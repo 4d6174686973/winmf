@@ -9,23 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/4d6174686973/winmf.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Mathis Makarski <mathis-makarski@web.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/4d6174686973/winmf/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/4d6174686973/winmf#readme",
   "dependencies": {
-    "next": "^13.0.6",
+    "next": "^13.5.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "18.11.10",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.5"
   }
 }

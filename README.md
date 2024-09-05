@@ -1,22 +1,28 @@
-# Nextra Docs Template 
+# WinMF 
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+This website is created with the [Nextra](https://nextra.site) template.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+See [Nextra Docs](https://nextra.site/docs) for development.
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
-
-## Quick Start
-
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
 
 ## Local Development
 
-First, run `pnpm i` to install the dependencies.
+Node.js image should be installed in Dockerfile
+```Dockerfile
+FROM node:20
+```
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+Then follow these steps
+
+1) Open project in devcontainer
+
+2) Run `npm install -g pnpm`
+
+3) Run `pnpm update`
+
+4) Run `pnpm i` to install the dependencies.
+
+5) Run `pnpm dev` to start the development server and visit localhost:3000.
 
 ## License
 
