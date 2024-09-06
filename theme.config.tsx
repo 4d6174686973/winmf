@@ -13,6 +13,11 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'WinMF Measurement Software',
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – WinMF'
+    }
+  }
 }
 
 export default config
