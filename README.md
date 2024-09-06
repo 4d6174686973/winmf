@@ -19,4 +19,4 @@ Follow these steps
 
 ## License
 
-This project is licensed under the MIT License.
+To be decided ...
