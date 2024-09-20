@@ -49,7 +49,7 @@ export default withBundleAnalyzer(
       ignoreDuringBuilds: true
     },
     i18n: {
-      locales: ['en', 'es', 'ru'],
+      locales: ['en', 'de'],
       defaultLocale: 'en'
     }, // basePath: "/some-base-path",
     distDir: './.next', // Nextra supports custom `nextConfig.distDir`

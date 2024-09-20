@@ -1,26 +1,21 @@
-# [SWR website](https://swr.vercel.app)
+# WinMF 
 
-The official website for [SWR](https://github.com/vercel/swr).
+This website is created with the [Nextra](https://nextra.site) template. See [Nextra Docs](https://nextra.site/docs) for development.
 
-To develop locally, clone this repository and run the following command to start
-the local dev server:
+For [multi language support](https://github.com/shuding/nextra/issues/3139) nextra v3 is needed. 
 
-```bash
-yarn
-yarn dev
-```
+This site is built on a clone of [swr website](https://github.com/shuding/nextra/tree/v3/examples/swr-site).
 
-And visit `localhost:3000` to preview your changes.
+## Local Development
 
-## Contributors
+Follow these steps
 
-- https://github.com/vercel/swr-site/graphs/contributors
-- Simplified Chinese translation done by Fang Lu
-  ([@huzhengen](https://github.com/huzhengen))
-- Spanish translation done by Markoz Peña
-  ([@markozxuu](https://twitter.com/markozxuu))
-- Japanese translation done by uttk ([@uttk](https://github.com/uttk)), Tomohiro
-  SHIOYA ([@shioyang](https://github.com/shioyang))
-- Korean translation done by SeulGi Choi ([@cs09g](https://github.com/cs09g))
-- Russian translation done by Valentin Politov
-  ([@valentinpolitov](https://github.com/valentinpolitov))
+1) Open project in devcontainer
+
+2) Run `npm install -g pnpm` in terminal
+
+3) Run `pnpm update` to update the dependencies.
+
+4) Run `pnpm i` to install the dependencies.
+
+5) Run `pnpm dev` to start the development server and visit localhost:3000.

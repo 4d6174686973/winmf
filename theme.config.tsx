@@ -23,21 +23,18 @@ const Vercel = () => (
 )
 
 const TITLE = {
-  en: 'React Hooks for Data Fetching',
-  es: 'Biblioteca React Hooks para la obtención de datos',
-  ru: 'React хуки для выборки данных'
+  en: 'WinMF Measurement Software',
+  de: 'WinMF Messsoftware'
 }
 
 const EDIT_TEXT = {
-  en: 'Edit this page on GitHub →',
-  es: 'Edite esta página en GitHub',
-  ru: 'Редактировать на GitHub'
+  en: 'Edit this page on GitHub',
+  de: 'Bearbeite diese Seite auf GitHub'
 }
 
 const FOOTER_LINK = {
   en: 'https://vercel.com/?utm_source=swr',
-  es: 'https://vercel.com/?utm_source=swr_es-es',
-  ru: 'https://vercel.com/?utm_source=swr_ru'
+  de: 'https://vercel.com/?utm_source=swr_ru'
 }
 
 const FOOTER_LINK_TEXT = {
@@ -66,10 +63,10 @@ const config: DocsThemeConfig = {
     dark: '15,23,42',
     light: '254,252,232'
   },
-  banner: {
-    content: 'SWR 2.0 is out! Read more →',
-    key: 'swr-2'
-  },
+  // banner: {
+  //   content: 'SWR 2.0 is out! Read more →',
+  //   key: 'swr-2'
+  // },
   // chat: {
   //   link: 'https://discord.com'
   // },
@@ -158,8 +155,7 @@ const config: DocsThemeConfig = {
   },
   i18n: [
     { locale: 'en', name: 'English' },
-    { direction: 'rtl', locale: 'es', name: 'Español RTL' },
-    { locale: 'ru', name: 'Русский' }
+    { locale: 'de', name: 'Deutsch' }
   ],
   logo: function Logo() {
     const { locale } = useRouter()

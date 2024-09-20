@@ -5,8 +5,7 @@ export function Page() {
   const { locale } = useRouter()
   const text = {
     en: 'This page could not be found',
-    ru: 'Эта страница не может быть найдена',
-    es: 'Esta pagina no se pudo encontrar'
+    de: 'Diese Seite konnte nicht gefunden werden',
   }
   return <h1>404 - {text[locale] || text.en}</h1>
 }
