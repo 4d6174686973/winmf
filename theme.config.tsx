@@ -22,6 +22,12 @@ const Vercel = () => (
   </svg>
 )
 
+const FourAudio = () => (
+  <div>
+    <img src="/four-audio-logo.png" alt="Four Audio Logo"/>
+  </div>
+)
+
 const TITLE = {
   en: 'WinMF Measurement Software',
   de: 'WinMF Messsoftware'
@@ -33,35 +39,29 @@ const EDIT_TEXT = {
 }
 
 const FOOTER_LINK = {
-  en: 'https://vercel.com/?utm_source=swr',
-  de: 'https://vercel.com/?utm_source=swr_ru'
+  en: 'https://www.four-audio.com/en/home/',
+  de: 'https://www.four-audio.com/'
 }
 
 const FOOTER_LINK_TEXT = {
   en: (
     <>
-      Powered by
-      <Vercel />
+      Distributed by
+      <FourAudio />
     </>
   ),
-  es: (
+  de: (
     <>
-      Desarrollado por
-      <Vercel />
+      Vertrieb durch
+      <FourAudio />
     </>
   ),
-  ru: (
-    <>
-      Работает на
-      <Vercel />
-    </>
-  )
 }
 
 const config: DocsThemeConfig = {
   backgroundColor: {
-    dark: '15,23,42',
-    light: '254,252,232'
+    dark: '14,14,14',
+    light: '255,255,255'
   },
   // banner: {
   //   content: 'SWR 2.0 is out! Read more →',
@@ -72,23 +72,23 @@ const config: DocsThemeConfig = {
   // },
   darkMode: true,
   docsRepositoryBase:
-    'https://github.com/shuding/nextra/blob/core/examples/swr-site',
+    'https://github.com/4d6174686973/winmf',
   editLink: {
     content: function useText() {
       const { locale } = useRouter()
       return EDIT_TEXT[locale!]
     }
   },
-  feedback: {
-    content: 'Question? Give us feedback →',
-    labels: 'feedback',
-    useLink() {
-      const config = useConfig()
-      return `https://google.com/search?q=${encodeURIComponent(
-        `Feedback for ${config.title}`
-      )}`
-    }
-  },
+  // feedback: {
+  //   content: 'Question? Give us feedback →',
+  //   labels: 'feedback',
+  //   useLink() {
+  //     const config = useConfig()
+  //     return `https://google.com/search?q=${encodeURIComponent(
+  //       `Feedback for ${config.title}`
+  //     )}`
+  //   }
+  // },
   footer: {
     content: function useText() {
       const { locale } = useRouter()
@@ -178,19 +178,19 @@ const config: DocsThemeConfig = {
     defaultTheme: 'dark'
   },
   project: {
-    link: 'https://github.com/vercel/swr'
+    link: 'https://github.com/4d6174686973/winmf'
   },
   sidebar: {
     autoCollapse: true,
     defaultMenuCollapseLevel: 1,
     toggleButton: true
   },
-  toc: {
-    extraContent: (
-      <img alt="placeholder cat" src="https://placecats.com/300/200" />
-    ),
-    float: true
-  }
+  // toc: {
+  //   extraContent: (
+  //     <img alt="placeholder cat" src="https://placecats.com/300/200" />
+  //   ),
+  //   float: true
+  // }
 }
 
 export default config

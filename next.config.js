@@ -75,16 +75,6 @@ export default withBundleAnalyzer(
       //   statusCode: 301,
       // },
       {
-        source: '/change-log',
-        destination: '/docs/change-log',
-        statusCode: 301
-      },
-      {
-        source: '/blog/swr-1',
-        destination: '/blog/swr-v1',
-        statusCode: 301
-      },
-      {
         source: '/docs.([a-zA-Z-]+)',
         destination: '/docs/getting-started',
         statusCode: 302
@@ -92,11 +82,6 @@ export default withBundleAnalyzer(
       {
         source: '/docs',
         destination: '/docs/getting-started',
-        statusCode: 302
-      },
-      {
-        source: '/examples',
-        destination: '/examples/basic',
         statusCode: 302
       },
       {
