@@ -10,16 +10,16 @@ export default {
     title: 'Docs',
     type: 'page'
   },
-  vertrieb: {
+  distribution: {
     title: 'Vertrieb',
     type: 'page'
   },
-  impressum: {
+  imprint: {
     title: 'Impressum',
     type: 'page'
   },
-  datenschutz: {
-    title: 'Datenschutzerklärung',
+  privacy: {
+    title: 'Datenschutz',
     type: 'page'
   }
 }

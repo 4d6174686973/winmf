@@ -164,7 +164,7 @@ const config: DocsThemeConfig = {
         <SWRLogo className="h-3" />
         <span
           className="max-md:hidden select-none font-extrabold ltr:ml-2 rtl:mr-2"
-          title={`SWR: ${TITLE[locale!] || ''}`}
+          title={`WinMF: ${TITLE[locale!] || ''}`}
         >
           WinMF
         </span>
