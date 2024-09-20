@@ -1,31 +1,47 @@
 {
-  "name": "winmf-docs",
-  "version": "0.0.1",
-  "description": "WinMF Documentation",
+  "name": "winmf",
+  "type": "module",
+  "author": "Mathis Makarski",
+  "license": "Apache-2.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
+    "analyze": "ANALYZE=true pnpm build",
     "build": "next build",
-    "start": "next start"
+    "clean": "rimraf .next .turbo",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next",
+    "prebuild": "node nextra-remote-filepaths/fetch.js",
+    "predev": "pnpm prebuild",
+    "start": "next start",
+    "types:check": "tsc --noEmit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/4d6174686973/winmf.git"
-  },
-  "author": "Mathis Makarski <mathis-makarski@web.de>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/4d6174686973/winmf/issues"
-  },
-  "homepage": "https://github.com/4d6174686973/winmf#readme",
   "dependencies": {
-    "next": "^13.5.6",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "markdown-to-jsx": "^6.11.4",
+    "next": "^14.2.13",
+    "nextra": "3.0.0-alpha.36",
+    "nextra-theme-docs": "3.0.0-alpha.36",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-intersection-observer": "^8.34.0"
+  },
+  "dependenciesMeta": {
+    "nextra": {
+      "injected": true
+    },
+    "nextra-theme-docs": {
+      "injected": true
+    }
   },
   "devDependencies": {
-    "@types/node": "18.11.10",
-    "typescript": "^4.9.5"
+    "@next/bundle-analyzer": "^13.5.7",
+    "@types/node": "22.5.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12"
+  },
+  "nextBundleAnalysis": {
+    "budget": 358400,
+    "budgetPercentIncreaseRed": 20,
+    "showDetails": true
   }
 }

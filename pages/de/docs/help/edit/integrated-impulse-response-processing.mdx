@@ -1,0 +1,51 @@
+# Integrated Impulse Response Processing
+
+In diesem Menü werden die Parameter verwaltet, um nach ISO 3382 eine Berechnung der Nachhallzeit durchzuführen. Das Verfahren basiert auf Auswertungen der rückwärts integrierten Impulsantwort (IIR).
+## Two-channel Impulse Response
+
+Folgender Plot zeigt die Messung einer zweikanaligen Impulsantwort, die mit einem Dodekaeder in einem Hallraum gemessen wurde. Das Anregungssignal der Messung war ein Sweep.
+
+![revch1_1_2](/revch1_1_2.png)
+
+Für die weitere Auswertung ist zunächst zu definieren, welcher Bereich der Impulsantwort in der Auswertung berücksichtigt werden soll. Dazu muss unter Select region der gewünschte Bereich angegeben werden. Der Endzeitpunkt der Auswertung sollte mit Bedacht gewählt werden. Der Impuls muss sauber in den Noisefloor übergehen, um eine automatische Detektion desselben zu ermöglichen. Außerdem sollte der Noisefloor nicht durch Verzerrungen der Signalkette, speziell dem Lautsprecher, gestört sein. Bei Messungen mit Sweeps finden sich Verzerrungsanteile am Ende der Impulsantwort wieder. Im Plot oben ist das am ansteigenden Verlauf ab ca. 16s zu erkennen.
+
+## Impulse Start
+
+Für die Wahl des Startzeitpunktes der Auswertung sollte man vorsichtshalber auch den Impulsstart (s. nächster Plot) begutachten und entscheiden ob Störungen vorliegen, die die automatische Detektion des Impulsstartes durcheinander bringen könnten. Evt. ist dann das Signal zu bearbeiten oder ein geeigneter Startzeitpunkt zu wählen. Für eine sichere Detektion sind mindestens 25dB Dynamik am Impulsstart notwendig. Sollten vor dem Impulsstart erhebliche Störungen vorliegen und diese wegen eines Versagens von Start detect der Integration zugeführt werden, dann können insbesondere die Werte für EDT und T10 verfälscht sein.
+
+![revch1_1_2_irstart](/revch1_1_2_irstart.png)
+
+## Processing Options
+
+Unter Processing options sind folgende Einstellungen möglich:
+
+import { Tabs } from 'nextra/components'
+ 
+<Tabs items={['IR start detect', 'Thr. rel max [dB]', 'Scan band', 'IR end detect', 'Tailcut compensation']}>
+  <Tabs.Tab>**IR start detect**: Benutzung der automatischen Detektion des Impulsstartes.</Tabs.Tab>
+  <Tabs.Tab>**Thr. rel max [dB]** definiert den Impulsstart relativ zum Maximum der Impulsantwort in dB für IR start detect; wenn die threshold auf -20dB steht, dann wird der Impulsstart beim ersten Überschreiten des globalen Maximums abzüglich 20dB vor dem Maximum der Impulsantwort gefunden.</Tabs.Tab>
+  <Tabs.Tab>**Scan band:** bei each wird nach Filterung der Impulsantwort der Impulsstart für jedes Band getrennt ermittelt und für weitere Auswertungen verwendet; bei highest only wird nur das Band mit der höchsten Frequenz für die Ermittlung des Impulsstartes verwendet</Tabs.Tab>
+  <Tabs.Tab>**IR end detect** ermittelt automatisch den Übergang der gefilterten IR in den Noisefloor</Tabs.Tab>
+  <Tabs.Tab>**Tailcut compensation** kompensiert den Fehler, der durch die endliche Integrationslänge am Ende der IIR entsteht (Abschmieren der IIR kurz vor dem Noisefloor) nach ISO 3382-1, Abschnitt 5.3.3.</Tabs.Tab>
+</Tabs>
+
+## Noise sustraction parameters
+
+Unter Noise subtraction können einige Parameter definiert werden, um aus einem bestimmten Teil der Impulsantwort eine Schätzung des RMS-Wertes des Noise zu gewinnen.  Dieser wird dann vor Integration von der Impulsantwort abgezogen, um die Berechnungsgenauigkeit der Nachhallzeit zu erhöhen.
+
+<Tabs items={['Noise subtraction', 'Noise detect', 'Take RMS from', 'Noise length [%]']}>
+<Tabs.Tab>**Noise subtraction:** wenn es aktiviert ist, erfolgt die Subtraktion der Rauschspannung</Tabs.Tab>
+<Tabs.Tab>**Noise detect:** ermittelt die Rauschspannung aus dem Bereich, der durch die Parameter Take RMS from und Noise length definiert wird. Ist Noise detect deaktiviert, dann kann in das Feld Noise RMS eine Spannung eingetragen werden</Tabs.Tab>
+<Tabs.Tab>**Take RMS from:** head übernimmt den Noise dem Bereich vor dem Impulsstart, tail vom Bereich hinter dem Übergang der Impulsantwort in den Noisefloor, lowest segment wählt den Bereich mit dem niedrigsten Noise</Tabs.Tab>
+<Tabs.Tab>**Noise length [%]:** wählt die Länge des auszuwertenden Noisefloor prozentual zu der Länge des jeweiligen Bereichs. Ist zum Beispiel der Noise tail 10s lang, dann ist der Bereich für die RMS-Berechnung des Noise die erste Sekunde, wenn Noise length auf 10% steht</Tabs.Tab>
+</Tabs>
+
+Unter Filter Options können die Impulsantworten nach DIN EN 61260 in Bruchteilen von Oktaven gefiltert werden.
+
+## Decay Time Analysis
+
+Nach Start der Berechnung mit OK wechselt das Display in den Bereich Int. impulse response. Dort können dann die eigentlichen Auswertungen der Nachhallzeit durchgeführt werden. Der folgende Plot zeigt die IIRs einer  in Oktaven  ausgewerteten zweikanaligen Messung.
+
+![revch1_1_2_irstart_iir](/revch1_1_2_irstart_iir.png)
+
+Wenn es während der Berechnung zu Fehlern gekommen ist, weil zum Beispiel aufgrund eines zu geringen SNR der Noise start nicht detektiert werden konnte, dann erscheint ein Fenster, das die Fehler listet. Je nach Art der Meldung können durch günstige Start und Endwerte des Berechnungsbereichs (unter Select region) Fehler im Processing vermieden werden.
