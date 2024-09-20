@@ -113,7 +113,7 @@ const config: DocsThemeConfig = {
     const image =
       config.frontMatter.image ||
       'https://assets.vercel.com/image/upload/v1572282926/swr/twitter-card.jpg'
-    const title = `${config.title} | SWR (${locale})`
+    const title = `${config.title} | WinMF (${locale})`
     return (
       <>
         <title>{title}</title>
@@ -166,7 +166,7 @@ const config: DocsThemeConfig = {
           className="max-md:hidden select-none font-extrabold ltr:ml-2 rtl:mr-2"
           title={`SWR: ${TITLE[locale!] || ''}`}
         >
-          SWR
+          WinMF
         </span>
       </>
     )

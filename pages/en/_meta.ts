@@ -5,7 +5,19 @@ export default {
     display: 'hidden'
   },
   docs: {
-    type: 'page',
-    title: 'Docs'
+    title: 'Docs',
+    type: 'page'
+  },
+  distribution: {
+    title: 'Distribution',
+    type: 'page'
+  },
+  imprint: {
+    title: 'Imprint',
+    type: 'page'
+  },
+  privacy: {
+    title: 'Privacy Policy',
+    type: 'page'
   }
 }
