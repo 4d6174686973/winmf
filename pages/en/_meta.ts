@@ -1,13 +1,6 @@
 export default {
-  index: {
-    title: 'Introduction',
-    type: 'page',
-    display: 'hidden'
-  },
-  docs: {
-    title: 'Docs',
-    type: 'page'
-  },
+  // Pages
+  index: 'Introduction',
   distribution: {
     title: 'Distribution',
     type: 'page'
@@ -19,5 +12,9 @@ export default {
   privacy: {
     title: 'Privacy Policy',
     type: 'page'
-  }
+  },
+
+  // Site map
+  'getting-started': 'Getting Started',
+  help: 'Help',
 }
