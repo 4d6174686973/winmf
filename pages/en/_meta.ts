@@ -17,4 +17,5 @@ export default {
   // Site map
   'getting-started': 'Getting Started',
   help: 'Help',
+  features: 'Features',
 }
