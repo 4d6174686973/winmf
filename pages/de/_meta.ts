@@ -1,15 +1,6 @@
-import meta from '../en/_meta'
-
 export default {
-  index: {
-    title: 'Einleitung',
-    type: 'page',
-    display: 'hidden'
-  },
-  docs: {
-    title: 'Docs',
-    type: 'page'
-  },
+  //  Pages
+  index: 'Einleitung',
   distribution: {
     title: 'Vertrieb',
     type: 'page'
@@ -21,5 +12,8 @@ export default {
   privacy: {
     title: 'Datenschutz',
     type: 'page'
-  }
+  },
+  //  Site map
+  'getting-started': 'Getting Started',
+  help: 'Hilfe',
 }
