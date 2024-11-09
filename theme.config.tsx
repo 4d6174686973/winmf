@@ -2,7 +2,9 @@
 import type { DocsThemeConfig } from 'nextra-theme-docs'
 import { LocaleSwitch, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'nextra/hooks'
-import type { ComponentProps, ReactElement } from 'react'
+// import type { ComponentProps, ReactElement } from 'react'
+import Image from 'next/image';
+// import Link from 'next/link';
 
 const TITLE = {
   en: 'WinMF Measurement Software',
@@ -29,11 +31,11 @@ const config: DocsThemeConfig = {
   },
   darkMode: true,
 
-
   // BANNER
   // banner: {
-  //   content: 'SWR 2.0 is out! Read more →',
-  //   key: 'swr-2'
+  //   content:  "Hello World!",
+  //   key: 'winmf-banner',
+  //   dismissible: false
   // },
 
   // DISCORD
@@ -70,7 +72,7 @@ const config: DocsThemeConfig = {
       const { locale } = useRouter()
       return (
         <span>
-          {new Date().getFullYear()} ©{' '}
+          {TITLE[locale!]} {new Date().getFullYear()} ©{' '}
           <a href={FOOTER_LINK[locale!]} target="_blank">
             Four Audio
           </a>
@@ -85,7 +87,7 @@ const config: DocsThemeConfig = {
     const { locale } = useRouter()
     const description =
       config.frontMatter.description ||
-      'WinMF - Measurement Software.'
+      'WinMF Measurement Software'
     // const image =
     //   config.frontMatter.image ||
     //   'https://assets.vercel.com/image/upload/v1572282926/swr/twitter-card.jpg'
@@ -113,25 +115,23 @@ const config: DocsThemeConfig = {
       </>
     )
   },
-
-  // NAVBAR
   i18n: [
     { locale: 'en', name: 'English' },
     { locale: 'de', name: 'Deutsch' }
   ],
-  logo: function Logo() {
-    const { locale } = useRouter()
-    return (
-      <>
-        <span
-          className="max-md:hidden select-none font-extrabold ltr:ml-2 rtl:mr-2"
-          title={`WinMF: ${TITLE[locale!] || ''}`}
-        >
-          WinMF
-        </span>
-      </>
-    )
-  },
+  logo: (
+    <>
+      <Image
+        alt="WinMF Logo"
+        src="/favicon/favicon.svg"
+        width={38}
+        height={38}
+      />
+      <span style={{ marginLeft: '0.8em', fontWeight: 700, fontSize: '1.0em'}}>
+        WinMF Measurement Software
+      </span>
+    </>
+  ),
   navbar: {
     extraContent: LocaleSwitch
   },
