@@ -1,3 +1,5 @@
+import { features } from "process";
+
 export default {
   //  Pages
   index: 'Einleitung',
@@ -16,4 +18,5 @@ export default {
   //  Site map
   'getting-started': 'Getting Started',
   help: 'Hilfe',
+  features: 'Features und Anwendungen',
 }
