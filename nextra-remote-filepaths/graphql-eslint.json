@@ -3,13 +3,6 @@
   "repo": "graphql-eslint",
   "branch": "master",
   "docsPath": "website/src/pages/docs/",
-  "filePaths": [
-    "configs.mdx",
-    "custom-rules.mdx",
-    "getting-started.mdx",
-    "getting-started/parser-options.mdx",
-    "getting-started/parser.mdx",
-    "index.mdx"
-  ],
+  "filePaths": [],
   "nestedMeta": {}
 }
