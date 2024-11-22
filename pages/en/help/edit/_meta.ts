@@ -3,5 +3,8 @@ export default {
   'region-control': 'Region Control',
   'channel-work': 'Channel work',
   'apply-window': 'Apply window',
+  generate: 'Generate',
+  'sweep-generator': 'Sweep generator',
+  'multisine-generator': 'Multisine generator',
   
 }
