@@ -1,5 +1,3 @@
-import { Recoverable } from "repl";
-
 export default {
     'supported-hardware': 'Supported hardware',
     'frequency-response': 'Frequency response',
