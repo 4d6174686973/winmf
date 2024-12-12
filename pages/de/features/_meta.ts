@@ -1,14 +1,14 @@
 export default {
-    'labormessungen-an-elektronik-und-lautsprechern': 'Labormessungen an Elektronik und Lautsprechern',
+    'laboratory-measurement-of-electronics-and-loudspeakers': 'Labormessungen an Elektronik und Lautsprechern',
     'balloon-und-directivity': 'Balloons und Directivity',
-    'einmessung-von-beschallungsanlagen-und-sti-auswertung': 'Einmessung von Beschallungsanlagen und STI-Auswertung',
-    raumakustik: 'Raumakustik',
-    'edit-und-processing-funktionen': 'Edit  und Processing Funktionen',
-    'erzeugung-individueller-anregungssignale': 'Erzeugung individueller Anregungssignale',
-    'statistik-auswertungen-von-zeitsignalen-und-spektren': 'Statistik Auswertungen von Zeitsignalen und Spektren',
+    'measurement-and-calibration-of-sound-reinforcement-systems-and-sti-evaluation': 'Einmessung von Beschallungsanlagen und STI-Auswertung',
+    'room-acoustics': 'Raumakustik',
+    'editing-and-processing-functionalities': 'Edit  und Processing Funktionen',
+    'creating-arbitrary-excitation-signals': 'Erzeugung individueller Anregungssignale',
+    'statistical-analysis-of-time-signals-and-spectra': 'Statistik Auswertungen von Zeitsignalen und Spektren',
     'level-recorder': 'Level recorder',
-    'qualitaetssicherung-von-elektronik-und-lautsprechern': 'Qualitätssicherung von Elektronik und Lautsprechern',
-    'makroprocessing-und-automatisierung': 'Makroprocessing und Automatisierung',
-    'plot-funktionen': 'Plot Funktionen',
+    'quality-control-for-electronics-and-loudspeakers': 'Qualitätssicherung von Elektronik und Lautsprechern',
+    'macro-processing-and-automation': 'Makroprocessing und Automatisierung',
+    'plotting-functionalities': 'Plot Funktionen',
     
 }
