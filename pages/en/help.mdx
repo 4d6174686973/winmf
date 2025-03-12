@@ -1,1 +1,29 @@
-# Help
+# WinMF - Basic Information
+
+## Installation
+
+see file install.txt included in the setup files
+
+## Basics on WinMF
+
+The software features two main windows, which are permanently open. One is the time domain window, the other the frequency domain window. In order to work in one of them, it needs to be activated by clicking on it. Closing one of these two windows makes WinMF save the current state and exit.
+
+In the time domain a file contains the data in the form of an audio file, the way it has been recorded from an AD converter (or several), as a sequence of voltage values (or sound pressure, displacement, etc.) on a time axis scaled by the sampling frequency.
+
+In the frequency domain a file contains a sequence of complex voltage values on a frequency raster. The time or frequency representation is displayed in the central diagram in the respective window.
+
+Generally any electroacoustic signal can be looked at in the time domain as well as in the frequency domain. The representations are fully equivalent and can be converted into one another without loss by mathematical operations. This does not happen automatically. When a measurement has been performed or a file has been opened, at first it is only present either in the frequency or the time domain, depending on which domain the measurement has been executed or the file has been opened in. Only by FFT (Fast Fourier Transformation) or IFFT (Inverse Fast Fourier Transformation) the information is transformed into the second window. Any editing or modification always affects the active window only and needs to be transferred by transformation if required.
+
+All current settings in the menus, as well as window sizes and positions etc., are stored into two configuration files when closing the program and automatically reloaded when restarting the program, which allows to continue working with the same configuration. Furthermore every submenu provides a possibility to save setup files with configurations for its delimited area and restore these. Thus complex specialist settings can be managed comfortably.
+
+[Cursor control and readout of sample values](/en/help/domain/cursor-control)
+
+[Cursor tools](/en/help/domain/cursor-tools)
+
+[Plot mode](/en/help/domain/plot-mode)
+
+[Range info](/en/help/domain/range)
+
+[File info](/en/help/domain/file-info)
+
+[Shortcuts](/en/help/domain/short-cuts)

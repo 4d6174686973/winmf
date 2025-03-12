@@ -1,0 +1,45 @@
+# Preferences
+
+This menu contains some general settings.
+
+## Path and basic settings
+
+Exciter path defines the standard directory for loading excitation signals. So the signals to be selected must be located in this folder and its subdirectories, which is a restriction in a way, but ensures that macros can be run on different systems without the need for changes.
+
+Base path defines the standard directory for any file operation occurring within a macro. This concerns for example the export functions from the info windows and all QC functions. The current directory for loading WinMF files and the import/export functions are exceptions. The general definition of a directory for macro relevant functions is equally necessary in order to ensure portability of macros.
+
+Generate sweeps in exciter path creates a set of popular sweeps for measuring which is stored in the Exciter path. Specific sweeps can be generated using the [Sweep generator](/en/help/edit/sweep-generator).
+
+Show QC process control at startup automatically opens the process control window on startup.
+
+Start QC automation at startup launches a process automation after starting WinMF.
+
+With Offline help being activated, WinMF uses the locally stored help page. It needs to be stored in a folder named "Help" inside the WinMF installation directory. The current help files can be downloaded here: www.ifaa-akustik.de/data/Help.zip
+
+Help language defines the language for the help page.
+
+Store measurement setup in file additionally stores into the WinMF file frontend setup and measuring menu used for a measurement. Under [Spectrums/Time](/en/help/time-signalsspectrums) signals these setting can be restored from the file.
+
+Check for updates at startup synchronises WinMF, offline help and other necessary components with the version present on the WinMF server. Internet connection is required and WinMF needs to be unblocked by the firewall.
+
+Decimal separator in tables is point sets the decimal separator in tables to '.', otherwise it is ','.
+
+Windows always at default position: all windows are opened in the left upper corner of the calling window.
+
+Reset all window positions sets the saved values for the window position to the default value.
+
+## Measurement
+
+Use filename as legend uses the filename as legend. An existing legend will be overwritten. This function will be applied only when a file is loaded.
+
+Copy path after FFT/IFFT to other domain copies the path of the original file to the other domain.
+
+Use cal-file.txt in WinMF folder to calibrate Frontend values: settings in this calibration file allows the user to overwrite frontend settings individually: [Documentation of Calibration file](/en/help/file/cal-file)
+
+All outs are normalized to exciter Volt. or amp. Watt (line(internal/external): normalizes over all activated channels also inhomogeneous outputs  to the defined voltage. This option has to be activated if reference measurements are used over inhomogeneous channels.
+
+Use sensor ident as legend uses the sensor identifier of the Frontend Setup in the legend
+
+T_ref (for delay calc.) [°C]: the here defined value serves to calculate the speed of sound for the menu Edit/add group delay and within the internal post-processing applied to ADDA/Polar response in the case of using a microphone arc with different microphone distances.
+
+Acquire lab temp, humid.: definiton and use of a sensor to acquire laboratory temperature and humidity (see [Configure lab. temp, humi](/en/help/file/lab-ht)).

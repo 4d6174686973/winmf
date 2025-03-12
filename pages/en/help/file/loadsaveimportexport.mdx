@@ -1,0 +1,43 @@
+# Load/Save/Import/Export
+
+Load file reads data stored in one of the WinMF format types. For the time domain the file extension is *.mda, for the frequency domain *.msp.
+
+Reload current file reloads the file with the name of the currently active one. So usually the file is just loaded anew. In case a new filename has been set by QC/set current filename, this file will be loaded.
+
+Save file as opens a file browser for saving a file. After the operation the current filename is taken over by WinMF.
+
+Save uses the the current filename. Existing files of that name are overwritten without further enquiry. In case a new filename has been set by QC/set current filename, the file is stored under this name.
+
+Save and plot additionally creates a plot. Existing files of that name are overwritten without further enquiry by the save operation as well as by the Plot operation (short cut q).
+
+Save (autoincrement) stores under the current filename. If the file already exists, a new file is created by adding a serial number to the current filename. E.g. current filename is "Test.msp". If Save (autoincrement) is executed and the file already exists in the current directory, a file with the name "Test_000001.msp" is written. With the next function call "Test_000002.msp" is created and so on.
+
+## Monkey forest
+
+Import *.spk import spectra from Monkey Forest.
+
+Export as *.spk exports spectra in Monkey Forest format.
+
+Export *.spk exports Monkey Forest spectra using the current path and filename. Existing files of that name are overwritten without further enquiry. In order to export spk files within a macro this function is to be used.
+
+Import/Export *.dat imports/exports Monkey Forest time signals.
+
+Import/Export *.wav imports/exports wav files. Wave formats available are 16bit integer and 32bit float.
+
+## Matlab raw data
+
+Matlab import and export functions work with the following variables inside a Matlab file:
+
+data: two-dimensional array, each row contains a channel vector
+
+samplerate: sample rate of data
+
+If 'data' is non-existent, the import is aborted. When importing an array into the time domain, only the real part is used.
+
+If 'samplerate' is non-existent, the sample rate of the file currently displayed in WinMF is used.
+
+Import *.mat imports Matlab data.
+
+Export as *.mat exports Matlab data.
+
+Export *.mat exports Matlab data using the current path and filename. Existing files of that name are overwritten without further enquiry. In order to export mat files within a macro this function is to be used.
