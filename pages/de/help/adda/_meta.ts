@@ -3,5 +3,18 @@ export default{
     'frequency-response': 'Frequency response',
     'impedance': 'Impedance',
     'ls-sensitivity': 'LS sensitivity',
+    'frequency-response-reference': 'Reference',
+    'harmonic-distortion': 'Harmonic distortion',
+    'harmonic-distortion-f': 'Harmonic distortion (f)',
+    'distortion-processing': 'Distortion Processing',
+    'multisine-distortion': 'Multisine distortion',
+    'max-spl': 'Max SPL',
+    'polar-response': 'Polar response',
+    'turn-table-setup': 'Turn table setup',
+    'ad-only': 'AD only',
+    'ad-da': 'ADDA',
+    'mic-calibration': 'Mic calibration',
+    'frontend-setup': 'Frontend Setup',
+    rec: 'Rec',
     
 }
