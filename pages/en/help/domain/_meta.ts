@@ -1,6 +1,6 @@
 export default{
     'cursor-control': 'Cursor control',
-    'cursor-control': 'Cursor tools',
+    'cursor-tools': 'Cursor tools',
     'plot-mode': 'Plot mode',
     'range': 'Range',
     'file-info': 'File info',
