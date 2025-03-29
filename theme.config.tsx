@@ -30,6 +30,9 @@ const config: DocsThemeConfig = {
     light: '255,255,255'
   },
   darkMode: true,
+  search: {
+    placeholder: 'Search...'
+  },
 
   // BANNER
   // banner: {
