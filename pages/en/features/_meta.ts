@@ -9,7 +9,6 @@ export default {
     'level-recorder': 'Level recorder',
     'quality-control-for-electronics-and-loudspeakers': 'Quality control for electronics and loudspeakers',
     'macro-processing-and-automation': 'Macro processing and automation',
+    'frontends-from-2-to-128-channels-with-up-to-192khz': 'Supported hardware',
     'plotting-functionalities': 'Plotting functions',
-    
-
 }

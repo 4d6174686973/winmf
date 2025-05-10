@@ -8,5 +8,6 @@ export default {
   'multisine-generator': 'Multisine generator',
   'edit-extended-comment': 'Edit extended comment',
   'edit-temp-humi': 'Edit temp., humidity',
-  
+  filter: 'Filter',
+  'a-weighting': 'A-weighting',
 }

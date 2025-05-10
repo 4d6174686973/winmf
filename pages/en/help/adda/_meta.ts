@@ -13,5 +13,6 @@ export default {
     'mic-calibration': 'Mic calibration',
     'frontend-setup': 'Frontend setup',
     rec: 'Rec',
-    
+    'turn-table-setup': 'Turntable setup',
+    'processing': 'Processing',
 }
