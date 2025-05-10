@@ -1,4 +1,13 @@
 export default {
   'integrated-impulse-response-processing': 'Integrated Impulse Response Processing',
   'region-control': 'Region Control',
+  'channel-work': 'Channel work',
+  'apply-window': 'Apply window',
+  generate: 'Generate',
+  'sweep-generator': 'Sweep generator',
+  'multisine-generator': 'Multisine generator',
+  'edit-extended-comment': 'Edit extended comment',
+  'edit-temp-humi': 'Edit temp., humidity',
+  filter: 'Filter',
+  'a-weighting': 'A-weighting',
 }

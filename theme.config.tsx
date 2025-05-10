@@ -30,6 +30,9 @@ const config: DocsThemeConfig = {
     light: '255,255,255'
   },
   darkMode: true,
+  search: {
+    placeholder: 'Search...'
+  },
 
   // BANNER
   // banner: {
@@ -54,17 +57,17 @@ const config: DocsThemeConfig = {
     }
   },
 
-  // FEEDBACK LINK
-  feedback: {
-    content: 'Question? Give us feedback →',
-    labels: 'feedback',
-    useLink() {
-      const config = useConfig()
-      return `https://google.com/search?q=${encodeURIComponent(
-        `Feedback for ${config.title}`
-      )}`
-    }
-  },
+  // // FEEDBACK LINK
+  // feedback: {
+  //   content: 'Question? Give us feedback →',
+  //   labels: 'feedback',
+  //   useLink() {
+  //     const config = useConfig()
+  //     return `https://google.com/search?q=${encodeURIComponent(
+  //       `Feedback for ${config.title}`
+  //     )}`
+  //   }
+  // },
 
   // FOOTER
   footer: {
@@ -124,11 +127,11 @@ const config: DocsThemeConfig = {
       <Image
         alt="WinMF Logo"
         src="/favicon/favicon.svg"
-        width={38}
-        height={38}
+        width={44}
+        height={44}
       />
       <span style={{ marginLeft: '0.8em', fontWeight: 700, fontSize: '1.0em'}}>
-        WinMF Measurement Software
+        WinMF
       </span>
     </>
   ),

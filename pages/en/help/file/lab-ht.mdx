@@ -1,0 +1,21 @@
+# Lab H, T
+
+defines the measurement of laboratory temperature.
+
+The values of temperature (T) and relative humidity (H) are acquired after each measurement (all menus of ADDA) and written into the header of the actual file  together with the timestamp of the measurement.
+
+In repeat mode, the moment of data acuisition is after the last repetition. If the sensor cannot deliver values, NaN will be displayed instead. If the defined interface does not respond, an error message is displayed. The measurement itself will be continued independently.
+
+The followong sensors/interfaces are supported:
+
+Arduino-USB with SHT31 or SHT35 sensor, see also : [QC/SHT3X](/en/help/qc/sht3x)
+
+The following options can be used:
+
+T,H, always visible: defines the visibility in the display
+
+T,H, always plotting: defines if the values are to be plotted
+
+The configuration of the text field is described here: [Edit Temp, Humi](/en/help/edit/edit-temp-humi).
+
+ 
