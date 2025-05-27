@@ -1,10 +1,17 @@
 export default {
+  file: 'File',
+  domain: 'Domain',
+  display: 'Display',
+  'time-signalsspectrums': 'Time signals/Spectrums',
   edit: 'Edit',
   info: 'Info',
+  transform: 'Transform',
   adda: 'ADDA',
-  'time-signalsspectrums': 'Time signals/Spectrums',
-  domain: 'Domain',
-  file: 'File',
+  directivity: 'Directivity',
+  macro: 'Macro',
   qc: 'QC',
-  
+  plot: 'Plot',
+  help: 'Help',
+  advices: 'Advices',
+  shortcuts: 'Shortcuts',
 }
