@@ -1,0 +1,17 @@
+export default {
+  'play-macro': 'Play Macro',
+  'start-macro-recording': 'Start macro recording',
+  'stop-macro-recording': 'Stop macro recording',
+  'batch-processing': 'Batch processing',
+  'macro-organizer': 'Macro organizer',
+  'edit-macro': 'Edit macro',
+  'set-filepath': 'Set filepath',
+  'set-read-filepath': 'Set read filepath',
+  'set-current-filename': 'Set current filename',
+  'set-current-read-filename': 'Set current read filename',
+  'set-exciter-level': 'Set exciter level',
+  'set-relative-exciter-level': 'Set relative exciter level',
+  'unset-exciter-level': 'Unset exciter level',
+  'macro-definitions': 'Macro definitions',
+  'macro-submenu-execution': 'Macro submenu execution',
+}
