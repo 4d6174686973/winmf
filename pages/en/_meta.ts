@@ -1,6 +1,6 @@
 export default {
   // Pages
-  index: 'Introduction',
+  index: 'Home',
   distribution: {
     title: 'Distribution',
     type: 'page'
@@ -15,6 +15,10 @@ export default {
   },
 
   // Site map
-  help: 'Help',
   features: 'Features',
+  'supported-hardware': 'Supported Hardware',
+  help: 'Help',
+  'first-steps': 'First Steps',
+  licensing: 'Licensing',
+  'system-requirements': 'System Requirements'
 }

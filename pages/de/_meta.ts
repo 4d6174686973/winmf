@@ -1,8 +1,6 @@
-import { features } from "process";
-
 export default {
   //  Pages
-  index: 'Einleitung',
+  index: 'Home',
   distribution: {
     title: 'Vertrieb',
     type: 'page'
