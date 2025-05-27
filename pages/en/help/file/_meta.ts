@@ -5,7 +5,8 @@ export default{
     'preferences': 'Preferences',
     'file-history': 'File history',
     'loadsave-setup-asdefault-values': 'Load/Save setup as/Default values',
-    'cal-file': 'Calibration file',
-    'lab-ht': 'Lab H, T',
     exit: 'Exit',
+    
+    // 'cal-file': 'Calibration file',
+    // 'lab-ht': 'Lab H, T',
 }

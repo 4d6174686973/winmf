@@ -2,7 +2,7 @@ export default {
   file: 'File',
   domain: 'Domain',
   display: 'Display',
-  'time-signalsspectrums': 'Time signals/Spectrums',
+  'time-signalsspectrums': 'Time Signals/Spectrums',
   edit: 'Edit',
   info: 'Info',
   transform: 'Transform',
