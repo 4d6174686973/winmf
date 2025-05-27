@@ -1,8 +1,4 @@
 export default {
-    'combine-curves': 'Combine curves',
-    
-    'average-magnitude': 'Average magnitude',
-
   'delete': 'Delete',
   'channel-subset': 'Channel subset',
   'insert': 'Insert',
