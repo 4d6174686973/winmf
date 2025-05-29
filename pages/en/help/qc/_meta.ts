@@ -10,5 +10,8 @@ export default {
   'process-control': 'Process control',
   'external-batch': 'External batch',
   'standard-tolerances': 'Standard tolerances',
-  'sht3x': 'SHT3X'
+  'sht3x': 'SHT3X',
+  'serial-port-communication' : {display: 'hidden'},
+  'meilhaus-1208ls-ad' : {display: 'hidden'},
+  'tti-tf930' : {display: 'hidden'},
 }

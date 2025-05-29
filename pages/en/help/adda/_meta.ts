@@ -19,4 +19,7 @@ export default {
     'polar-response': 'Polar response',
     'turn-table-setup': {display: 'hidden'},
     'processing': {display: 'hidden'},
+    'frequency-response-reference': {display: 'hidden'},
+    'distortion-processing': {display: 'hidden'},
+    'polar-data-setup': {display: 'hidden'},
 }
