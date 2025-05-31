@@ -1,0 +1,35 @@
+# Reference
+
+Prior to measuring a ``Frequency response``, ``LS sensitivity`` or ``Polar response`` a reference measurement needs to be carried out with the selected excitation signal.
+
+This reference is required firstly for neutralising non-flat frequency response curves of excitation signals, secondly for compensating measurement errors through the measuring system.
+
+Measurement signals can contain almost arbitrary weighting functions. However, as the only interest lies in the frequency response of the system under test, this weighting curve is neutralised by multiplying the measured signal by the reference file, which is basically an inverse of the excitation signal. If the reference file has been generated through the in- and outputs of the measuring system, the complex frequency response of the hardware has been recorded as well and is also being compensated accordingly.
+
+The plot shows a possible weighting curve of a sweep signal in blue and the corresponding reference spectrum in green.
+
+![reference_3](/reference_3.png)
+
+It needs to be considered in particular, that the same sampling frequency is used for the reference and the actual measurement. Otherwise WinMF will produce an error message. In principle a suitable reference file can be used even if it has been created at an earlier point in time. However, the creation of new references is recommended when starting a new measuring session.
+
+In the Filter setup section two arbitrary filters are to be defined, which will be used in addition during the reference measurement. This can be necessary in case of impaired signal quality. Filter definitions are described in [Edit-Filter](/en/help/edit/filter).
+
+In ``Select channel`` the channel for the reference measurement is specified. Internal reference measurements using Robo frontends are only possible on channels 1 and 2.
+
+``Apply to all channels`` creates a reference file with n channels via all n active input channels.
+
+``Reference`` specifies the file the reference measurement is stored into.
+
+``Ref. mode`` allows selecting different kinds of referencing when using Robo frontends.
+
+``Exciter file`` does not actually perform a measurement, but takes the inverse spectrum of the excitation signal as reference instead. Hardware-induced errors (time delay, spectrum) are not corrected in this mode.
+
+``External line`` performs a measurement via line-in- and outputs, which need to be connected by cable for this.
+
+``External amp`` performs a measurement via line-in- and outputs, for which the external power amplifier is included in the signal chain. So the line-outputs of the frontend are connected to the amplifier inputs, and the amplifier outputs to the line-inputs of the frontend. The amplified signal must be wired to pins 2 and 3 of the XLR input, pin 1 remains open. It is important that the input sensitivity of the frontend is adjusted to the signal from the power amplifier, as the frontend can be damaged in cases of bad settings or wrong wiring!
+
+``Internal line`` automatically patches the internal line-in- and outputs; no external wiring is required.
+
+``Internal Amp`` connects the outputs of the internal output stage to the line-inputs.
+
+``Calc. dyn [dB]`` describes the maximum dynamic range for the calculation of the reference file.

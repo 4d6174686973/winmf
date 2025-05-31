@@ -1,0 +1,105 @@
+# Frontend setup
+
+The menu item ``Frontend setup`` opens a new window, where all relevant settings for the in- and output channels to be used can be made.
+
+## File
+
+By ``Frontend setup / File`` configurations once set for the in- and output channels can be saved and reloaded.
+
+## Default
+
+Under ``Default`` convenient basic configurations can be selected for specific hardware setups. Default settings available are ``Robo3``, ``RME Multiface II``, ``Robo2 + Multiface II``, ``Digital``, and ``DBS1``.
+
+## Input view / Output view
+
+Here the elements present in the signal chain of an individual measuring setup can be switched on and off. Only settings of the selected blocks are being displayed. In the input section there is ``Frontend inputs``, ``Probes`` and ``Preamps`` available; the output section comprises ``Frontend outputs``, ``Internal power amplifiers``, ``External power amplifiers`` and ``Loads & output calibration``.
+
+## Probes
+
+``Probes`` contains settings for transducers converting a mechanical quantity (e.g. sound pressure or acceleration) into electric signals.
+
+### Sensor
+
+By default the input channels are numbered consecutively. These numbers can be replaced by representative labels, for example "measurement microphone left".
+
+### Serial identifier
+
+Input field for serial numbers of sensors. Up to now this information is not being utilised. One possible application for example is the logging of serial numbers in Excel protocols of quality control processes (QC/Process control).
+
+### Microphone compensation
+
+Here the compensation file for a microphone used (or any other transducer) can be included. The file must be present in WinMF format and be deposited inside the Exciter directory. Every measurement is being multiplied by this file, hence it needs to contain the inverse frequency response of the microphone. The compensation file can be selected by right-clicking the filename-field and opening the context menu.
+
+### Sensortype
+
+Here the type of sensor used is to be selected. For mere electrical measurements, e.g. of equalisers or controllers, ``voltage`` is to be chosen, ``pressure`` for microphone measurements, ``velocity`` for velocity sensors, ``acceleration`` for accelerometers, and so on. The results of the measurements are then displayed using the corresponding units.
+
+### Sensor characteristic
+
+When using microphone probes, this drop-down menu allows to keep as additional information, whether it is a free-field or a diffuse-field microphone. For the case of accelerometers and velocity sensors the vectorial orientation can be noted down. Up to now this information is not being utilised. Possible applications are for example 3D animations of measured velocity distributions.
+
+### Sensitivity
+
+For a correct acquisition of measured data the accurate declaration of the ``Sensitivity`` of the transducer is crucial. When using a microphone, the corresponding sensitivity needs to be entered here, for example 15mV/Pa (to be typed in as 0.015 V/Pa). With a calibrator available the sensor can also be calibrated by the menu ``AD/DA / Mic. calibrate`` in the time domain window. After a successful calibration the colour of the respective channel switches from red to green; the sensitivity determined has then been adopted automatically.
+
+## External preamp
+
+### External preamp gain
+
+If an external preamplifier is used for measuring, the respective gain must be entered here.
+
+### External preamp max. output
+
+The maximum output voltage of the external preamplifier can be specified here.
+
+## Frontend inputs
+
+The input channels are activated by the check boxes next to their labels. With each measurement all the channels checked here are being recorded, no matter if there is a signal present at the respective input or not.
+
+### Frontend sensitivity
+
+When using a Robo2 or Robo3, here the input sensitivity of channels 1 and 2 can be changed synchronously. The maximum input voltage is adjustable in steps of 20dB from -40dBu up to +40dBu (Robo2) and from -34dBu up to +46dBu (Robo3). When the input level is too low, a lower voltage range is to be selected; when overdriving the input, the voltage range is to be raised. Levels way out of range, for example from power amplifiers, can damage the Robo! Therefore, in case of unknown signal levels, a low sensitivity should be started with (e.g. +46dBu). With a Robo the maximum input voltage values of channels 3-18 are given by the hardware and are not switchable by the user; for Multiface II without Robo this applies to all channels.
+
+### Frontend phantom power
+
+In case phantom power is remote-controllable, here it can be switched on and off.
+
+## Frontend outputs
+
+Here the outputs of the frontend are activated by checking the boxes. The output signal is sent to all activated output channels with the same level (in dBFS).
+
+### Frontend sensitivity
+
+When using a Robo2 or Robo3, here the maximum output level of channels 1 and 2 can be changed synchronously, between 0dBu and +20dBu with a Robo2, between +6dBu and +26dBu with a Robo3. For all other channels, and with a Multiface II without Robo, the maximum output levels are given by the hardware and are not switchable.
+
+## Internal power amplifiers
+
+Robo2 and Robo3 frontends include internal power amplifiers on output channels 1 and 2. The correct values are already set and not changeable.
+
+### Internal amp gain
+
+The amplification factor of the power amplifier integrated in the Robo is read here. It is fixed to 20dB in Robo2 and 0dB in Robo3.
+
+### Internal amp max. out
+
+The maximum output level at the output stage of the Robo is read here. The maximum level at the banana plugs of Robo2 or the Speakon connector of Robo3 is +26dBu.
+
+## External power amplifiers
+
+### External amp gain
+
+If an external power amplifier is used for measuring, the amplification factor in dB must be entered here.
+
+### External amp max. out
+
+To avoid overdriving an external power amplifier, the maximum output voltage in dBu is to be specified here.
+
+## Loads and output calibration
+
+### Load impedance
+
+For correct determination of electrical power the nominal impedance of the loudspeaker is to be entered here.
+
+### Output calibration
+
+Here for each output channel of the frontend a calibration factor can be entered. When playing back files by ``ADDA/Play`` these calibration factors are used to calibrate the playback chain (external power amplifier + loudspeaker or headphone). This allows for example recordings stored in PA to be reproduced with the right sound pressure. No other menus use this calibration factor.

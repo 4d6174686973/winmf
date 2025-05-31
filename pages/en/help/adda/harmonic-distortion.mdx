@@ -1,0 +1,19 @@
+# Harmonic distortion
+
+This type of measurement is used to determine harmonic distortions employing sine signals for excitation.
+
+![thd_2](/thd_2.png)
+
+The plot shows the distortion spectrum of an overdriven input of a Robo3 measurement system with an excitation frequency of 1.3kHz and the harmonic components at multiples of this frequency (as well as some minor intermodulation components).
+
+The parameters for the measurement are to be set in the [Measurement setup](/en/help/adda/measurement-setup). As an additional parameter the frequency of the sinusoid excitation signal can be specified in ``Frequency [Hz]``. The frequency entered here is adjusted automatically, so that with the FFT length selected the resulting number of signal periods is an integer, and hence the signal ends on a zero crossing.
+
+Level settings are made in the [Exciter setup](/en/help/adda/exciter-setup), the configuration of the amplifiers to be used is done in the [Amplifier setup](/en/help/adda/amplifier-setup).
+
+Using ``Normalisation`` the measurement can be referenced to different reference values: to a voltage of 1V, to the level of the excitation signal (``excitation level``), or the measured signal is displayed absolutely (``nothing``).
+
+In [Processing](/en/help/adda/processing) the post-processing of the measuring results is to be configured.
+
+If the option ``Show distortion`` is active, after the measurement the analysis by the [Distortion Info window](/en/help/info/distortion) is launched automatically. The excitation frequency used for measuring is automatically transferred to the analysis window.
+
+``Cancel`` aborts the measurement, ``OK`` starts the process.

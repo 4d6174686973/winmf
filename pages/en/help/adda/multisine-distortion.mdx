@@ -1,0 +1,27 @@
+# Multisine distortion
+
+``Multisine distortion`` is an intermodulation measurement. For this the loudspeaker is being excited simultaneously by multiple sine waves. In addition to the harmonic distortions, which already occurred for single sine frequencies, here the various excitation frequencies modulate each other and intermodulation effects appear, which can be evaluated after removing the excitation signal. The excitation signal is composed in such a way, that the harmonics of one sine frequency, as far as possible, do not coincide with other sine frequencies. The excitation signal is removed from the measured signal by subtraction in order to obtain only harmonic distortions and intermodulation components.
+
+In the [Measurement setup](/en/help/adda/measurement-setup) the basic configuration for the measurement is set.
+
+Under ``Multisine setup`` the [Multisine generator](/en/help/edit/multisine-generator) is launched by ``Multisine para.``. ``Refresh`` takes over the settings from the ``Multisine generator``.
+
+[Exciter setup](/en/help/adda/exciter-setup) sets the level for the measuring signal; [Amplifier setup](/en/help/adda/amplifier-setup) contains parameters for the amplifiers to be used.
+
+[Processing](/en/help/adda/processing) configures the post-processing of measurement results.
+
+![multisinus-eia426b](/multisinus-eia426b.png)
+
+The measuring result contains five channels:
+
+The first channel displays the raw recording, comprising excitation and distortions.
+
+In channel 2 the sine frequencies of the excitation have been removed through subtraction.
+
+For channel 3 the raw signal has been summated in frequency bands, whose widths correspond to the frequency intervals in the excitation. From this signal also the total level can be calculated.
+
+Channel 4 contains the band-wise summation of channel 2 (with the excitation removed). Band widths correspond to channel 2.
+
+Channel 5 ultimately displays the ratio of channel 4 to channel 3.
+
+``OK`` starts the measurement; ``Cancel`` aborts the procedure.

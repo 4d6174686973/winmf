@@ -1,0 +1,29 @@
+# Rec
+
+Here the recording function is configured.
+
+``Samples`` shows the number of audio samples for a measurement.
+
+``Meas. time`` shows the measurement time.
+
+``FFT`` converts the number of samples into a power of two. An integer value is not mandatory in this case.
+
+``Use preamp gains`` and ``Use sensor sensitivities`` allows considering the corresponding values from the ``Frontend setup``.
+
+``Upd. rate`` defines the buffer length for audio data in samples. If for example a total of 480k samples is being measured and buffer length is 48k, then 10 buffers of 48k each will be recorded. This is relevant especially for simultaneous statistical analysis (see below). Furthermore ``Upd. rate`` refers to the updating of the plot window. If the interval is too small, the display might not update fast enough and hence will lag behind the recording.
+
+``Show rec.`` defines the length of the time slot displayed.
+
+``Record to disc`` allows recording an audio stream onto the hard disk for which Recording ``file`` specifies the corresponding file name. After selecting Recording ``file`` this name is to be edited.
+
+## Statistics over time
+
+``Statistics over time`` enables the evaluation of statistical quantities over the course of the signal. Then the parameters selected via the ``Select/Select parameters`` menu are displayed as functions over time. The calculation is always performed with the resolution specified as ``update rate``. Example: The statistic quantities RMS and Leq have been selected. Update rate has been set to 48000 samples with a sample rate of 48kHz. Then the measurement results are RMS and Leq curves over time for each active input with each value referring to an interval of 1s (48kHz/48000 samples); so every second a new value is calculated. Applications of this kind of analysis are multichannel long-term monitoring of level progressions or long-term testing in electronics development. The channel assignment of the evaluation is captured in the legend automatically.
+
+![techno-rock-4ohm-10_power_limitv0_96_statistics_over_time](/techno-rock-4ohm-10_power_limitv0_96_statistics_over_time.png)
+
+## SPL over time
+
+When ``SPL over time`` is active, the continuous SPL progression is being captured. The update rate value has no effect here. The parameters are to be set in the ``SPL over time`` menu. The parameters are handled independent from the ``SPL over time`` section in the ``Edit/SPL over time`` menu.
+
+[About the SPL-over-time configuration](/en/help/edit/spl-over-time)

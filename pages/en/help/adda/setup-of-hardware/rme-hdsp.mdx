@@ -1,0 +1,29 @@
+# RME HDSP
+
+Before measuring, the driver for the RME HDSP interface card needs to be installed on the computer. After the installation usually a system reboot is necessary. It is recommended to use the latest driver version.
+
+As WinMF does not have access to the routing of RME-HDSP hardware, it needs to be ensured that the RME matrix is configured appropriately. The configuration is accessible at the bottom right of the task bar via the symbol "Hammerfall DSP Mix" by right-click/Matrix. The following routing should be set:
+
+![rme_hdsp_matrix](/rme_hdsp_matrix.png)
+
+The headphone mix (Ph.L, Ph.R) is irrelevant for measuring and may be configured at will for monitoring inputs and outputs.
+
+Furthermore in the Hammerfall DSP Settings the buffer size should be set to 256 samples. Higher values for the buffer size lead to higher latencies. Then it might happen that the end of a sweep cannot be measured anymore. The settings are also accessible in the task bar via the symbol for "Hammerfall DSP Settings".
+
+![hammerfall_dsp-setting](/hammerfall_dsp-setting.png)
+
+Sample rate is controlled by WinMF and needs no further modification. If digital I/Os are to be used, further configuration regarding the clock master might be necessary.
+
+After a new installation of the RME-HDSP card all settings are suited for WinMF; it's ready to go.
+
+## Important
+
+Returning from standby or hibernate with the hardware connected can cause problems with the HDSP card, especially using a notebook. While in fact the card is detected, failures occur at the in- and outputs. For that reason cold booting with the hardware switched on is important. Hot plugging with ExpressCard slots occasionally causes the same problem. This can become evident for example in distorted and overdriven measurements, even if the recording level is adequate.
+
+None of the RME devices used for measuring is to be set as standard audio device for playback of Windows sounds or media. In the ``Control Panel`` under ``Sounds`` and ``Audio Devices`` a standard device other than any RME-HDSP device needs to be selected. Otherwise measurement errors can occur.
+
+## Analysis of faulty driver installation/defective hardware at PCI bus
+
+Incorrect driver installation for any PCI device can become evident in dropouts in sound playback. In this case the latencies at the PCI bus can increase up to a point where dropout-free playback is not possible anymore. Defective hardware or malfunctioning firmware of SSD drives can have the same effect.
+
+*Only for Win 7 and predecessors*: A simple analysis is offered by the tool dpclat.exeIf measured latencies lie within the red range, all devices connected to the PCI bus should be deactivated one by one, until the culprit has been identified. Disabling hard drives might require rebooting.

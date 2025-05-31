@@ -1,0 +1,9 @@
+# Amplifier setup
+
+In the ``Amplifier setup`` the parameters of the power amplifiers used for measuring are to be set.
+
+At first the amplifier needs to be selected as internal or external. If ``internal`` has been selected, the built-in power amplifiers of Robo2 or Robo3 are being used for measuring. For many common measurements their power is sufficient; the amplifier gains are automatically set correctly. As the output stages are physically assigned to output channels 1 and 2, they can be used for measuring only in this configuration.
+
+If other power amplifiers are to be used, ``external`` needs to be selected. Furthermore, in the [Frontend setup](/en/help/adda/frontend-setup) the values for the amplifiers in use need to be fed into the corresponding ``External power amplifiers`` fields.
+
+The nominal impedance of the loudspeaker connected is specified in ``Nominal impedance``. This is required for correct normalisation of measurements to 1W,1m. Furthermore, this value, the amplifier gain and the output voltage of the measuring system are used to calculate the power referenced to nominal impedance, which is fed into the speaker during the measurement. This is displayed in the ``Nom. Power [W]`` field. Vice versa, the desired power can be specified here, to which the output voltage is then adjusted correspondingly.
