@@ -1,0 +1,23 @@
+# Loudspeaker parameters
+
+The determination of loudspeaker parameters (Thiele-Small parameters) is done by the added mass method. An [impedance measurement](/en/help/adda/impedance) is required containing two channels: one without added mass, the other one including added mass. The order of channels is irrelevant.
+
+## Choice and mounting of additional mass
+
+The chosen mass may not be magnetic. Its weight should be adequate to the moving mass of the woofer, in order to cause a significant detuning of its resonance. Excessive masses on the other hand should be avoided nonetheless, as the idle state of the membrane might be overly shifted (in a horizontal set-up) causing measuring errors. An asymmetrical mounting and/or excessive additional masses can lead to oscillating movements of the membrane. This can possibly cause the resonance peak to split in two. In this case another mass and/or way of mounting should be chosen. An approved method is to attach a copper cable to the transition line from dust cap to membrane, as this is the area of force transmission from the voice coil. Typical masses are between 1g and 50g. The weight needs to be determined as accurately as possible.
+
+## Impedance measurement
+
+The measuring should be performed with a high signal-to-noise ratio, in order to be able to choose the starting frequency for measuring DC resistance as low as possible. Furthermore a rather long measuring signal is preferable for a high line density in the spectrum. For subwoofers a minimum length for the measuring signal of 2^18 samples at 48kHz is required. The following plot shows the example of a 12" woofer.
+
+![imp12](/imp12.png)
+
+## Evaluation
+
+The area to be evaluated is defined under Region. Furthermore either membrane diameter or membrane area must be specified, as well as the added mass. If any inconsistencies regarding the determined values for DC resistance or inductance are detected, the text window informs about this. In this case another upper and/or lower limit should be chosen.
+
+![loudspeaker_parameters](/loudspeaker_parameters.gif)
+
+## Further notes
+- Measurements on brand-new chassis often produce resonance frequencies strongly deviating from the values given in the data sheets, as those data sheet values are usually measured after a run-in period. Thereby the compliance of the membrane suspension reaches its final state.
+- The measuring voltage does not affect the determined parameters. Usually the parameters are measured at relatively low power (< 1W).

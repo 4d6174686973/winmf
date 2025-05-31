@@ -1,0 +1,37 @@
+import { Steps } from 'nextra/components'
+
+# Distortion
+
+The Distortion Info window is used for evaluating harmonic distortions in the spectrum currently displayed. The evaluation is configured by
+
+<Steps>
+
+### Selecting the parameters to be evaluated under ``Select``:
+
+![info-distortion-select](/info-distortion-select.gif)
+
+- Sel. H [dB]: the distortion component is calculated from the ``selected harmonics``. The harmonics are selected in the THD info setup menu.
+- THD and THD+N: for THD the distortion component is calculated from all harmonics in the evaluation range (defined by Select region in the Info window), resp. for THD+N from the harmonics + noise floor
+- Rub&Buzz and Rub&Buzz+N: for Rub&Buzz the distortion component is calculated from all harmonics specified under ``THD info setup`` for the R&B analysis, resp. for Rub&Buzz+N from the harmonics + noise floor
+- Noise R&B: displays the noise floor from a Rub&Buzz analysis
+- Fund. rms: RMS of the fundamental
+- H2 up to H15: fractions of the second up to the 15th harmonic
+- SINAD: Signal to Noise and Distortion ratio. The value corresponds to the negative THD+N value
+
+### Setting up the evaluation under THD info setup:
+
+![info-distortion-setup](/info-distortion-setup.gif)
+
+- Frequency [Hz]: fundamental frequency
+- Select H start, Select H step and Select H stop: define the order of the harmonics to be evaluated under Sel. H. E.g. the values 2, 1 and 5 (meaning from 2 up to 5 in steps of 1) specify the harmonic orders 2,3,4 and 5. By choosing step=2 even or odd-order harmonics can be analysed separately
+- Distortion ref.: defines the reference value for a distortion measurement. Available options are the fundamental (``Fund. IEEE1241``), fundamental and harmonics (``Fund.+THD``) and the whole signal (``All IEC60268-5``)
+- Rub&Buzz: here the corresponding parameters for measuring the higher distortion components are set; ``R&B H start`` is the first component to be considered, ``R&B H stop`` is the last component, ``R&B H step`` defines the increment.
+- Capture mode: First of all ``Eval. mode`` allows choosing between ``Sync`` and ``Windowed``. In Sync mode the system expects the fundamental to be exactly on the frequency point defined under Frequency. In a synchronous measurement (AD and DA converters are being fed by the same clock) this will always be the case. In non-synchronous measurements (e.g. a tape recorder with wow and flutter) this frequency might be displaced. In this case the fundamental component is determined within a frequency range (``Windowed``). The width of this frequency window (``Capture width``) can be set automatically (``Auto``) or manually (``Fixed``). ``Capture [Hz]`` defines the window size when set manually.
+
+### Evaluation results are displayed in the Info window e.g. as follows:
+
+![info-distortion-window](/info-distortion-window.gif)
+
+Exporting the values listed can be done by copy & paste or by activating the export options (under ``Select``/``Show export options``). For more information read about [table export](/en/help/info/excelcsv-export).
+
+</Steps>

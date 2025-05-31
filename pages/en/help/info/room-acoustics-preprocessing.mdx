@@ -1,0 +1,24 @@
+# Room acoustics preprocessing
+
+Prior to the evaluation of room acoustic single number quantities in [Room acoustics](/en/help/info/room-acoustics) the processing needs to be executed.
+
+![room_acoustics_processing](/room_acoustics_processing.gif)
+
+For correct determination of measures the definition of the starting time for the analysis is crucial. If several or frequency band filtered impulse responses are being analysed, it is essential to have the starting time detected automatically by the ``IR start detect`` function. At first, ``Region`` defines, which region the functions ``IR start detect``, ``IR end detect`` and those regarding noise floor shall consider. If for example the end of an impulse response is polluted by distortion, an exclusion from the analysis is favourable.
+
+The following settings are available in Processing options:
+
+- IR start detect: execution of automatic detection of impulse start
+- Thr. rel max [dB]: defines the impulse response start relative to the maximum of the impulse response in dB for IR start detect; if the threshold is set to -20dB, the impulse response start is being found at the point in time before the actual impulse peak, where the response exceeds the global impulse maximum minus 20dB.
+- Scan band: if set to ``each``, after filtering the impulse response, for each frequency band the IR start detection is carried out and used for further processing; if set to ``highest only``, only for the highest frequency band the detection is carried out.
+- IR end detect: automatically identifies the point in time, where the filtered IR merges into the noise floor.
+- IACC t1 and t2 [s]: integration interval for determination of IACC_t1,t2
+
+``Noise subtraction`` contains several parameters to be specified for estimating the RMS-value of the noise from a certain part of the impulse response. This can be subtracted from the impulse response prior to further analysis.
+
+- Noise subtraction: if activated, the subtraction of the noise voltage is being applied.
+- Noise detect: determines the noise voltage from the region defined by the parameters ``Take RMS from`` and ``Noise length``. If Noise detect is deactivated a value for the noise voltage can be entered manually in ``Noise RMS``.
+- Take RMS from: head examines the noise in the region before the impulse start, ``tail`` looks behind the transition region after the impulse response; ``lowest segment`` finds the region with the lowest noise level.
+- Noise length [%]: defines the length of the noise floor segment to be evaluated as a percentage of the respective region. E.g. if the noise tail is 10s long, and ``Noise length`` is set to 10%, then the first second of the tail is evaluated to obtain the RMS-value of the noise.
+
+Filter Options allow [Fractional octave filtering](/en/help/edit/frac-oct-filtering) of the impulse responses according to DIN EN 61260.

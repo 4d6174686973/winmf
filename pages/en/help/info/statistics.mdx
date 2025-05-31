@@ -1,0 +1,21 @@
+# Statistics 
+
+In the ``Info`` / ``Statistics`` section measurements are evaluated and values can be exported.
+
+## Configuration
+
+By the ``Select`` menu the desired parameters are to be selected. In addition statistical values can be calculated from these parameters.
+
+![info-oktavbandlevel-crest-select](/info-oktavbandlevel-crest-select.gif)
+
+The results are displayed by the ``Info window`` immediately. In there, under ``dBref`` the reference value for dB quantities is to be defined. If power is evaluated, these values refer to the load impedance specified for the respective channel inside the ``Info`` window. The display of load impedances is to be switched on also by the ``Select`` menu; these values can be edited directly inside the table. The input related impedances managed here by the ``Info`` window are independent from the output related load impedances from the frontend menu.
+
+[Region](/en/help/edit/region-control) defines the section to be evaluated.
+
+If [fractional octave filtering](/en/help/edit/frac-oct-filtering) has been performed in advance, the selected parameters can be displayed band-wise. The assignment to the original channels is deposited in the channel tag. The nominal and the exact band centre frequencies can be displayed in the table. The following example shows a 4 channel microphone signal containing motor noise, filtered in 8 octaves for further evaluation:
+
+![motor1_octaves](/motor1_octaves.png)
+
+By selecting Channel tag, fm nom., Crest and Leq the ``Info`` window produces the following output:
+
+![info-oktavbandlevel-crest](/info-oktavbandlevel-crest.gif)
