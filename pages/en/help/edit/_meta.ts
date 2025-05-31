@@ -50,5 +50,5 @@ export default {
   'edit-extended-comment': 'Edit extended comment',
   'edit-temp-humi': 'Edit temp humi',
   'region-control': {display: 'hidden'},
-  'edit': {display: 'hidden'},
+  'channel-subset-syntax': {display: 'hidden'},
 }

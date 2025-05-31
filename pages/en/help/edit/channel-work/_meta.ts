@@ -13,7 +13,7 @@ export default {
   'copy-phase': 'Copy phase',
   'average': 'Average',
   'add-magnitude': 'Add magnitude',
-  'subtract-magnitude': 'Subtract magnitude',
+  'substract-magnitude': 'Substract magnitude',
   'multiply-magnitude': 'Multiply magnitude',
   'divide-magnitude': 'Divide magnitude',
   'average-magnitude': 'Average magnitude',
