@@ -1,0 +1,55 @@
+# Filter
+
+WinMF contains extensive filtering functions for modifying spectra.
+
+First of all, ``Filter control`` allows to switch between display modes of the filters. ``Filter`` shows the selected filters applied to one or several channels, ``Set`` only shows the configured filters, while ``Set single channels`` displays each filter in a separate channel.
+
+``Add new filter`` creates a new filter at the end of the list of filters.
+
+``Delete filter`` erases the filter currently active.
+
+``Copy`` copies the settings of the active filter, which can then be assigned to another filter by ``Paste``.
+
+``Insert before`` creates a new filter in front of the active filter using the settings memorised by ``Copy``; ``Insert after`` correspondingly inserts the new filter behind the active filter.
+
+``Interactive`` causes the current changes in the filter settings to be displayed instantly. In this mode the below described keyboard and mouse control is available (as long as the filter menü is open).
+
+Under ``Filter setup`` the actual filter parameters are set.
+
+The first drop-down menu contains the list of all filters present, of which one is selected whose parameters are then editable. Next to the menu a name can be assigned to each filter.
+
+``Bypass filter`` deactivates the current filter, ``Invert phase`` inverts the phase.
+
+In the menu underneath the filter type is chosen. There are high-pass, low-pass, all-pass, bell filters (parametric EQ), as well as low- and high-shelf filters in 6dB and 12dB versions available.
+
+For the high-pass, low-pass and all-pass filters the following filter characteristics are available: ``Butterworth``, ``Bessel``, ``Chebyshef PB (passband, type 1)``, ``Chebyshev SB (stopband, type 2)`` and ``Linkwitz-Riley``. Parameters to be configured are the ``filter order``, ``cut-off frequency`` and ``filter gain``. Furthermore, for ``Chebyshev PB`` the ``passband ripple`` and for ``Chebyshev SB`` the ``stopband attenuation`` are editable parameters.
+
+``Bell`` filters feature the parameters ``gain``, ``frequency`` and ``quality``; ``Shelving`` filters only have ``gain`` and ``frequency``.
+
+For all filters the phase can be selected as minimal, linear or maximum.
+
+The selection of channels is described in [Select channel](/en/help/edit/select-channel).
+
+``OK`` applies the configured filters to the corresponding channels, while ``Cancel`` aborts the operation.
+
+The following plot shows some typical filters:
+
+![set_of_filters](/set_of_filters.png)
+
+## Keyboard control (MF-style):
+- Page up: decreases the filter number of the current filter.
+- Page down: increases the filter number of the current filter. If the filter is the last filter in the filter list, a new filter is appended.
+- Cursor left, right: decreases/increases the frequency. By pressing shift (step*10), strg  (step*100) or alt (step*0.1) the stepsize is modified.
+- comma/period: decreases/increases the gain by 0.1dB. By pressing shift (step 1dB), strg  (step 10dB) or alt (step 0.01dB) the stepsize is modified.
+- b: toggles the bypass option.
+- c/v: decreases/increases the order of the filter.
+- h: changes the filter characteristic (only if type is high- or lowpass).
+- m/n: decreases/increases the quality of bell filters in 0.1 steps. By pressing shift (step 1), strg  (step 10) or alt (step 0.01) the stepsize is modified.
+- t: changes the type of the filter.
+- delete: deletes the active filter.
+- escape/return: closes the filter menu without/with applying the filters.
+
+## Mouse control:
+- left mouse button: by modifying the active cursor (the yellow one) the frequency of the filter is changed.
+- right mouse button: by going up/down the gain is changed
+- mouswheel: changes the quality of the filter in 0.1 steps. By pressing shift (step 1), strg  (step 10) or alt (step 0.01) the stepsize is modified.
