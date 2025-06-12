@@ -2,7 +2,7 @@ export default {
   'channel-work': 'Channel work',
   'read-file': 'Read file',
   'read-file-channels': 'Read file channels',
-  'read-file-insert-active-cursor': 'Read file and insert at active cursor',
+  'read-file-and-insert-at-active-cursor': 'Read file and insert at active cursor',
   'set-readfilepath-to-filepath': 'Set readfilepath to filepath',
   'write': 'Write',
   'multiply': 'Multiply',
