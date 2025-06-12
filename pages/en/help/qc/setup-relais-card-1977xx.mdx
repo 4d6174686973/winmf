@@ -1,0 +1,9 @@
+# Set-up Relay Card 1977xx
+
+When using the optionally available USB-RS232 adapter to connect the card it is mandatory to install the most recent [driver](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx). This is particularly important for 64-bit systems. The included driver is deprecated and causes an immediate system crash upon connection.
+
+The correct COM port number has to be specified prior to the initialization and operation of the relay card. The correct baud rate (19200) is set by default and should not be changed. For the utilization of relay cards during the QC process it is highly recommended to include the COM port set-up in the QC procedure.
+
+The execution of QC processes using relay cards on other systems may require the adjustment of the COM port number. This is especially true using the USB-RS232 adapter.
+
+[Further information about the set-up of serial ports](/en/help/qc/com-port-settings)

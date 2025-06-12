@@ -1,0 +1,15 @@
+# SHT3X
+
+Reads temperature and relatibe humidity via Arduino over USB and Seed SHT31 or SHT35 sensor. The values will be written into the Logfile if it is used within a QC process. The values are measured when pressing OK.
+
+Additionally, the system clock is read out as time stamp for the measurement.
+
+The comp port settings have to be used with the default values (baud rate 115200, timeout 1s).
+
+The following options can be used:
+
+``Append to title`` appends the values of T and Rh to the title of the plot.
+
+``Append to ext. comment`` appends the values of T and Rh to the extended comment of the file (see [Edit extended comment](/en/help/edit/edit-extended-comment)).
+
+Set to file header writes the values into the header of the files (see [Edit temp, humid.](/en/help/edit/edit-temp-humi))
