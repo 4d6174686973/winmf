@@ -6,4 +6,5 @@ export default {
   'loudspeaker-parameters': 'Loudspeaker parameters',
   'room-acoustics': 'Room acoustics',
   'room-acoustics-preprocessing': 'Room acoustics preprocessing',
+  'excelcsv-export': {display: 'hidden'},
 }

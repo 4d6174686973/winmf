@@ -1,0 +1,25 @@
+# Multisine generator
+
+The ``Multisine generator`` creates multisine signals, which can be used for instance to measure intermodulation distortion. The frequencies of the sine signals are distributed in such a way, that the harmonics of one frequency value, as far as possible, do not coincide with another frequency value.
+
+[Length](/en/help/edit/signal-length) defines the signal length.
+
+## Multisine generation
+
+``Upper limit`` and Lower limit confine the range, in which the frequencies of the sine signals are located.
+
+``Weighting`` multiplies the multisine signal by one of the common [weighting functions](/en/help/edit/weighting-functions), of which ``white`` means same amplitude for all sine components and ``file`` allows the weighting with an arbitrary spectrum available.
+
+By ``Filename`` that spectrum can be selected.
+
+``Anchor freq.`` is the fixed frequency, starting from which the other frequency values are calculated.
+
+``Bandw.`` defines the distance between the single frequencies in fractions of octaves.
+
+``Max. harmonic`` describes the order, up to which coincidence of sine signals and harmonics is avoided.
+
+[Show multisine infos](/en/help/edit/multisine-infos) shows further information about the individual frequency values.
+
+The plot shows a multisine signal with a length of FFT 16 and 1/6 octave distance between the lines in a frequency range of 20Hz - 20kHz.
+
+![mulitsin_eia426b](/mulitsin_eia426b.png)

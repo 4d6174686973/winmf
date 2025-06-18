@@ -1,0 +1,15 @@
+# User Input
+
+``User input`` forces an interaction with the user. The QC process is suspended until the interaction is completed. An image may be displayed.
+
+## Options
+
+Only one of the three user intercations can be used at the same time:
+
+``Requires user input`` forces the input of a string. The string is recorded in the QC sheet of the current QC process. A possible application is the input of a reading manually acquired by the user. If this option is not selected the user only needs to press "OK". The confirmation is also recorded in the QC sheet of the current QC process.
+
+``Requires user desicion (OK/NOT OK)``: the user has to select OK or NOT OK. The result is stored in the QC-table of the actual process. A typical application is the quality control of functions or states that can not be read out automatically. NOT OK does not stop the process.
+
+``Requires user desicion (OK/CANCEL all processes)``: the user has to select OK or CANCEL. The result is stored in the QC-table of the actual process. A typical application is the quality control of functions or states that can not be read out automatically. CANCEL stops the complete process.
+
+``Define message`` contains a message displayed to the user. The message can be used to explain a task or pose a question.

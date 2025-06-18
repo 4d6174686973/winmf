@@ -1,0 +1,29 @@
+# STI (Impulse response and STIPA)
+
+Calling ``Info/STI from impulse response`` or ``Info/STI from STIPA`` first of all starts the processing for calculating the MTF table. Only the region between the cursors is being evaluated. For recalculating, at first the ``Info`` window needs to be closed.
+
+The impulse responses need to provide sufficient length (at least 1.6s and adequate to the reverberation of the room) and quality. Distortion and low signal-to-noise ratios can affect the results.
+
+When using modulated noise for excitation (STIPA method), at least 10s of signal must be present. Furthermore it is important that the excitation signal is played back with correct sample rate, as the method is sensitive to frequency shifting. Thus also a signal chain causing frequency shifts is rather unsuitable for use with the STIPA method.
+
+Under ``Select/Select parameters`` the evaluation to be displayed is selected:
+
+![sti_info_window-select](/sti_info_window-select.gif)
+
+The ``Info`` window shows a table with STI values for each channel:
+
+In addition to different variants for the consideration of auditory masking, also reception threshold factor and the inclusion of signal-to-noise values can be separately switched on and off.
+
+``Copy signal-, or noise levels`` copies the level at the octave mid-frequencies from the current spectrum file into the STI-menu.
+
+``Show m-table`` shows the modulation transfer function and the m-correction as table:
+
+![sti_info_window-m-table](/sti_info_window-m-table.gif)
+
+Exporting the table values can be performed via copy & paste or by activating export options (under ``Select/Show export options``). More on [table export](/en/help/info/excelcsv-export).
+
+For use with other applications the modulation transfer functions can also be transferred directly to frequency domain:
+
+[Transfer/Complex MTF from impulse response](/en/help/transform/complex-mtf-of-impulse-response)
+
+[Transfer/Complex MTF from stationary signal (from STIPA)](/en/help/transform/complex-mtf-of-stationary-signal-stipa-exciter)

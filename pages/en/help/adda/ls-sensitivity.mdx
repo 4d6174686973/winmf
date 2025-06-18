@@ -1,0 +1,25 @@
+# LS sensitivity
+
+``LS sensitivity`` is a frequency response measurement like [Frequency response](/en/help/adda/frequency-response), but with some additional parameters and processing options especially suited for loudspeaker measurement using microphones.
+
+![sensitivity](/sensitivity.png)
+
+Prior to the actual measurement a reference needs to be recorded by [Ref. - Reference measurement](/en/help/adda/frequency-response-reference).
+
+General configuration is described by the [Measurement setup](/en/help/adda/measurement-setup), the setup of the excitation by [Exciter setup](/en/help/adda/exciter-setup).
+
+The setup of amplifiers to be used for measuring is described by [Amplifier setup](/en/help/adda/amplifier-setup).
+
+``LS sensitivity proc.`` specifies the measuring conditions. ``Mic. dist. [m]`` describes the distance between loudspeaker and microphone. The results of sensitivity measurements are typically normalised to 1W, 1m. WinMF performs this normalisation automatically. The input voltage corresponding to the power of 1W at nominal impedance is automatically appended to the comment. Nominal impedance is equal to the square of this value (according to $PZ=U^2$).
+
+A correction value can be defined in ``Corrected by``; all measurements are multiplied by this value. When measuring with the microphone on the rigid floor for example, it is common practice to adjust the result by -6dB in order to regain free field condition.
+
+Amplifier settings are described by [Amplifier setup](/en/help/adda/amplifier-setup).
+
+[Processing](/en/help/adda/processing) determines automatic post-processing of measurement results.
+
+A ``Test measurement`` can be carried out to check levels and wiring.
+
+``Detect dist.`` launches another test measurement, which determines from the signal delay the distance between speaker and microphone, which is then transferred to the field ``Mic. dist. [m]``. Usually this procedure is less accurate than measuring by tape measure or laser distance measurer and also the delay time caused by the loudspeaker itself is added to the distance.
+
+The measurement can be started by ``OK`` and is aborted by ``Cancel``.

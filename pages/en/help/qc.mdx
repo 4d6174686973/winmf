@@ -1,0 +1,31 @@
+# Quality Control (QC)
+
+The QC module allows to perform complex quality control tasks. Neither programming skills nor the writing of scripts are required. The programming of the QC process is done by recording and playing WinMF macros.
+
+## Essentials QC functions
+
+The [process control](/en/help/qc/process-control) is the key function in the QC menu. It manages the playback of QC macros, the administration of paths and file names and serial numbers. A new folder is created for every QC process containing the measurements and evaluations as well as a corresponding Excel file. The Excel file holds a production log and a QC sheet. All events of the QC process, the current date, the serial number of the device under test and the name of the tester are recorded in the production log. The QC sheet contains the results of all evaluations such as the tolerance check, indicates limit violations and states if the test was passed or failed.
+
+The QC modules enables the per channel selection of upper and lower limits for the evaluation parameters ([statistics](/en/help/info/statistics), [STI](/en/help/info/sti-impuse-response-und-stipa), [distortion](/en/help/info/distortion)) in the info windows. The menu entry "show limits" in the "select" menu of the info windows enables this feature. Calling an info window with activated limits during the QC process triggers the check of all limits and the related evaluation in the QC sheet.
+
+Furthermore, the QC menu provides additional functions for the process control, the tolerance check and the automated learning of tolerance bands.
+
+All QC functions are available in the frequency domain window. In the time domain window the QC menu is reduced to the functions "set current file name", "check tolerance" and "learn tolerance". All functions are applied to the current signal.
+
+## Other QC functions
+
+[Check tolerance](/en/help/qc/check-tolerance) and [learn tolerance](/en/help/qc/learn-tolerance) control the per channel learning and checking of tolerances. In the frequency domain the limits are applied to the modulus, in the time domain to the amplitude. Possible frequency domain applications are the monitoring of impedance frequency responses, distortion or the sensitivity of transducers. An application in the time domain is a polarity check by means of evaluating the impulse response.
+
+[Set current file name](/en/help/macro/set-current-filename) controls the QC process file name.
+
+[Write string to Excel cell](/en/help/qc/write-string-to-excel-cell) writes a string to the QC sheet, allowing for free comments on the QC process.
+
+[User input](/en/help/qc/user-input) forces an interaction with the user. An image may be displayed to illustrate a procedure. The QC process is suspended during the interaction and the user input will be recorded in the QC sheet.
+
+[Relay card 1977xx](/en/help/qc/relais-card-1977xx) controls Conrad Electronic relay cards with the order code 1977xx.
+
+[Wait seconds](/en/help/qc/wait-seconds) suspends the QC process for a given number of seconds.
+
+## Individual QC functions
+
+Individual functions for tasks such as firmware updates for the device under test or the programming of set-ups can be implemented on demand.

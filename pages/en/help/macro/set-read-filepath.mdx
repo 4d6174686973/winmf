@@ -1,0 +1,17 @@
+# Set read filepath
+
+Sets filepath for read operations under Edit/... (during macro processing and also in manual mode).
+
+With activated option ``Use current filepath``, the path is set to
+- without macro processing to the last used path for loading or saving files
+- with Play Macro to the result path
+- within the QC-process to the here defined path (base path, production lot)
+
+Without activating this option, the path is set to the path selected by ``Path``. This path has to be under the base path (base path unter preferences).
+
+This affects the following functions:
+- [Edit/read](/en/help/edit/read-file)
+- [Edit/read file channels](/en/help/edit/read-file-channels)
+- [Edit/read current filename (nur diese Funktion ist makrofähig)](/en/help/edit/read-file)
+- [Edit/read and insert at active cursor](/en/help/edit/read-file-and-insert-at-active-cursor)
+- [Edit/read current filename file and insert at active cursor](/en/help/edit/read-file-and-insert-at-active-cursor)

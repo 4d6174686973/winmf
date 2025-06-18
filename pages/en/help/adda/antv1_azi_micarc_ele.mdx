@@ -1,0 +1,21 @@
+# ANTV1_Azi_MicArc_Ele
+
+This menu combines the ANT turntable with a multi channel microphone arc.
+
+The configuration of the microphone arc is done here:
+
+![pol_micarc1](/pol_micarc1.jpg)
+
+Besides 4 standard presets, also arbitrary microphone angles can be used. Please note, that for EASE Speaker lab import aquidistant angle spacing is required.
+
+The turntable will drive the azimuth angles, while the elevation is completely covered by the arc microphones.The elevation setup normally defined under polar-data-setup, is overwritten by the elevation angles of the mic arc. Microphone correction spectrum, preamp-gains and sensitivities of each input channel are set under Frontend as usual.
+
+Is is recommended to use the Frontend "Digital", as it provides 128 homogenious channels.
+
+The activated frontend channel count has to be identical to the number of defined microphone arcs.
+
+For each microphone an individual distance can be set. It will be corrected with respect to the Mic. dist in the polar menu.
+
+After each azimuth measurement, all channels are separated and stored under a name and format (*.spk), which can be imported by speaker lab.
+
+All automation options, like channel and setup automation, are compatible to this measurement procedure.

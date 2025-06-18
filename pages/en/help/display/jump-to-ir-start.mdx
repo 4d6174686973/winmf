@@ -1,0 +1,7 @@
+# Jump to IR start
+
+This function searches for the start of an impulse response and sets the active cursor to this point.
+
+[Select region](/en/help/edit/region-control) specifies the segment to be scanned.
+
+In the ``Jump to IR start setup`` the channel to be considered is selected by ``Actual channel. Thresh. rel max`` sets the level threshold relative to the impulse peak and is used to define the start of the impulse response. The search algorithm approaches the maximum within the selected region from the left and sets the cursor to the point, at which the amplitude exceeds the specified threshold for the first time.

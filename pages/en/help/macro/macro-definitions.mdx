@@ -1,0 +1,59 @@
+# Macro definitions
+
+A WinMF Macro definition consists of a text file with a setup name in each line. Each line corresponds to a macro step, which executes the menu listed in this line with the associated setup. When a macro is executed, the menu setup for the macro step is loaded into the menu in question and then executed in the current domain (time domain, frequency domain, etc.). In order to achieve a well-defined macro execution, the first line shall specify the domain.
+
+A simple example for a macro recorded by the macro recorder:
+
+Demo_000001.frequency_domain.set
+
+Demo_000001.Initialize.set
+
+Demo_000001.FE.set
+
+Demo_000001.AD.set
+
+Demo_000002.FE.set
+
+Demo_000002.AD.set
+
+The macro name is "Demo", the indices are assigned by the recorder automatically to distinguish between menus used several times. The following actions are performed:
+
+1. Switching to frequency domain
+
+2. Initialise measuring hardware
+
+3. Setting up the frontend with setup Demo_000001
+
+4. AD measurement with setup Demo_000001
+
+5. Setting up the frontend with setup Demo_000002
+
+6. AD measurement with setup Demo_000002
+
+Macro definition and all associated setups need to be located in the same directory in order to run the macro.
+
+## Manual macro editing
+
+The most convenient way to edit a macro and the associated setups is by using the [Macro Editor](/en/help/macro/edit-macro). However macros can easily be edited manually as well. Using an arbitrary text editor the macro definition can be modified. Identical setups can also be called several times of course. A variation of the macro above might look like the following:
+
+Demo_000001.frequency_domain.set
+
+Demo_000001.Initialize.set
+
+Demo_000001.FE.set
+
+Demo_000001.AD.set
+
+Demo_000002.FE.set
+
+Demo_000001.AD.set
+
+Demo_000003.FE.set
+
+Demo_000001.AD.set
+
+Accordingly the same AD setup is called 3 times, but after changing the frontend setup each time, e.g. in order to activate other channels.
+
+## Editing menu setups belonging to macro definitions
+
+Menu setups associated to macro definitions are to be handled just like any other menu setup. So just load the setup to be modified in the corresponding menu by File/Load setup; inside the menu all desired changes can be made, and afterwards the setup only needs to be saved via File/Save setup under the same file name.

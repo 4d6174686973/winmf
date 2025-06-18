@@ -14,4 +14,5 @@ export default {
   'serial-port-communication' : {display: 'hidden'},
   'meilhaus-1208ls-ad' : {display: 'hidden'},
   'tti-tf930' : {display: 'hidden'},
+  'automation' : {display: 'hidden'},
 }

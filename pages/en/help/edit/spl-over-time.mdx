@@ -1,0 +1,23 @@
+# SPL over time
+
+``SPL over time`` calculates from a microphone signal the progression of SPL over time. The adjustable parameters are the same as for a level meter (A-weighting, integration time), however additional filtering options are available and the averaging between channels is also possible. After the calculation the y-axis display mode is automatically set to ``Level``.
+
+``Int. length [s]`` sets the integration time in seconds.
+
+``Apply to all channels`` allows the application of the function to all channels of a file, or the activated channel only.
+
+``Average magnitude all chan.`` averages magnitude progressions of sound pressure after integration and A-weighting (not the Level).
+
+``A weighting`` applies an A-weighting filter.
+
+``Use filter 1 (2)`` activates additional filters. At first the category is selected as ``Low pass`` or ``High pass``. For the filter characteristics the types ``Butterworth``, ``Chebyshev PB``, ``Chebyshev SB`` and ``Elliptic`` are available. While the former offer smoother filter shapes, the latter are able to provide steeper curves, with the drawback of a higher ripple. ``Filter order`` determines the gradient of the filter slope in units of 6dB/oct. ``Cut off [Hz]`` sets the cutoff frequency for the filter. ``Passb. rip. [dB]`` and ``Stopb.rip. [dB]`` define the maximum ripple in the passband and the stopband for the Chebyshev and the elliptic filters. ``OK`` starts the integration.
+
+As an example the following plot shows motor noise recorded at 4 microphone positions.
+
+![motor1](/motor1.png)
+
+The A-weighted SPL over time of these signals is plotted here:
+
+![motor1_spl](/motor1_spl.png)
+
+SPL over time can also be used in combination with the [Fract. octave Filterbank](/en/help/edit/frac-oct-filtering) in order to evaluate SPL progressions in frequency bands.

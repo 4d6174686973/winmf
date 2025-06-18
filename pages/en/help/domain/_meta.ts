@@ -8,4 +8,5 @@ export default{
     'plot-mode': {display: 'hidden'},
     'range': {display: 'hidden'},
     'file-info': {display: 'hidden'},
+    'winmf-display': {display: 'hidden'},
 }

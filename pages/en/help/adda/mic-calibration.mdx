@@ -1,0 +1,21 @@
+# Mic calibration
+
+(only in time domain) allows calibrating the microphone sensitivity using a calibrator or pistonphone.
+
+Under ``File`` setups for this operation can be loaded and saved.
+
+``Mode`` defines, whether the measurement is performed once or repeatedly. ``Escape`` quits the repeated measurement.
+
+``FFT length`` sets the length of the measurement as a power of two (2^n). ``Samples`` shows the resulting number of sample points, ``Meas. time`` the length of the measurement depending on the sample rate.
+
+Under Piston the sound pressure level of the calibrator is specified.
+
+Calibration is started by ``OK``. ``Cancel`` closes the window and aborts the measurement.
+
+The table underneath lists the sensor numbers, the corresponding sensitivities and the calibration status: red means "not calibrated", green indicates a successful calibration. In the following example calibration has been performed on two channels. On channel 1 a voltage of 7.4mV has been measured, channel 2 has been discarded due to low SNR and high distortion in the measurement. A successful calibration is automatically transferred to the [Frontend setup](/en/help/adda/frontend-setup).
+
+![mic-calibration-menu](/mic-calibration-menu.gif)
+
+The level meter at the bottom right gives information about the recording level during the last measurement. Depending on the hardware at least -30dB should be reached here when calibrating.
+
+![mic-calibration-screen-shot2](/mic-calibration-screen-shot2.gif)

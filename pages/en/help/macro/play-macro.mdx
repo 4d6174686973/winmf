@@ -1,0 +1,32 @@
+# Play Macro
+
+By ``Play macro`` an existing macro can be loaded and executed. ``Macro file`` allows selecting the macro file. Right-click on the file name opens the [Macro editor](/en/help/macro/edit-macro).
+
+The execution of macros allows the use of subversions. A subversion is marked with a "$" followed by the subversion name in each row of the macro definition. If "only base macro" is selected, the macro executes the lines which do not belong to a subversion. If a subversion is selected, the macro also executes the lines which are introduced by the subversion string.
+
+The following examples shows a simple macro with two subversions (PPA1000-2 und PPA2200-3):
+
+| _ | frequency_domain |
+|------------|-------------|
+| 48kHz | Initialize |
+| $PPA1000-2 2ch | FE |
+| $PPA1000-2 100W, 2ch | LSE |
+| $PPA1000-2 10-110dB | Display_range |
+| $PPA2200-3 3ch | FE |
+| $PPA2200-3 2000W, 3ch | LSE |
+| $PPA2200-3 20-120dB | Display_range |
+| Freq_resp | Plotting |
+
+First, the measurement system is initialized and then, depending on the selected version,  the macro executes the three steps for PPA1000-2 or PPA2200-3. Finally, a plot is generated independently of the selected version.
+
+The [Macro editor](/en/help/macro/edit-macro) allows to insert and remove version strings into the macro definition.
+
+``Result path`` defines the directory, the processed files shall be stored to. If this path is identical to the original file path, the file will be overwritten after being processed by the macro. If this path is empty, the original filepath will be used for write processes during the macro run. This is also applied to statistics windows which can export tables to ascii files and excel files.
+
+``Repetitions`` executes the macro as often as defined here.
+
+``Single stepping`` allows executing the macro in single steps.
+
+[Macro definitions and manual macro editing](/en/help/macro/macro-definitions)
+
+Macro collections can be managed by the [Macro organizer](/en/help/macro/macro-organizer) for quick access.

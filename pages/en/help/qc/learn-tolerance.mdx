@@ -1,0 +1,36 @@
+# Learn tolerance
+
+``Learn tolerance`` generates a tolerance band for each channel of the current file. The tolerance band is generated regarding the modulus (frequency domain) or the amplitude (time domain). Tolerance bands are always generated for the whole file. The range for the tolerance check is selected per channel in the [check tolerance](/en/help/qc/check-tolerance) menu.
+
+The tolerance bands are saved in a file specified in ``tolerance file``. If the ``tolerance file`` already exists the limits will be adjusted to the new values if the ``tolerance file`` meets the following criteria:
+- Same sampling rate and total number of samples as the current time signal or spectrum.
+- Double the amount of channels as the current time signal or spectrum (upper and lower limit for each channel)
+
+Attention! If a wrong or not suitable file is currently loaded, the tolerance file will be adjusted accordingly if it is compatible. Hence, it is highly recommended to backup tolerance files.
+
+In case the ``tolerance file`` name is not specified, a name is derived from the current file name + tolerance.suffix.
+Attention! an existing file with the same name will be replaced.
+
+## Tolerance Band Set-Up
+
+``Tolerance set-up`` allows for the specification of an upper and lower limit in dB and an additive absolute offset per channel. The absolute offset causes a relative widening of the tolerance band. It is added to the limit.
+
+Example: The sensitivity of a loudspeaker is 94dB (1 Pa). The specification of a 3dB tolerance results in an upper limit of 94dB + 3dB = 97dB. An additive absolute offset of .5 raises the upper limit to 1.41Pa + .5Pa = 1.91Pa. The lower limit is affected accordingly. In the frequency domain the lower limit is confined to values equal to and above 0.
+
+Hint: It is possible to check for upper limits only (eg. distortion or noise measurements) by setting the ``lower limit dB`` to high values (eg. 200dB).
+
+The generation of the tolerance bands is not a simple shift of the original curve. This would lead to unsatisfactory results for jagged curves or impulse responses. Small shifts of peaks and notches would result in an immediate tolerance violation. Hence, smoothing is implemented in the tolerance band generation. In the frequency domain the smoothing interval is the "relative bandwidth" ([1/oct]), in the time domain it is the "interval" ([s]). For the generation of the tolerance bands a floating minimum and maximum detection is executed within the boundaries set by the smoothing interval. The limits and offsets are then applied to the maximum in each interval for the upper limit and to the minimum for the lower limit.
+
+Example: The smoothing interval in the frequency domain is given as 1/1 octave. At a frequency of 1000Hz the maximum and minimum are detected within an octave (1000Hz) around the 1000Hz center frequency. The upper tolerance is then: maximum within the octave + relative offset in dB + additive absolute offset. The lower limit is generated accordingly.
+
+The wider the smoothing interval is specified, the more tolerant the QC process is towards shifts of peaks and notches.
+
+## Further Processing
+
+It is generally recommended to smooth measurement data before using it for the generation of tolerance bands. [Windowing](/en/help/edit/apply-window) of impulse responses is a method of smoothing their spectra, as is the application of a [smoothing function](/en/help/edit/smooth). A smoothing of time signals can be achieved by multiplication with a rectangular function and subsequent IFFT. Complex smoothing processes can be automated with [macros](/en/help/macro).
+
+## Automated Generation of Tolerance Bands
+
+In quality control it is common practice to derive tolerance bands from a large number of measurements that have been checked and approved.
+
+For the automated generation of tolerance bands any number of approved measurements has to be copied into a folder. The generation of tolerance bands as well as all prior processing can be automated using the [macro functionality](/en/help/macro). Using the [batch processing](/en/help/macro/batch-processing) feature, the macro can be applied to the folder containing the measurement data. An existing tolerance file has to be deleted to allow for the generation of a new file.

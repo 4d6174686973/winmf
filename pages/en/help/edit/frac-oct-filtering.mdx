@@ -1,0 +1,33 @@
+# Fractional octave filtering
+
+``Fractional octave filtering`` allows filtering in the time and frequency domain using octave band or fractional octave band filters according to DIN EN 61260.
+
+``Bandwidth [1/oct]`` defines the band width of the filters in fractions of octaves.
+
+``Lower band [Hz]`` sets the center frequency of the lowest filter.
+
+``Upper band [Hz]`` sets the center frequency of the highest filter.
+
+``Reference [Hz]`` sets the reference center frequency. Based on this frequency all the center frequencies are determined, using the value chosen for Basis. With a Basis of 2 the center frequencies of the octave filters are separated exactly by the factor 2, with a Basis of 10 by the factor $10^{3/10}≈1.99526$.
+
+``Class 1 tol.`` and ``Class 2 tol.`` create tolerance curves according to the norm, illustrating the different degrees of tolerance.
+
+If ``Create band level spectrum`` is activated, for each output curve a spectrum is created with the levels of the filtered bands.
+
+The channel is chosen by [Select channel](/en/help/edit/select-channel).
+
+After the filtering for each filter band there is a channel in the time domain.
+
+As an example of an application the following plot shows motor noise recorded at 4 microphone positions.
+
+![motor1](/motor1.png)
+
+After the octave band filtering, for each of the 4 channels the time signal is displayed in octaves, resulting in a total of 32 channels:
+
+![motor1_octaves](/motor1_octaves.png)
+
+Using the [Info window](/en/help/info/statistics), statistical values of the filtered channels, such as crest factor or Leq, can be evaluated in detail.
+
+If ``Create band level spectrum`` is activated, additionally the corresponding spectrum of band levels is created in the frequency domain:
+
+![motor1_octaves_spl_band_levels](/motor1_octaves_spl_band_levels.png)

@@ -1,0 +1,33 @@
+# Smooth
+
+## Smooth (time signal)
+
+Working area and channel are defined by [Select region](/en/help/edit/region-control) and [Select channel](/en/help/edit/select-channel).
+
+Smoothing in the time domain is achieved through averaging within a sliding rectangular window. The width of the window in samples is set by the number of ``bins``.
+
+![motor1-sm_100bins](/motor1-sm_100bins.png)
+
+## Smooth (spectrum)
+
+Working area and channel are defined by [Select region](/en/help/edit/region-control) and [Select channel](/en/help/edit/select-channel).
+
+### Smooth setup
+
+Here the parameters for the operation are set. ``Process`` offers the options of ``continuous`` smoothing or smoothing in ``steps``.
+
+### Continuous smoothing
+
+Using continuous smoothing, the magnitude (``Smoothing of magnitude``), the group delay (``Smoothing of group delay``) or both (``Smoothing of both``) can be modified.
+
+The region to be considered for the averaging can be specified linearly (``Method lin.`` by entering the number of evaluated frequency values (``bins``)) or logarithmically (``Method log.`` by entering the width of the evaluated frequency band in octaves (``Bandw. [1/oct.]``)).
+
+### Smoothing in steps
+
+The smoothing in steps is differentiated by two methods using averaging (``Method averaged``) or summation (``Method added (SPL)``).
+
+The width of the steps is specified in octaves (``Bandw. [1/oct.]``).
+
+The following plot shows an example of the different smoothing methods applied to the frequency response measurement of a sound reinforcement system.
+
+![wfs-fr-smooth-example](/wfs-fr-smooth-example.png)

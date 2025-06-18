@@ -1,0 +1,11 @@
+# Coherence
+
+The coherence and transferfunction (even channel/odd channel) estimate is calculated for the channel pairings of odd and even channel numbers (i.e. 1-2, 3-4, 5-6, etc.). To do this, the part selected under ``Region`` is divided into sections with the ``window length`` / ``overlap`` and windowed with the selected ``window function``. The window length is defined relative to the ``FFT length``. The FFT length determines the frequency resolution of the coherence curve. The overlap of the analysis windows is adjustable and can be a maximum of 1/2 of the window length.
+
+For an exact result, a time offset between the channel pairs must be compensated as precisely as possible with the value under ``Latency compensation``. The value entered here is subtracted from the even channels in the group delay.
+
+The greater the time offset in relation to the analysis length, the greater the loss of coherence due to latency. If group delay distortions are to be expected so that exact latency compensation cannot be determined, then the analysis length (FFT length) should be chosen as large as possible and the overall length of the measurement should also be adjusted in length in order to obtain a sufficiently large number of analysis sections . The result is displayed in the frequency domain as $ν^2$.
+
+If the setting results in fewer than 2 analysis sections, a message about incorrect parameterization is displayed.
+
+

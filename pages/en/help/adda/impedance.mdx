@@ -1,0 +1,30 @@
+# Impedance
+
+In the field of loudspeaker measurement one of the most common kinds is the impedance measurement. Among other things it provides an insight into the functioning of the speaker system and the applicable frequency range. The picture shows an example of a typical impedance curve for a bass reflex system.
+
+![impredance](/impredance.png)
+
+
+The impedance measurement employs the circuitry with shunt resistor and amplifier included in Robo2 resp. Robo3 frontends. The speaker is to be simply connected to a speakon output.
+
+Prior to each impedance measurement a [Reference measurement](/en/help/adda/impedance-reference) ought to be carried out.
+
+In the [Measurement setup](/en/help/adda/measurement-setup) the basic configuration for the measurement is done; using the [Exciter setup](/en/help/adda/exciter-setup) the excitation signal is selected and the measuring level adjusted.
+
+``Impedance processing`` takes into account correction values for the loudspeaker cable. The real resistance of the cable in milli-Ohm, measured or estimated, is to be entered in ``Cable R [mOhm]``; ``Cable L [uH]`` is the respective field for the inductance value in micro-Henry.
+
+[Processing](/en/help/adda/processing) configures the post-processing of measurement results.
+
+When using an external connection for the impedance measurement, the following schematic has to be used:
+
+![ext-imp-sch](/ext-imp-sch.png)
+
+Line in should be connected symmetrically to measure the voltage over $R_S$, Gnd (XLR1) should not be connected to the amplifier.
+
+As reference resistor a $10 \Omega$ has to be used instead of the DTU ($Z_{load}$).
+
+$R_s = 1 \Omega$ is a suitable shunt for most applications.
+
+In case of wrong cabling, the frontend can be destroyed!
+
+``OK`` starts the measurement; ``Cancel`` aborts the procedure.

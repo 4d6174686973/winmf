@@ -1,0 +1,21 @@
+# Measurement setup
+
+Here the measurement is configured.
+
+``Mode`` switches between the modes for single measurement (``Mode single``) and continuous measurement (``Mode repeat``). In ``repeat`` mode the measurement is being repeated until aborted by pressing esc. Only the last measuring cycle is displayed and kept in memory.
+
+``Averages`` defines the number of averages carried out for one measurement.
+
+``Presends`` defines the number of signal cycles played back before the actual measurement. These presends are not yet recorded. ``Presends`` can be used for example to open noise gates.
+
+``Samples`` displays the number of samples of the measurement signal.
+
+``Meas time [ms]`` displays the time corresponding to one signal cycle.
+
+``FFT length`` displays the number of samples as a power of two. If this values is an integer, the field is green; if ``FFT length`` is not an integer, the field is red.
+
+``Meas time [ms]`` displays the time needed for all averages.
+
+If ``External preamps`` is active, the gain values deposited in [Frontend setup](/en/help/adda/frontend-setup) are being considered. This is necessary having a preamplifier in the signal chain.
+
+If ``Apply sensor sensitivities`` is active, the sensitivity values deposited in [Frontend setup](/en/help/adda/frontend-setup) are being considered. This is necessary when measuring with sensors like microphones or accelerometers.

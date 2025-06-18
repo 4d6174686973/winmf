@@ -1,0 +1,18 @@
+# Macro Submenu Execution
+
+Menus, which allow an execution of its submenus in macro processses show an additional entry in  its file menu: ``Macro submenu exec``.
+
+Within this menu, the submenu to be executed can be selected and its execution be activated.
+
+The execution is also shown in the filemenu (checked or unchecked).
+
+The macro execution is in the case of a submenu as follows:
+
+The macro process is
+- first the calling menu of  the submenu is only opened
+- then the selected submenu is opened and executed
+- both menus are closed after execution
+
+The calling menu of the submenu is !not! executed. Should this also be executed, it must be defined as separate step in the macro process.
+
+Example: the menu ADDA/FR for frequency response measurement allows the execution of the reference in the macro process. If this is activated, only the reference measurement is executed. For a subsequent frequency response measurement a second step has to be defined in the process (without ``Macro submenu exec``).

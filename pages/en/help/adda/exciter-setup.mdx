@@ -1,0 +1,11 @@
+# Exciter Setup
+
+``dB reference`` switches the indication of levels between dBV and dBU.
+
+``Level [dB]`` defines the output level of the measuring system without considering external power amplifiers.
+
+``Voltage [Vrms]`` specifies the effective output voltage.
+
+``Level [dBFS]`` sets the level of the measuring signal in relation to the maximum output level. The highest value possible is 0 dBFS.
+
+Furthermore, for measurements explicitly requiring the definition of an excitation signal, the measurement signal is to be selected via ``Exciter``. When measuring frequency responses (Frequency response, LS sensitivity and Polar response) a reference signal suitable for the selected excitation signal is required. For frequency responses the excitation signal needs to fit a complete FFT-length, which means the number of samples must be a power of two. In case no suitable reference is to be found, a new reference measurement can be carried out using the corresponding [reference menu](/en/help/adda/frequency-response-reference).
