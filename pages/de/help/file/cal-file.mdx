@@ -1,0 +1,154 @@
+# Calibration File
+Using the calibration file, one can modify basic settings of a frontend menu. This includes sensitivity values of in- and outputs which can slightly differ between devices of same type.
+
+Thus, the user can precisely make an individual calibration of a physical device. As the file can be read and edited directly, it also satisfies the requirements for the documentation of measurement chains.
+
+Another application is the creation of an individual frontend for a device, which is not implemended as default frontend setup. 
+
+In order to use such a calibration file, the option ``Use cal-file....`` under Preferences has to be activated. Automatically, the option ``All outs are normalized ...`` will be activated, too. If  ``Use cal-file....`` is activated, WinMF will search in its start path for the file with name ``cal-file.txt`` will read it, interpret the entries and overwrite the existing entries in the current frontend. If at least one correct entry is found, the display will show in the right lower corner the green information that an EXTERNAL CAL FILE is currently used:
+
+![Calibration File Display](/cal-file-display.png)
+
+If no file is found, WinMF will ignore the option and the frontend will be used as before configured. If the file is faulty, an error dialog will come up.
+
+## Definition of cal-file entries
+
+A cal-file begins with the frontend name in the first line. This name has to be identical with the internal name of the frontend. Large and lower case are ignored.
+
+The list of qualified frontend names is:
+- Babyface_Pro_FS
+- DBS1
+- Digital
+- Fireface
+- Fireface_UCX2
+- Fireface_UFX_Plus
+- Motu_M2
+- MuFa2
+- Robo2
+- Robo2_Fireface_UCX
+- Robo2_Fireface_UCX2_CH5_6
+- Robo2_Fireface_UCX_CH5_6
+- Robo3
+- Special_2x_Robo3
+- Special_4x_Robo3
+
+## Configuration
+
+One correct entry defines exactly one parameter of one channel. There are four different channel types configurable, as explained here:
+
+```plaintext
+type
+sensor
+channel number (1...max_channels)
+sens
+sensitivity factor as float with point as decimal separator
+```
+
+```plaintext
+type
+in,out
+channel number (1...max_channels)
+sel_sensitivity
+number of the popupmenu's item
+sensitivity_dBu
+sensitivity in dBu as float with point as decimal separator
+```
+
+```plaintext
+type
+out
+channel number (1...max_channels)
+int_gain
+gain in dB as float with point as decimal separator
+```
+
+```plaintext
+type
+out
+channel number (1...max_channels)
+ext_gain
+gain in dB as float with point as decimal separator
+```
+
+## Multiface II example
+
+MuFa2
+
+```plaintext
+type
+out
+1
+sel_sensitivity
+1
+sensitivity_dBu
+5.73
+```
+
+```plaintext    
+type
+out
+1
+sel_sensitivity
+2
+sensitivity_dBu
+15.71
+```
+
+```plaintext
+type
+in
+1
+sel_sensitivity
+1
+sensitivity_dBu
+14.43
+```
+
+The Multiface II (MuFa2) settings are changed as follow:
+- out channel 1, first step of sensitivity = 5.73dBu
+- out channel 1, second step of sensitivity = 15.71dBu
+- in channel 1, first step of sensitivity = 14.43dBu
+
+## Robo3 example
+
+robo3
+
+```plaintext
+type
+sensor
+1
+sens
+0.0078
+```
+
+```plaintext
+type
+in
+1
+sel_sensitivity
+4
+sensitivity_dBu
+26.3
+```
+
+```plaintext
+type
+out
+2
+int_gain
+0.1
+```
+
+```plaintext
+type
+out
+2
+ext_gain
+26
+```
+
+The Robo3 settings are changed as follow:
+- channel 1, sensor sensitivity = 0.0078
+- in channel 1, fourth step of sensitivity = 26.3dBu
+- out channel 2, internal amp gain = 0.1dB
+- out channel 2, external amp gain = 26dB

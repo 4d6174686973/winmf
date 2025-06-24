@@ -1,0 +1,14 @@
+# Check tolerance
+
+``Check tolerance`` performs a tolerance band check for the current file. A range for the tolerance check can be defined for every channel ("range to check"). The tolerance bands are described by the ``tolerance file``.
+
+The ``tolerance file`` will be verified prior to the check. The ``tolerance file`` must have the same sampling rate and number of samples as the current file. It also has to contain the double amount of channels (an upper and lower limit has to be defined for every channel).
+
+The tolerance is checked channel by channel. Channel 1 of the current file is compared to its specified limits (channel 1 and 2 in the ``tolerance file``), then channel 2 is checked (channel 3 and 4 in the ``tolerance file``), etc. For a slower procedure it is possible to specify a "pause" in between the checks. This feature is especially useful for the observation of new QC procedures.
+
+![v1-0-00427_fr_setup_tol](/v1-0-00427_fr_setup_tol.png)
+A violation of the specified limits is indicated by colored circles around the affected areas. A pause of 1 second then allows for an initial inspection. The results of the tolerance check are recorded in the QC sheet. Tolerance violations are marked.
+
+There is no limit to the maximum number of channels to be checked.
+
+The function [learn tolerance](/en/help/qc/learn-tolerance) offers a convenient method of generating the tolerance limits and the corresponding tolerance file. A manual generation is possible as well.

@@ -1,4 +1,6 @@
-export default{
+export default {
+    'edit-directivity' : 'Edit directivity',
     'edit-balloon': 'Edit balloon',
-    'edit-directivity': 'Edit directivity',
+    'clf-export': 'CLF Export',
+    'ansi-cea-2034-a': 'ANSI-CEA-2034-A'
 }

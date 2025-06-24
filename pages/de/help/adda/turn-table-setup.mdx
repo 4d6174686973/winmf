@@ -1,0 +1,61 @@
+# Turn table setup
+
+``Turn table setup`` contains the settings for the rotating plate or rotating arm to be used.
+
+In ``Select machine`` several devices are available:
+
+[ELF V2](/en/help/adda/elf-v2)
+
+[Manual](/en/help/adda/manual)
+
+[LT360EX](/en/help/adda/lt360ex)
+
+[Wendefix](/en/help/adda/wendefix)
+
+[Knarrzi](/en/help/adda/knarrzi)
+
+[St. Neumann](/en/help/adda/st-neumann)
+
+[ET250-3D](/en/help/adda/et250-3d)
+
+[ANTV1_Azi_MicArc_Ele](/en/help/adda/antv1_azi_micarc_ele)
+
+After selecting one of the automated rotator devices from the list further settings are to be made under ``Configure machine``.
+
+## Configure machine
+
+The interface(s) for machine control and manual control are configured here.
+
+### Serial ports for machine control
+
+``Scan ports`` searches the Windows system for ports suitable for controlling a rotating plate. The scanning result is displayed here after a few seconds.
+
+By ``Port number`` the port is selected, which shall be used to control the machine. Ports available can also be viewed in the Windows Device Manager under ``Ports (Com & LPT)``. The ``Wendefix`` machine needs two separate ports for controlling the horizontal and the vertical axis.
+
+### Control via Ethernet
+
+``Host IP``: IP address of the rotating plate
+
+``Port``: UPD port number
+
+``Elevation control`` allows manual control of the horizontal rotation.
+
+``Step CW`` and ``Step CCW`` rotate the device clockwise and counter-clockwise, respectively, by the angle entered in between the buttons.
+
+``Pos. [°]`` shows the machine's current position status; Set to 0° defines the current state as 0-position.
+
+``GoTo`` turns the machine to the position specified next to the button; GoTo 0° turns to 0-position.
+
+Azimuth control allows manual control of the vertical rotation; the function is analogue to Elevation control.
+
+``Travel plan`` defines for biaxial machines the measuring order: a complete measuring cycle in the axis selected by ``Inner loop`` is carried out, then the other axis proceeds one step, and another cycle in the first axis starts.
+
+``Inner loop dir.`` specifies whether the measuring sequence in the ``Inner loop`` axis is always oriented clockwise (``always CW``) or switches directions each cycle (``toggle CW/CCW``). The second option is somewhat faster as the machine doesn't need to turn back between the cycles. The direction does not affect the assignment of file names to the individual measurements.
+
+``Elevation (Hor) mot. behav.`` defines the motor control behaviour for the horizontal axis.
+
+``Wait for key (return)`` means that the machine automatically moves to the next loudspeaker position, but the actual measurement for that position is triggered by the Return key.
+
+``Start delay [ms]`` allows entering a pause before the first measurement; ``Settle time [ms]`` defines a pause between the movement to the next position and the measuring. This can be useful if the rotation causes swinging of measuring hardware and loudspeaker, which needs to settle before measuring can be started.
+
+``Azimuth (Ver) mot. behav.`` contains settings for the vertical axis analogue to ``Elevation (Hor) mot. behav.``.

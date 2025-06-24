@@ -1,19 +1,24 @@
 export default {
-  //  Pages
+  // Pages
   index: 'Home',
   distribution: {
-    title: 'Vertrieb',
+    title: 'Distribution',
     type: 'page'
   },
   imprint: {
-    title: 'Impressum',
+    title: 'Imprint',
     type: 'page'
   },
   privacy: {
-    title: 'Datenschutz',
+    title: 'Privacy Policy',
     type: 'page'
   },
-  //  Site map
-  help: 'Hilfe',
-  features: 'Features und Anwendungen',
+
+  // Site map
+  features: 'Features',
+  'supported-hardware': 'Supported Hardware',
+  help: 'Help',
+  'first-steps': 'First Steps',
+  licensing: 'Licensing',
+  'system-requirements': 'System Requirements'
 }

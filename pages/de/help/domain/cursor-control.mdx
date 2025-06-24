@@ -1,0 +1,19 @@
+# Cursor control
+
+There are two cursors in each of the two main windows. The active cursor is yellow, the inactive one is red. In order to control the cursors, the window in question needs to be activated by clicking on it. Usually the cursors are initially located at the left and right edge of the diagram, where they might be invisible.
+
+The active cursor (yellow) can be shifted by the arrow left and arrow right keys. The combinations shift + arrow left and shift + arrow right do the same with an increased step width. The cursors can also be grabbed and moved with the mouse (left mouse button).
+
+## Activation of Cursors
+
+The right cursor is activated by pressing the key r, the left cursor by pressing the key l. Switching is done with the space key.
+
+## Readout of Sample Values
+
+The values at the left cursor are displayed under ``Cursor 1``, the values at the right cursor under ``Cursor 2``. The Index values represent a consecutive numbering of the curve points, meaning the sample number in the time signal or in the frequency raster. Under ``Cursor 1-2`` the difference between the two values is displayed, which is the number of samples between the cursors.
+
+The row underneath shows the curve's x-value at the cursor positions. In the time domain this is the time counted from the beginning of the signal, in the frequency domain it is the frequency value. The difference between the values of ``Cursor 1`` and ``Cursor 2`` again is displayed under ``Cursor 1-2``.
+
+The row labelled V (Voltage) shows the y-value of the curve at cursor position. This can represent for instance voltage or sound pressure, depending on what has been chosen under ``AD/DA`` / ``Frontend setup`` / ``Sensortype`` before the measurement. Under cursor again the difference of the y-values is to be found.
+
+In the row labelled *dB* the y-value is given in dB, once for each cursor and the difference of both in the middle.

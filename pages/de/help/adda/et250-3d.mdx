@@ -1,0 +1,13 @@
+# Outline ET250-3D
+
+The uniaxial Outline turntable is controlled via Ethernet by UDP packets. The machine's IP address needs to be entered in the configuration in WinMF. Usually the pre-defined port number should be idle, otherwise the port number can be changed. The WinMF computer also needs a valid IP address from the same subnet, e.g.:
+
+WinMF: 192.168.0.12
+
+ET250-3D: 192.168.0.199
+
+The IP address for the ET250-3D is selected via the software provided with the turntable. 
+
+In case a firewall is active, the IP addresses need to be unblocked, as well as the port to be used. Usually the firewall will launch a message on initial use and ask whether to allow the communication.
+
+The current angle is entirely managed by WinMF, so the Outline's display is merely informative and not necessarily consistent with the angle managed in WinMF. It is recommended to turn the machine to the zero point via turntable setup/configure machine, so to set the machine to 0°, and then to set the zero point in WinMF by set to 0°. From here on the values shown by the Outline display are consistent with the current position values managed by WinMF.

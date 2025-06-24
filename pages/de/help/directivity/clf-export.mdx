@@ -1,0 +1,17 @@
+# CLF Export
+
+Converts spk-ballons into CLF1, CLF2 v1 and v2.
+
+The CLF-textfile is stored under the name ``filename`` in the folder of the balloon. The files for sensitivity and impedance, defined in the section ``Electro acoustic data``, have to be in the balloon folder, too.
+
+If the choosen ``Method`` for power is ``custom``, the balloon folder must contain a file with the custom spectrum and the defined name. The power spectrum will not be averaged or modified in another way. It will be used as defined in the file. The level values are read out from the power spectrum file at the band center frequencies (dB reference is 1) and written into the CLF file.
+
+The sensitivity should not contain latency (for CLF2 v2).
+
+Exporting of CLF1 presumes that the balloon was imported with 10° steps.
+
+The export of CLF2 requires  that the balloon was imported with 5° steps. Phase data is extracted at the band center frequencies. Phase data is always raw data, as phase data is not averaged when importing the balloon.
+
+The dxf-format to describe the case should  be Autocad R12 lines and arcs with the option to use lines only. The maximum file size is 500kB. The origin of the drawing is fixed to 0,0,0. This is the default value for the mechanical reference point in the CLF file, too. The positive X-axis is on-axis of the loudspeaker (0°), the z-axis is the top of the cabinet. The unit of length is m or mm.
+
+![clf-export](/clf-export.png)

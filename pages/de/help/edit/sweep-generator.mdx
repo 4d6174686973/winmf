@@ -1,0 +1,50 @@
+# Sweep generator
+
+## Nomenclature of measurement signals
+
+The sweeps which are predefined in the exciter path use the following nomenclature:
+
+SWP LL APP
+
+SWP = sweep exciter
+
+LL = number of samples in terms of FFT-length (2^LL)
+
+APP = application:
+- LS: loudspeaker sensitivity
+- ELE: electronics
+- DIS: distortion
+- DRY: roomacoustics in dry rooms
+- WET: roomacoustics in wet rooms
+- REV: measurements in reverbaration chamber
+
+## Generation of arbitrary sweeps
+
+Under ``Presets`` predefined settings suitable for numerous applications can be loaded. However, these settings can be modified at will in order to create specific measurement signals.
+
+``Length`` defines the signal length. The number of samples is determined by the parameter ``FFT``, e.g. FFT=12 means that the signal will contain 2^12 samples. Furthermore the ``Samplerate`` the signal is created for must be specified. Generally sweeps can be generated with arbitrary sampling rates. But in order to use these signals for measurements it needs to be ensured that the measurement hardware supports the respective sampling frequency. The Robo3 for example can measure with sampling frequencies of 32kHz, 44,1kHz, 48kHz, 88,2kHz or 96kHz. The sampling frequency needs to be twice the highest frequency one wants to measure.
+
+``Sweep options`` offers several parameters to be configured for the design of the signal. The first option allows to switch between ``linear`` and ``logarithmic``.
+
+A ``logarithmic Sweep`` progresses logarithmically over time, the amplitude is constant. As a result the function over frequency decreases by 3dB/oct. These sweeps can be use for distortion measurements for example.
+
+A ``linear Sweep`` also has constant amplitude over time, the frequency response however is widely adjustable. The simplest case is an equally linear frequency response. Sweeps of this kind can be used e.g. for measurements in electric circuits and filters. However, for many applications (e.g. room acoustics, loudspeaker measurements) signals are required to contain increased energy at low frequencies in order to obtain a higher signal-to-noise ratio in that region. For this, ``Define mag.`` is used to create a corresponding filter, for example a low shelf with a gain of 20dB at 100Hz. With ``Cust.mag.`` the [filter](/en/help/edit/filter) is switched on and off. The amplitude of the sweep itself is not increased at low frequencies though, in fact the sweep passes that frequency region accordingly slower and thereby feeds more energy into the system under test.
+
+For special applications where the amplitude of the sweep is required to be non-constant, ``Def. amplitude`` can be used to modify this course with [filters](/en/help/edit/filter) as well. ``Cust. amp.`` switches these filters on and off.
+
+![sweep_custom](/sweep_custom.png)
+![sweep_custom-timesignal](/sweep_custom-timesignal.png)
+
+``Restrict range`` limits the frequency range the sweep will pass. ``Start. freq.`` and ``Stop freq.`` define the frequencies where the sweep will start and stop.
+
+The parameter ``Stop margin`` appends zeros at the end of the sweep, the length is specified in seconds. The length must be at least the latency of the measurement system (several ms) plus the acoustic runtime (for microphone measurements approx. 3ms/m) plus the decay time of the system under test (for room acoustic measurements this is about the reverberation time).
+
+The following plots show three typical sweeps:
+1. for electronic measurements with constant amplitude of the time signal and linear magnitude progression
+2. for loudspeaker measurements with constant amplitude of the time signal and 20dB magnitude gain in the low-mid range for increased SNR
+3. for distortion measurements with a logarithmic group delay progression and constant amplitude of the time signal
+
+![sweeps](/sweeps.png)
+![sweeps-gd](/sweeps-gd.png)
+![sweeps-timesignal](/sweeps-timesignal.png)
+

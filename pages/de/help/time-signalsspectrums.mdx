@@ -1,0 +1,17 @@
+# Time signals/Spectrums
+
+In the time and frequency domain windows the loaded files are managed by the menus ``Time signals`` and ``Spectrums`` respectively. The object currently active is plotted in the display. Any operation like [Edit](/en/help/edit), [Transform](/en/help/transform), [Save](/en/help/file), etc., is applied to the active object only. When a new file is loaded, imported, generated, etc., all data of the object currently active is overwritten. [Measuring](/en/help/adda) equally writes into the active object.
+
+The list of objects shows the files with their labels. When files are imported, the file name is used as label.
+
+The following operations are available:
+- Copy to new position: places a copy of the active object into the memory and activates it
+- Delete current: deletes the active object and switches to the subsequent object in the list
+- Delete all curves: deletes all objects from the memory and creates a new, blank object
+- New: places a new, blank object to the end of the list and activates it. There is no limit to the number of files in the list of objects except for the size of the main memory.
+- Copy: copies the curves of the active object to the paste buffer
+- Paste: inserts the curves from the paste buffer into the active object. Sample rate and number of data points are converted automatically if necessary.
+- Spectrogram of current: opens the menu for [creating spectrograms](/en/help/time-signalsspectrums/spectrogram)
+- Restore frontend setup: if the file contained a setup for frontend configuration, these settings can be restored. This function needs to be activated under [Preferences](/en/help/file/preferences) in order to make use of it. If no setup is present this function is shown in grey and inactive
+- Restore measurement setup: if the file contained a setup from the last measurement performed, the measuring menu can be restored. This function needs to be activated under [Preferences](/en/help/file/preferences) in order to make use of it. If no setup is present this function is shown in grey and inactive
+

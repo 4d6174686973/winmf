@@ -1,0 +1,70 @@
+import { Steps } from 'nextra/components'
+import { Callout } from 'nextra/components'
+ 
+# First Steps
+
+<Steps>
+
+### Setting of exciter- and base path:
+
+In the  beginning of page [file/preferences](/en/help/file/preferences) the meaning of the exciter path is explained and in
+this menu, you can find the tool to create a set of exciters.
+
+### Create a set of exciters
+
+Press the button ``generate sweeps in exciter path`` in the preferences menu.
+
+### Install audio interface drivers
+
+The audio interface has to be installed with its ASIO drivers. For Robo2 and Robo3 the RME HDSPe is used. The HDSPe setup is explained here: [adda/setup-of-hardware/rme-hdsp](/en/help/adda/setup-of-hardware/rme-hdsp).
+
+### Initialize hardware
+
+Before proceeding with measurements, go to [ADDA/Initialize](/en/help/adda/initialize), select the ASIO interface for the installed audio interface and define the samplerate. This has to be done only the first time.
+
+<Callout type="info">
+    **Hints for Robo2 and Robo3:** If the Robo3 is connected correctly, the lock/Error LED is off. If it can not be connected, this LED is on or blinking.
+</Callout>
+
+### Frontend setup
+
+Go to [adda/frontend-setup](/en/help/adda/frontend-setup)  and select the suitable frontend.
+
+<Callout type="info">
+    **Hints for Robo3 (and Robo2):** Select the frontend Robo3 (or Robo2).  Try to switch the sensitivity of in- or output, you can hear the relais  clicking in the Robo3 if everything is installed correctly.
+</Callout>
+
+### Reference for Frequency response, (LS-sensitivity, Polar response)
+
+In the measurement menu, you have to select the exciter first and make
+a reference measurement:
+
+[adda/frequency-response-reference](/en/help/adda/frequency-response-reference)
+
+<Callout type="info">
+    **Hints for Robo2 and Robo3:** The reference connections are realized by internal relais and are remote controlled by WinMF.
+</Callout>
+
+<Callout>
+**Hint for acoustic measurements:** Using sweeps, the exiter end time gap has to cover the total time gap of the digital measurement chain, the acoustical path, and the DSP hardware latency if active loudspeakers are measured.
+</Callout>
+
+Usually, the following exciters should be used if 48kHz samplerate is selected. If the samplerate is higher, use also a higher FFT length for the exciter. Double samplerate requires +1 FFT length:
+
+**LS-sensitivity, or polar reponse:** SWP15LM, SWP16LM, SWP17LM or higher (SWP = SWP, 15 = FFT length, LM = loudspeaker measurement).
+
+**Frequency response of electrical devices:** SWP14ELE, SWP15ELE, SWP16ELE or higher (ELE = electronics).
+
+**Sweep distortion with frequency response or LS-sensitivity:** SWP17DIS, SWP18DIS, SWP19DIS or longer (DIS = Distortion).
+
+### Polar measurements (Directivity, 3D-Ballons)
+
+The turntable is selected under ADDA/Polar response in the menu  Setup/Turntable setup by choosing the used machine under Select machine: [Turntable setup](/en/help/adda/turn-table-setup)
+
+Then, under Configure machine the commincation with the machine is to be set up (select a port or a IP-address) and the axes can be driven into the 0°-postion and by pressing the Set to 0°, the 0° position of both axes is to be stored.
+
+With Setup/Pol. Setup Balloon, the automation for the directivity or balloon measurement is set up: [Pol. Setup Balloon](/en/help/adda/polar-data-setup). Here, presets fo commonly used automations can be selected. For example, Hor. 360° makes a polar measurement in the horizontal plane with 360° angle range. The standard angle step is 5° (El. Step or Az. Step) and can be adjusted if needed. Under output files, it should be selected SPK-output always, as third party software like EASE Speaker lab cannot read the WinMF format. For compatibility reasons the [Directivity Editor](/en/help/directivity/edit-directivity) uses SPK-files, too. 3D-ballons can be imported by the [Balloon Editor](/en/help/directivity/edit-balloon) and exported to CLF files.
+
+Under Measurement Info, the user can define three strings to describe the DUT and the measurement series. WinMF generates a folder name with these strings and all data from the measurement series is stored in this folder. The folder will be generated always below the actual path. This is last  path used in the main window to load or store files.
+
+</Steps>

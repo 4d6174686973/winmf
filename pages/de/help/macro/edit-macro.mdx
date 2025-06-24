@@ -1,0 +1,39 @@
+# Edit macro
+
+Here the recorded macros can be modified.
+
+Under ``Macro setup - Macro file`` the macro to be edited is selected.
+
+The table under ``Macro definition`` lists the single macro steps. The leftmost column contains the macro name supplemented by a consecutive index, in case a menu occurs more than once within the macro. The rightmost column shows the menu which is called by this step.
+
+![macroeditor](/macroeditor.gif)
+
+The names on the left are editable by clicking on them.
+
+For editing the menus on the right an entry needs to be selected by left-click; then a right-click opens a context menu. If several entries are selected, the operation chosen from the context menu is always applied to the upmost entry. Only exception is ``Delete``.
+
+When ``Edit setup menu`` is selected, the same menu appears as it was executed during macro recording. All setting can be modified at will and saved by ``File - Save setup`` as under the old or a new name.
+
+``Execute setup menu`` executes the selected macro step.
+
+``Insert`` allows inserting an existing setup in front of the selected menu.
+
+``Delete`` applies to all selected rows of the table.
+
+``Copy to new name`` copies the entire row, which by ``Paste`` can then be inserted in the list at any position. The name now contains the appendix copy, which is editable at will.
+
+``Copy to same name`` has the same function, but without changing the name.
+
+``Paste`` inserts the menu from the paste buffer.
+
+``Append`` adds the menu from the paste buffer at the end of the table.
+
+``Insert macro file`` inserts an entire existing macro in front of the current position.
+
+``Append macro file`` adds a macro at the end of the table.
+
+``Comment line(s)`` inserts a comment symbol. Comment lines are disregarded during execution.
+
+``Uncomment line(s)`` deletes comment symbols
+
+``Clean up macro folder`` deletes from the macro directory all setups which are not used by the macro that is currently being edited. If the directory contains multiple macros, this function should be used carefully.

@@ -1,0 +1,21 @@
+# Decay times
+
+``Decay times`` in the ``Info`` menu performs an evaluation of reverse-time integrated impulse responses (IIR). If no IIR is present in the memory, the [menu for IIR processing](/en/help/edit/integrated-impulse-response-processing) is launched automatically.
+
+At first the parameters to be displayed are to be selected via the ``Select/Select parameters`` submenu of the ``Decay times`` menu.
+
+![decay-times-select](/decay-times-select.gif)
+
+The analysis is performed according to DIN EN ISO 3382-1:2009 and DIN EN ISO 3382-2:2008. In addition to decay times for the various intervals, the following evaluations and information can be produced:
+
+- channel tag: shows the associated channel number from before the filtering, so the results can be associated to the original channels
+- fm nom. [Hz]: nominal band centre frequency according to DIN EN 61620
+- fm [Hz]: exact band centre frequency according to DIN EN 61620
+- C(...): degree of curvature according to ISO 3382-2:2008, Annex B3. For example C(T20-30) is the degree of curvature for the T20 interval compared to the T30 interval, etc. Typical values are between 0 and 5%, values beyond 10% indicate deviations from the linear shape
+- x: degree of non-linearity according to ISO 3382-2:2008, Annex B2. For the respective evaluation interval the squared correlation coefficient is calculated. E.g. x30 calculates a measure for the deviation from the linear regression curve between -5 and -35dB. In contrast to the curvature C, x also detects fluctuations. The value is given in per mil. A value around 0 means no deviation, 1000 is maximum deviation. Typical values for sound IIRs are between 0 and 5 per mil.
+
+![decay-times-info-window](/decay-times-info-window.gif)
+
+Via the ``copy table to spectrum`` button the displayed RT values are copied as spectra to multiple channels in the frequency domain.
+
+![t20-t30](/t20-t30.png)

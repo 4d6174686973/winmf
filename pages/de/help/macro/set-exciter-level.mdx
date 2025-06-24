@@ -1,0 +1,47 @@
+# Set exciter level
+
+This function only applies when [recording](/en/help/macro/start-macro-recording) or [executing](/en/help/macro/play-macro) macros.
+
+Under ``Exciter level`` a voltage value is to be defined. All subsequent measuring menus in the macro (except [Play](/en/help/adda/play)) passing a signal via the DA converter, will disregard the value defined in their setup and use the value specified here instead. Normalisation is done absolute, thus considering the output sensitivity set at the frontend. Normalisation is based on the assumption, that the crest factor of the signal is 3dB. For other crest factors this is to be considered when choosing the voltage value. The value specified here virtually is a variable for subsequent measuring menus.
+
+Changes after 07.02.2019:
+
+The chosen voltage is calculated always referenced to the chosen physical output, that means referenced to line out if Amp_out = line, otherwise referenced to the internal or external amp gain.
+
+If under File/Preferences the option All outs are normalized to exciter Volt... is activated, all active outputs will be set to the voltage defined with set exciter level. If the normalization is not used, only out 1 is considered. All other outputs are relative to output 1 with their indivdual gain differences.
+
+In connection with the [Set relative exciter level](/en/help/macro/set-relative-exciter-level) menu complex level sequences can be implemented within the macro process, without having to store an own measuring menu for each level.
+
+Example:
+
+The macro calls the ADDA menu with a sine excitation and a level of -20dBFS. The output sensitivity of the frontend is set to 26dBu. Thus the sine signal is played back with 6dBu (rms). At this point the macro looks something like this:
+
+.
+
+.
+
+Out1_26dBu.Robo3.set
+
+-20dBFS.ADDA.set
+
+.
+
+.
+
+Inserting the ``Set exciter level`` menu into the macro and setting the level to 1Vrms for example, the sine signal is re-normalised in such a way, that 1Vrms is emitted by the frontend.
+
+.
+
+.
+
+1Vrms.Set_exciter_level.set
+
+Out1_26dBu.Robo3.set
+
+-20dBFS.ADDA.set
+
+.
+
+.
+
+The settings are valid within the macro until [Unset exciter level](/en/help/macro/unset-exciter-level) is called in the macro or the macro is terminated.

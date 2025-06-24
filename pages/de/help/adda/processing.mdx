@@ -1,0 +1,74 @@
+# Processing
+
+Depending on the type of measurement ``Processing`` offers different kinds of processing and file handling options.
+
+### Windowing (AD only, AD-DA, Harmonic distortion, Harmonic distortion (f), Impedance)
+
+In the ``Windowing`` section a time window can defined. A description of its parameters is to be found under [Edit - Apply window](/en/help/edit/apply-window).
+
+### Impulse response proc. (Frequency response, LS sensitivity, Polar response)
+
+``Impulse response proc.`` modifies the measured impulse response in the time domain. With ``Delay correct.`` switched to ``offset`` the whole impulse response is shifted circularly by the value specified in ``Delay [ms]``.
+
+Windowing enables a windowing function, whose parameters are to be defined via ``Window para.``.
+
+## 2CH-FFT processing / time signal coherence (AD only, AD-DA)
+
+Either a classic ``2-CH FFT analysis`` can be used or channel pairs of time signals can be analyzed in ``coherence`` and estimate of transferfunction even channel/odd channel. For the 2-CH FFT analysis, the measurement must run in repeat mode.
+
+In the window ``2CH-FFT para``. the ``latency compensation`` can be set for the even channel numbers. (The latency is subtracted in the even channels).
+
+You can set which channels should be displayed in the result:
+- odd-, even channels: the raw data A, B
+- odd-, even channels running aver.: running magnitude average value of the raw data ($G_{AA}^{0.5} = (\frac{1}{n} \sum |A|^2)^{0.5}, G_{BB}^{0.5} = (\frac{1}{n} \sum |B|^2)^{0.5}$)
+- Coherence (magnitude squared): $ν^2 = |G_{AB}|^2 / (G_{AA}*G_{BB})$  (with $G_{AB}=\frac{1}{n} \sum AB$)
+- SNR (Signal to noise estimate): $SNR = ν^2 / (1-ν^2)$
+- complex transfer functions $TF1=G_{AB} / G_{AA}$ and $TF2 = G_{BB} / G_{AB}^*$
+
+The time signal coherence analysis is parameterized as described under [Edit/Channel Work/Coherence](/en/help/edit/channel-work/coherence).
+
+``Exciter=Reference``: For both processing options, the set exciter can be used as the reference channel (ADDA only), so that the reference channel does not have to be measured separately.
+
+### Spectral processing (AD only, AD-DA, Frequency response, LS sensitivity, Polar response)
+
+``Skip sensitivity normalisation (only LS sensitivity)`` bypasses the normalisation (to 1W at nominal impedance) usually applied to sensitivity measurements. Instead, the sensitivity is referenced to the input voltage and a distance of 1m. This can be convenient for measuring active devices.
+
+``Spectral processing`` modifies the measurement in the frequency domain. [A-weighting](/en/help/edit/a-weighting) applies the A-filter to the measured curve.
+
+``Smoothing`` enables the smoothing function, whose parameters are to be modified via [Smooth para.](/en/help/edit/smooth).
+
+### Distortion processing (LS sensitivity, Polar response)
+
+[Distortion processing](/en/help/adda/distortion-processing) allows the evaluation of distortion in measurements using logarithmic sweeps.
+
+``Relate to fundamental`` displays in separate channels the distortions of the individual orders relative to the fundamental.
+
+``Max order`` specifies the highest order of which the distortions are displayed.
+
+### Channel processing (AD only, AD-DA, Harmonic distortion, Multisine, Frequency response, LS sensitivity, Impedance)
+
+``Channel processing`` allows writing a sequence of measurements into a buffer and showing them as separate channels.
+
+When ``Keep raw`` data is active, also the raw measurement without processing is written into the buffer and a separate channel.
+
+``Hold # meas.`` defines the number of measurements kept in the buffer. When this maximum is reached, the lowermost measurement is discarded and the remaining measurements are pushed one step further in the buffer.
+
+Reset buffer erases the measurements stored in the buffer, while the present channels are not deleted. Buffering starts again with the next measurement.
+
+``Show buffer`` displays the current buffer content.
+
+``Result in both domains`` directly transfers each measurement into the time domain through IFFT.
+
+### File processing (AD only, AD-DA, Harmonic distortion, Harmonic distortion (f), Multisine, Frequency response, LS sensitivity, Polar response, Impedance)
+
+With ``File processing`` it is possible to automatically store sequential measurements with consecutive file names.
+
+``Autoinc. mode`` switches between measurements to be started manually (``Single``), time triggered measurements (``Repeat n times``) and deactivation of automatic storage (``off``).
+
+``Repeat n times`` defines the number of measurements to be carried out and stored automatically.
+
+``Pause time`` defines the pause between measurements.
+
+``File name`` specifies the first part of file names which will automatically be suffixed by a measurement index.
+
+``Save also MF`` automatically stores all measurements also in Monkey Forest format.

@@ -1,0 +1,17 @@
+# External batch
+
+This menu executes an external batch file. The file path is set under Path. The path has to be relative to the ``Base path`` under [Preferences](/en/help/file/preferences). The batch filename and parameters are set under ``Execute``. An additional data file can be defined under ``Data file``. An application for this menu is the automated programming of electronic devices during production or QC.
+
+To insert special characters, the 3-digit ASCII code is used together with a #. A line feed, for example, is generated using  #010.
+
+In order to use the serial number from [Process control](/en/help/qc/process-control), the variable #SER is to be used. #SER is replaced by the serial number during execution of the menu. #SER is case sensitive and has to written exactly like this. 
+
+Is the serial number itself containing special characters like space, the variable #SER has to be used with double marks: "#SER".
+
+If a batch is executed and at the same time the output should be visible, the command "start /WAIT /D [Pfad] [.bat file]" has to be used.
+
+The actual time domain filepath is read out by the identifier #TIME_FILEPATH.
+
+The actual frequency domain filepath is read out by the identifier #FREQ_FILEPATH.
+
+After a QC run, the actual time- and frequency domain path is always the path for the tested device, also after a failed result.

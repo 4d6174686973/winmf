@@ -1,0 +1,5 @@
+# A-filtering (IIR)
+
+This function applies to a frequency response or time signal the standardised (DIN EN 61672-1:2003-10) A-filter in the form of an IIR filter (infinite impulse response filter). In doing so, the phase is also affected according to the IIR filter. Being an IIR filter, the curve slightly differs from the expected shape around half the sample frequency; however, it still lies within the tolerance limits of the standard. Therefore the exact shape of the filter depends on the sampling frequency. A comparable behaviour can be observed with level meters, which also utilise IIR filters for calculating the A-weighting.
+
+This function can only be applied once to a frequency response or time signal, and is then blocked until [A-unfiltering](/en/help/edit/a-unfiltering-iir) is executed.

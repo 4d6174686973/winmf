@@ -1,0 +1,18 @@
+export default {
+  'write-string-to-excel-cell': 'Write string to excel cell',
+  'user-input': 'User input',
+  'setup-relais-card-1977xx': 'Setup relais card 1977xx',
+  'init-relais-card-1977xx': 'Init. relais card 1977xx',
+  'relais-card-1977xx': 'Relais card 1977xx',
+  'wait-seconds': 'Wait seconds',
+  'check-tolerance': 'Check tolerance',
+  'learn-tolerance': 'Learn tolerance',
+  'process-control': 'Process control',
+  'external-batch': 'External batch',
+  'standard-tolerances': 'Standard tolerances',
+  'sht3x': 'SHT3X',
+  'serial-port-communication' : {display: 'hidden'},
+  'meilhaus-1208ls-ad' : {display: 'hidden'},
+  'tti-tf930' : {display: 'hidden'},
+  'automation' : {display: 'hidden'},
+}

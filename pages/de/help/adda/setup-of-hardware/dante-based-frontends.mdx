@@ -1,0 +1,34 @@
+# Dante based frontends
+
+The software tools described in the following are to be purchased and downloaded via the [Audinate homepage](https://www.audinate.com/) (DVS).
+
+The link between Dante and the computer is established either by a PCIe Dante soundcard (128 channels) or by a software soundcard (DVS, 64 channels). For the installation of the DVS please note that the current version does not support Windows XP. The last version compatible with XP is DVS 3.03, which however is not officially supported by Audinate anymore. Nevertheless, recently purchased licence keys can be used. When entering the licence key for the DVS please make sure that the firewall does not block the activation process.
+
+For configuring the audio matrix, and thus assigning physical in- and outputs, Dante Controller needs to be installed. After launching Dante Controller the available devices are listed and assignments can be defined in the matrix as desired.
+
+![dante_controller_dbs1](/dante_controller_dbs1.jpg)
+
+## Known problems in Windows XP and with old versions of Dante Controller:
+
+If there is an active WLAN connection on the computer, Dante Controller may not start up correctly.
+
+If the computer is connected to another network while booting, which is not the network to be used for Dante, the functioning of Dante controller is affected. Remedial measures are rebooting with the LAN to be used for Dante or manually launching Dante ``Control and Monitoring`` Service under ``Control Panel/Administrative Tools/Services``.
+
+If Dante Controller still does not work, the following services should be restarted under ``Control Panel/Administrative Tools/Services``:
+
+- Dante Control and Monitoring
+- Dante Discovery
+- Dante Virtual Soundcard Manager (if DVS is being used)
+- Service "Bonjour"
+
+For setting up measuring equipment via Dante the PCIe soundcard or the network adapter of the computer is to be connected to the Ethernet. When using DVS, the soundcard is to be activated by pressing the round on/off button. The button turns green when the soundcard is activated, otherwise it is grey:
+
+![dante__dvs](/dante__dvs.jpg)
+
+Dante Controller now lists all devices available. If devices based on Ultimo chips are to be used in peer-to-peer operation with a DVS, the following latency settings ought to be chosen for a better latency stability:
+
+![dante_controller_deviceview](/dante_controller_deviceview.jpg)
+
+Now the in- and outputs of the devices used for measuring need to be assigned to the respective in- and outputs of the Dante soundcard in the routing matrix of Dante Controller. The example shows the measuring station "Prowler" which is patched to the device FA-DBS1-07013d on channel 1 and 2. When connected successfully, the checkmarks turn green.
+
+![dante_controller_dbs1](/dante_controller_dbs1.jpg)

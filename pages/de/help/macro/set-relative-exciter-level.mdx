@@ -1,0 +1,29 @@
+# Set relative exciter level
+
+This function only applies when [recording](/en/help/macro/start-macro-recording) or [executing](/en/help/macro/play-macro) macros and after [Set exciter level](/en/help/macro/set-exciter-level) has been called.
+
+If this menu is called within a macro process, the exciter level is changed by the specified value for all subsequent menus.
+
+Example:
+
+.
+
+.
+
+1Vrms.Set_exciter_level.set
+
+Out1_26dBu.Robo3.set
+
+-20dBFS.ADDA.set % voltage at frontend output = 1Vrms
+
+-6dB.set_relative_exciter_level.set
+
+-20dBFS.ADDA.set % voltage at frontend output = 0.5Vrms
+
+-6dB.set_relative_exciter_level.set
+
+-20dBFS.ADDA.set % voltage at frontend output = 0.25Vrms
+
+.
+
+.

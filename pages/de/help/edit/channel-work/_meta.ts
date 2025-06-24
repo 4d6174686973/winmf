@@ -1,4 +1,23 @@
-export default{
-    'combine-curves': 'Combine curves',
-    
+export default {
+  'delete': 'Delete',
+  'channel-subset': 'Channel subset',
+  'insert': 'Insert',
+  'new': 'New',
+  'exchange': 'Exchange',
+  'copy': 'Copy',
+  'add': 'Add',
+  'subtract': 'Subtract',
+  'multiply': 'Multiply',
+  'divide': 'Divide',
+  'copy-magnitude': 'Copy magnitude',
+  'copy-phase': 'Copy phase',
+  'average': 'Average',
+  'add-magnitude': 'Add magnitude',
+  'substract-magnitude': 'Substract magnitude',
+  'multiply-magnitude': 'Multiply magnitude',
+  'divide-magnitude': 'Divide magnitude',
+  'average-magnitude': 'Average magnitude',
+  'combine-curves': 'Combine curves',
+  'cross-correlation': 'Cross correlation',
+  'coherence': 'Coherence',
 }

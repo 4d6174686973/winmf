@@ -1,51 +1,53 @@
 # Integrated Impulse Response Processing
 
-In diesem Menü werden die Parameter verwaltet, um nach ISO 3382 eine Berechnung der Nachhallzeit durchzuführen. Das Verfahren basiert auf Auswertungen der rückwärts integrierten Impulsantwort (IIR).
+This menu handles the parameters used to calculate reverberation times according to ISO 3382. The procedure is based on the analysis of the reverse-time integrated impulse response (IIR).
+
 ## Two-channel Impulse Response
 
-Folgender Plot zeigt die Messung einer zweikanaligen Impulsantwort, die mit einem Dodekaeder in einem Hallraum gemessen wurde. Das Anregungssignal der Messung war ein Sweep.
+The following plot shows a two-channel impulse response measurement, recorded in a reverberation chamber using a dodecahedron loudspeaker and a sweep signal for excitation.
 
 ![revch1_1_2](/revch1_1_2.png)
 
-Für die weitere Auswertung ist zunächst zu definieren, welcher Bereich der Impulsantwort in der Auswertung berücksichtigt werden soll. Dazu muss unter Select region der gewünschte Bereich angegeben werden. Der Endzeitpunkt der Auswertung sollte mit Bedacht gewählt werden. Der Impuls muss sauber in den Noisefloor übergehen, um eine automatische Detektion desselben zu ermöglichen. Außerdem sollte der Noisefloor nicht durch Verzerrungen der Signalkette, speziell dem Lautsprecher, gestört sein. Bei Messungen mit Sweeps finden sich Verzerrungsanteile am Ende der Impulsantwort wieder. Im Plot oben ist das am ansteigenden Verlauf ab ca. 16s zu erkennen.
+For any further evaluation at first the segment of the impulse response to be considered in the processing needs to be determined. For this the respective region is selected under [Select region](/help/edit/region-control). The endpoint for the evaluation should be chosen carefully. The impulse has to merge neatly into the noise floor, in order to enable an automatic detection of that very noise floor. Furthermore the noise floor should not be polluted by distortions in the signal chain, especially from the loudspeaker. When using sweeps for measurements, the distortion artefacts appear at the end of the impulse response. In the plot above this is found in the rising slope setting in at around 16s.
 
 ## Impulse Start
 
-Für die Wahl des Startzeitpunktes der Auswertung sollte man vorsichtshalber auch den Impulsstart (s. nächster Plot) begutachten und entscheiden ob Störungen vorliegen, die die automatische Detektion des Impulsstartes durcheinander bringen könnten. Evt. ist dann das Signal zu bearbeiten oder ein geeigneter Startzeitpunkt zu wählen. Für eine sichere Detektion sind mindestens 25dB Dynamik am Impulsstart notwendig. Sollten vor dem Impulsstart erhebliche Störungen vorliegen und diese wegen eines Versagens von Start detect der Integration zugeführt werden, dann können insbesondere die Werte für EDT und T10 verfälscht sein.
+To be on the safe side, also the impulse start (see next plot) should be examined more closely when setting the starting point in order to identify disturbances that could affect the automatic detection of the impulse start. In that case the signal might have to be edited or an adapted starting point would have to be chosen. For a safe detection of the impulse start its dynamic range has to be at least 25dB. If there are major disturbances present before the impulse start and if through failure of `Start detect` they are included in the integration, then especially the results for EDT and T10 might be falsified.
 
 ![revch1_1_2_irstart](/revch1_1_2_irstart.png)
 
 ## Processing Options
 
-Unter Processing options sind folgende Einstellungen möglich:
+Under `Processing` options the following options are to be configured:
 
 import { Tabs } from 'nextra/components'
  
 <Tabs items={['IR start detect', 'Thr. rel max [dB]', 'Scan band', 'IR end detect', 'Tailcut compensation']}>
-  <Tabs.Tab>**IR start detect**: Benutzung der automatischen Detektion des Impulsstartes.</Tabs.Tab>
-  <Tabs.Tab>**Thr. rel max [dB]** definiert den Impulsstart relativ zum Maximum der Impulsantwort in dB für IR start detect; wenn die threshold auf -20dB steht, dann wird der Impulsstart beim ersten Überschreiten des globalen Maximums abzüglich 20dB vor dem Maximum der Impulsantwort gefunden.</Tabs.Tab>
-  <Tabs.Tab>**Scan band:** bei each wird nach Filterung der Impulsantwort der Impulsstart für jedes Band getrennt ermittelt und für weitere Auswertungen verwendet; bei highest only wird nur das Band mit der höchsten Frequenz für die Ermittlung des Impulsstartes verwendet</Tabs.Tab>
-  <Tabs.Tab>**IR end detect** ermittelt automatisch den Übergang der gefilterten IR in den Noisefloor</Tabs.Tab>
-  <Tabs.Tab>**Tailcut compensation** kompensiert den Fehler, der durch die endliche Integrationslänge am Ende der IIR entsteht (Abschmieren der IIR kurz vor dem Noisefloor) nach ISO 3382-1, Abschnitt 5.3.3.</Tabs.Tab>
+  <Tabs.Tab>**IR start detect**: Use of automatic detection of impulse response start.</Tabs.Tab>
+  <Tabs.Tab>**Thr. rel max [dB]** defines the impulse response start relative to the maximum of the impulse response in dB for `IR start detect`; if the threshold is set to -20dB, the impulse response start is being found at the point in time before the actual impulse peak, where the response exceeds the global impulse maximum minus 20dB.</Tabs.Tab>
+  <Tabs.Tab>**Scan band:** If set to `each`, after filtering the impulse response, for each frequency band the IR start detection is carried out and used for further processing; if set to `highest only`, only for the highest frequency band the detection is carried out.</Tabs.Tab>
+  <Tabs.Tab>**IR end detect** sutomatically identifies the point in time, where the filtered IR merges into the noise floor.</Tabs.Tab>
+  <Tabs.Tab>**Tailcut compensation** compensates the error caused by the finite integration time at the end of the IIR (dropping of IIR close to the noise floor) according to ISO 3382-1, chapter 5.3.3.</Tabs.Tab>
 </Tabs>
 
-## Noise sustraction parameters
+## Noise subraction parameters
 
-Unter Noise subtraction können einige Parameter definiert werden, um aus einem bestimmten Teil der Impulsantwort eine Schätzung des RMS-Wertes des Noise zu gewinnen.  Dieser wird dann vor Integration von der Impulsantwort abgezogen, um die Berechnungsgenauigkeit der Nachhallzeit zu erhöhen.
+`Noise subtraction` contains several parameters to be specified for estimating the RMS-value of the noise. This is subtracted from the impulse response before the integration in order to increase the accuracy for the calculation of decay times.
+
 
 <Tabs items={['Noise subtraction', 'Noise detect', 'Take RMS from', 'Noise length [%]']}>
-<Tabs.Tab>**Noise subtraction:** wenn es aktiviert ist, erfolgt die Subtraktion der Rauschspannung</Tabs.Tab>
-<Tabs.Tab>**Noise detect:** ermittelt die Rauschspannung aus dem Bereich, der durch die Parameter Take RMS from und Noise length definiert wird. Ist Noise detect deaktiviert, dann kann in das Feld Noise RMS eine Spannung eingetragen werden</Tabs.Tab>
-<Tabs.Tab>**Take RMS from:** head übernimmt den Noise dem Bereich vor dem Impulsstart, tail vom Bereich hinter dem Übergang der Impulsantwort in den Noisefloor, lowest segment wählt den Bereich mit dem niedrigsten Noise</Tabs.Tab>
-<Tabs.Tab>**Noise length [%]:** wählt die Länge des auszuwertenden Noisefloor prozentual zu der Länge des jeweiligen Bereichs. Ist zum Beispiel der Noise tail 10s lang, dann ist der Bereich für die RMS-Berechnung des Noise die erste Sekunde, wenn Noise length auf 10% steht</Tabs.Tab>
+<Tabs.Tab>**Noise subtraction:** if activated, the subtraction of the noise voltage is being applied.</Tabs.Tab>
+<Tabs.Tab>**Noise detect:** determines the noise voltage from the region defined by the parameters `Take RMS from` and `Noise length`. If `Noise detect` is deactivated a value for the noise voltage can be entered manually in `Noise RMS`.</Tabs.Tab>
+<Tabs.Tab>**Take RMS from:** `head` examines the noise in the region before the impulse start, `tail` looks behind the transition region after the impulse response; `lowest segment` finds the region with the lowest noise level.</Tabs.Tab>
+<Tabs.Tab>**Noise length [%]:** defines the length of the noise floor segment to be evaluated as a percentage of the respective region. E.g. if the noise tail is 10s long, and ``noise length`` is set to 10%, then the first second of the tail is evaluated to obtain the RMS-value of the noise.</Tabs.Tab>
 </Tabs>
 
-Unter Filter Options können die Impulsantworten nach DIN EN 61260 in Bruchteilen von Oktaven gefiltert werden.
+`Filter Options` allow fractional octave filtering of the impulse responses according to DIN EN 61260.
 
 ## Decay Time Analysis
 
-Nach Start der Berechnung mit OK wechselt das Display in den Bereich Int. impulse response. Dort können dann die eigentlichen Auswertungen der Nachhallzeit durchgeführt werden. Der folgende Plot zeigt die IIRs einer  in Oktaven  ausgewerteten zweikanaligen Messung.
+After starting the calculation by `OK`, the display switches to Int. impulse response domain. Here the actual decay time analysis can be performed. The following plot shows IIRs of a two-channel measurement evaluated in octaves.
 
 ![revch1_1_2_irstart_iir](/revch1_1_2_irstart_iir.png)
 
-Wenn es während der Berechnung zu Fehlern gekommen ist, weil zum Beispiel aufgrund eines zu geringen SNR der Noise start nicht detektiert werden konnte, dann erscheint ein Fenster, das die Fehler listet. Je nach Art der Meldung können durch günstige Start und Endwerte des Berechnungsbereichs (unter Select region) Fehler im Processing vermieden werden.
+If errors occur during the calculations, for example when the noise start could not be identified due to insufficient SNR, a window appears listing the errors. Depending on the kind of indication, processing errors can be avoided by suitable adjustments of starting and end points for the region to be evaluated ([Select region](/en/help/edit/region-control)).

@@ -1,0 +1,35 @@
+# Edit extended comment
+
+This menu edits and creates multiline comments.
+
+The comments can be saved using  [File/Save extended comment](/en/help/file/save-extended-comment) as txt-file.
+
+The visibility in the display is controlled by the checkbox ``Comm...`` (near the checkbox for legend)(shortcut c). Clicking the comment activates edit mode, clicking outside stops editing. The comment is stored in the header of the file and is reproduced exaxtly when loading the file.
+
+![example1](/example1.png)
+
+Detail settings are controlled via this menu (``Edit/Header/Edit extended comment``).
+
+![example2](/example2.png)
+
+``Mode`` switsches between ``Edit header`` and ``Set header``. ``Edit header`` edits the comment settings stored in the file header. ``OK`` overwrites the header, ``Cancel`` not.
+
+``Set header`` overwrites the comment and settings by the settings stored in the menu. ``Ok`` overwrites the data in the menu and the header. This mode allows the use in macro processes to store information in a structured way, by using a default text in the menu.
+
+The ``position`` of the comment is relative to the lower left corner of the plot axes, e.g. lower left corner is 0,0, upper right corner is 1,1. Placing the text outside the axes requires values smaller as 0 or larger as 1. This can be useful to place text outside when plotting figures.
+
+``visible in plot`` controls the use in plots
+
+``visible in display`` controls visibility in the display of WinMF
+
+``Font size``: text size in dpi
+
+``Text color``: text color
+
+``Backgr. Color``: background color, none ist transparent
+
+``Interpreter``: the text interpreter. Tex can be used for normal text and text together with symbols (like greek letteres) as well as for simple mathematical formulas. (See as example the figure above). Z_\{min\} makes a lower "min" and \Omega makes the greek letter as symbol for "Ohm". See also [LaTeX-Kompendium:_Control characters](https://de.wikibooks.org/wiki/LaTeX-Kompendium:_Sonderzeichen).
+
+``Latex`` can be used for complex formulas (sums, integrals etc.), but the quality of the output is not as high as when using the other interpreters and sometimes symbols are misplaced, depending also on the font size. Latex sequences begin with \$\$ and are closed with \$\$.
+
+``Text`` is simply text.
