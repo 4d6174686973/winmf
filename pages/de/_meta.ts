@@ -2,15 +2,15 @@ export default {
   // Pages
   index: 'Home',
   distribution: {
-    title: 'Distribution',
+    title: 'Vertrieb',
     type: 'page'
   },
   imprint: {
-    title: 'Imprint',
+    title: 'Impressum',
     type: 'page'
   },
   privacy: {
-    title: 'Privacy Policy',
+    title: 'Datenschutz',
     type: 'page'
   },
 
@@ -19,6 +19,6 @@ export default {
   'supported-hardware': 'Supported Hardware',
   help: 'Help',
   'first-steps': 'First Steps',
-  licensing: 'Licensing',
-  'system-requirements': 'System Requirements'
+  licensing: 'Lizensierung',
+  'system-requirements': 'Systemanforderungen'
 }
