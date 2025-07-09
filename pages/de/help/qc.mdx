@@ -1,31 +1,31 @@
 # Quality Control (QC)
 
-The QC module allows to perform complex quality control tasks. Neither programming skills nor the writing of scripts are required. The programming of the QC process is done by recording and playing WinMF macros.
+Das QC-Modul ermöglicht es komplexe Aufgaben in der Qualitätssicherung umzusetzen. Dabei sind keine Programmierkenntnisse oder das Schreiben eines Skriptes notwendig. Die "Programmierung" des QC-Prozesses erfolgt genaus so einfach wie die Aufzeichnung und Wiedergabe eines Makros mit WinMF.
 
-## Essentials QC functions
+## Grundlagen zum QC-Menü
 
-The [process control](/en/help/qc/process-control) is the key function in the QC menu. It manages the playback of QC macros, the administration of paths and file names and serial numbers. A new folder is created for every QC process containing the measurements and evaluations as well as a corresponding Excel file. The Excel file holds a production log and a QC sheet. All events of the QC process, the current date, the serial number of the device under test and the name of the tester are recorded in the production log. The QC sheet contains the results of all evaluations such as the tolerance check, indicates limit violations and states if the test was passed or failed.
+Hauptfunktion des QC-Menüs ist der Prozess-Kontroller [Process control](/de/help/qc/process-control), der das Abspielen des QC-Makros, die Verwaltung der Pfade, Dateinamen und die Einbindung einer Seriennummer in Dateinamen übernimmt. Für jeden QC-Process wird ein eigener Ordner für die Messungen, Auswertungen und eine Excel-Tabelle angelegt. Die Excell-Tabelle enthält zwei Sheets, Production log und QC. Im Production log werden alle Aktionen des QC-Processes gelistet, sowie das aktuelle Datum, die Seriennummer des Prüflings und der Name des QC-Testers. Auf dem Blatt QC werden alle Auswertungen, also Prüfung auf Toleranzschläuche, Verletzung von Limits und sonstige Tests im Detail gelistet. Für jeden Test wird außerdem Auskunft gegeben ob der Test bestanden wurde (Passed) oder nicht (Failed).
 
-The QC modules enables the per channel selection of upper and lower limits for the evaluation parameters ([statistics](/en/help/info/statistics), [STI](/en/help/info/sti-impuse-response-und-stipa), [distortion](/en/help/info/distortion)) in the info windows. The menu entry "show limits" in the "select" menu of the info windows enables this feature. Calling an info window with activated limits during the QC process triggers the check of all limits and the related evaluation in the QC sheet.
+Wenn das QC-Modul freigeschaltet ist, können in allen Info-Fenstern ([Statistics](/de/help/info/statistics), [STI](/de/help/info/sti-impuse-response-und-stipa), [Distortion](/de/help/info/distortion), etc.) für jeden auszuwertenden Parameter kanalweise obere und untere Limits verwaltet werden. Dazu muss im Select-Menü des Info-Fensters  "Show limits" aktiviert werden. Wird ein Info-Fenster mit aktivierten Limits im QC-Prozess aufgerufen, so werden alle Limits kontrolliert und das Ergebnis in der QC-Tabelle auf dem Blatt QC ausgewertet.
 
-Furthermore, the QC menu provides additional functions for the process control, the tolerance check and the automated learning of tolerance bands.
+Darüber hinaus werden im QC-Menü weitere Funktionen zur Prozesssteuerung, Toleranzkontrolle und automatischen Anlernung von Toleranzschläuchen zur Verfügung gestellt.
 
-All QC functions are available in the frequency domain window. In the time domain window the QC menu is reduced to the functions "set current file name", "check tolerance" and "learn tolerance". All functions are applied to the current signal.
+Der QC-Prozess wird vom Frequenzbereichsfenster aus gesteuert. Hier sind alle Funktionen im QC-Menü enthalten. Das QC-Menü im Zeitbereich enthält nur die Funktionen ``Set current filename``, ``Check tolerance`` und ``Learn tolerance``, die beim Aufrufen auf das gerade im Speicher befindliche Signal angewendet werden.
 
-## Other QC functions
+## Weitere Funktionen im QC-Menü
 
-[Check tolerance](/en/help/qc/check-tolerance) and [learn tolerance](/en/help/qc/learn-tolerance) control the per channel learning and checking of tolerances. In the frequency domain the limits are applied to the modulus, in the time domain to the amplitude. Possible frequency domain applications are the monitoring of impedance frequency responses, distortion or the sensitivity of transducers. An application in the time domain is a polarity check by means of evaluating the impulse response.
+Die Funktionen [Check tolerance](/de/help/qc/check-tolerance) und [Learn tolerance](/de/help/qc/learn-tolerance) erlauben es kanalweise Toleranzen anzulernen und im QC-Process auszuwerten. Die Anwendung bezieht sich im Frequenzbereich auf den Amplitudengang und im Zeitbereich auf die Amplitude. Damit können z.B. Frequenzgänge von Impedanzen, Verzerrungskurven oder Sensitivities von Lautsprechern überprüft werden. Mögliche Anwendung im Zeitbereich ist die Polaritätskontrolle über eine Auswertung der Impulsantwort.
 
-[Set current file name](/en/help/macro/set-current-filename) controls the QC process file name.
+[Set current filename](/de/help/macro/set-current-filename) ermöglicht eine erweiterte Kontrolle über den gerade verwendeten Dateinamen.
 
-[Write string to Excel cell](/en/help/qc/write-string-to-excel-cell) writes a string to the QC sheet, allowing for free comments on the QC process.
+[Write string to Excel cell](/de/help/qc/write-string-to-excel-cell) schreibt in die QC-Tabelle einen String. Diese Funktion kann z.B. zur Einbindung von Kommentaren in den QC-Process verwendet werden.
 
-[User input](/en/help/qc/user-input) forces an interaction with the user. An image may be displayed to illustrate a procedure. The QC process is suspended during the interaction and the user input will be recorded in the QC sheet.
+[User input](/de/help/qc/user-input) erzwingt eine Interaktion mit dem Benutzer. Dabei kann auch ein Bild angezeigt werden, um z. B. dem Benutzer eine Erläuterung eines Arbeitsschrittes anzuzeigen. Der QC-Prozess ist unterbrochen, bis der Benutzer die erforderliche Eingabe gemacht hat. Das Ergebnis der Eingabe wird in der QC-Tabelle erfasst.
 
-[Relay card 1977xx](/en/help/qc/relais-card-1977xx) controls Conrad Electronic relay cards with the order code 1977xx.
+[Relay card 1977xx](/de/help/qc/relais-card-1977xx) steuert die von Conrad Electronic vertriebenen Relaiskarten mit den Bestellnummern 1977xx an.
 
-[Wait seconds](/en/help/qc/wait-seconds) suspends the QC process for a given number of seconds.
+[Wait seconds](/de/help/qc/wait-seconds) unterbricht den Prozess um die angegebenen Sekunden.
 
-## Individual QC functions
+## Individuelle Menüs
 
-Individual functions for tasks such as firmware updates for the device under test or the programming of set-ups can be implemented on demand.
+Spezialfunktionen, wie Firmware updates auf der zu prüfenden Hardware, Programmierung von Setups, etc., können bei Bedarf implementiert werden.
