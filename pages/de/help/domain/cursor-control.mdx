@@ -1,19 +1,23 @@
-# Cursor control
+# Cursorsteuerung
 
-There are two cursors in each of the two main windows. The active cursor is yellow, the inactive one is red. In order to control the cursors, the window in question needs to be activated by clicking on it. Usually the cursors are initially located at the left and right edge of the diagram, where they might be invisible.
+![anzeigebereich](/anzeigebereich.png)
 
-The active cursor (yellow) can be shifted by the arrow left and arrow right keys. The combinations shift + arrow left and shift + arrow right do the same with an increased step width. The cursors can also be grabbed and moved with the mouse (left mouse button).
+Es gibt zwei Cursor pro Darstellungsfenster. Der aktive Cursor ist dabei gelb, der inaktive rot. Um die Cursor steuern zu können, muss der Fokus zunächst durch Anklicken mit der Maus auf die Grafikanzeige des entsprechenden Fensters gesetzt werden. Die Cursor stehen dabei im Allgemeinen zunächst am rechten und linken Rand des Anzeigebereichs, wo sie evt. nicht sichtbar sind.
 
-## Activation of Cursors
+Der gerade aktive (also gelbe) Cursor kann mit Pfeil links bzw. Pfeil rechts verschoben werden. Durch Shift + Pfeil links bzw. Shift + Pfeil rechts erfolgt die Verschiebung in größeren Schritten. Die Cursor können auch mit der Maus gegriffen (linke Maustaste) und verschoben werden.
 
-The right cursor is activated by pressing the key r, the left cursor by pressing the key l. Switching is done with the space key.
+## Aktivierung eines Cursors
 
-## Readout of Sample Values
+Der rechte Cursor kann durch Drücken der Taste r, der linke durch Drücken der Taste l aktiviert werden. Umschalten ist mit der Leertaste möglich.
 
-The values at the left cursor are displayed under ``Cursor 1``, the values at the right cursor under ``Cursor 2``. The Index values represent a consecutive numbering of the curve points, meaning the sample number in the time signal or in the frequency raster. Under ``Cursor 1-2`` the difference between the two values is displayed, which is the number of samples between the cursors.
+## Ablesen von Werten
 
-The row underneath shows the curve's x-value at the cursor positions. In the time domain this is the time counted from the beginning of the signal, in the frequency domain it is the frequency value. The difference between the values of ``Cursor 1`` and ``Cursor 2`` again is displayed under ``Cursor 1-2``.
+![ablesewerte](/ablesewerte.png)
 
-The row labelled V (Voltage) shows the y-value of the curve at cursor position. This can represent for instance voltage or sound pressure, depending on what has been chosen under ``AD/DA`` / ``Frontend setup`` / ``Sensortype`` before the measurement. Under cursor again the difference of the y-values is to be found.
+Die Werte am linken Cursor können unter Cursor 1, die Werte am rechten Cursor unter Cursor 2 abgelesen werden. Dabei beschreibt Index die durchlaufende Nummer des Kurvenstützpunktes. Dies ist im Zeitbereich die Nummer des Samples, im Frequenzbereich die des Frequenzstützpunktes. Unter Cursor 1-2 kann die Differenz der beiden Werte, also hier die Anzahl der Punkte zwischen den Cursorn, abgelesen werden.
 
-In the row labelled *dB* the y-value is given in dB, once for each cursor and the difference of both in the middle.
+In der folgenden Zeile kann der X-Wert der Kurve am Cursor abgelesen werden. Im Zeitbereich ist dies die Zeit ab Beginn des Signals, im Frequenzbereich die Frequenz. Die Differenz der beiden Werte an Cursor 1 und 2 kann wieder unter Cursor 1-2 abgelesen werden.
+
+In der Zeile V (Voltage) kann der Y-Wert der Messkurve abgelesen werden. Dies kann zum Beispiel eine Spannung oder ein Schalldruck sein, je nachdem, was bei der Messung unter AD/DA / Frontend setup / Sensortype angegeben wurde. Unter Cursor 1-2 steht wieder die Differenz der Y-Werte an beiden Cursorn.
+
+In der Zeile dB wird der Y-Wert in dB angegeben, jeweils am linken, rechten und als Differenz zwischen den Cursorn.

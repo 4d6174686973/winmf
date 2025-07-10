@@ -1,68 +1,66 @@
 # Shortcuts
 
-Shortcuts are allocated keys or key combinations, which directly trigger commands and thus speed up and simplify the handling of WinMF. There are shortcuts invoked by single keys as well as combinations involving the Shift-, Ctrl- or Alt-keys.
+Shortcuts sind Tastaturbefehle oder Tastenkombinationen, die unmittelbar einen Befehl aufrufen und so die Bedienung von WinMF beschleunigen und vereinfachen. Es gibt Shortcuts, die mit einer einzelnen Taste aufgerufen werden, sowie Kombinationen mit den Tasten ``Shift (Umschalt-)``, ``Ctrl (Strg)`` oder ``Alt``.
 
-All shortcut operations can also be selected conventionally by mouse in the corresponding menus.
-Shift-0
+Alle Shortcut-Befehle können auch konventionell mit der Maus in den entsprechenden Menüs aufgerufen werden.
 
 | Shortcut              | Description   |
 | :------------         | :------------ |
-| ``Shift-0``           | Pulls the cursors to the position of the active cursor. (on German keyboards: ``=``) |
-| ``1``, ``2``... ``9`` | The number keys activate the corresponding channel, presuming it is present. |
-| ``+``                 | Zooms into the region around the active cursor. |
-| ``-``                 | Zooms out of the region around the active cursor. |
-| ``*``                 | Activates the channel with the subsequent number (cyclic). |
-| ``/``                 | Activates the channel with the subjacent number (cyclic). |
-| ``Shift-1``           | Shifts the magnitudes of all channels in the frequency domain in such a way, that they have the same value at the active cursor position as the active channel. The phases are not modified. (On German keyboards: ``!``) |
-| ``Delete``            | Delete (on German keyboards: ``Entf``) deletes the active channel without further confirmation. |
-| ``Shift-Delete``      | (on German keyboards: ``Umschalt-Entf``) invokes the operation Delete region in the time domain, that zeroes parts of the active channel. |
-| ``Insert``            | Insert (on German keyboards: ``Einf``) invokes the operation Edit-Read file, which loads additional channels from existing files. |
-| ``Escape``            | Terminates the current measurement or the execution of a macro. |
-| ``Space``             | Activates the inactive cursor. |
-| ``Tab``               | The active cursor is shifted in such a way, that the distance between the cursors (Index values) reaches the next power of 2. The field Cursor 1-2 / Index now shows the value 2^n-1. (Exp. to 2^n) |
-| ``Shift-Tab``         | The active cursor is shifted in such a way, that the distance between the cursors (Index values) is reduced to the next power of 2. The field Cursor 1-2 / Index now shows the value 2^n-1. (Red. to 2^n) |
-| ``Arrow up`` / ``Arrow down`` | Modifies the display range in the active window. In amplitude diagrams the display range is expanded / compressed around the 0-line; in logarithmic diagrams the entire displayed range is shifted up or down respectively. |
-| ``Shift-Arrow up`` / ``Shift-Arrow down`` | Modifies the display range in the active window. In amplitude diagrams the displayed range including the 0-line is shifted up or down respectively; in logarithmic diagrams the range is expanded / compressed. |
-| ``Arrow right`` / ``Arrow left`` | Moves the active cursor in the corresponding direction. Combined with Ctrl- the operation is sped up. |
-| ``a``                 | Switches between the display modes showing either the active channel only or all channels at once. |
-| ``Alt-a``             | Opens the AD/DA menu. |
-| ``c``                 | Toggles visbility of the extended comment. |
-| ``Shift-c``           | Moves the active cursor to the center of the displayed area. |
-| ``d``                 | Calls the menu Display range. |
-| ``Ctrl-d``            | Sets the readfilepath to the actual filepath. |
-| ``e``                 | Expands the display of the active window to the entire time resp. frequency range. The cursors keep their positions. |
-| ``Shift-e``           | Expands the display of the active window to the entire time resp. frequency range. The cursors are shifted to edges of the diagram. |
-| ``Alt-e``             | Opens the Edit menu. |
-| ``f``                 | In the time domain ``f`` invokes the operation Transform-FFT. |
-| ``Alt-f``             | Opens the File menu. |
-| ``i``                 | In the frequency domain ``i`` invokes the operation Transform-IFFT. |
-| ``Ctrl-i``            | In the frequency domain ``Ctrl-i`` switches the display to the imaginary part with linear scaling. |
-| ``Alt-i``             | Opens the Info menu. |
-| ``j``                 | Sets the active cursor to the minimum of all channels. |
-| ``Shift-j``           | Sets the active cursor to the minimum of the active channel. |
-| ``k``                 | Editing of the comment. |
-| ``l``                 | Activates the left cursor. |
-| ``Ctrl-l``            | In the frequency domain ``Ctrl-l`` switches the display to Group delay. |
-| ``m``                 | Sets the active cursor to the maximum of all channels. |
-| ``Shift-m``           | Sets the active cursor to the maximum of the active channel. |
-| ``Ctrl-m``            | In the frequency domain ``Ctrl-m`` switches the display to Level (magnitude). |
-| ``n``                 | Opens the channel visibility menu and sets the focus to the input of the active channel number. |
-| ``o``                 | Switches the function cursor lock on and off. When activated, the function keeps a constant distance between the two cursors; they can then only be shifted in parallel. |
-| ``Alt-o``             | Opens the Domain menu. |
-| ``p``                 | Opens the menu Plot/Plotting. |
-| ``Ctrl-p``            | In the frequency domain ``Ctrl-p`` switches the display to Phase. |
-| ``q``                 | Invokes the function save and plot. |
-| ``r``                 | Activates the right cursor. |
-| ``Ctrl-r``            | In the frequency domain ``Ctrl-r`` switches the display to the real part with linear scaling. |
-| ``Alt-r``             | Opens the Macro menu. |
-| ``s``                 | Opens the filebrowser for saving a file |
-| ``Ctrl-s``            | Invokes the function save. |
-| ``t``                 | Shifts the display of the active window in such a way, that the maximum of the visible channels is located at the upper edge of the diagram. |
-| ``Shift-t``           | Switches the display between Amplitude and Level in the time domain, and between Level and RMS in the frequency domain. |
-| ``Ctrl-t``            | Activates the time domain window. |
-| ``Alt-t``             | Opens the Transform menu. |
-| ``w``                 | Opens the filebrowser to load a file |
-| ``x``                 | Zooms the display to the range between the cursors. |
-| ``y``                 | Modifies the range of the display in such a way, that all channels are just about entirely visible. |
-| ``Shift-y``           | Switches the display between Amplitude and Level in the time domain, and between Level and RMS in the frequency domain. |
-| ``Alt-y``             | Opens the Display menu. |
+| ``Shift-0``           | (auf deutschen Tastaturen ``=``) Zieht die beiden Cursor an der Position des aktiven Cursors zusammen. |
+| ``1``, ``2``... ``9`` | Die Zifferntasten aktivieren den entsprechenden Kanal, sofern dieser Kanal vorhanden ist. |
+| ``+``                 | Vergrößert den Bereich um den aktiven Cursor (zoom in). |
+| ``-``                 | Verkleinert den Bereich um den aktiven Cursor (zoom out). |
+| ``*``                 | Aktiviert den Kanal mit der nächsthöheren Nummer (zyklisch). |
+| ``/``                 | Aktiviert den Kanal mit der nächstniedrigeren Nummer (zyklisch). |
+| ``Shift-1``           | (auf deutschen Tastaturen ``!``) Verschiebt im Frequenzbereich die Beträge aller Kanäle derart, dass sie an der Stelle des aktiven Cursors den gleichen Wert wie der aktive Kanal aufweisen. Die Phase bleibt hiervon unberührt. |
+| ``Delete``            | (auf deutschen Tastaturen ``Entf``) löscht (ohne weitere Bestätigung) den aktiven Kanal. |
+| ``Shift-Delete``      | (auf deutschen Tastaturen ``Umschalt-Entf``) ruft im Zeitbereich den Befehl [Delete region](/de/help/edit/delete-region) auf, der Teile aus dem aktiven Kanal zu Null setzt. |
+| ``Insert``            | (auf deutschen Tastaturen ``Einf``) ruft den Befehl [Edit-Read file](/de/help/edit/read-file) auf, der weitere Kanäle aus vorhandenen Dateien dazu lädt. |
+| ``Escape``            | Beendet die aktuelle Messung oder die Ausführung eines [Macros](/de/help/macro/macro). |
+| ``Space``             | (Leerzeichen) schaltet den inaktiven Cursor aktiv. |
+| ``Tab``               | Verschiebt den aktiven Cursor derart, dass der Abstand der Cursor (Indexwert) die nächst größere Potenz von 2 erreicht. Im Feld Cursor 1-2 / Index wird der Wert 2^n-1 angezeigt. (Exp. to 2^n) |
+| ``Shift-Tab``         | Verschiebt den aktiven Cursor derart, dass der Abstand der Cursor (Indexwert) die nächst kleinere Potenz von 2 erreicht. Im Feld Cursor 1-2 / Index wird der Wert 2^n-1 angezeigt. (Red. to 2^n) |
+| ``Pfeil oben`` / ``Pfeil unten`` | Verändert den Darstellungsbereich des aktiven Displays. Bei Amplitudendarstellungen wird der Darstellungsbereich um die 0-Linie gespreizt / gestaucht, bei logarithmischen Darstellungen wird der gesamte angezeigte Bereich nach oben bzw. unten verschoben. |
+| ``Shift-Pfeil oben `` / ``Shift-Pfeil unten`` | Verändert den Darstellungsbereich des aktiven Displays. Bei Amplitudendarstellungen wird der Darstellungsbereich mit der 0-Linie nach oben bzw. unten verschoben,  bei logarithmischen Darstellungen wird der angezeigte Bereich gespreizt / gestaucht. |
+| ``Pfeil rechts`` / ``Pfeil links`` | Bewegt den aktiven Cursor nach rechts bzw. links. Zusammen mit Ctrl. wird diese Bewegung beschleunigt. |
+| ``a``                 | Schaltet die Anzeige um zwischen der Darstellung aller Kanäle und der Darstellung nur des aktiven Kanals. |
+| ``Alt-a``             | Öffnet das Menü ``AD/DA``. |
+| ``c``                 | macht den erweiterten Kommentar sichtbar/unsichtbar. |
+| ``Shift-c``           | Bewegt den aktiven Cursor zur Mitte des gerade dargestellten Bereichs |
+| ``d``                 | ruft das Menü [Display range](/de/help/display/display-range) auf |
+| ``Ctrl-d``            | Setzt den readfilepfad auf den aktuellen filepfad |
+| ``e``                 | Zeigt im aktiven Display den kompletten Zeit- bzw. Frequenzbereich an. Die Cursor bleiben dabei an ihrer Position. |
+| ``Shift-e``           | Zeigt im aktiven Display den kompletten Zeit- bzw. Frequenzbereich an. Die Cursor werden dabei auf die Außenpositionen gesetzt. |
+| ``Alt-e``             | Öffnet das Menü ``Edit``. |
+| ``f``                 | Führt im Zeitbereich den Befehl [Transform-FFT](/de/help/transform/fft) aus. |
+| ``Alt-f``             | öffnet das Menü ``File``. |
+| ``i``                 | Führt im Frequenzbereich den Befehl [Transform-IFFT](/de/help/transform/ifft) aus. |
+| ``Ctrl-i``            | Zeigt im Frequenzbereich den Imaginärteil in linearer Darstellung an. |
+| ``Alt-i``             | Öffnet das Menü ``Info``. |
+| ``j``                 | Setzt den aktiven Cursor auf das Minimum aller Kanäle. |
+| ``Shift-j``           | Setzt den aktiven Cursor auf das Minimum des aktiven Kanals.|
+| ``k``                 | Editieren des Kommentars. |
+| ``l``                 | Macht den linken Cursor aktiv. |
+| ``Ctrl-l``            | Schaltet das Frequenzfenster auf die Darstellung Group-delay um. |
+| ``m``                 | Setzt den aktiven Cursor auf das Maximum aller Kanäle. |
+| ``Shift-m``           | Setzt den aktiven Cursor auf das Maximum des aktiven Kanals. |
+| ``Ctrl-m``            | Schaltet das Frequenzdisplay auf Levelanzeige (Magnitude). |
+| ``n``                 | Öffnet das Menü Channel visibility und setzt den Fokus auf die Eingabe für den aktiven Kanal. |
+| ``o``                 | Schaltet die Funktion ``Cursor lock`` ein bzw. aus. Bei aktiviertem ``Cursor lock`` bleibt der Abstand der beiden Cursor stets gleich. Wird der aktive Cursor verschoben, so verschiebt sich der inaktive Cursor entsprechend. |
+| ``Alt-o``             | Öffnet das Menü ``Domain``. |
+| ``p``                 | Öffnet das Menü ``Plot/Plotting``. |
+| ``Ctrl-p``            | Schaltet das Frequenzdisplay auf Phasenanzeige. |
+| ``q``                 | ruft die Funktion ``save and plot`` auf. |
+| ``r``                 | Macht den rechten Cursor aktiv. |
+| ``Ctrl-r``            | Zeigt im Frequenzbereich den Realteil in linearer Darstellung an. |
+| ``Alt-r``             | öffnet das Menü ``Macro``. |
+| ``s``                 | Öffnet den Filebrowser zum Abspeichern |
+| ``Ctrl-s``            | führt den Befehl [Save](/de/help/file/loadsaveimportexport) aus. |
+| ``t``                 | Verschiebt die Anzeige des aktiven Fensters derart, dass das Maximum der angezeigten Kanäle am oberen Rand des Displays angezeigt wird. |
+| ``Shift-t``           | Schaltet im Zeitbereichsfenster zwischen Amplituden- und Levelanzeige um, im Frequenzfenster zwischen Amplitude und RMS. |
+| ``Ctrl-t``            | Aktiviert das Zeitfenster. |
+| ``Alt-t``             | Öffnet das Menü ``Transform``. |
+| ``w``                 | Öffnet den Filebrowser zum Laden eines Files |
+| ``x``                 | Verändert den Darstellungsbereich des Displays derart, dass gerade alle Kanäle ganz im Display angezeigt werden. |
+| ``Shift-y``           | Schaltet im Frequenzfenster zwischen Amplituden- und Levelanzeige um, im Frequenzfenster zwischen Amplitude und RMS. |
+| ``Alt-y``             | Öffnet das Menü Display. |
