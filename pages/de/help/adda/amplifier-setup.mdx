@@ -1,9 +1,9 @@
 # Amplifier setup
 
-In the ``Amplifier setup`` the parameters of the power amplifiers used for measuring are to be set.
+Im ``Amplifier setup`` werden die Einstellungen zu den für die Messung verwendeten Endstufen vorgenommen.
 
-At first the amplifier needs to be selected as internal or external. If ``internal`` has been selected, the built-in power amplifiers of Robo2 or Robo3 are being used for measuring. For many common measurements their power is sufficient; the amplifier gains are automatically set correctly. As the output stages are physically assigned to output channels 1 and 2, they can be used for measuring only in this configuration.
+Zunächst wird zwischen internem und externem Verstärker ausgewählt.  Bei der Wahl von ``internal`` werden die im Robo2 oder Robo3 eingebauten Endstufen für die Messungen verwendet. Die Leistung reicht für viele Standardmessungen aus, die Verstärkungswerte werden automatisch richtig ausgewählt. Da die Endstufen der Robo-Frontends fest mit den Ausgangskanälen 1 und 2 verbunden sind, können sie für Messungen auch nur mit diesen verwendet werden.
 
-If other power amplifiers are to be used, ``external`` needs to be selected. Furthermore, in the [Frontend setup](/en/help/adda/frontend-setup) the values for the amplifiers in use need to be fed into the corresponding ``External power amplifiers`` fields.
+Wenn für die Messungen andere Endstufen verwendet werden sollen, wählt man ``external`` aus. Zusätzlich müssen im [Frontend setup](/en/help/adda/frontend-setup) unter ``External power amplifiers`` die entsprechenden Werte für den verwendeten Verstärker eingetragen sein.
 
-The nominal impedance of the loudspeaker connected is specified in ``Nominal impedance``. This is required for correct normalisation of measurements to 1W,1m. Furthermore, this value, the amplifier gain and the output voltage of the measuring system are used to calculate the power referenced to nominal impedance, which is fed into the speaker during the measurement. This is displayed in the ``Nom. Power [W]`` field. Vice versa, the desired power can be specified here, to which the output voltage is then adjusted correspondingly.
+Unter ``Nominal impedance`` wird die Nennimpedanz des angeschlossenen Lautsprechers eingetragen. Diese ist zum einen für die korrekte Normierung der Messung auf 1W,1m erforderlich, zum zweiten wird aus diesem Wert, dem Endstufen-Gain und der Ausgangsspannung des Messsystems die auf die Nennimpedanz bezogene Leistung berechnet, mit der der Lautsprecher während der Messung angeregt wird. Diese wird im Feld ``Nom. Power [W]`` angezeigt. Umgekehrt kann auch die gewünschte Leistung hier eingetragen werden, dann wird die Ausgangsspannung entsprechend angepasst.

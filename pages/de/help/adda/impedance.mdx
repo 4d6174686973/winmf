@@ -1,30 +1,29 @@
 # Impedance
 
-In the field of loudspeaker measurement one of the most common kinds is the impedance measurement. Among other things it provides an insight into the functioning of the speaker system and the applicable frequency range. The picture shows an example of a typical impedance curve for a bass reflex system.
+Die Impedanzmessung ist im Bereich der Lautsprechermesstechnik eine der häufigsten Messungen. Sie lässt unter anderem Rückschlüsse auf das Funktionsprinzip und den nutzbaren Frequenzbereich zu. Das Bild zeigt beispielhaft den typischen Impedanzverlauf einer Bassreflexbox.
 
 ![impredance](/impredance.png)
 
+Die Impedanzmessung verwendet die im Robo2 bzw. Robo3 vorhandene Schaltung incl. Shuntwiderstand und Verstärker. Der Lautsprecher wird einfach an einen Speakon-Ausgang angeschlossen.
 
-The impedance measurement employs the circuitry with shunt resistor and amplifier included in Robo2 resp. Robo3 frontends. The speaker is to be simply connected to a speakon output.
+Vor jeder Impedanzmessung sollte mit [Reference measurement](/de/help/adda/impedance-reference) eine Referenzmessung durchgeführt werden.
 
-Prior to each impedance measurement a [Reference measurement](/en/help/adda/impedance-reference) ought to be carried out.
+Im [Measurement setup](/de/help/adda/measurement-setup) werden grundsätzliche Einstellungen zur Messung vorgenommen, im [Exciter setup](/de/help/adda/exciter-setup) wird das Anregungssignal ausgewählt und der Pegel eingestellt.
 
-In the [Measurement setup](/en/help/adda/measurement-setup) the basic configuration for the measurement is done; using the [Exciter setup](/en/help/adda/exciter-setup) the excitation signal is selected and the measuring level adjusted.
+Im ``Impedance setup`` können Korrekturwerte für das verwendete Lautsprecherkabel eingetragen werden. Bei ``Cable R [mOhm]`` wird der gemessene oder abgeschätzte reelle Widerstand des Kabels in Milliohm eingetragen, bei ``Cable L [uH]`` die Induktivität in Mikrohenry.
 
-``Impedance processing`` takes into account correction values for the loudspeaker cable. The real resistance of the cable in milli-Ohm, measured or estimated, is to be entered in ``Cable R [mOhm]``; ``Cable L [uH]`` is the respective field for the inductance value in micro-Henry.
+Im Bereich [Processing](/de/help/adda/processing) können die Messergebnisse bearbeitet werden.
 
-[Processing](/en/help/adda/processing) configures the post-processing of measurement results.
-
-When using an external connection for the impedance measurement, the following schematic has to be used:
+Wird eine externe Beschaltung für die Impedanzmessung verwendet, dann sind die Widerstände wie folgt anzuschließen:
 
 ![ext-imp-sch](/ext-imp-sch.png)
 
-Line in should be connected symmetrically to measure the voltage over $R_S$, Gnd (XLR1) should not be connected to the amplifier.
+Der Line In sollte symmetrisch das Signal über $R_s$ abgreifen, Gnd (XLR1) sollte nicht mit der externen Endstufe verbunden werden.
 
-As reference resistor a $10 \Omega$ has to be used instead of the DTU ($Z_{load}$).
+As Referenzwiderstand muss zur Referenzmessung statt des DUT  ($Z_{load}$) 10 Ohm angeschlossen werden.
 
-$R_s = 1 \Omega$ is a suitable shunt for most applications.
+$R_s = 1 \Omega$ ist für die meisten Anwendung als Shunt eine geeignete Größe.
 
-In case of wrong cabling, the frontend can be destroyed!
+Es besteht die Gefahr bei falscher Verkabelung das Messfrontend zu zerstören!
 
 ``OK`` starts the measurement; ``Cancel`` aborts the procedure.

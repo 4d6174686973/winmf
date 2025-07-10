@@ -1,29 +1,28 @@
 # Rec
 
-Here the recording function is configured.
+Hier werden die Einstellungen für eine Aufnahme festgelegt.
 
-``Samples`` shows the number of audio samples for a measurement.
+``Samples`` zeigt die Anzahl der Audiosamples für eine Messung an.
 
-``Meas. time`` shows the measurement time.
+``Meas. time`` zeigt die Messdauer an.
 
-``FFT`` converts the number of samples into a power of two. An integer value is not mandatory in this case.
+``FFT`` rechnet die die Anzahl der Samples in eine Zweierpotenz um. Hier ist nicht erforderlich, eine ganzzahlige Zweierpotenz einzutragen.
 
-``Use preamp gains`` and ``Use sensor sensitivities`` allows considering the corresponding values from the ``Frontend setup``.
+Use ``preamp gains`` und Use ``sensor sensitivities`` erlaubt die Berücksichtigung der entsprechenden Werte im ``Frontend setup``.
 
-``Upd. rate`` defines the buffer length for audio data in samples. If for example a total of 480k samples is being measured and buffer length is 48k, then 10 buffers of 48k each will be recorded. This is relevant especially for simultaneous statistical analysis (see below). Furthermore ``Upd. rate`` refers to the updating of the plot window. If the interval is too small, the display might not update fast enough and hence will lag behind the recording.
+``Upd. rate`` legt die Bufferlänge der Audiodaten in Samples fest. Werden z. B. 480k Samples insgesamt aufgezeichnet und die Bufferlange ist 48k, dann werden insgesamt 10 Buffer je 48k aufgezeichnet. Dies spielt insbesondere eine Rolle, wenn simultane Statistikauswertungen gemacht werden (s. weiter unten).  Weiterhin bestimmt die ``Upd. rate ``auch die Aktualisierung des Plotfensters. Wenn das Intervall zu klein ist, dann kann es dazu kommen, dass die Anzeige nicht schnell genug aktualisiert wird, also der Aufnahme hinterherhinkt.
 
-``Show rec.`` defines the length of the time slot displayed.
+``Show rec.`` definiert die Länge des dargestellten Bereichs.
 
-``Record to disc`` allows recording an audio stream onto the hard disk for which Recording ``file`` specifies the corresponding file name. After selecting Recording ``file`` this name is to be edited.
+``Record to disc`` erlaubt die Aufnahme des Audio-Streams auf die Festplatte, wofür ``Recording file`` den entsprechenden Dateinamen festlegt. Nach Anwahl von ``Recording file`` kann dieser Name editiert werden.
 
 ## Statistics over time
 
-``Statistics over time`` enables the evaluation of statistical quantities over the course of the signal. Then the parameters selected via the ``Select/Select parameters`` menu are displayed as functions over time. The calculation is always performed with the resolution specified as ``update rate``. Example: The statistic quantities RMS and Leq have been selected. Update rate has been set to 48000 samples with a sample rate of 48kHz. Then the measurement results are RMS and Leq curves over time for each active input with each value referring to an interval of 1s (48kHz/48000 samples); so every second a new value is calculated. Applications of this kind of analysis are multichannel long-term monitoring of level progressions or long-term testing in electronics development. The channel assignment of the evaluation is captured in the legend automatically.
-
+``Statistics over time`` schaltet die Auswertung statistischer Größen über dem Zeitverlauf des Signals ein. Dabei werden die im Menü ``Select/Select parameters`` ausgewählten Größen als Verlauf über der Zeitachse dargestellt. Die Berechnung erfolgt dabei immer mit der Auflösung die bei ``update rate`` eingestellt wurde. Beispiel: Es wurden die statistischen Größen RMS und Leq ausgewählt. Update rate wurde auf 48000 Samples bei einer Samplerate von 48kHz festgelegt. Das Messergebnis ist dann für jeden aktiven Input ein RMS- und Leq-Verlauf über der Zeit wobei sich die berechneten Werte immer auf ein Intervall von 1s beziehen (48kHz/48000 samples), also jede Sekunde ein neuer Wert berechnet wird. Anwendungen dieser Auswertung sind vielkanalige Langzeitüberwachungen von Pegelverläufen oder Dauerversuche in der Elektronikentwicklung. Die Zuordnung der Auswertungen zu den Kanälen wird in der Legende automatisch erfasst.
 ![techno-rock-4ohm-10_power_limitv0_96_statistics_over_time](/techno-rock-4ohm-10_power_limitv0_96_statistics_over_time.png)
 
 ## SPL over time
 
-When ``SPL over time`` is active, the continuous SPL progression is being captured. The update rate value has no effect here. The parameters are to be set in the ``SPL over time`` menu. The parameters are handled independent from the ``SPL over time`` section in the ``Edit/SPL over time`` menu.
+Ist ``SPL over time`` aktiviert, so wird der kontinuierliche SPL-Verlauf über der Zeit erfasst. Die eingestellte Update rate hat darauf keinen Einfluss. Die Parameter können im Menü ``SPL over time`` definiert werden. Die Verwaltung der Parameter ist unabhängig von dem SPL over time Menü, das sich unter ``Edit/SPL over time`` befindet.
 
-[About the SPL-over-time configuration](/en/help/edit/spl-over-time)
+[About the SPL-over-time configuration](/de/help/edit/spl-over-time)

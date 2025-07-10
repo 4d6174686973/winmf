@@ -1,11 +1,11 @@
 # Exciter Setup
 
-``dB reference`` switches the indication of levels between dBV and dBU.
+Mit dB reference kann können die Pegelanzeigen zwischen dBV und dBU umgeschaltet werden.
 
-``Level [dB]`` defines the output level of the measuring system without considering external power amplifiers.
+Mit Level [dB] wird der Ausgangspegel des Messsystems ohne Berücksichtigung von externen Endstufen eingestellt.
 
-``Voltage [Vrms]`` specifies the effective output voltage.
+Voltage [Vrms] gibt die effektive Ausgangsspannung an.
 
-``Level [dBFS]`` sets the level of the measuring signal in relation to the maximum output level. The highest value possible is 0 dBFS.
+Mit Level [dBFS] wird der Pegel des Messsignals relativ zur maximalen Aussteuerung eingestellt. Der höchstmögliche Wert is 0 dBFS.
 
-Furthermore, for measurements explicitly requiring the definition of an excitation signal, the measurement signal is to be selected via ``Exciter``. When measuring frequency responses (Frequency response, LS sensitivity and Polar response) a reference signal suitable for the selected excitation signal is required. For frequency responses the excitation signal needs to fit a complete FFT-length, which means the number of samples must be a power of two. In case no suitable reference is to be found, a new reference measurement can be carried out using the corresponding [reference menu](/en/help/adda/frequency-response-reference).
+Für Messungen, die die explizite Auswahl eines Exciters verlangen, kann außerdem unter Exciter ein Messignal ausgewählt werden. Bei Frequenzgangmessungen (Frequency response, LS sensitivity und Polar response) muss für den gewählten Exciter eine passende Referenz vorliegen. Der Exciter muss für Frequenzgangmessungen eine ganze FFT-Länge haben, d. h. die Anzahl der Samples muss eine Zweierpotenz sein. Sollte keine passende Referenz gefunden werden, dann kann im jeweiligen [Referenz menü](/en/help/adda/frequency-response-reference) eine neue Referenzmessung erzeugt werden.

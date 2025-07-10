@@ -1,45 +1,49 @@
 # Max SPL
 
-``Max SPL`` measures the sound pressure level a loudspeaker is able to produce at particular frequencies. The measuring signal consists of sine bursts, whose level is increased successively while SPL and harmonic distortions are being measured. Stop criteria are a maximum THD value, a predefined input level and limiter detection.
+Die ``Max SPL`` misst den maximalen Schalldruck, den ein Lautsprecher bei einzelnen Frequenzen liefern kann. Als Messsignal dienen Sinusbursts, deren Pegel sukzessive erhöht wird, während die harmonischen Verzerrungen und der Pegel gemessen werden. Abbruchkriterien sind ein maximaler THD-Wert, ein vorgegebener maximaler Eingangspegel sowie eine Limitererkennung.
 
 ![max-spl_1](/max-spl_1.png)
 
-In the [Measurement setup](/en/help/adda/measurement-setup) the basic configuration for the measurement is set; the frequency points to be measured are specified in the [Frequency steps setup](/en/help/adda/frequency-steps-setup).
+Im [Measurement setup](/de/help/adda/measurement-setup) werden die Grundeinstellungen zur Messung vorgenommen, im [Frequency steps setup](/de/help/adda/frequency-steps-setup) die zu messenden Einzelfrequenzen festgelegt.
 
-``LS sensitivity proc.`` is required for the correct normalisation to a distance of 1m.
+``LS sensitivity proc.`` dient der korrekten Normierung auf den Abstand 1m.
 
-The distance between microphone and loudspeaker is entered in ``Mic. dist [m]``.
+``Unter Mic. dist [m]`` wird der Abstand zwischen Mikrofon und Lautsprecher eingetragen.
 
-``Corrected by [dB]`` is used for shifting the measurement by a constant value, e.g. when measuring with the microphone on a rigid floor by -6dB for regaining free field conditions.
+``Corrected by [dB]`` korrigiert die Messung mit einem konstanten Wert, z.B. bei Mikrofon auf schallhartem Boden mit -6dB für Freifeldbedingungen.
 
-If for ``Mic. dist [m]`` a value of 1m is entered and 0dB for ``Corrected by [dB]``, no normalisation is carried out and the absolute sound pressure level at microphone position is being measured.
+``Wird bei Mic. dist [m]`` 1m und bei ``Corrected by [dB]`` 0dB eingetragen, so erfolgt keine Normierung und es wird der absolute Schalldruck an der Mikrofonposition gemessen.
 
-``Level steps setup`` controls the level of the measuring signal.
+``Level steps setup`` steuert den Pegel des Messsignals.
 
-``Rel. start level`` defines the starting level relative to the maximum output level.
+``Rel. start level`` legt den Startpegel relativ zum maximalen Ausgangspegel fest.
 
-``Level increment`` describes the increment between two particular measurements.
+``Level increment`` beschreibt die Pegelerhöhung zwischen zwei Einzelmessungen.
 
-``Recovery [s]`` is a level bound regeneration interval between two individual measurements. The closer the level gets to the upper limit the longer this pause becomes; ``Recovery [s]`` defines its maximum.
+``Recovery [s]`` ist eine pegelabhängige Regenerationspause zwischen zwei Einzelmessungen. Je näher der Pegel an die obere Pegelgrenze kommt, desto länger wird diese Pause, der hier eingetragene Wert bestimmt die maximale Dauer.
 
-``Pause time [s]`` on the other hand is inserted as level independent break after each new frequency.
+Die ``Pause time [s]`` wird vor der nächsten Frequenz einmalig eingefügt und dient z.B. der Erholung eines Thermolimiters.
 
-``Return to min.`` makes the measuring level fall back to Rel. start level for the start of each new frequency; otherwise an estimated value for the first Distortion threshold is taken as starting level.
+``Return to min.`` lässt die Messung bei jeder neuen Frequenz wieder beim Rel. start level beginnen, ansonsten wird mit dem Level des zuletzt ereichten mininmalen Distortion threshold begonnen.
 
-The parameters Burst pause [s]``, ``Start offset [dB]`` and ``Recovery max@[dB]`` are newly implemented on 02.09.2016. Using 0 as value for these 3 parameters, MaxSPL behaves as before.
+die Parameter ``Burst pause [s]``, ``Start offset [dB]`` und ``Recovery max@[dB]`` sind ab dem 02.09.2016 hinzugekommen. Werden diese 3 Parameter zu 0 gesetzt, verhält sich alles wie zuvor.
 
-``Burst pause [s]`` defines a third constant pause time between each burst.
+``Burst pause [s]`` definiert eine weitere konstante Pausenzeit, die vor jedem Burst eingelegt wird.
 
-``Start offset [dB]`` will be applied only if ``return to min`` is deactivated. In this case, ``Start offset`` will be added to the relative start level of the next frequency. If, e.g. the next start level is -30dBu and ``start offset`` is -5dB, the next frequency would be started at -35dBu.
+``Start offset [dB]`` wirkt sich nur aus, wenn ``return to min`` deaktiviert ist. Dann wird der Startlevel der nächsten Frequenz zuzüglich dieses offsets gewählt. Es sind nur negative Werte möglich. Wurde beispielsweise als Startlevel für die nächste Frequenz -30dBu ermittelt und ``Start offset [dB]`` ist -5dB, dann wird bei -35dBu die nächste Frequenz gestartet.
 
-``Recovery max@[dB]`` clips the recovery time at a level relative to the maximum level to the maximum ``recovery time``. Using this value, the maximum ``recovery time`` will be reached earlier, but at low levels the measurement is still fast.
+``Recovery max@[dB]`` clipt die ``Recovery time`` bei einem offset level relativ zum maximalen level auf die maximale recovery time. Dadurch wird die maximale recovery time früher erreicht, bei niedrigen Leveln läuft die Messung hingegen schnell durch.
 
-``Max voltage rel.`` frontend defines the maximum output voltage at the line-output of the frontend. Active loudspeakers for example are connected here. ``dB reference`` switches the level display between ``dBV`` and ``dBU``. Now the maximum measuring level can be specified as ``Level [dB]``, in the form of an RMS voltage (``Voltage Vrms``) or relative to the digital maximum level (``Level dBFs``).
+``Max voltage rel. frontend`` legt die maximale Ausgangsspannung am Line-Ausgang des Frontends fest. Hier werden beispielsweise Aktivlautsprecher angeschlossen. dB reference schaltet die Anzeige zwischen ``dBV`` und ``dBU`` um. Der maximale Messpegel kann nun als Pegel in dB (``Level [dB]``), als effektive Spannung (``Voltage Vrms``) oder relativ zum digitalen Maximalpegel (``Level dBFs``) eingegeben werden.
 
-``Max voltage rel. amplifier`` defines the maximum measuring power when using the internal output stages of the frontend or external power amplifiers.
+``Max voltage rel. amplifier`` legt die maximale Messleistung bei Verwendung der internen Endstufen des Frontends oder von externen Endstufen fest.
 
-``Amp output`` allows switching between the use of internal or external power amplifiers. When using external amplifiers, the correct specification of the amplifier gain in the [Frontend setup](/en/help/adda/frontend-setup) is essential. In ``Nom. load [Ohm]`` the nominal impedance of the loudspeaker is entered. Under ``Nom. power [W]`` the maximum power for the measurement is to be defined. If this value is chosen too optimistically, the loudspeaker might be destroyed!
+``Amp output`` ermöglicht die Auswahl zwischen internen und externen Endstufen. Wichtig bei Verwendung externer Verstärker ist die Eingabe des korrekten Verstärkergains im  [Frontend setup](/de/help/adda/frontend-setup) .
 
-``Distortion thresholds`` are the THD limits evaluated during the ``Max SPL`` measurement. Every time one of these thresholds is reached while increasing the measuring level, a data point with the currently measured SPL is generated in the corresponding channel (each threshold is monitored by an own channel). If a particular measurement is stopped before reaching the threshold (e.g. by reaching the maximum output level), the corresponding data point is set to the highest SPL measured for this frequency. A maximum of four thresholds can be measured, to be specified as percentage of the fundamental. Threshold values commonly used are 1%, 3%, 10% or 20%. If less than four distortion thresholds are to be monitored, channels can be disabled by entering 0%.
+Bei ``Nom. load [Ohm]`` wird die nominale Impedanz des Lautsprechers eingetragen.
 
-``OK`` starts the measurement; ``Cancel`` aborts the procedure.
+Unter ``Nom. power [W]`` wird die maximale Leistung für die Messung eingetragen. Zu optimistische Werte können dabei die Lautsprecher zerstören!
+
+Die ``Distortion thresholds`` sind die Schwellwerte für die THD, die bei der Maximalpegelmessung gemessen werden. Wird bei der Erhöhung des Messpegels einer dieser Schwellwerte überschritten, so wird im entsprechenden Ausgangskanal (jeder Threshold wird in einem eigenen Kanal ausgegeben) bei dem dann gemessenen Schallpegel ein Messpunkt erzeugt. Wird die Einzelmessung vor Erreichen des Thresholds gestoppt (zum Beispiel durch Erreichen des maximalen Ausgangspegels), so wird der entsprechende Messpunkt beim höchsten bei dieser Frequenz gemessenen Pegel eingetragen. Es können maximal 4 Thresholds gemessen werden, die als Prozentwerte von der Fundamentalen angegeben werden. Häufig verwendete Schwellwerte sind 1%, 3%, 10% oder 20%. Sollen weniger als vier Verzerrungsgrenzen gemessen werden, so wird für die nicht benötigten Kanäle der Wert 0% eingetragen.
+
+``OK`` startet die Messung, ``Cancel`` bricht sie ab.

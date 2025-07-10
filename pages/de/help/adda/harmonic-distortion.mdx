@@ -1,19 +1,19 @@
 # Harmonic distortion
 
-This type of measurement is used to determine harmonic distortions employing sine signals for excitation.
+Die Messung ``Harmonic distortion`` dient zur Bestimmung der harmonischen Verzerrungen und verwendet als Anregung Sinussignale.
 
 ![thd_2](/thd_2.png)
 
-The plot shows the distortion spectrum of an overdriven input of a Robo3 measurement system with an excitation frequency of 1.3kHz and the harmonic components at multiples of this frequency (as well as some minor intermodulation components).
+Das Bild zeigt das Klirrspektrum eines übersteuerten Eingangs des Robo3 Messystems mit der Anregungsfrequenz 1,3kHz und den Harmonischen bei ganzzahligen Vielfachen davon (sowie einige kleine Intermodulationsanteile).
 
-The parameters for the measurement are to be set in the [Measurement setup](/en/help/adda/measurement-setup). As an additional parameter the frequency of the sinusoid excitation signal can be specified in ``Frequency [Hz]``. The frequency entered here is adjusted automatically, so that with the FFT length selected the resulting number of signal periods is an integer, and hence the signal ends on a zero crossing.
+Die Parameter der Messung werden in  [Measurement setup](/de/help/adda/measurement-setup) festgelegt. Als zusätzlicher Parameter kann die Frequenz des anregenden Sinussignals bei ``Frequency [Hz]`` eingegeben werden. Die eingegebene Frequenz wird dabei so angepasst, dass in der eingestellten FFT-Länge eine ganzzahlige Anzahl von Signalperioden durchlaufen wird und das Signal damit in einem Nulldurchgang enden kann.
 
-Level settings are made in the [Exciter setup](/en/help/adda/exciter-setup), the configuration of the amplifiers to be used is done in the [Amplifier setup](/en/help/adda/amplifier-setup).
+Die Pegeleinstellungen erfolgen im  [Exciter setup](/de/help/adda/exciter-setup), die Einstellungen zu den verwendeten Endstufen im [Amplifier setup](/de/help/adda/amplifier-setup).
 
-Using ``Normalisation`` the measurement can be referenced to different reference values: to a voltage of 1V, to the level of the excitation signal (``excitation level``), or the measured signal is displayed absolutely (``nothing``).
+Unter ``Normalisation`` kann die Messung auf verschiedene Bezugswerte bezogen werden, und zwar auf den Wert ``1V``, auf den Pegel des Anregungssignals (``excitation level``), oder das gemessene Signal wird absolut dargestellt (``nothing``).
 
-In [Processing](/en/help/adda/processing) the post-processing of the measuring results is to be configured.
+In [Processing](/de/help/adda/processing) wird die Weiterverarbeitung der Messergebnisse eingestellt.
 
-If the option ``Show distortion`` is active, after the measurement the analysis by the [Distortion Info window](/en/help/info/distortion) is launched automatically. The excitation frequency used for measuring is automatically transferred to the analysis window.
+Ist die Option ``Show distortion`` aktiviert, dann erfolgt nach Messung automatisch eine Auswertung mit Hilfe des [Distortion Info window](/de/help/info/distortion). Die in der Messung verwendete Anregungsfrequenz wird in das Auswertungsfenster automatisch übertragen. 
 
-``Cancel`` aborts the measurement, ``OK`` starts the process.
+``Cancel`` bricht die Messung ab, ``OK`` startet die Messung.

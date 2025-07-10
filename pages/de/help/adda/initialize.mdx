@@ -1,9 +1,9 @@
 # Initialize
 
-When the program is started for the first time, an initialisation is to be carried out by ``ADDA / Initialize``. During this process the configuration is being set to its default values and the ASIO hardware and sample rate is to be selected. On further program runs the last configuration is reloaded, so no further initialising is required.
+Wenn das Programm zum ersten Mal gestartet wird, muss einmal eine Initialisierung mit ``ADDA / Initialize`` durchgeführt werden. Bei diesem Prozess werden alle Einstellungen auf ihre default-Werte gesetzt sowie die ASIO-Hardware und die Samplerate für die Messungen ausgewählt. Bei weiteren Programmstarts werden die letzten Einstellungen geladen, so dass eine weitere Initialisierung nicht erforderlich ist.
 
-The ``Initialize`` window lists the ASIO hardware present in the system. If there are several ASIO devices available, here the desired hardware is to be selected.
+Im ``Initialize``-Fenster wird die vorhandene ASIO-Hardware gelistet. Sind mehrere ASIO-Geräte vorhanden, kann hier die gewünschte Hardware ausgewählt werden.
 
-The drop-down menu ``Samplerates`` allows to select the desired sample rate. When switching to higher sample rates, with some devices, like RME HDSP and RME Fireface, the number of channels available is being reduced. As this information is not available until reinitialising the ASIO driver, restarting WinMF might be necessary after switching to higher sample rates.
+Im Auswahlfenster ``Samplerates`` kann die gewünschte Samplerate ausgewählt werden. Beim Wechsel zu höheren Sampleraten wird bei manchen Geräten, wie RME HDSP und RME Fireface, die verfügbare Kanalanzahl reduziert. Da diese Information erst bei Neuinitialisierung des Asio-Treibers zur Verfügung steht, ist beim Wechsel auf höhere Sampleraten evt. ein Neustart von WinMF notwendig.
 
-After changing hardware ``Initialize`` needs to be carried out anew.
+Bei Wechsel der Hardware muss ``Initialize`` erneut ausgeführt werden.

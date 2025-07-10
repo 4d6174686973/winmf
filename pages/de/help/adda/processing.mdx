@@ -1,74 +1,74 @@
 # Processing
 
-Depending on the type of measurement ``Processing`` offers different kinds of processing and file handling options.
+``Processing`` ermöglicht je nach Messung verschiedene Arten der automatischen Nachbearbeitung und des Filehandlings.
 
 ### Windowing (AD only, AD-DA, Harmonic distortion, Harmonic distortion (f), Impedance)
 
-In the ``Windowing`` section a time window can defined. A description of its parameters is to be found under [Edit - Apply window](/en/help/edit/apply-window).
+Im Bereich ``Windowing`` kann ein Zeitfenster definiert werden, die Beschreibung der Parameter ist unter [Edit - Apply window](/de/help/edit/apply-window) zu finden. 
 
 ### Impulse response proc. (Frequency response, LS sensitivity, Polar response)
 
-``Impulse response proc.`` modifies the measured impulse response in the time domain. With ``Delay correct.`` switched to ``offset`` the whole impulse response is shifted circularly by the value specified in ``Delay [ms]``.
+``Impulse`` response proc. bearbeitet die gemessene Impulsantwort im Zeitbereich. Wenn ``Delay correct.`` auf ``offset`` geschaltet wird, wird die komplette Impulsantwort um den in ``Delay [ms]`` eingetragenen Wert verschoben (zyklisch).
 
-Windowing enables a windowing function, whose parameters are to be defined via ``Window para.``.
+``Windowing`` schaltet eine Fensterfunktion ein, deren Parameter in [Window para.](/de/help/edit/apply-window) definiert werden können.
 
 ## 2CH-FFT processing / time signal coherence (AD only, AD-DA)
 
-Either a classic ``2-CH FFT analysis`` can be used or channel pairs of time signals can be analyzed in ``coherence`` and estimate of transferfunction even channel/odd channel. For the 2-CH FFT analysis, the measurement must run in repeat mode.
+Es kann entweder eine klassische ``2-CH FFT`` Analyse verwendet werden oder für Kanalpaare von Zeitsignalen die Kohärenz und Schätzung der Transferfunktion gerader Kanal/ungerader Kanal berechnet werden (``Coherence``). Für die ``2-CH FFT`` Analyse muss die Messung im Repeat-mode laufen.
 
-In the window ``2CH-FFT para``. the ``latency compensation`` can be set for the even channel numbers. (The latency is subtracted in the even channels).
+Im Fenster ``2CH-FFT para.`` kann die Latenzkompesation für die geraden Kanalnummern gesetzt werden. (Die Latenz wird in den geraden Kanälen abgezogen).
 
-You can set which channels should be displayed in the result:
-- odd-, even channels: the raw data A, B
-- odd-, even channels running aver.: running magnitude average value of the raw data ($G_{AA}^{0.5} = (\frac{1}{n} \sum |A|^2)^{0.5}, G_{BB}^{0.5} = (\frac{1}{n} \sum |B|^2)^{0.5}$)
+Für die ``2CH-FFT`` kann eingestellt werden, welche Kanäle im Ergebnis angezeigt werden sollen:
+- odd-, even channels: die Rohdaten A, B
+- odd-, even channels running aver.: laufender Betrags-Mittelwert der Rohdaten ($G_{AA}^{0.5} = (\frac{1}{n} \sum |A|^2)^{0.5}, G_{BB}^{0.5} = (\frac{1}{n} \sum |B|^2)^{0.5}$)
 - Coherence (magnitude squared): $ν^2 = |G_{AB}|^2 / (G_{AA}*G_{BB})$  (with $G_{AB}=\frac{1}{n} \sum AB$)
 - SNR (Signal to noise estimate): $SNR = ν^2 / (1-ν^2)$
-- complex transfer functions $TF1=G_{AB} / G_{AA}$ and $TF2 = G_{BB} / G_{AB}^*$
+- komplexe Transferfunktionen $TF1=G_{AB} / G_{AA}$ and $TF2 = G_{BB} / G_{AB}^*$
 
-The time signal coherence analysis is parameterized as described under [Edit/Channel Work/Coherence](/en/help/edit/channel-work/coherence).
+Die Parametrierung der Zeitsignal Kohärenz-Analyse erfolgt wie unter  [Edit/Channel Work/Coherence](/de/help/edit/channel-work/coherence) beschrieben.
 
-``Exciter=Reference``: For both processing options, the set exciter can be used as the reference channel (ADDA only), so that the reference channel does not have to be measured separately.
+``Exciter=Reference``: Für beide Processing Optionen kann als Referenz-Kanal der eingestellte Exciter eingesetzt werden (nur ADDA), so dass der Referenzkanal nicht extra mitgemessen werden muss.
 
 ### Spectral processing (AD only, AD-DA, Frequency response, LS sensitivity, Polar response)
 
-``Skip sensitivity normalisation (only LS sensitivity)`` bypasses the normalisation (to 1W at nominal impedance) usually applied to sensitivity measurements. Instead, the sensitivity is referenced to the input voltage and a distance of 1m. This can be convenient for measuring active devices.
+``Skip sensitivity normalisation`` (nur bei LS sensitivity) verhindert bei Sensitivity Messungen die Normalisierung auf 1W an der Nominalimpedanz. Stattdessen wird die Sensitivity auf die Eingangsspannung und 1m Abstand bezogen dargestellt. Diese Einstellung kann bei der Messung von Aktivsystemen sinnvoll sein.
 
-``Spectral processing`` modifies the measurement in the frequency domain. [A-weighting](/en/help/edit/a-weighting) applies the A-filter to the measured curve.
+``Spectral processing`` bearbeitet die Messung im Frequenzbereich. [A-weighting](/de/help/edit/a-weighting) applies the A-filter to the measured curve.
 
-``Smoothing`` enables the smoothing function, whose parameters are to be modified via [Smooth para.](/en/help/edit/smooth).
+``Smoothing`` enables the smoothing function, whose parameters are to be modified via [Smooth para.](/de/help/edit/smooth) bearbeitet werden können.
 
 ### Distortion processing (LS sensitivity, Polar response)
 
-[Distortion processing](/en/help/adda/distortion-processing) allows the evaluation of distortion in measurements using logarithmic sweeps.
+[Distortion processing](/de/help/adda/distortion-processing) erlaubt bei Messungen mit logarithmischen Sweeps die Auswertung von Verzerrungen.
 
-``Relate to fundamental`` displays in separate channels the distortions of the individual orders relative to the fundamental.
+``Relate to fundamental`` stellt die Verzerrungen der einzelnen Ordnungen relativ zur Fundamentalen in einzelnen Kanälen dar.
 
-``Max order`` specifies the highest order of which the distortions are displayed.
+``Max order`` gibt die höchste dargestellte Verzerrungsordnung vor.
 
 ### Channel processing (AD only, AD-DA, Harmonic distortion, Multisine, Frequency response, LS sensitivity, Impedance)
 
-``Channel processing`` allows writing a sequence of measurements into a buffer and showing them as separate channels.
+``Channel processing`` erlaubt es, mehrere aufeinander folgende Messungen in einen Buffer-Speicher zu schreiben und zeigt sie als einzelne Kanäle an.
 
-When ``Keep raw`` data is active, also the raw measurement without processing is written into the buffer and a separate channel.
+``Keep raw data`` schreibt auch die vom Processing unbeeinflusste Rohmessung in den Buffer und in einen eigenen Kanal.
 
-``Hold # meas.`` defines the number of measurements kept in the buffer. When this maximum is reached, the lowermost measurement is discarded and the remaining measurements are pushed one step further in the buffer.
+``Hold # meas.`` legt die Anzahl der letzten Messungen fest, die im Buffer erhalten bleiben. Ist die maximale Anzahl der Messungen überschritten, wird die älteste Messung verworfen und die übrigen Messungen werden im Buffer weiter geschoben.
 
-Reset buffer erases the measurements stored in the buffer, while the present channels are not deleted. Buffering starts again with the next measurement.
+``Reset buffer`` löscht die im Buffer gespeicherten letzten Messungen, die vorliegenden Kanäle werden jedoch nicht gelöscht. Mit der nächsten Messung beginnt die Belegung der Buffer neu.
 
-``Show buffer`` displays the current buffer content.
+``Show buffer`` zeigt den aktuellen Inhalt des Buffers an.
 
-``Result in both domains`` directly transfers each measurement into the time domain through IFFT.
+``Result in both domains`` überführt per IFFT jede Messung direkt auch in den Zeitbereich.
 
 ### File processing (AD only, AD-DA, Harmonic distortion, Harmonic distortion (f), Multisine, Frequency response, LS sensitivity, Polar response, Impedance)
 
-With ``File processing`` it is possible to automatically store sequential measurements with consecutive file names.
+``File processing`` ermöglicht es, mehrere aufeinander folgende Messungen automatisch unter fortlaufenden Namen zu speichern.
 
-``Autoinc. mode`` switches between measurements to be started manually (``Single``), time triggered measurements (``Repeat n times``) and deactivation of automatic storage (``off``).
+``Autoinc. mode`` erlaubt die Auswahl zwischen manuell gestarteten Messungen (``Single``), zeitgesteuerten Messungen (``Repeat n times``) und Abschaltung der automatischen Speicherung (``off``).
 
-``Repeat n times`` defines the number of measurements to be carried out and stored automatically.
+``Repeat n times`` legt die Anzahl der automatisch durchgeführten und gespeicherten Messungen fest.
 
-``Pause time`` defines the pause between measurements.
+``Pause time`` bestimmt die Pause zwischen den einzelnen Messungen.
 
-``File name`` specifies the first part of file names which will automatically be suffixed by a measurement index.
+``File name`` legt den ersten Teil der Dateinamen fest, daran wird automatisch die Nummer der Messung angehängt.
 
-``Save also MF`` automatically stores all measurements also in Monkey Forest format.
+``Save also MF`` speichert alle Messungen automatisch auch im Monkey Forest Format ab.

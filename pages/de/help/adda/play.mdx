@@ -1,15 +1,15 @@
 # Play
 
-The time signal displayed is played back through the activated outputs. Using the output matrix channels can be mixed at will.
+Es wird das angezeigte Zeitsignal über die aktivierten Outputs abgespielt. Über die Wiedergabematrix können die Kanäle geeignet gemischt werden.
 
-``Mode`` defines whether the reference signal is played once or repeatedly. In repeat mode playback can be terminated by ``Escape``.
+``Mode`` legt fest, ob das Referenzsignal einfach oder wiederholt abgespielt wird. Die wiederholte Wiedergabe kann mit ``Escape`` beendet werden.
 
-``Normalize`` defines which level the reference signals are normalised to. The options available are ``Max. all ch`` (the loudest sample of all channels is defined as 0dBFs), ``Calibr. SPL`` (see below), ``Calc. SPL`` (calculated SPL), ``Frontend V`` (maximum output voltage of the frontend) and ``Amp V`` (maximum output voltage of the amplifier).
+``Normalize`` legt fest, auf welchen Pegel die abgespielten Referenzsignale normalisiert werden. Zur Auswahl stehen ``Max. all ch`` (lautestes Sample aller Kanäle wird zu 0dBFs), ``Calibr. SPL`` (siehe unten), ``Calc. SPL`` (berechneter Pegel), ``Frontend V`` (maximale Ausgangsspannung des Frontends) und ``Amp V`` (maximale Ausgangsspannung des Verstärkers).
 
-``Calibr. SPL`` opens a new window, where frequency limits for a level calculation are to be specified (``Calibr. fu [Hz]`` and ``Calibr. fo [Hz]``). ``Calibr. SPL [dB]`` defines the reference level for the reference signal. ``Use input`` defines the input channel used for calibrating. A microphone needs to be connected to this channel and the correct sensitivity and pre amp gain values must be provided. The calibration levels are transferred to the frontend setup into Loads and Calibration where they can also be adjusted manually.
+``Calibr. SPL`` öffnet ein weiteres Fenster, in dem eine untere und obere Grenzfrequenz für die Pegelberechnung angegeben werden können (``Calibr. fu [Hz]`` und ``Calibr. fo [Hz]``). ``Calibr. SPL [dB] ``legt den Referenzpegel des Referenzsignals fest. Use input legt den verwendeten Eingangskanal für die Kalibrierung fest. Es ist darauf zu achten, dass für diesen Kanal ein Mikrofon angeschlossen ist und korrekte Werte für Sensitivity und Pre Amp Gain eingetragen werden. Die Kalibrierwerte werden im Frontend Setup unter Loads and Calibration eingetragen und können dort auch manuell angepasst werden.
 
-``Calibrate`` starts the calibration.
+``Calibrate`` startet die Kalibrierung.
 
-``Level [dBFs]`` defines the playback level of the normalised signal (only values lower or equal 0dBFs are accepted).
+``Level [dBFs]`` legt den Wiedergabepegel des normalisierten Signals fest (nur Werte kleiner gleich 0dBFs können eingegeben werden).
 
-Inside the output matrix playback levels of channels can be adjusted separately. Rows represent the individual channels of the signal loaded, while columns represent activated output channels.
+In der Wiedergabematrix können die Kanäle einzeln in der Wiedergabelautstärke angepasst werden. Dabei stehen die Zeilen für die einzelnen Kanäle des im Speicher befindlichen Signals, die Spalten für die aktivierten Ausgangskanäle.

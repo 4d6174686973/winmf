@@ -1,27 +1,27 @@
 # Multisine distortion
 
-``Multisine distortion`` is an intermodulation measurement. For this the loudspeaker is being excited simultaneously by multiple sine waves. In addition to the harmonic distortions, which already occurred for single sine frequencies, here the various excitation frequencies modulate each other and intermodulation effects appear, which can be evaluated after removing the excitation signal. The excitation signal is composed in such a way, that the harmonics of one sine frequency, as far as possible, do not coincide with other sine frequencies. The excitation signal is removed from the measured signal by subtraction in order to obtain only harmonic distortions and intermodulation components.
+Die ``Multisine distortion`` Messung ist eine Intermodulationsmessung. Dabei wird ein Lautsprecher mit mehreren Sinustönen gleichzeitig angeregt. Neben den harmonischen Verzerrungen, wie sie auch bei einzelnen Sinusfrequenzen auftreten, modulieren sich die verschiedenen Anregungsfrequenzen gegenseitig und es treten Intermodulationseffekte auf, die nach Entfernung des Anregungssignals ausgewertet werden können. Das Anregungssignal ist dabei so gestaltet, dass die Harmonischen einer Sinusfrequenz möglichst nicht genau auf einer anderen Sinusfrequenz liegen. Das Anregungssignal wird durch Subtraktion aus dem gemessenen Signal entfernt, so dass nur die harmonischen Verzerrungen sowie die Intermodulationsanteile übrig bleiben.
 
-In the [Measurement setup](/en/help/adda/measurement-setup) the basic configuration for the measurement is set.
+Im  [Measurement setup](/de/help/adda/measurement-setup) werden die Grundeinstellungen der Messung vorgenommen.
 
-Under ``Multisine setup`` the [Multisine generator](/en/help/edit/multisine-generator) is launched by ``Multisine para.``. ``Refresh`` takes over the settings from the ``Multisine generator``.
+Im ``Multisine setup`` wird durch ``Multisine para.`` der [Multisine generator](/de/help/edit/multisine-generator) aufgerufen. ``Refresh`` aktualisiert die Einstellungen aus dem ``Multisine generator``.
 
-[Exciter setup](/en/help/adda/exciter-setup) sets the level for the measuring signal; [Amplifier setup](/en/help/adda/amplifier-setup) contains parameters for the amplifiers to be used.
+im [Exciter setup](/de/help/adda/exciter-setup) wird der Pegel des Messsignals eingestellt, im [Amplifier setup](/de/help/adda/amplifier-setup) die Parameter für die verwendeten Endstufen.
 
-[Processing](/en/help/adda/processing) configures the post-processing of measurement results.
+[Processing](/de/help/adda/processing) erlaubt die Bearbeitung der Messergebnisse.
 
 ![multisinus-eia426b](/multisinus-eia426b.png)
 
-The measuring result contains five channels:
+Das Messresultat enthält 5 Kanäle:
 
-The first channel displays the raw recording, comprising excitation and distortions.
+Im ersten Kanal wird das aufgezeichnete Rohsignal dargestellt, mit Anregungssignal und Verzerrungen.
 
-In channel 2 the sine frequencies of the excitation have been removed through subtraction.
+In Kanal 2 sind die Sinusfrequenzen der Anregung durch Subtraktion entfernt worden
 
-For channel 3 the raw signal has been summated in frequency bands, whose widths correspond to the frequency intervals in the excitation. From this signal also the total level can be calculated.
+Für Kanal 3 wird das Rohsignal bandweise aufsummiert, die Bandbreite entspricht dem Frequenzabstand der Anregung. Aus diesem Signal kann auch der Gesamtpegel berechnet werden.
 
-Channel 4 contains the band-wise summation of channel 2 (with the excitation removed). Band widths correspond to channel 2.
+Kanal 4 enthält die bandweise Summe von Kanal 2, also ohne Anregung. Die Bandbreite entspricht Kanal 3.
 
-Channel 5 ultimately displays the ratio of channel 4 to channel 3.
+Kanal 5 schließlich stellt das Verhältnis von Kanal 4 zu Kanal 3 dar.
 
-``OK`` starts the measurement; ``Cancel`` aborts the procedure.
+``Ok`` startet die Messung, ``Cancel`` bricht sie ab.

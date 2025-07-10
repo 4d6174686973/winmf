@@ -1,35 +1,35 @@
 # Reference
 
-Prior to measuring a ``Frequency response``, ``LS sensitivity`` or ``Polar response`` a reference measurement needs to be carried out with the selected excitation signal.
+Vor einer ``Frequency response``, ``LS sensitivity`` oder ``Polar response`` Messung muss eine Referenzmessung mit dem ausgewählten Anregungssignal durchgeführt werden.
 
-This reference is required firstly for neutralising non-flat frequency response curves of excitation signals, secondly for compensating measurement errors through the measuring system.
+Eine Referenzmessung dient zum einen dazu, den meist nicht neutralen Frequenzgang der Anregungssignale auszugleichen, zum anderen die Messfehler, die durch das Messsystem selbst hervorgerufen werden, zu beheben.
 
-Measurement signals can contain almost arbitrary weighting functions. However, as the only interest lies in the frequency response of the system under test, this weighting curve is neutralised by multiplying the measured signal by the reference file, which is basically an inverse of the excitation signal. If the reference file has been generated through the in- and outputs of the measuring system, the complex frequency response of the hardware has been recorded as well and is also being compensated accordingly.
+Die Messignale können eine beinahe beliebige Frequenzgewichtung beinhalten. Da bei der Messung jedoch nur die Frequenzantwort des gemessenen Systems von Interesse ist, wird diese Gewichtung durch Multiplikation des gemessenen Signals mit der Referenzdatei, die im Wesentlichen die Inverse des Anregungssignals darstellt, neutralisiert. Wenn die Referenzdatei durch eine Messung über die Ein- und Ausgänge des Messsystems erzeugt wurde, wird zusätzlich der komplexe Frequenzgang der Hardware gemessen und in der Folge ebenfalls ausgeglichen.
 
-The plot shows a possible weighting curve of a sweep signal in blue and the corresponding reference spectrum in green.
+Die Grafik zeigt in blau eine mögliche Frequenzgewichtung eines Sweeps, in grün das zugehörige Referenzspektrum.
 
 ![reference_3](/reference_3.png)
 
-It needs to be considered in particular, that the same sampling frequency is used for the reference and the actual measurement. Otherwise WinMF will produce an error message. In principle a suitable reference file can be used even if it has been created at an earlier point in time. However, the creation of new references is recommended when starting a new measuring session.
+Besonders zu beachten ist, dass die Referenzdatei mit der gleichen Samplefrequenz gemessen wurde, mit der auch die Messung durchgeführt wird. WinMF erzeugt andernfalls eine Fehlermeldung. Prinzipiell kann eine passende, zu einem früheren Zeitpunkt erzeugte Referenzdatei für Messungen verwendet werden. Es empfiehlt sich jedoch, zu Beginn jeder Messsession neue Referenzmessungen durchzuführen.
 
-In the Filter setup section two arbitrary filters are to be defined, which will be used in addition during the reference measurement. This can be necessary in case of impaired signal quality. Filter definitions are described in [Edit-Filter](/en/help/edit/filter).
+Im Bereich Filter setup können zwei beliebige Filter definiert werden, die bei der Referenzmessung zusätzlich verwendet werden. Dies kann beispielsweise bei gestörter Signalqualität erforderlich sein. Die Filterdefinitionen sind bei [Edit-Filter](/de/help/edit/filter) erklärt.
 
-In ``Select channel`` the channel for the reference measurement is specified. Internal reference measurements using Robo frontends are only possible on channels 1 and 2.
+Mit ``Select channel`` wird ein Kanal für die Referenzmessung ausgewählt. Interne Referenzmessungen mit Robo-Frontends sind nur mit Kanal 1 und 2 möglich.
 
-``Apply to all channels`` creates a reference file with n channels via all n active input channels.
+``Apply to all channels`` erzeugt eine n-kanalige Referenzmessung über alle n aktiven Eingangskanäle.
 
-``Reference`` specifies the file the reference measurement is stored into.
+``Reference`` bestimmt die Datei, in der die Referenzmessung gespeichert wird.
 
-``Ref. mode`` allows selecting different kinds of referencing when using Robo frontends.
+``Ref. mode`` erlaubt bei Robo-Frontends die Auswahl zwischen verschiedenen Arten der Referenz.
 
-``Exciter file`` does not actually perform a measurement, but takes the inverse spectrum of the excitation signal as reference instead. Hardware-induced errors (time delay, spectrum) are not corrected in this mode.
+``Exciter file`` startet keine Messung im eigentlichen Sinn, sondern nimmt als Referenzfile das inverse Spektrum des Anregungssignals. Bei dieser Variante werden hardwareseitige Fehler (Laufzeit, Spektrum) nicht bei der Messung ausgeglichen.
 
-``External line`` performs a measurement via line-in- and outputs, which need to be connected by cable for this.
+``External line`` misst über die Line Ein- und Ausgänge, die dazu mit Kabeln verbunden werden müssen.
 
-``External amp`` performs a measurement via line-in- and outputs, for which the external power amplifier is included in the signal chain. So the line-outputs of the frontend are connected to the amplifier inputs, and the amplifier outputs to the line-inputs of the frontend. The amplified signal must be wired to pins 2 and 3 of the XLR input, pin 1 remains open. It is important that the input sensitivity of the frontend is adjusted to the signal from the power amplifier, as the frontend can be damaged in cases of bad settings or wrong wiring!
+``External amp`` misst über die Line Ein- und Ausgänge, wobei die externe Endstufe ebenfalls im Signalweg liegt. Die Line-Ausgänge des Frontends werden also mit den Endstufeneingängen verkabelt, die Ausgänge der Endstufe mit den Line-Eingängen des Frontends. Das Endstufensignal muss dabei zwischen den Pins 2 und 3 des XLR-Eingangs liegen, Pin 1 bleibt unbeschaltet. Dabei ist zu beachten, dass das die Eingangsempfindlichkeit des Messfrontends an das Endstufensignal angepasst ist, falsche Einstellungen oder Kabelbelegungen können hier zu Beschädigungen des Frontends führen!
 
-``Internal line`` automatically patches the internal line-in- and outputs; no external wiring is required.
+``Internal line`` verbindet automatisch die internen Line Ein- und Ausgänge des Robo-Frontends, externe Kabel sind nicht erforderlich.
 
-``Internal Amp`` connects the outputs of the internal output stage to the line-inputs.
+``Internal Amp`` verbindet die Ausgänge der internen Endstufen mit den Line-Eingängen.
 
-``Calc. dyn [dB]`` describes the maximum dynamic range for the calculation of the reference file.
+``Calc. dyn [dB]`` beschreibt die maximale Dynamik, mit der die Referenzdatei berechnet wird.
