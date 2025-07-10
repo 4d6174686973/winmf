@@ -6,7 +6,7 @@ export default {
   'exchange': 'Exchange',
   'copy': 'Copy',
   'add': 'Add',
-  'subtract': 'Subtract',
+  'substract': 'Substract',
   'multiply': 'Multiply',
   'divide': 'Divide',
   'copy-magnitude': 'Copy magnitude',

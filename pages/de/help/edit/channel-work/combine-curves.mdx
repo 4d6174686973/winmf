@@ -1,16 +1,17 @@
 # Combine curves
 
-Purpose of this function is to create a curve by putting together parts of existing curves.
+Diese Funktion dient dazu, eine Kurve aus Teilen von anderen Kurven zusammen zu setzen.
 
-``Target channel`` specifies the channel, from which the upper part of the frequency range is taken. Magnitude and phase of this channel are preserved.
+``Target channel`` bezeichnet dabei den Kanal, von dem der obere Frequenzbereich verwendet werden soll. Pegel und Phase dieses Kanals bleiben erhalten.
 
-``Source channel`` specifies the channel which shall be appended at the bottom end of the ``Target channel``. Magnitude and phase are continuously merged into the Target channel.
+``Source channel`` bezeichnet den Kanal, der unten am`` Target channel`` angesetzt werden soll. Pegel und Phase werden dabei stetig an den Target channel angepasst.
 
-``Frequency`` defines the frequency at which the two segments are put together.
+``Frequency`` bestimmt die Frequenz, bei der die beiden Kanalabschnitte zusammen gesetzt werden.
 
-``Delete source`` decides whether the Source channel is preserved or deleted.
+``Delete source`` entscheidet darüber, ob der Source channel erhalten bleibt oder gelöscht wird.
 
-The following example shows the [windowed](/en/help/edit/apply-window) measurement of a 15" woofer, the nearfield frequency response and the combined curve as magnitude- and phase-plot (below).
+Das folgende Beispiel zeigt die [gefensterte](/de/help/edit/apply-window) Messung eines 15"-Tieftöners, die Nahfeldmessung und die bei 100Hz kombinierte Messung als Betrags- und Phasengang (unten).
 
 ![lf-near-far-combi](/lf-near-far-combi.png)
+
 ![lf-near-far-combi-phase](/lf-near-far-combi-phase.png)

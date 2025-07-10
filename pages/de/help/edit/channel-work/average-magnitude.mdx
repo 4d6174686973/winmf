@@ -1,13 +1,12 @@
 # Average magnitude
 
-This function averages the magnitudes of two or more channels. The phase of the ``Target channel`` is not modified.
+Diese Funktion mittelt zwei oder mehr Kanäle betragsmäßig, die Phase des Zielkanals bleibt dabei erhalten.
+[Select region](/de/help/edit/region-control) bestimmt den zu bearbeitenden Bereich.
 
-[Select region](/en/help/edit/region-control) specifies the region to be considered for the operation.
+``Target = (Target + Source) / n``  beschreibt den Rechenvorgang, dabei ist n die Anzahl der gemittelten Kanäle.
 
-``Target = (Target + Source) / n``  describes the procedure, with n being the number of channels averaged.
+``Normalize before averaging`` führt eine Normalisierung der Kurven auf den  [Log. average](/de/help/edit/log-average-adjust) Wert im Bereich zwischen ``Norm. start`` und ``Norm. stop`` vor der Mittelung durch.
 
-``Normalize before averaging`` performs a normalization of the curves to the [Log. average](/en/help/edit/log-average-adjust) value, relating to the region between ``Norm. start`` and ``Norm. stop``, before the averaging.
+``Delete source`` löscht den als Source channel ausgewählten Kanal nach der Mittelung.
 
-``Delete source`` eliminates the specified Source channel after the operation.
-
-``Go for all`` averages all channels.
+``Go for all`` mittelt über alle Kanäle.
