@@ -1,21 +1,21 @@
 # Calibration File
-Using the calibration file, one can modify basic settings of a frontend menu. This includes sensitivity values of in- and outputs which can slightly differ between devices of same type.
+Mittels Calibration file können Grundeinstellungen eines Frontends modifiziert werden. Dazu gehören u.a. Sensitivity Werte von Ein- und Ausgängen, die individuell zwischen Geräten leicht schwanken können. Es ergibt sich damit die Möglichkeit einen sehr präzisen und individuellen Abgleich eines physikalischen Gerätes vorzunehmen. Da das File menschenles- und editierbar ist, genügt es auch Anforderungen an die Dokumentation von Messketten.
 
-Thus, the user can precisely make an individual calibration of a physical device. As the file can be read and edited directly, it also satisfies the requirements for the documentation of measurement chains.
+Eine weitere Anwendung ist die Erzeugung eines individuellen Frontends für ein Gerät, das nicht als Default-Setup implementiert ist.
 
-Another application is the creation of an individual frontend for a device, which is not implemended as default frontend setup. 
+Um in WinMF ein solches File zu verwenden muss in Preferences die ``Use cal-file....`` Option aktiviert werden. Es wird dann automatisch ``All outs are normalized ...`` mit aktiviert. Wenn ``Use cal-file....`` aktiviert ist, sucht WinMF in seinem Startpfad nach einer Datei mit dem Namen: ``cal-file.txt``
 
-In order to use such a calibration file, the option ``Use cal-file....`` under Preferences has to be activated. Automatically, the option ``All outs are normalized ...`` will be activated, too. If  ``Use cal-file....`` is activated, WinMF will search in its start path for the file with name ``cal-file.txt`` will read it, interpret the entries and overwrite the existing entries in the current frontend. If at least one correct entry is found, the display will show in the right lower corner the green information that an EXTERNAL CAL FILE is currently used:
+und liest dieses File ein, interpretiert die Einträge und überschreibt das existierende Frontend mit den dort gefundenen Werten. Wenn mindestens ein verwertbarer Eintrag gefunden wird, dann erscheint unten rechts im Display die grün hinterlegte Information, dass ein EXTERNAL CAL FILE verwendet wird:
 
 ![Calibration File Display](/cal-file-display.png)
 
-If no file is found, WinMF will ignore the option and the frontend will be used as before configured. If the file is faulty, an error dialog will come up.
+Wenn kein File gefunden wird, dann ignoriert WinMF diese Option und es wird das Frontend wie zuletzt konfiguriert verwendet. Wenn das File ungültig ist, wird eine Fehlermeldung angezeigt.
 
-## Definition of cal-file entries
+## Definition von cal-file Einträgen
 
-A cal-file begins with the frontend name in the first line. This name has to be identical with the internal name of the frontend. Large and lower case are ignored.
+Ein Cal-file wird eingeleitet mit dem Frontend Namen in der ersten Zeile. **Dieser Name muss mit dem internen Namen des Frontends übereinstimmen.** Groß- und Kleinschreibung werden dabei ignoriert.
 
-The list of qualified frontend names is:
+Die Liste gültiger Frontendnamen ist:
 - Babyface_Pro_FS
 - DBS1
 - Digital
@@ -34,40 +34,40 @@ The list of qualified frontend names is:
 
 ## Configuration
 
-One correct entry defines exactly one parameter of one channel. There are four different channel types configurable, as explained here:
+Ein gültiger Eintrag bezieht sich auf genau einen Parameter eines Kanals. Es gibt vier konfigurierbare Kanaltypen, die wie folgt aufgebaut sind:
 
 ```plaintext
 type
 sensor
-channel number (1...max_channels)
+kanalnummer (1...max_kanäle)
 sens
-sensitivity factor as float with point as decimal separator
+sensitivity faktor als float mit punkt als dezimalseparator
 ```
 
 ```plaintext
 type
 in,out
-channel number (1...max_channels)
+kanalnummer (1...max_kanäle)
 sel_sensitivity
-number of the popupmenu's item
+nummer des elements der popupmenu liste
 sensitivity_dBu
-sensitivity in dBu as float with point as decimal separator
+sensitivity in dBu als float mit punkt als dezimalseparator
 ```
 
 ```plaintext
 type
 out
-channel number (1...max_channels)
+kanalnummer (1...max_kanäle)
 int_gain
-gain in dB as float with point as decimal separator
+gain in dB als float mit punkt als dezimalseparator
 ```
 
 ```plaintext
 type
 out
-channel number (1...max_channels)
+kanalnummer (1...max_kanäle)
 ext_gain
-gain in dB as float with point as decimal separator
+gain in dB als float mit punkt als dezimalseparator
 ```
 
 ## Multiface II example
@@ -104,12 +104,12 @@ sensitivity_dBu
 14.43
 ```
 
-The Multiface II (MuFa2) settings are changed as follow:
-- out channel 1, first step of sensitivity = 5.73dBu
-- out channel 1, second step of sensitivity = 15.71dBu
-- in channel 1, first step of sensitivity = 14.43dBu
+Es wird für das Frontend Multiface II (MuFa2) Folgendes gesetzt
+- Ausgang Kanal 1, erste Stufe der Sensitivity = 5.73dBu
+- Ausgang Kanal 1, zweite Stufe der Sensitivity = 15.71dBu
+- Eingang Kanal 1, erste Stufe der Sensitivity = 14.43dBu
 
-## Robo3 example
+## Robo3 Beispiel
 
 robo3
 
@@ -147,8 +147,8 @@ ext_gain
 26
 ```
 
-The Robo3 settings are changed as follow:
-- channel 1, sensor sensitivity = 0.0078
-- in channel 1, fourth step of sensitivity = 26.3dBu
-- out channel 2, internal amp gain = 0.1dB
-- out channel 2, external amp gain = 26dB
+Es wird für das Frontend Robo3 Folgendes gesetzt
+- Kanal 1, Sensor Sensitivity = 0.0078
+- Eingang Kanal 1, vierte Stufe der Sensitivity = 26.3dBu
+- Ausgang Kanal 2, internal amp gain = 0.1dB
+- Ausgang Kanal 2, external amp gain = 26dB

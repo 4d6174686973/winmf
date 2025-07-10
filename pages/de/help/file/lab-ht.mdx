@@ -1,21 +1,17 @@
 # Lab H, T
 
-defines the measurement of laboratory temperature.
+hier kann die Messung der Labortemperatur konfiguriert werden.
 
-The values of temperature (T) and relative humidity (H) are acquired after each measurement (all menus of ADDA) and written into the header of the actual file  together with the timestamp of the measurement.
+Die erfassten Werte für Temperatur (T) und relativer Luftfeuchte (H) werden nach jeder Messung (alle Menus in ADDA)  in den Header des aktuellen Files zusammen mit dem Zeitstempel der Messung geschrieben. Die Erfassung der Labortemperatur erfolgt nach dem Abschluss der Messung. Im Repeat Mode ist das nach Abschluss der letzten Wiederholung. Wenn der Sensor keine Werte liefert wird NaN angezeigt, wenn die konfigurierte Schnittstelle nicht ansprechbar ist (z.B. falscher Com-port) wird bei jeder Messung eine Fehlermeldung angezeigt, die Messung selbst wird aber normal durchgeführt.
 
-In repeat mode, the moment of data acuisition is after the last repetition. If the sensor cannot deliver values, NaN will be displayed instead. If the defined interface does not respond, an error message is displayed. The measurement itself will be continued independently.
+Es werden folgende Sensoren/Schnittstellen unterstützt:
 
-The followong sensors/interfaces are supported:
+Arduino-USB mit SHT31 oder SHT35 Sensor, s. dazu:  [QC/SHT3X](/en/help/qc/sht3x)
 
-Arduino-USB with SHT31 or SHT35 sensor, see also : [QC/SHT3X](/en/help/qc/sht3x)
+Diese Optionen stehen zur Verfügung:
+- ``T,H, always visible``: definiert die Sichtbarkeit im Display
+- ``T,H, always plotting``: definiert ob die Werte im Plot berücksichtigt werden
 
-The following options can be used:
-
-T,H, always visible: defines the visibility in the display
-
-T,H, always plotting: defines if the values are to be plotted
-
-The configuration of the text field is described here: [Edit Temp, Humi](/en/help/edit/edit-temp-humi).
+Dazu s. auch die Konfiguration dieses Textfeldes: [Edit Temp, Humi](/en/help/edit/edit-temp-humi).
 
  

@@ -1,45 +1,45 @@
 # Preferences
 
-This menu contains some general settings.
+Hier werden einige menüübergreifende Grundeinstellungen vorgenommen.
 
-## Path and basic settings
+## Pfade und Grundeinstellungen
 
-``Exciter path`` defines the standard directory for loading excitation signals. So the signals to be selected must be located in this folder and its subdirectories, which is a restriction in a way, but ensures that macros can be run on different systems without the need for changes.
+``Exciter path`` legt den Startpfad für das Laden von Anregungssignalen fest, d.h. die zu verwendenden Signale müssen sich in diesem Pfad oder in Unterordnern befinden. Das bedeutet zwar eine gewisse Einschränkung, stellt aber sicher, dass Makros ohne Änderung auf verschiedenen Rechnern laufen können.
 
-``Base path`` defines the standard directory for any file operation occurring within a macro. This concerns for example the export functions from the info windows and all QC functions. The current directory for loading WinMF files and the import/export functions are exceptions. The general definition of a directory for macro relevant functions is equally necessary in order to ensure portability of macros.
+``Base path`` legt den Startpfad für alle Fileoperationen die in Makros vorkommen können fest. Dies betrifft z.B. die Export-Funktion in den Info-Fenstern und alle QC-Funktionen. Der aktuelle Filepfad zum Laden von WinMF-files und die Import/Export Funktionen sind davon ausgenommen. Die zentrale Festlegung eines Pfades für die in Makros relevanten Funktionen ist ebenfalls notwendig, um die Übertragbarkeit von Makros zu ermöglichen.
 
-``Generate sweeps`` in exciter path creates a set of popular sweeps for measuring which is stored in the Exciter path. Specific sweeps can be generated using the [Sweep generator](/en/help/edit/sweep-generator).
+``Generate sweeps in exciter path`` erzeugt im Exciter path eine Sammlung gängiger Sweeps für Messungen. Spezielle sweeps können im [Sweep generator](/de/help/edit/sweep-generator) erzeugt werden.
 
-``Show QC process control`` at startup automatically opens the process control window on startup.
+``Show QC process control at startup`` öffnet automatisch das Process control Fenster beim Starten.
 
-``Start QC automation at startup`` launches a process automation after starting WinMF.
+``Start QC automation at startup`` startet eine Prozessautomatisierung nach dem Starten von WinMF.
 
-With ``Offline help`` being activated, WinMF uses the locally stored help page. It needs to be stored in a folder named "Help" inside the WinMF installation directory. The current help files can be downloaded here: www.ifaa-akustik.de/data/Help.zip
+Wenn  ``Offline help`` aktiviert ist, greift WinMF auf die lokale Hilfe Seite zu. Die Hilfe muss im Installationspfad von WinMF im Ordner Help liegen. Die aktuelle Hilfe kann hier geladen werden: www.ifaa-akustik.de/data/Help.zip
 
-``Help language`` defines the language for the help page.
+``Help language`` legt die Sprache der Hilfe fest.
 
-``Store measurement setup in file`` additionally stores into the WinMF file frontend setup and measuring menu used for a measurement. Under [Spectrums/Time](/en/help/time-signalsspectrums) signals these setting can be restored from the file.
+``Store measurement setup in file`` speichert in den WinMF Files zusätzlich das bei einer Messung verwendete Frontend setup und Messmenü. Unter  [Spectrums, bzw. Time Signals](/de/help/time-signalsspectrums), können die Settings dann aus dem File wiederhergestellt werden.
 
-``Check for updates at startup`` synchronises WinMF, offline help and other necessary components with the version present on the WinMF server. Internet connection is required and WinMF needs to be unblocked by the firewall.
+``Check for updates at startup`` synchronisiert WinMF, die Offline-Hilfe und weitere benötigte Komponenten mit der Version auf dem WinMF Server. Es ist eine Internetverbindung erforderlich und die Firewall muss WinMF freigeben.
 
-``Decimal separator`` in tables is point sets the decimal separator in tables to '.', otherwise it is ','.
+``Decimal separator in tables is point`` setzt den Dezimalseparator in Tabellen auf '.', ansonsten ist er ','.
 
-``Windows always at default position``: all windows are opened in the left upper corner of the calling window.
+``Windows always at default position``lässt alle Fenster in der linken oberen Ecke des aufrufenden Fensters aufgehen.
 
-``Reset all window positions`` sets the saved values for the window position to the default value.
+``Reset all window positions`` setzt den in den Fenstern gespeicherten Wert auf den default Wert zurück.
 
-## Measurement
+## Messungen
 
-``Use filename as legend`` uses the filename as legend. An existing legend will be overwritten. This function will be applied only when a file is loaded.
+``Use filename as legend`` verwendet den Filenamne und die Kanalnummern als neue Legende. Eine vorhandene Legende wird überschrieben. Diese Funktion wird nur beim Laden eines Files angewendet.
 
-``Copy path after FFT/IFFT to other domain`` copies the path of the original file to the other domain.
+``Copy path after FFT/IFFT to other domain`` kopiert den Pfad der Ausgangsdatei in die andere Domäne.
 
-``Use cal-file.txt in WinMF folder to calibrate Frontend values``: settings in this calibration file allows the user to overwrite frontend settings individually: [Documentation of Calibration file](/en/help/file/cal-file)
+``Use cal-file.txt in WinMF folder to calibrate Frontend values`` es kann über ein Textfile eine individuelle Kalibrierung jeder Frontendeinstellung vorgnommen werden:  [Doku zum Kalibrierfile](/de/help/file/cal-file)
 
-``All outs are normalized to exciter Volt. or amp. Watt`` (line internal/external): normalizes over all activated channels also inhomogeneous outputs  to the defined voltage. This option has to be activated if reference measurements are used over inhomogeneous channels.
+``All outs are normalized to exciter Volt. or amp. Watt`` (line internal/external): normalisiert kanalübergreifend auch inhomogene Ausgänge auf die eingestellte Spannung. Diese Option muss zwingend aktiviert werden, wenn über inhomogene Kanäle Referenzen verwendet werden.
 
-``Use sensor ident as legend`` uses the sensor identifier of the Frontend Setup in the legend
+``Use sensor ident as legend`` verwendet den sensor identifier aus Frontend Setup in der Legende
 
-``T_ref (for delay calc.) [°C]``: the here defined value serves to calculate the speed of sound for the menu Edit/add group delay and within the internal post-processing applied to ADDA/Polar response in the case of using a microphone arc with different microphone distances.
+``T_ref (for delay calc.) [°C]``: der hier angegebene Wert wird zur Berechnung der Schallgeschwindigkeit im Menu ``Edit/add group delay`` und im nachgelagerten internenen processing bei ADDA/Polar response im Falle der Verwendung eines Mikrofonarms mit unterschiedlichen Abständen der Mikrofone verwendet.
 
-``Acquire lab temp, humid.``: definiton and use of a sensor to acquire laboratory temperature and humidity (see [Configure lab. temp, humi](/en/help/file/lab-ht)).
+``Acquire lab temp, humid.``: Hier kann der Sensor zur Erfassung der Labortemperatur konfiguriert werden (s. [Configure lab. temp, humi](/de/help/file/lab-ht)).

@@ -10,60 +10,60 @@ The file history list collects the operations in a chronological order and numbe
 
 ## History Setup
 
-The **Mode** of File History defines the class of functions (menus), which will make an entry in the history :
-- **all actions**: alle menus make an entry
-- **measurement**: only measurements make an entry
-- **overlay only**: only the overlay function will be used, that means the visible marked files of the history will be appened as additional channels to the current display. Typical application is to show additional channels of the file history in a current  measurment or to add them to a loaded file
-- **save operation only**: only saving operations make a new entry
-- **shortcuts**: only shortucts of the File History make an entry
+The ``Mode`` of File History defines the class of functions (menus), which will make an entry in the history :
+- ``all actions``: alle menus make an entry
+- ``measurement``: only measurements make an entry
+- ``overlay only``: only the overlay function will be used, that means the visible marked files of the history will be appened as additional channels to the current display. Typical application is to show additional channels of the file history in a current  measurment or to add them to a loaded file
+- ``save operation only``: only saving operations make a new entry
+- ``shortcuts``: only shortucts of the File History make an entry
 
-**Basename**: is the basename for the files stored by the file history, which are automatically named by an increasing  number (Basename_#nnnnnn, mit nnnnnn an increasing number)
+``Basename``: is the basename for the files stored by the file history, which are automatically named by an increasing  number (Basename_#nnnnnn, mit nnnnnn an increasing number)
 
-**Basepath** is the path to store the files. The setting for the path behavior is defined under Files/Preferences.
+``Basepath`` is the path to store the files. The setting for the path behavior is defined under Files/Preferences.
 
 The options for the display are:
-- **Hold**: all new entries are marked as visible, which corresponds to a classical hold function and additionally showing the other marked files of the list
-- **Only last file visible**:only the newest entry is visible, all others are marked invisible. This correcponds to a pure serial data acquisition: the last one is displayed, all is saved with increasing numbers.
-- **Use filename as legend**: copies the filename into the legend
-- **Keep display settings**: uses the actual display settings, so that switching the visible files does not affect the display. Otherwise, the display setting of the topmost marked file of the history defines the display
+- ``Hold``: all new entries are marked as visible, which corresponds to a classical hold function and additionally showing the other marked files of the list
+- ``Only last file visible``:only the newest entry is visible, all others are marked invisible. This correcponds to a pure serial data acquisition: the last one is displayed, all is saved with increasing numbers.
+- ``Use filename as legend``: copies the filename into the legend
+- ``Keep display settings``: uses the actual display settings, so that switching the visible files does not affect the display. Otherwise, the display setting of the topmost marked file of the history defines the display
 
 ## Shortcut Menus
 
-The **Shortcut menus** can be configured by a context menu for each function F1-F10.
+The ``Shortcut menus`` can be configured by a context menu for each function F1-F10.
 
 The 3 topmost entries of the menu are available for some menus, for example it allows the direct execution of  a reference measurement for some measurement menus.
 
-**Select**: select the menu in the file browser to be executed by the function
+``Select``: select the menu in the file browser to be executed by the function
 
-**Edit**: opens the menu, allows editing and all other functions. Should the changes be stored, the file/save function of the menu is to be used.
+``Edit``: opens the menu, allows editing and all other functions. Should the changes be stored, the file/save function of the menu is to be used.
 
 The following other functions can be configured in the context menu (checked or unchecked):
-- **Open only**: the menu is only opened, not executed
-- **Save menu by OK**: the menu is saved after operation. This makes sense when using it together with the option open only, as the menu then remembers the last state.
-- **Override file saving**: if this option is checked no entry is made by this menu, e.g. to provide a microphone calibration without making a new entry.
-- **Default color red**: makes the button's default color red (after loading a history setup). The execution of a reference measurement changes the color to green
-- **Green after exec.**: changes the color to green after the first execution (e.g to support calibration processes)
+- ``Open only``: the menu is only opened, not executed
+- ``Save menu by OK``: the menu is saved after operation. This makes sense when using it together with the option open only, as the menu then remembers the last state.
+- ``Override file saving``: if this option is checked no entry is made by this menu, e.g. to provide a microphone calibration without making a new entry.
+- ``Default color red``: makes the button's default color red (after loading a history setup). The execution of a reference measurement changes the color to green
+- ``Green after exec.``: changes the color to green after the first execution (e.g to support calibration processes)
 
-The buttons **Back** and **Forw.**, **Back+del** move the newest visible check one step to the top (Forw.) or to the bottom (back). Back+del. deletes the last entry. This behavior is similar to an undo function with deleting. With these functions complex edit operations can be stepped back and if necessary the last steps can be repeated starting from new position etc..
+The buttons ``Back`` and ``Forw.``, ``Back+del`` move the newest visible check one step to the top (Forw.) or to the bottom (back). Back+del. deletes the last entry. This behavior is similar to an undo function with deleting. With these functions complex edit operations can be stepped back and if necessary the last steps can be repeated starting from new position etc..
 
 ## History List
 
-The **History List** provides additional functions. The column name shows the filename. It is possible to edit the filename directly in the list. The filename on the harddisk is edited, too. This allows a quick renaming after serial measurements using individual names.
+The ``History List`` provides additional functions. The column name shows the filename. It is possible to edit the filename directly in the list. The filename on the harddisk is edited, too. This allows a quick renaming after serial measurements using individual names.
 
-The checkbox **visible** marks one or more files visible, which is a classical overlay function working on files of the file system.
+The checkbox ``visible`` marks one or more files visible, which is a classical overlay function working on files of the file system.
 
-The column **last action** shows the name of the menu which created the entry
+The column ``last action`` shows the name of the menu which created the entry
 
-**Path** shows the path of each file. It is possible to collect files from different paths to make complex scenarios.
+``Path`` shows the path of each file. It is possible to collect files from different paths to make complex scenarios.
 
 The context menu of the History table allows different edit operations on the list:
-- **Delete entry**: selected entries are deleted, corresponding files are not deleted from the harddisk.
-- **Reset table**: reset the list, corresponding files are not deleted from the harddisk.
-- **Delete entry+file**: selected entries are deleted, corresponding files are deleted from the harddisk!
-- **Make visible**: activates the option visible for the selected entries.
-- **Make invisible**: deactivates the option visible for the selected entries.
-- **Insert files**: opens the file browser to add files from different paths of the filesystem and insert them at the selected position
-- **Append files**: opens the file browser to append files from different paths of the filesystem to the list
-- **Cleanup table**: deletes entries from the list which are not existing in the file system
+- ``Delete entry``: selected entries are deleted, corresponding files are not deleted from the harddisk.
+- ``Reset table``: reset the list, corresponding files are not deleted from the harddisk.
+- ``Delete entry+file``: selected entries are deleted, corresponding files are deleted from the harddisk!
+- ``Make visible``: activates the option visible for the selected entries.
+- ``Make invisible``: deactivates the option visible for the selected entries.
+- ``Insert files``: opens the file browser to add files from different paths of the filesystem and insert them at the selected position
+- ``Append files``: opens the file browser to append files from different paths of the filesystem to the list
+- ``Cleanup table``: deletes entries from the list which are not existing in the file system
 
 ![file_history_table_context_menu](/file_history_table_context_menu.jpg)

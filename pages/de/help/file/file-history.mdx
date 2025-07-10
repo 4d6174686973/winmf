@@ -1,69 +1,69 @@
 # File history
 
-File history provides the functionality to manage and store a history of executed operations into a folder of the file system. Different operation modes and a management of shortcuts are available. The main intention of the file history menu is to support serial measurements and edit operations of any kind and furthermore provides a forward/backward function, so that complex edit operations can be executed easily.
+File history ermöglicht es eine Historie der ausgeführten Operationen in einem Ordner zu speichern und zu verwalten. Dazu stehen verschiedene Modi und die Verwaltung von Shortcuts zur Verfügung. Das Menü dient hauptsächlich dem Zweck der Seriennmessung und Edit-Operationen aller Art und stellt zudem eine Vorwärts/Rückwärts Funktion zur Verfügung, so dass komplexe Edit-Operationen komfortabel durchgeführt werden können.
 
-10 setups can directly be accessed via shortcuts (F1-F10). To execute via shortcut functions F1 to F10 it is requiered that the window focus is within the file history window (click into the window). The function also can be executed by clicking the buttons directly.
+10 Setups können per Shortcut (F1-F10) direkt benutzt werden. Für das Auslösen per Funktionstaste ist es erforderlich, dass der Fensterfokus im file_history Fenster steht (durch Klicken in das Fenster). Die Funktionen können auch durch Klicken mit der Maus auf die Buttons ausgelöst werden.
 
-The file history list collects the operations in a chronological order and numbered, the topmost element is the newest on.
+In der History Liste sammeln sich die Operationen chronologisch und durchnummeriert, das oberste Element ist das Neueste.
 
 ![file_history](/file_history.jpg)
 
 ## History Setup
 
-The **Mode** of File History defines the class of functions (menus), which will make an entry in the history :
-- **all actions**: alle menus make an entry
-- **measurement**: only measurements make an entry
-- **overlay only**: only the overlay function will be used, that means the visible marked files of the history will be appened as additional channels to the current display. Typical application is to show additional channels of the file history in a current  measurment or to add them to a loaded file
-- **save operation only**: only saving operations make a new entry
-- **shortcuts**: only shortucts of the File History make an entry
+Der  ``Mode`` der File History definiert die Funktionsklasse, die einen Eintrag in der History auslöst:
+- ``all actions``: alle Menüs erzeugen einen Eintrag
+- ``measurement``: nur Messungen bewirken einen Eintrag
+- ``overlay only``: es wird nur die overlay Funktion verwendet, d.h. die als visible markierten files in der history werden als zusätzliche Kanäle in der Ausgabe angehängt. Anwendungen davon: Zusätzlich zu einer Messung werden weitere Kanäle angezeigt oder zusätzlich zu einem geladenen File werden die als visible markierten files geladen und angezeigt.
+- ``save operation only``: nur speichern löst einen Eintrag aus
+- ``shortcuts``: nur shortcuts aus der File History lösen einen Eintrag aus
 
-**Basename**: is the basename for the files stored by the file history, which are automatically named by an increasing  number (Basename_#nnnnnn, mit nnnnnn an increasing number)
+``Basename``: ist der Basisname für die in der File History gespeicherten files, die automatisch inkrementell benannt werden (Basename_#nnnnnn, mit nnnnnn eine fortlaufende Zahl)
 
-**Basepath** is the path to store the files. The setting for the path behavior is defined under Files/Preferences.
+``Basepath`` ist der Pfad unter dem die files gespeichert werden. Es ist die Einstellung für das Pfadverhalten unter [Files/Preferences](/de/help/file/preferences) zu beachten.
 
-The options for the display are:
-- **Hold**: all new entries are marked as visible, which corresponds to a classical hold function and additionally showing the other marked files of the list
-- **Only last file visible**:only the newest entry is visible, all others are marked invisible. This correcponds to a pure serial data acquisition: the last one is displayed, all is saved with increasing numbers.
-- **Use filename as legend**: copies the filename into the legend
-- **Keep display settings**: uses the actual display settings, so that switching the visible files does not affect the display. Otherwise, the display setting of the topmost marked file of the history defines the display
+Die Anzeigoptionen sind:
+- ``Hold``: es werden alle neuen Einträge als visible markiert, so dass das Verhalten einer Hold-Funktion entspricht, die außerdem die zusätzlich als visible markierten files anzeigt.
+- ``Only last file visible``:nur der neueste Eintrag wird als visible markiert, alle anderen werden als nicht-visible gesetzt. Dieses Verhalten enstpricht einer reinen Serienerfassung von Daten: Es wird nur das Neueste angezeigt, alle vorherigen werden durchnummeriert gespeichert
+- ``Use filename as legend``: kopiert den Filenamen in die Legende
+- ``Keep display settings``: verwendet immer das aktuelle Display setting, so dass beim Umschalten der als visible markierten files die Anzeige unverändert bleibt, ansonsten wird immer das Display setting des neuesten files verwendet.
 
 ## Shortcut Menus
 
-The **Shortcut menus** can be configured by a context menu for each function F1-F10.
+Der Bereich  ``Shortcut menus`` kann per Kontextmenü für jede Funktion F1-F10 konfiguriert werden:
 
-The 3 topmost entries of the menu are available for some menus, for example it allows the direct execution of  a reference measurement for some measurement menus.
+die obersten 3 Einträge sind je nach Menü verfügbar und erlauben z.B. den direkten Zugriff auf ein Untermenü. Bei Messungen wird hier je nach Menü die Referenzmessung ausgelöst.
 
-**Select**: select the menu in the file browser to be executed by the function
+``Select``: Auswahl des Menu-setups im File Browser
 
-**Edit**: opens the menu, allows editing and all other functions. Should the changes be stored, the file/save function of the menu is to be used.
+``Edit``: öffnet das Menü, erlaubt Editieren und alle weiteren Funktionen. Sollen die Änderungen gespeichert werden, so muss im Menü per File/Save das Setup gespeichert werden.
 
-The following other functions can be configured in the context menu (checked or unchecked):
-- **Open only**: the menu is only opened, not executed
-- **Save menu by OK**: the menu is saved after operation. This makes sense when using it together with the option open only, as the menu then remembers the last state.
-- **Override file saving**: if this option is checked no entry is made by this menu, e.g. to provide a microphone calibration without making a new entry.
-- **Default color red**: makes the button's default color red (after loading a history setup). The execution of a reference measurement changes the color to green
-- **Green after exec.**: changes the color to green after the first execution (e.g to support calibration processes)
+Es können weitere Optionen konfiguriert werden (checked oder unchecked):
+- ``Open only``: das Menü wird beim Auslösen durch den Button oder die Funktionstaste nur geöffnet
+- ``Save menu by OK``: das Menu wird nach Benutzung aktualisiert gespeichert. Das macht im Zusammenspiel mit Open only Sinn, da sich das Menu dann automatisch den letzten Stand merkt.
+- ``Override file saving``: wenn diese Option angewählt ist, wird kein Listeneintrag erzeugt, z.B. wenn man hier eine Mikrofonkalibrierung auslöst und nicht möchte, dass damit ein Eintrag in der File History erzeugt wird.
+- ``Default color red``: färbt den Button im Startzustand rot (nach dem Laden eines File history setups). Eine Ausführung von Referenzmessungen im Kontextmenü färbt den Button grün.
+- ``Green after exec.``: färbt nach der ersten Ausführung den Button grün, um z.B. Kalibrierprozesse zu unterstützen
 
-The buttons **Back** and **Forw.**, **Back+del** move the newest visible check one step to the top (Forw.) or to the bottom (back). Back+del. deletes the last entry. This behavior is similar to an undo function with deleting. With these functions complex edit operations can be stepped back and if necessary the last steps can be repeated starting from new position etc..
+Die Buttons  ``Back`` und ``Forw.``, ``Back+del`` verschieben den zuletzt als visible markierten Eintrag nach oben (Forw.) oder nach unten (Back). Back+del löscht den letzten Eintrag zusätzlich. Das entspricht einer Undo Funktion mit löschen. Auf diese Weise kann man bei komplexen Edit Operationen zurückgehen, bei Bedarf letzte Schritte löschen und die Operation an anderer Stelle wieder aufnehmen.
 
 ## History List
 
-The **History List** provides additional functions. The column name shows the filename. It is possible to edit the filename directly in the list. The filename on the harddisk is edited, too. This allows a quick renaming after serial measurements using individual names.
+Die ``History List`` stellt weitere Funktionen zur Verfügung. Die Spalte Name zeigt den Filenamen an. Es ist möglich den Namen direkt in der Liste zu editieren. Der Filename auf der Festplatte wird dadurch direkt umbenannt. So hat man eine schnelle Möglichkeit Files nach Messreihen mit individuellen Namen zu versehen.
 
-The checkbox **visible** marks one or more files visible, which is a classical overlay function working on files of the file system.
+Die Checkbox  ``visible`` schaltet ein oder mehrere Files visible (klassische Overlay Funktion, die auf Files im Dateisystem arbeitet).
 
-The column **last action** shows the name of the menu which created the entry
+Die Spalte Last action zeigt den Namen des auslösenden Menüs an.
 
-**Path** shows the path of each file. It is possible to collect files from different paths to make complex scenarios.
+Path zeigt den Pfad des jeweiligen Files an. Es können auch Files aus verschiedenen Pfaden in der Liste versammelt werden, um komplexe Szenarien abzubilden.
 
-The context menu of the History table allows different edit operations on the list:
-- **Delete entry**: selected entries are deleted, corresponding files are not deleted from the harddisk.
-- **Reset table**: reset the list, corresponding files are not deleted from the harddisk.
-- **Delete entry+file**: selected entries are deleted, corresponding files are deleted from the harddisk!
-- **Make visible**: activates the option visible for the selected entries.
-- **Make invisible**: deactivates the option visible for the selected entries.
-- **Insert files**: opens the file browser to add files from different paths of the filesystem and insert them at the selected position
-- **Append files**: opens the file browser to append files from different paths of the filesystem to the list
-- **Cleanup table**: deletes entries from the list which are not existing in the file system
+Das Kontextmenu der History Liste erlaubt diverse Edit Operationen in der Liste:
+- ``Delete entry``: Selektierte Einträge aus der Liste werden gelöscht. Korrespondierende Files auf der Festplatte werden nicht gelöscht.
+- ``Reset table``: reset the list, corresponding files are not deleted from the harddisk.
+- ``Delete entry+file``: ein oder mehrere selektierte Einträge aus der Liste werden gelöscht. Files auf der Festplatte werden simultan gelöscht!
+- ``Make visible``: aktiviert für die selektierten Einträge die Option visible
+- ``Make invisible``: deaktiviert für die selektierten Einträge die Option visible
+- ``Insert files``: öffnet den Filebrowser um weitere Files an der selektierten Position aus beliebigen Pfaden hinzuzufügen.
+- ``Append files``: öffnet den Filebrowser um weitere Files an das Ende der Liste aus beliebigen Pfaden hinzuzufügen.
+- ``Cleanup table``: löscht Einträge aus der Liste, die physikalisch nicht auf der Festplatte unter dem angegebenen Pfad zu finden sind.
 
 ![file_history_table_context_menu](/file_history_table_context_menu.jpg)
