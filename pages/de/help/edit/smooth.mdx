@@ -2,32 +2,32 @@
 
 ## Smooth (time signal)
 
-Working area and channel are defined by [Select region](/en/help/edit/region-control) and [Select channel](/en/help/edit/select-channel).
+Arbeitsbereich und Kanal werden mit [Select region](/de/help/edit/region-control) und [Select channel](/de/help/edit/select-channel) festgelegt.
 
-Smoothing in the time domain is achieved through averaging within a sliding rectangular window. The width of the window in samples is set by the number of ``bins``.
+Die Glättung im Zeitbereich führt eine Mittelwertbildung in einem gleitenden Rechteckfenster durch. Die Fensterbreite in Samples wird durch die Anzahl ``bins`` angegeben.
 
 ![motor1-sm_100bins](/motor1-sm_100bins.png)
 
 ## Smooth (spectrum)
 
-Working area and channel are defined by [Select region](/en/help/edit/region-control) and [Select channel](/en/help/edit/select-channel).
+Arbeitsbereich und Kanal werden mit [Select region](/de/help/edit/region-control) und [Select channel](/de/help/edit/select-channel) festgelegt.
 
 ### Smooth setup
 
-Here the parameters for the operation are set. ``Process`` offers the options of ``continuous`` smoothing or smoothing in ``steps``.
+Hier werden die Parameter der Glättung eingestellt. ``Process`` erlaubt die Auswahl einer kontinuierlichen Glättung (``continuous``) oder einer Glättung in Stufen (``steps``).
 
-### Continuous smoothing
+### Kontinuierliche Glättung
 
-Using continuous smoothing, the magnitude (``Smoothing of magnitude``), the group delay (``Smoothing of group delay``) or both (``Smoothing of both``) can be modified.
+Bei der kontinuierlichen Glättung kann der Betrag (``Smoothing of magnitude``), die Gruppenlaufzeit (``Smoothing of group delay``) oder beides (``Smoothing of both``) bearbeitet werden.
 
-The region to be considered for the averaging can be specified linearly (``Method lin.`` by entering the number of evaluated frequency values (``bins``)) or logarithmically (``Method log.`` by entering the width of the evaluated frequency band in octaves (``Bandw. [1/oct.]``)).
+Der Bereich, der für die Mittelung betrachtet wird, kann linear (``Method lin.`` durch Eingabe der betrachteten Frequenzlinien (``bins``)) oder logarithmisch (``Method log.`` durch Eingabe der Breite des betrachteten Bereichs in Oktaven (``Bandw. [1/oct.]``)) angegeben werden.
 
-### Smoothing in steps
+### Glättung in Stufen
 
-The smoothing in steps is differentiated by two methods using averaging (``Method averaged``) or summation (``Method added (SPL)``).
+Bei der Glättung in Stufen ist zwischen einer Mittelwertbildung (Method averaged) und einer Addition (``Method added (SPL)``) zu unterscheiden.
 
-The width of the steps is specified in octaves (``Bandw. [1/oct.]``).
+Die Breite der Stufen wird in Oktaven angegeben (``Bandw. [1/oct.]``).
 
-The following plot shows an example of the different smoothing methods applied to the frequency response measurement of a sound reinforcement system.
+Der folgende Plot zeigt exemplarisch die verschiedenen Glättungsmethoden angewandt auf die Frequenzgangmessung einer Beschallungsanlage.
 
 ![wfs-fr-smooth-example](/wfs-fr-smooth-example.png)

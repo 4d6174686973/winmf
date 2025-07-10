@@ -1,39 +1,39 @@
 # Generate
 
-Using the signal generator some of the classic signal can be created.
+Im Signalgenerator können einige der klassischen Signale erzeugt werden.
 
 ![signals](/signals.png)
 
-Under [Signal length](/en/help/edit/signal-length) the total length of the new signal as well as the sampling frequency need to be specified.
+Unter [Signal length](/de/help/edit/signal-length) ist die Gesamtlänge des neuen Signals einzugeben. Außerdem ist die Samplefrequenz anzugeben.
 
 ## Generator
 
-Here several wave forms are available. Depending on the wave form different parameters can be configured.
+hier stehen verschiedene Wellenformen zur Verfügung. Je nach Wellenform können verschiedene Parameter eingestellt werden.
 
 ### Sine
 
-For ``sine`` at first the frequency is chosen.
+Bei Sinus (``sine``) kann zunächst die Frequenz eingestellt werden.
 
-The option ``round_to_int`` adjusts this value in such a way, that a number of whole periods fits the given signal length. For the application as an excitation signal this option needs to be activated, otherwise the requirement of absolute periodicity for FFT operations is not fulfilled (leakage effect).
+Die Funktion ``round_to_int`` verändert diesen Frequenzwert so, dass eine ganzzahlige Anzahl von Perioden in die vorgegebene Signallänge passt. Bei Verwendung als Anregungssignal muss die Option aktiviert werden, da sonst bei FFT-Berechnungen die Vorraussetzung einer exakten Periodizität verletzt wird (leakage effekt).
 
-In ``Amplitude [V]`` the peak value for the signal amplitude can be set.
+Unter ``Amplitude [V]`` kann der Spitzenwert der Signalamplitude eingestellt werden.
 
-### Rectangular
+### Rechteck
 
-``Rectangular`` offers the same parameters as ``sine``, additionally ``Duty cycle [%]`` allows to choose, how long the positive peak value is held, in proportion to the whole period.
+Rechteck (``rectangular``) hat die gleichen Parameter wie Sinus. Zusätzlich kann unter ``Duty cycle [%]`` eingestellt werden, wie lange der positive Maximalwert im Verhältnis zur Periodendauer gehalten wird.
 
-### Triangular
+### Dreieck
 
-``Triangular`` uses the same parameters as sine.
+Dreieck (``triangular``) hat die gleichen Parameter wie Sinus.
 
-### Sawtooth
+### Sägezahn
 
-``Sawtooth`` uses the additional parameter width, describing the length of the rising slope in proportion to the whole period. The range of values is from 0 to 1. With a width of 0.5, the sawtooth becomes a triangle.
+Sägezahn (``sawtooth``) hat zusätzlich den Parameter ``width``, der die Länge der aufsteigenden Flanke im Verhältnis zur Periodendauer beschreibt. Der Wertebereich liegt zwischen 0 und 1. Bei einem Wert von 0.5 für ``width`` entspricht der Sägezahn einem Dreieck.
 
-### Noise
+### Rauschen
 
-The length of a ``noise`` signal is specified as the FFT length (``FFT length noise``). Only integer input values are accepted, the signal consists of $2^N$ samples.
+Bei Rauschsignalen (``noise``) wird die Länge als FFT-Wert angegeben (``FFT length noise``). Hier sind nur ganzzahlige Eingaben möglich, das Signal hat 2^N Samples.
 
-The parameter ``Slope [dB]`` represents a decrease of amplitude in the frequency domain in dB/octave.
+Der Parameter ``Slope [dB]`` beschreibt den Abfall der Amplitude im Frequenzbereich in dB/Oktave.
 
-``0dB at freq. [Hz]`` causes a displacement of the curve, so that the value at the frequency specified in this field is 0 dB.
+``0dB at freq. [Hz]`` verschiebt die Kurve im Frequenzbereich derart, dass sie bei der eingegebenen Frequenz den Wert 0dB hat.

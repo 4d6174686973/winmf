@@ -1,35 +1,35 @@
 # Edit extended comment
 
-This menu edits and creates multiline comments.
+Mit diesem Menu können mehrzeilige Kommentare erzeugt und bearbeitet werden.
 
-The comments can be saved using  [File/Save extended comment](/en/help/file/save-extended-comment) as txt-file.
+Die Kommentare können mit [File/Save extended comment](/de/help/file/save-extended-comment) als txt-file gespeichert werden.
 
-The visibility in the display is controlled by the checkbox ``Comm...`` (near the checkbox for legend)(shortcut c). Clicking the comment activates edit mode, clicking outside stops editing. The comment is stored in the header of the file and is reproduced exaxtly when loading the file.
+Die Sichtbarkeit im Display wird mit der Checkbox Comm... (neben der Checkbox für Legend) gesteuert (Shortcut c). Klicken in den Text des Kommentars aktiviert das Editieren. Der Text wird nach Klicken außerhalb des Kommentarfeldes übernommen. Der Text wird im header des files inklusive aller Einstellungen und Formatierungen gespeichert und beim Laden des Files exakt reproduziert.
 
 ![example1](/example1.png)
 
-Detail settings are controlled via this menu (``Edit/Header/Edit extended comment``).
+Die Detaileinstellungen dieses Menüs (``Edit/Header/Edit extended comment``) sind wie folgt:
 
 ![example2](/example2.png)
 
-``Mode`` switsches between ``Edit header`` and ``Set header``. ``Edit header`` edits the comment settings stored in the file header. ``OK`` overwrites the header, ``Cancel`` not.
+``Mode`` schaltet zwischen ``Edit header`` und ``Set header`` um. ``Edit header`` editiert die im Header des Files gespeicherten Daten des Kommentars. Bei OK wird der Header überschrieben, bei Cancel nicht.
 
-``Set header`` overwrites the comment and settings by the settings stored in the menu. ``Ok`` overwrites the data in the menu and the header. This mode allows the use in macro processes to store information in a structured way, by using a default text in the menu.
+Mit ``Set header`` werden die Daten des Kommentars mit den in dem Menü gespeicherten Daten überschrieben. Mit Ok werden sowohl die Daten im Header mit den editierten Daten überschrieben, als auch die im Menü hinterlegten. Dieser Modus erlaubt  die Benutzung in Makroprozessen, um beispielsweise erweiterte Informationen strukturiert zu erfassen, indem ein default text im Menü hinterlegt wird.
 
-The ``position`` of the comment is relative to the lower left corner of the plot axes, e.g. lower left corner is 0,0, upper right corner is 1,1. Placing the text outside the axes requires values smaller as 0 or larger as 1. This can be useful to place text outside when plotting figures.
+Die Position des Kommentarfeldes ist relativ zur Achsendarstellung des Plots, d.h. links unten ist 0,0, rechts oben ist 1,1. Zur Platzierung von Text außerhalb müssen Werte kleiner 0  und größer 1 verwendet werden. Das kann nützlich sein, um beim Plotten einen Kommentar außerhalb des Plots zu platzieren.
 
-``visible in plot`` controls the use in plots
+``visible in plot`` steuert die Verwendung beim Plotten
 
-``visible in display`` controls visibility in the display of WinMF
+``visible in display`` steuert die Sichtbarkeit im Display von WinMF
 
-``Font size``: text size in dpi
+``Font size``: Textgröße in dpi
 
-``Text color``: text color
+``Text color``: Textfarbe
 
-``Backgr. Color``: background color, none ist transparent
+``Backgr. Color``: Hintergrundfarbe, none ist transparent
 
-``Interpreter``: the text interpreter. Tex can be used for normal text and text together with symbols (like greek letteres) as well as for simple mathematical formulas. (See as example the figure above). Z_\{min\} makes a lower "min" and \Omega makes the greek letter as symbol for "Ohm". See also [LaTeX-Kompendium:_Control characters](https://de.wikibooks.org/wiki/LaTeX-Kompendium:_Sonderzeichen).
+``Interpreter``: der Text Interpreter. Tex ist für normalen Text in Verbindung mit Symbolen (z. B. griechische Symbole) und einfachen mathematischen Ausdrücken und Formatierungen empfohlen. Als Beispiel dient der Text im Fenster (s. oben): Z_\{min\} erzeugt ein tiefer gestelltes "min" und \Omega ergibt den griechischen Buchstaben als Symbol für "Ohm". S. z.B. auch [LaTeX-Kompendium:_Control characters](https://de.wikibooks.org/wiki/LaTeX-Kompendium:_Sonderzeichen).
 
-``Latex`` can be used for complex formulas (sums, integrals etc.), but the quality of the output is not as high as when using the other interpreters and sometimes symbols are misplaced, depending also on the font size. Latex sequences begin with \$\$ and are closed with \$\$.
+``Latex`` kann für komplexe Formeln (Summen, Integrale etc.) verwendet werden, allerdings ist der Output nicht so hoch in der Qualität und es kommt je nach Font size schon mal zu Verschiebungen der Symbole .  Latex Sequenzen werden mit  \$\$ eingeleitet und mit \$\$ abgeschlossen.
 
-``Text`` is simply text.
+``Text`` ist einfach Text.

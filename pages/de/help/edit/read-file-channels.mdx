@@ -1,15 +1,17 @@
 # Read file channels
 
-``Read file channels`` adds channels reading from one or more files. The channels to be read are defined in the channel vector Channel subset.
+Mit ``Read file channels`` werden zu den vorhandenen Kanälen weitere Kanäle aus einer oder mehrerer Dateien dazu geladen, wobei nur die durch den Kanalvektor im Feld ``Channel subset`` angegebenen Kanäle geladen werden.
 
-The syntax of the channel vector is
-- Start:Step:Stop (2:3:11 results in channels 2 5 8 11)
-- Comma separeted list (1,2,7 resulst in 1 2 7)
+Die Syntax für den Kanalvektor ist:
+- Start:Step:Stop (2:3:11 ergibt den Kanalvektor 2 5 8 11)
+- Komma separierte Liste (1,2,7 ergibt den Kanalvektor 1 2 7)
 
-or a combination
+oder Kombinationen
 
-2:3:11,10:5:20 is the vecor 2 5 8 11 10 15 20
+z.B.
 
-The resulting channel vector is displayed in ``Subset preview``.
+2:3:11,10:5:20 ergibt den Kanalvektor 2 5 8 11 10 15 20
 
-Non existing channels are ignored.
+Der resultierende Kanalvektor wird im Feld ``Subset preview`` angezeigt.
+
+Sind die zu ladenden Kanäle nicht in den Files vorhanden, dann werden diese Kanalnummern beim Laden der files ignoriert.

@@ -1,5 +1,5 @@
 # Complex interpolation
 
-Calculates a complex interpolation with a user-defined [number of samples and samplerate](/en/help/edit/signal-length). If the samplerate is increased, zero padding is used to fill the undefined frequency range. The target values for ``samples`` and ``FFT`` are related to the corresponding impulse response of the complex spectrum. Example: if FFT=14 is used the number of lines will be $2^{13}+1 = 8193$.
+führt eine komplexe Interpolation mit vorgebener [Anzahl Samples und Samplerate](/de/help/edit/signal-length) aus. Beim Heraufsetzen der Samplerate werden Nullen im nichtdefinierten Frequenzbereich eingefügt. Die unter length eingegebenen Werte für Samples, bzw. FFT, beziehen sich auf die zugehörige Impulsantwort des komplexen Frequenzganges. Wird beispielsweise FFT = 14 eingegeben, dann ist die Linienzahl des Spektrums: $2^{13}+1 = 8193$.
 
-Advice: Complex interpolation is working only if magnitude and phase response are smooth. Usually, most measured frequency responses are smooth enough to perform a complex interpolation. It is not useful to calculate a complex interpolation on noise spectrums.
+Hinweis: Daten können nur sinnvoll komplex interpoliert werden, wenn sie einen hinreichend glatten Verlauf des Betrags- und Phasengangs aufweisen. In der Regel trifft das auf die meisten gemessenen Frequenzgänge zu. Es ist nicht sinnvoll Rauschspektren durch eine komplexe Interpolation zu modifizieren.

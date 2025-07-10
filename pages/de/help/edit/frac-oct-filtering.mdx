@@ -1,33 +1,33 @@
 # Fractional octave filtering
 
-``Fractional octave filtering`` allows filtering in the time and frequency domain using octave band or fractional octave band filters according to DIN EN 61260.
+``Fractional octave filtering`` erlaubt die Filterung im Zeit- und Frequenzbereich mit Oktavfiltern oder Bruchteilen von Oktaven nach DIN EN 61260.
 
-``Bandwidth [1/oct]`` defines the band width of the filters in fractions of octaves.
+``Bandwidth [1/oct]`` legt die Bandbreite der Filter in Bruchteilen von Oktaven fest.
 
-``Lower band [Hz]`` sets the center frequency of the lowest filter.
+``Lower band [Hz]`` bestimmt die Mittenfrequenz des tiefsten Filters.
 
-``Upper band [Hz]`` sets the center frequency of the highest filter.
+``Upper band [Hz]`` bestimmt die Mittenfrequenz des höchsten Filters.
 
-``Reference [Hz]`` sets the reference center frequency. Based on this frequency all the center frequencies are determined, using the value chosen for Basis. With a Basis of 2 the center frequencies of the octave filters are separated exactly by the factor 2, with a Basis of 10 by the factor $10^{3/10}≈1.99526$.
+``Reference [Hz]`` legt die Referenz-Mittenfrequenz fest. Ausgehend von dieser werden die übrigen Mittenfrequenzen abhängig vom Wert für Basis festgelegt. Bei dem Basiswert 2 liegen die Filtermittenfrequenzen der Oktavfilter exakt um den Faktor 2 auseinander, beim Wert 10 um den Faktor $10^(3/10)=1.99526$ (gerundet).
 
-``Class 1 tol.`` and ``Class 2 tol.`` create tolerance curves according to the norm, illustrating the different degrees of tolerance.
+``Class 1 tol.`` und ``Class 2 tol.`` erzeugt Toleranzkurven entsprechend der Norm, die die verschiedenen Toleranzstufen veranschaulichen.
 
-If ``Create band level spectrum`` is activated, for each output curve a spectrum is created with the levels of the filtered bands.
+Ist ``Create band level spectrum`` aktiviert, dann wird für jede Ausgangskurve ein Spektrum mit den Leveln der gefilterten Bänder erzeugt.
 
-The channel is chosen by [Select channel](/en/help/edit/select-channel).
+Die Kanalauswahl erfolgt nach [Select channel](/de/help/edit/select-channel).
 
-After the filtering for each filter band there is a channel in the time domain.
+Nach der Filterung liegt für jedes Filterband ein eigener Kanal im Zeitbereich vor.
 
-As an example of an application the following plot shows motor noise recorded at 4 microphone positions.
+Als Beispiel für die Anwendung ist im Folgenden ein an 4 Mikrofonpositionen aufgezeichnetes Motorgeräusch gezeigt.
 
 ![motor1](/motor1.png)
 
-After the octave band filtering, for each of the 4 channels the time signal is displayed in octaves, resulting in a total of 32 channels:
+Nach Oktavbandfilterung liegen für jeden der 4 Kanäle alle Zeitverläufe in Oktaven vor, insgesamt 32 Kanäle:
 
 ![motor1_octaves](/motor1_octaves.png)
 
-Using the [Info window](/en/help/info/statistics), statistical values of the filtered channels, such as crest factor or Leq, can be evaluated in detail.
+Statistikwerte für die gefilterten Kanäle, wie Crest-Faktor oder Leq, können detailliert im [Info-Fenster](/de/help/info/statistics) ausgewertet werden.
 
-If ``Create band level spectrum`` is activated, additionally the corresponding spectrum of band levels is created in the frequency domain:
+Ist ``Create band level spectrum`` aktiviert, dann wird zusätzlich das zugehörige Bandlevel Spektrum im Frequenzbereich erzeugt:
 
 ![motor1_octaves_spl_band_levels](/motor1_octaves_spl_band_levels.png)

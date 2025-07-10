@@ -1,28 +1,28 @@
 # Apply window
 
-``Apply window`` creates a time window for blinding out unwanted sequences of the time signal. The window is displayed like an additional channel. Starting and ending point of the window are specified by the settings under ``Select Region``. The window preview is always updated when moving the cursors or by clicking the diagram.
+``Apply window`` erzeugt ein Zeitfenster, um unerwünschte Bereiche aus dem Zeitsignal auszublenden. Das Fenster wird wie ein zusätzlicher Kanal angezeigt. Beginn und Ende des Fensters werden über die Einstellungen unter ``Select Region`` festgelegt. Eine Aktualisierung des Previews des Fensters erfolgt immer nach einer Cursor-Bewegung.
 
 ![ir-tukey-win](/ir-tukey-win.png)
 
-``Window setup`` defines the shape of the time window. The following windows are available:
+``Window setup`` legt die Form des Zeitfensters fest. Es stehen folgende Fenster zur Verfügung:
 
 ![windows](/windows.png)
 
-For the window shape ``tukeywin`` the ratio of the slopes, where the window function increases or decreases between 0 and 1, to the total length of the window can be modified as a parameter. The range of that value is from 0 to 1. The remaining middle part of the window is not modified. Also the windows ``Chebychef``, ``Gauss`` and ``Kaiser`` can be controlled in their course by parameters.
+Bei der Fensterform ``tukeywin`` kann als Parameter der Anteil an den Flanken des Fensters bestimmt werden, in dem die Fensterfunktion von 1 auf 0 sinkt. Der Wertebereich liegt zwischen 0 und 1. Der verbleibende Anteil in der Mitte des Fensters bleibt unbeeinflusst. Die Fenster ``Chebychef``, ``Gauss`` und ``Kaiser`` können ebenfalls durch Parameter im Verlauf gesteuert werden. 
 
-``Window slope`` defines, whether the window shall be symmetrical (sym), or the slope shall be located on one side only (right/left).
+``Window slope`` legt fest, ob das Fenster symmetrisch sein soll (sym), die Flanke nur auf der rechten Seite (right), oder links (left) sein soll.
 
 ![left-right-window](/left-right-window.png)
 
-``Win. body length`` defines the ratio of pass through segment to slope length.
+``Win. body length`` bestimmt das Verhältnis von Durchlassbereich zu Flanke.
 
 ![window-bodies](/window-bodies.png)
 
-If the ``Instant FFT`` function is activated in the processing options, a new channel will be created in the frequency domain containing the windowed result. Changes applied to the window are passed on directly to the new channel. When leaving the ``Apply window`` menu by ``OK``, the newly created channel is kept in the frequency domain; leaving by ``Cancel`` deletes the channel, reproducing the initial state.
+Ist die Funktion ``Instant FFT`` unter processing options aktiviert, dann wird im Frequenzbereich ein neuer Kanal mit dem gefensterten Ergebnis angelegt. Änderungen am Fenster werden sofort auf den neuen Kanal übertragen. Wenn man das ``Apply windows`` Menü mit OK verlässt, wird der neu erstellte Kanal im Frequenzbereich belassen, bei Cancel wird der Kanal wieder gelöscht, also der Anfangszustand herbeigeführt.
 
-``Remove DC`` subtracts the DC component from the windowed region of the impulse response. Usually this leads to better high-pass characteristics in the windowed impulse response.
+``Remove DC`` subtrahiert den DC Anteil aus dem gefensterten Bereich der Impulsantwort. Dies führt im Allgemeinen zu einem besseren Hochpassverhalten der gefensterten Impulsantwort.
 
 ![15-fr-bd4-ir](/15-fr-bd4-ir.png)
 ![15-fr-bd4](/15-fr-bd4.png)
 
-``Apply to all channels`` applies the window to all channels of the active file; if ``Apply to all channels`` is not activated, only the active channel is windowed. ``OK`` executes the window operation.
+``Apply to all channels`` wendet das Fenster auf alle Kanäle der aktiven Datei an, ist ``Apply to all channels`` deaktiviert wird nur der aktive Kanal gefenstert. OK führt die Fensterung aus.
