@@ -1,29 +1,31 @@
 # STI (Impulse response and STIPA)
 
-Calling ``Info/STI from impulse response`` or ``Info/STI from STIPA`` first of all starts the processing for calculating the MTF table. Only the region between the cursors is being evaluated. For recalculating, at first the ``Info`` window needs to be closed.
+Wenn ``Info/STI from impulse response`` oder  ``Info/STI from STIPA`` aufgerufen wird, dann erfolgt zunächst das Processing zur Berechnung der MTF-Tabelle. Es wird nur der zwischen den Cursorn liegende Bereich ausgewertet. Um eine Neuberechnung durchzuführen, muss vorher das Info-Fenster geschlossen werden.
 
-The impulse responses need to provide sufficient length (at least 1.6s and adequate to the reverberation of the room) and quality. Distortion and low signal-to-noise ratios can affect the results.
+Es ist darauf zu achten, dass die Impulsantworten eine hinreichende Länge (mindestens 1,6s, bzw. der Nachhallzeit des Raumes angemessen) und Qualität haben. Verzerrungen und ein geringer Signal-to-Noise können die Ergebnisse beeinflussen.
 
-When using modulated noise for excitation (STIPA method), at least 10s of signal must be present. Furthermore it is important that the excitation signal is played back with correct sample rate, as the method is sensitive to frequency shifting. Thus also a signal chain causing frequency shifts is rather unsuitable for use with the STIPA method.
+Für die Verwendung von moduliertem Rauschen als Testsignal (STIPA-Methode) gilt, dass mindestens 10s Signal vorliegen sollten. Ferner ist darauf zu achten, dass das Anregungssignal mit korrekter Samplerate wiedergegeben wird, da das Verfahren empfindlich auf Frequenzverschiebungen reagiert. Auch eine Messstrecke, die in der Signalverarbeitung Frequenzverschiebungen verursacht, ist eher ungeeignet für das STIPA-Verfahren.
 
-Under ``Select/Select parameters`` the evaluation to be displayed is selected:
+Unter ``Select/Select parameters`` können dann die anzuzeigenden Auswertungen ausgewählt werden:
 
 ![sti_info_window-select](/sti_info_window-select.gif)
 
-The ``Info`` window shows a table with STI values for each channel:
+Im Info Fenster erscheinen tabellarisch die STI-Werte für jeden Kanal:
 
-In addition to different variants for the consideration of auditory masking, also reception threshold factor and the inclusion of signal-to-noise values can be separately switched on and off.
+![sti_info_window-results](/sti_info_window-results.gif)
 
-``Copy signal-, or noise levels`` copies the level at the octave mid-frequencies from the current spectrum file into the STI-menu.
+Neben den verschiedenen Versionen zur Berücksichtigung der Maskierung, können auch der Hörschwellenfaktor und die Verarbeitung der Signal-to-Noise Werte getrennt an - und abgeschaltet werden.
 
-``Show m-table`` shows the modulation transfer function and the m-correction as table:
+``Copy signal-``, bzw., ``noise levels`` kopiert aus der gerade angezeigten Spektrumsdatei (nur Kanal 1 wird berücksichtigt) die Level an den Oktavband-Mittenfrequenzen in das STI-Menü.
+
+``Show m-table`` zeigt die Modulations-Transferfunktionen und die m-Korrekturfaktoren in tabellarischer Form :
 
 ![sti_info_window-m-table](/sti_info_window-m-table.gif)
 
-Exporting the table values can be performed via copy & paste or by activating export options (under ``Select/Show export options``). More on [table export](/en/help/info/excelcsv-export).
+Der Export der Tabellenwerte kann per Copy&Paste oder bei Aktivierung der Export Optionen (unter ``Select/Show export options``) erfolgen. Siehe auch dazu: [Export der Tabellenwerte](/de/help/info/excelcsv-export).
 
-For use with other applications the modulation transfer functions can also be transferred directly to frequency domain:
+Die Modulationstransferfunktionen können für andere Anwendungen auch direkt in den Frequenzbereich transformiert werden:
 
-[Transfer/Complex MTF from impulse response](/en/help/transform/complex-mtf-of-impulse-response)
+[Transfer/Complex MTF from impulse response](/de/help/transform/complex-mtf-of-impulse-response)
 
-[Transfer/Complex MTF from stationary signal (from STIPA)](/en/help/transform/complex-mtf-of-stationary-signal-stipa-exciter)
+[Transfer/Complex MTF from stationary signal (from STIPA)](/de/help/transform/complex-mtf-of-stationary-signal-stipa-exciter)

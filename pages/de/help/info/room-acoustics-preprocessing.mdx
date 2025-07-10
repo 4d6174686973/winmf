@@ -1,24 +1,24 @@
 # Room acoustics preprocessing
 
-Prior to the evaluation of room acoustic single number quantities in [Room acoustics](/en/help/info/room-acoustics) the processing needs to be executed.
+Vor der Auswertung der raumakustischen Einzahlkennwerte unter  [Room acoustics](/de/help/info/room-acoustics) muss zunächst das Processing ausgeführt werden.
 
 ![room_acoustics_processing](/room_acoustics_processing.gif)
 
-For correct determination of measures the definition of the starting time for the analysis is crucial. If several or frequency band filtered impulse responses are being analysed, it is essential to have the starting time detected automatically by the ``IR start detect`` function. At first, ``Region`` defines, which region the functions ``IR start detect``, ``IR end detect`` and those regarding noise floor shall consider. If for example the end of an impulse response is polluted by distortion, an exclusion from the analysis is favourable.
+Für die korrekte Auswertung der Messgrößen ist es entscheidend den Startzeitpunkt der Auswertungen festzulegen. Werden mehrere Impulsantworten ausgewertet oder in Bänder gefilterte Impulsantworten, so ist es unerlässlich den Startzeitpunkt durch die Funktion ``IR start detect`` automatisch detektieren zu lassen. Unter Region wird zunächst definiert, in welchem Bereich die Funktion ``IR start detect``, ``IR end detect`` und die Funktionen mit Bezug zum Noisefloor wirken sollen. Ist zum Beispiel das Ende der Impulsantwort durch Verzerrungen gestört, bietet es sich an dieses von der Auswertung auszunehmen.
 
-The following settings are available in Processing options:
+Unter ``Processing options`` sind folgende Einstellungen möglich:
 
-- IR start detect: execution of automatic detection of impulse start
-- Thr. rel max [dB]: defines the impulse response start relative to the maximum of the impulse response in dB for IR start detect; if the threshold is set to -20dB, the impulse response start is being found at the point in time before the actual impulse peak, where the response exceeds the global impulse maximum minus 20dB.
-- Scan band: if set to ``each``, after filtering the impulse response, for each frequency band the IR start detection is carried out and used for further processing; if set to ``highest only``, only for the highest frequency band the detection is carried out.
-- IR end detect: automatically identifies the point in time, where the filtered IR merges into the noise floor.
-- IACC t1 and t2 [s]: integration interval for determination of IACC_t1,t2
+- IR start detect: Benutzung der automatischen Detektion des Impulsstartes.
+- Thr. rel max [dB]: definiert den Impulsstart relativ zum Maximum der Impulsantwort in dB für IR ``start detect``; wenn die threshold auf -20dB steht, dann wird der Impulsstart beim ersten Überschreiten des globalen Maximums abzüglich 20dB vor dem Maximum der Impulsantwort gefunden
+- Scan band: bei ``each`` wird nach Filterung der Impulsantwort der Impulsstart für jedes Band getrennt ermittelt und für weitere Auswertungen verwendet; bei ``highest only`` wird nur das Band mit der höchsten Frequenz für die Ermittlung des Impulsstartes verwendet
+- IR end detect: ermittelt automatisch den Übergang der gefilterten IR in den Noisefloor
+- IACC t1 und t2 [s]: Integrationsgrenzen für die Auswertung des IACC_t1,t2
 
-``Noise subtraction`` contains several parameters to be specified for estimating the RMS-value of the noise from a certain part of the impulse response. This can be subtracted from the impulse response prior to further analysis.
+Unter ``Noise subtraction`` können einige Parameter definiert werden, um aus einem bestimmten Teil der Impulsantwort eine Schätzung des RMS-Wertes des Noise zu gewinnen.  Dieser kann dann vor weiteren Berechnungen von der Impulsantwort abgezogen werden.
 
-- Noise subtraction: if activated, the subtraction of the noise voltage is being applied.
-- Noise detect: determines the noise voltage from the region defined by the parameters ``Take RMS from`` and ``Noise length``. If Noise detect is deactivated a value for the noise voltage can be entered manually in ``Noise RMS``.
-- Take RMS from: head examines the noise in the region before the impulse start, ``tail`` looks behind the transition region after the impulse response; ``lowest segment`` finds the region with the lowest noise level.
-- Noise length [%]: defines the length of the noise floor segment to be evaluated as a percentage of the respective region. E.g. if the noise tail is 10s long, and ``Noise length`` is set to 10%, then the first second of the tail is evaluated to obtain the RMS-value of the noise.
+- ``Noise subtraction``: wenn es aktiviert ist, erfolgt die Subtraktion der Rauschspannung
+- ``Noise detect``: ermittelt die Rauschspannung aus dem Bereich, der durch die Parameter ``Take RMS from`` und ``Noise length`` definiert wird. Ist ``Noise detect`` deaktiviert, dann kann in das Feld Noise RMS eine Spannung eingetragen werden
+- ``Take RMS from``: ``head`` übernimmt den Noise dem Bereich vor dem Impulsstart, tail vom Bereich hinter dem Übergang der Impulsantwort in den Noisefloor, lowest ``segment`` wählt den Bereich mit dem niedrigsten Noise
+- Noise length [%]: wählt die Länge des auszuwertenden Noisefloor prozentual zu der Länge des jeweiligen Bereichs. Ist zum Beispiel der Noise tail 10s lang, dann ist der Bereich für die RMS-Berechnung des Noise die erste Sekunde, wenn ``Noise length`` auf 10% steht
 
-Filter Options allow [Fractional octave filtering](/en/help/edit/frac-oct-filtering) of the impulse responses according to DIN EN 61260.
+Unter Filter Options können die Impulsantworten nach DIN EN 61260 in [Bruchteilen von Oktaven](/de/help/edit/frac-oct-filtering) gefiltert werden.

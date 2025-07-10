@@ -1,13 +1,17 @@
 # Export to Excel/CSV
 
-In ``Write options`` the settings for the export procedure are configured. Format offers the options ``Excel`` and ``CSV``. If ``Excel`` is chosen, also the ``Excel-sheet`` to write into can be defined, as well as the insert point in the cell array (``Insert at cell``).
+Unter ``Write options`` werden die Einstellungen der Export-Funktion festgelegt. Mit Format wählt man zwischen Excel- und CSV-Format. Bei gewähltem Excel-Format kann außerdem das Tabellenblatt (``Excel-sheet``) und die Startzelle (``Insert at cell``) eingegeben werden. 
 
-``Append data``: The data is written behind potential content already present in the file.
+``Append data``
 
-``Offset to cell``: If the offset is 0, ``Append`` data starts writing into the first empty cell behind the data already present, otherwise that starting point is shifted further by the offset value.
+Daten werden an die nächste freie Zeile gehängt.
 
-``Use column header`` writes a label for the quantities into the first row of the exported data.
+``Offset to cell``
 
-``Use same name`` being activated, the exported file gets the same name as the WinMF file evaluated. Otherwise a user-defined file name can be written into ``Info data file``.
+Steht offset auf 0, wird bei append die nächste freie Zeile genommen, ansonsten die um den Wert bei offset verschobene Zeile. 
 
-``Cancel`` terminates the export and closes the window, whereas ``Ok`` starts the export procedure.
+Use ``column header`` schreibt die Parameterdefinition in die erste Zeile der exportierten Daten.
+
+Bei aktiviertem ``Use same name`` erhält die exportierte Datei den gleichen Namen wie die ausgewertete WinMF Datei. Anderenfalls kann unter ``Info data file`` ein beliebiger Dateiname vergeben werden. 
+
+``Cancel`` bricht den Export ab und schließt das Fenster, während ``Ok`` den Export ausführt.

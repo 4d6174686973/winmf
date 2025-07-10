@@ -1,21 +1,23 @@
 # Statistics 
 
-In the ``Info`` / ``Statistics`` section measurements are evaluated and values can be exported.
+Im Bereich ``Info`` / ``Statistics`` können die Messungen ausgewertet werden und die ermittelten Werte exportiert werden.
 
-## Configuration
+## Konfiguration
 
-By the ``Select`` menu the desired parameters are to be selected. In addition statistical values can be calculated from these parameters.
+Im Menü ``Select`` werden die gewünschten Parameter ausgewählt. Zusätzlich können Statistiken über die einzelnen Parameter berechnet werden.
 
 ![info-oktavbandlevel-crest-select](/info-oktavbandlevel-crest-select.gif)
 
-The results are displayed by the ``Info window`` immediately. In there, under ``dBref`` the reference value for dB quantities is to be defined. If power is evaluated, these values refer to the load impedance specified for the respective channel inside the ``Info`` window. The display of load impedances is to be switched on also by the ``Select`` menu; these values can be edited directly inside the table. The input related impedances managed here by the ``Info`` window are independent from the output related load impedances from the frontend menu.
+Die Auswertungen erscheinen sofort im ``Info`` Fenster. Dort kann unter ``dBref`` der Bezugswert für  die dB-Werte bestimmt werden. Werden Leistungen (Power) ausgewertet, so beziehen sich diese Werte auf die für den jeweiligen Eingangskanal im Info-Fenster eingegebene Lastimpedanz (Load impedance). Die Anzeige der Lastimpedanz kann ebenfalls im Menü ``Select`` aktiviert werden. Die Impedanzwerte können dann in der Tabelle direkt editiert werden. Die im Info-Fenster verwalteten Input-bezogenen Impedanzen sind unabhängig zu den Output-bezogenen Last-Impedanzen im Frontend Menü.
 
-[Region](/en/help/edit/region-control) defines the section to be evaluated.
+Unter [Region](/de/help/edit/region-control) wird der Auswertungsbereich definiert.
 
-If [fractional octave filtering](/en/help/edit/frac-oct-filtering) has been performed in advance, the selected parameters can be displayed band-wise. The assignment to the original channels is deposited in the channel tag. The nominal and the exact band centre frequencies can be displayed in the table. The following example shows a 4 channel microphone signal containing motor noise, filtered in 8 octaves for further evaluation:
+Wurde vorher eine [Fract. octave Filterung](/de/help/edit/frac-oct-filtering) durchgeführt, so können bandweise die ausgewählten Werte angezeigt werden. Die Zugehörigkeit zu den Ursprungskanälen ist im Channel tag hinterlegt. Die nominelle oder auch die exakte Bandmittenfrequenz können ebenfalls in der Tabelle angezeigt werden. Das folgende Beispiel ist ein 4-kanaliges Mikrofonsignal eines Motorgeräusches, das zur weiteren Bearbeitung in 8 Oktaven gefiltert wurde:
 
 ![motor1_octaves](/motor1_octaves.png)
 
-By selecting Channel tag, fm nom., Crest and Leq the ``Info`` window produces the following output:
+Im Info Fenster wird bei Auswahl von Channel tag, fm nom., Crest und Leq  die folgende Ausgabe erzeugt:
 
 ![info-oktavbandlevel-crest](/info-oktavbandlevel-crest.gif)
+
+[Export der Tabellenwerte](/de/help/info/excelcsv-export)

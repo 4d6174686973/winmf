@@ -1,50 +1,53 @@
-Room acoustics
+# Room acoustics
 
-Under Room acoustics all parameters from ISO 3382-1 can be determined. The evaluation is done in two steps. At first the preprocessing needs to be performed by the [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing) menu. Here all parameters are calculated and deposited in the file. Upon completion of the processing, the Room Acoustics Info window is launched automatically:
+Unter Room acoustics können alle Parameter aus der ISO 3382-1 ausgewertet werden. Die Auswertung erfolgt in 2 Schritten. Zunächst muss das Preprocessing im Menü  [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing) ausgeführt werden. Dabei werden alle Parameter berechnet und im File hinterlegt. Nachdem das Processing beendet ist, wird automatisch das Room Acoustics Info Fenster aufgerufen:
 
 ![room_acoustics_info_table](/room_acoustics_info_table.gif)
 
-Here only those quantities are displayed, which have been activated in the ``Select/Select parameters`` submenu:
+Dabei werden nur die Werte angezeigt, die im Untermenü ``Select/Select parameters`` aktiviert sind:
 
 ![room_acoustics_select](/room_acoustics_select.gif)
 
-Exporting the table values can be performed by copy & paste, or the results can be written directly into Excel tables or ASCII files via Select/Show export options: [Table export](/en/help/info/excelcsv-export)
+Der Export der Tabellenwerte kann entweder per Copy&Paste erfolgen oder unter Select/Show export options kann direkt in Excel-Tabellen oder Ascii-Files geschrieben werden: [Export der Tabellenwerte](/de/help/info/excelcsv-export)
 
-In addition to the room acoustic single number values some further information can be displayed in the table:
+Neben den raumakustischen Einzahlkennwerten, können auch einige Zusatzinformationen in der Tabelle angezeigt werden:
 
-- Channel tag: shows the original channel assignment after the frequency band filtering. In the example shown above the original file contained 2 channels; filtering in 7 octave bands produces 14 channels with the corresponding band centre frequencies
-- fm nom. [Hz]: nominal band centre frequency after filtering
-- fm [Hz]: exact band centre frequency
-- Start [ms]: if start detect was activated in the [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing), the starting time for the evaluation of each channel is displayed here. If start detect was not activate, the start of the evaluation region is displayed, which was selected in the Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing) under [Region](/en/help/edit/region-control).
-- End [ms]: if end detect was activated in the [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing), the end time for the evaluation of each channel is displayed here. If end detect was not active, the end of the evaluation region is displayed, which was selected in the [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing) under [Region](/en/help/edit/region-control).
-- Noise [dB]: noise floor in dB
-- SNR [dB]: ratio of peak level of the impulse response to noise floor
+- Channel tag: zeigt die ursprüngliche Kanalzugehörigkeit nach der Filterung in Bändern an. In dem oben gezeigten Beispiel hatte die Ursprungsdatei 2 Kanäle, nach Filterung in 7 Oktaven sind es 14 Kanäle mit den entsprechenden Bandmittenfrequenzen
+- fm nom. [Hz]: die nominelle Bandmittenfrequenz nach Filterung
+- fm [Hz]: die exakte Bandmittenfrequenz
+- Start [ms]: wenn im [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing) start detect aktiviert war, dann wird hier der Startzeitpunkt der Auswertung für jeden Kanal angezeigt. War start detect nicht aktiviert, so wird der Beginn des Auswertungsbereichs angezeigt, der in [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing) unter [Region](/de/help/edit/region-control) eingestellt war.
+- End [ms]: wenn im [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing) end detect aktiviert war, dann wird hier der Endzeitpunkt der Auswertung für jeden Kanal angezeigt. War end detect nicht aktiviert, so wird das Ende des Auswertungsbereichs angezeigt, das in [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing) unter [Region](/de/help/edit/region-control) eingestellt war.
+- Noise [dB]: der Noise floor in dB
+- SNR [dB]: das Verhältnis vom Peak level der Impulsantwort zum Noise floor
 
-## Room acoustic single number values
+## Raumakustische Einzahlkennwerte
 
-All calculation formulae implemented in WinMF are taken over from ISO 3382-1:2009. All quantities are based on one or several measured impulse responses. For some parameters measurements using 2 microphones (omnidirectional and figure-of-eight characteristics) are required. Furthermore some evaluations require additional measurement of the sound source under free-field conditions.
+Die in WinMF implementierten Formeln zur Berechnung sind der ISO 3382-1:2009 entnommen. Alle Größen basieren auf einer oder mehrerer gemessener Impulsantworten. Teilweise ist es erforderlich 2 Mikrofone (Kugel- und Achtercharakteristik) einzusetzen. Weiterhin benötigen einige Auswertungen zusätzliche Messungen der Schallquelle unter Freifeldbedingungen.
 
-## Annex A - Auditorium measures
-- Sound strength G: the logarithmic ratio of sound energy of an impulse response measured by an omnidirectional microphone in the audience area and the energy of the impulse response of the same sound source under free-field conditions measured at a distance of 10m. The analysis in WinMF assumes, that the odd-numbered channels contain the impulse responses from the audience area; the even-numbered channels contain the corresponding measurements with the sound source under free-field conditions. As generally these measurements take place locally and temporally separated, it is favourable to perform the single measurements in terms of [frequency responses](/en/help/adda/frequency-response) with the same settings. Thereby it can be ensured, that the impulse responses have correct amplitudes, irrespective of the actual measuring voltage. If it is not possible to measure at a distance of 10m, in most cases smaller distances should be acceptable, as long as a sufficient distance to the near-field to far-field threshold of the sound source is maintained. Furthermore it should be noted that the free-field measurement of the sound source shall be an energetic average around the source in angular intervals of 12.5°, in order to obtain an average of the emitted power.
-- L_pE, L_pE10: sound energy level of the impulse responses. Both quantities are partial results of the sound strength determination. L_pE is the energy level of the impulse response(s) in the audience area (odd-numbered channel(s)), L_pE10 is the energy level of the impulse response(s) measured at 10m under free-field conditions (even-numbered channel(s)). G is calculated by: G = L_pE - L_pE10.
-- Clarity C50, C80: logarithmic ratio of early-arriving energy to late-arriving energy. C50 uses a limit of 50ms for the early energy, C80 evaluates a range of 0-80ms. The measurement is performed using an omnidirectional microphone.
-- Definition D50, D80: ratio in per cent of early-arriving energy to total energy of the impulse response. D50 uses a limit of 50ms for the early energy, D80 evaluates a range of 0-80ms. The measurement is performed using an omnidirectional microphone.
-- Centre time Ts (Gravity): energetic centre point of impulse response
-- Early lateral fraction J_LF: logarithmic ratio of energy in the range from 5ms to 80ms of the impulse response measured by the figure-of-eight microphone to the energy in the range of 0 - 80ms of the impulse response measured by the omnidirectional microphone. For calculation in WinMF the impulse responses of the figure-of-eight microphones need to be present in the odd-numbered channels, the omnidirectional impulse responses shall be assigned to the even-numbered channels. For the measurement the lobes of the figure-of-eight microphone shall be aligned perpendicular to the direction of the sound source.
-- Early lateral fraction J_LFC (cosine energy directivity): somewhat different calculation, leading to a cosine directivity regarding the direction of arriving sound energy. Channel assignment and positioning of microphones are identical to J_LF.
-- Late lateral energy L_J: Channel assignment and positioning of microphones are identical to measurement of early lateral fraction, but here the energy from the figure-of-eight microphone is evaluated starting from 80ms, the impulse response of the omnidirectional microphones is integrated over the entire range.
+## Annex A - Messgrößen für den Publikumsbereich (Auditorium measures)
 
-## Annex B - Binaural auditorium measures
+- Stärkemaß G (Sound strength): das logarithmierte Verhältnis der Schallenergie einer im Publikumsbereich mit omnidirektionalem Mikrofon gemessenen Impulsantwort und der Energie der Impulsantwort der gleichen Schallquelle unter Freifeldbedinungen in 10m Entfernung gemessen. Die Auswertung in WinMF setzt voraus, dass die Kanäle mit ungerader Kanalnummer die Impulsantworten im Publikumsbereich enthalten, die Kanäle mit gerader Nummer sind die korrespondierenden Messungen der Schallquelle unter Freifeldbedingungen. Da diese Messungen üblicherweise räumlich und zeitlich vollkommen unabhängig stattfinden, ist es sicher sinnvoll die Einzelmessungen im Sinne einer Frequenzgangmessung mit identischen Einstellungen durchzuführen. Dadurch ist sicher gestellt, dass die Impulsantworten unabhängig von der tatsächlich während der Messung anliegenden Spannung korrekte Amplituden haben. Ist eine Messung in 10m Distanz nicht möglich, dann ist in den meisten Fällen sicher auch eine Messung in geringerer Entfernung zulässig, so lange man eine hinreichend große Distanz zur Nahfeld- Fernfeldgrenze der Schallquelle einhält. Es wird ferner darauf hingewiesen, dass die Freifeldmessung der Schallquelle als energetisches Mittel im Winkelabstand von 12.5° um die Schallquelle vorliegen soll, um einen Mittelwert der abgestrahlten Leistung zu erhalten
+- L_pE, L_pE10: Schallenergiepegel der Impulsantworten. Beide Größen sind Teilergebnisse der Stärkemaßberechnung. L_pE ist der Energiepegel der Impulsantwort(en) im Publikumsbereich (ungerade Kanalnummer(n), L_pE10 ist der Energiepegel der in 10m unter Freifeldbedingungen gemessenen Impulsantworte(en) (gerade Kanalnummer(n)). G berechnet sich daraus wie folgt: G = L_pE - L_pE10.
+- Klarheitsmaß C50, C80 (Clarity): das logarithmierte Verhältnis von früh eintreffender Energie zu spät eintreffender Energie. C50 bedeutet eine Grenze von 50ms für die früh eintreffende Energie, C80 wertet den Bereich von 0-80ms aus. Die Messung wird mit einem omnidirektionalen Mikrofon durchgeführt.
+- Deutlichkeit D50, D80 (Definition): das Verhältnis in Prozent von früh eintreffender Energie zur gesamten Energie der Impulsantwort. D50 bedeutet eine Grenze von 50ms für die früh eintreffende Energie, D80 wertet den Bereich von 0-80ms aus. Die Messung wird mit einem omnidirektionalen Mikrofon durchgeführt.
+- Schwerpunktszeit Ts (Gravity): Energieschwerpunkt der Impulsantwort
+- früher Seitenschallgrad J_LF (Early lateral fraction): das logarithmierte Verhältnis der Energie im Bereich 5ms bis 80ms der mit einem Achtmikrofon gemessenen Impulsantwort zur Energie im Bereich von 0 - 80ms der mit einem Kugelmikrofon gemessenen Impulsantwort. Zur Auswertung mit  WinMF müssen die Impulsantworten der Achtmikrofone in den ungeraden Kanälen sein, die Kugelmikrofonimpulsantworten sind den geraden Kanälen zugeordnet. Bei der Messung soll die Nullrichtung des Achtmikrofons auf die Schallquelle zeigen.
+- früher Seitenschallgrad J_LFC (Early lateral fraction, cosine energy directivity):  eine etwas andere Berechnung, die zu einer  Cosinusabhängigkeit in Bezug zur Richtung der einfallenden Schallenergie führt. Die Kanalzuordnung und Mikrofonierung ist identisch zu J_LF.
+- später Seitenschallgrad L_J (Late lateral energy): Zur Auswertung mit  WinMF müssen die Impulsantworten der Achtmikrofone in den ungeraden Kanälen sein. In den geraden Kanälen sind die Impulsantworten der Schallquelle unter Freifeldbedingungen. Es wird der Energieanteil des Achtmikrofons im Bereich ab 80ms ausgewertet, die Impulsantwort der Kugelquelle wird im kompletten Bereich integriert
 
-For all binaural measurements the impulse responses of the left ear need to be assigned to the odd-numbered channels, the right ear impulse responses are put on even-numbered channels. Basis for the binaural measures is the normalised inter-aural cross correlation function (IACF), calculated with an integration interval t1 to t2. The inter-aural cross correlation coefficient IACC_t1,t2 is derived as the maximum magnitude of the IACF in an interval from -1ms to 1ms. WinMF provides three integration intervals (with the starting time referring to the start of the impulse response, see [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing)).
 
-- IACC_t1:t2: arbitrary limits, to be defined under processing options in the [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing)
-- IACC_0-80ms: fixed integration interval from 0 to 80ms for evaluating early reflections
-- IACC_80ms-: fixed integration interval from 80ms to the end of the impulse response for evaluating decay
+## Annex B - Binaurale Messgrößen in Zuhörerräumen (Binaural auditorium measures)
 
-## Annex C - Stage measures
+Für alle binauralen Messungen gilt, dass die Impulsantworten des linken Ohres auf den ungeraden Kanalnummern liegen müssen, die rechtsohrigen Impulsantworten sind auf den geraden Kanalnummern. Grundlage der binauralen Messgrößen ist die normierte interaurale Kreuzkorrelationsfunktion (IAAC), die für ein Integrationsintervall t1 bis t2 berechnet wird. Daraus wird schließlich der interaurale Kreuzkorrellationskoeffizient IACC_t1,t2 als Maximum des Betrages der IACF im Intervall -1ms bis 1ms ausgewertet.  WinMF stellt drei Integrationsintervalle zur Verfügung, wobei der Startzeitpunkt auf den Start der Impulsantwort bezogen ist (s. [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing)).
 
-For determination of early and late support impulse responses measured by omnidirectional microphones are analysed. Starting times refer to the starting time detected or defined in the [Room acoustics preprocessing](/en/help/info/room-acoustics-preprocessing).
+- IACC_t1:t2: frei wählbare Grenzen, die unter processing options im Room acoustics preprocessing eingestellt werden können
+- IACC_0-80ms: feste Integrationsgrenzen von 0 bis 80ms für die Bewertung früher Reflexionen
+- IACC_80ms-: feste Integrationsgrenzen von 80ms bis zum Ende der Impulsantwort für die Bewertung des Nachhalls
 
-- ST_Early (Early support): logarithmic ratio of energy between 20ms and 100ms to energy in the range of 0-10ms
-- ST_Late (Late support): logarithmic ratio of energy between 100ms and 1000ms to energy in the range of 0-10ms
+
+## Annex C - Messgrößen für Bühnen (Stage measures)
+Für die Messung der frühen und späten Unterstüzung werden Impulsantworten verwendet, die mit Kugelmikrofonen gemessen worden sind. Die Startzeitpunkte beziehen sich auf den unter [Room acoustics preprocessing](/de/help/info/room-acoustics-preprocessing) gefundenen bwz. eingestellten Startzeitpunkt.
+
+- ST_Early (Early support): logarithmiertes Verhältnis der Energie im Bereich 20ms bis 100ms zu der Energie im Bereich 0-10ms
+- ST_Late (Late support): logarithmiertes Verhältnis der Energie im Bereich 100ms bis 1000ms zu der Energie im Bereich 0-10ms
+

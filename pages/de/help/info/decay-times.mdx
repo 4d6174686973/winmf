@@ -1,21 +1,21 @@
 # Decay times
 
-``Decay times`` in the ``Info`` menu performs an evaluation of reverse-time integrated impulse responses (IIR). If no IIR is present in the memory, the [menu for IIR processing](/en/help/edit/integrated-impulse-response-processing) is launched automatically.
+Im Info Menü kann unter Decay times eine Auswertung der rückwärts integrierten Impulsantworten (IIR) erfolgen. Wenn keine IIR im Speicher vorliegt, wird automatisch das  [menu for IIR processing](/de/help/edit/integrated-impulse-response-processing) aufgerufen.
 
-At first the parameters to be displayed are to be selected via the ``Select/Select parameters`` submenu of the ``Decay times`` menu.
+Die anzuzeigenden Parameter sind zunächst im Untermenu ``Select/Select parameters`` des Decay times Menüs zu selektieren.
 
 ![decay-times-select](/decay-times-select.gif)
 
-The analysis is performed according to DIN EN ISO 3382-1:2009 and DIN EN ISO 3382-2:2008. In addition to decay times for the various intervals, the following evaluations and information can be produced:
+Die Auswertungen erfolgen nach DIN EN ISO 3382-1:2009 und  DIN EN ISO 3382-2:2008. Neben den Nachhallzeiten für die verschiedenen Intervalle können noch folgende Berechnungen und Informationen angezeigt werden:
 
-- channel tag: shows the associated channel number from before the filtering, so the results can be associated to the original channels
-- fm nom. [Hz]: nominal band centre frequency according to DIN EN 61620
-- fm [Hz]: exact band centre frequency according to DIN EN 61620
-- C(...): degree of curvature according to ISO 3382-2:2008, Annex B3. For example C(T20-30) is the degree of curvature for the T20 interval compared to the T30 interval, etc. Typical values are between 0 and 5%, values beyond 10% indicate deviations from the linear shape
-- x: degree of non-linearity according to ISO 3382-2:2008, Annex B2. For the respective evaluation interval the squared correlation coefficient is calculated. E.g. x30 calculates a measure for the deviation from the linear regression curve between -5 and -35dB. In contrast to the curvature C, x also detects fluctuations. The value is given in per mil. A value around 0 means no deviation, 1000 is maximum deviation. Typical values for sound IIRs are between 0 and 5 per mil.
+- channel tag: zeigt die zugehörige Kanalnummer vor Filterung an, so dass die Ergebnisse den ursprünglichen Kanälen zugeordnet werden können
+- fm nom. [Hz]: nominelle Bandmittenfrequenz nach DIN EN 61620
+- fm [Hz]: exakte Bandmittenfrequenz nach DIN EN 61620
+- C(...): Grad der Krümmung nach ISO 3382-2:2008, Anhang B3. C(T20-30) ist z. B. der Krümmungsgrad für das Intervall T20 im Vergleich zu T30, usw. Typische Werte sind zwischen 0 und 5%, Werte höher als 10% deuten auf eine Abweichung vom linearen Verlauf
+- x: Grad der Nichtlinearität nach ISO 3382-2:2008, Anhang B2. Es wird hier das Quadrat des Korrelationskoeffizienten für das jeweilige Auswerteintervall berechnet. x30 berechnet z. B. im Bereich -5 bis -35dB ein Maß für die Abweichung von der durch die lineare Regression bestimmten Kurve. Im Gegensatz zu dem Krümmungsgrad C werden hier auch "eirige" Verläufe detektiert. Der Wert ist in Promille angegeben. Ein Wert um die 0 bedeutet keine Abweichung, 1000 ist maximale Abweichung. Typische Werte für "intakte" IIRs sind im Bereich 0-5 Promille.
 
 ![decay-times-info-window](/decay-times-info-window.gif)
 
-Via the ``copy table to spectrum`` button the displayed RT values are copied as spectra to multiple channels in the frequency domain.
+Über den button ``copy table to spectrum`` können die angezeigten RT-Werte als kanalweises Spektrum in die Frequency domain kopiert werden.
 
 ![t20-t30](/t20-t30.png)
