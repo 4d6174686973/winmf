@@ -1,17 +1,17 @@
 # CLF Export
 
-Converts spk-ballons into CLF1, CLF2 v1 and v2.
+Konvertiert spk balloons in CLF1, CLF2 v1 und v2.
 
-The CLF-textfile is stored under the name ``filename`` in the folder of the balloon. The files for sensitivity and impedance, defined in the section ``Electro acoustic data``, have to be in the balloon folder, too.
+Das CLF-Textfile wird unter dem Namen ``Filename`` im Ordner des Balloons gespeichert. Die unter ``Electro acoustic data`` einzubindenden files für Sensitivity und Impedanz müssen mit dem hier angebenen Filenamen im Balloon Ordner vorhanden sein.
 
-If the choosen ``Method`` for power is ``custom``, the balloon folder must contain a file with the custom spectrum and the defined name. The power spectrum will not be averaged or modified in another way. It will be used as defined in the file. The level values are read out from the power spectrum file at the band center frequencies (dB reference is 1) and written into the CLF file.
+Wenn bei ``Method`` für power ``custom`` gewählt wird, dann muss im  Balloon Ordner das File mit dem Custom Spektrum unter dem angegebenen Namen liegen. Das Spektrum wird nicht in Bänder gemittelt oder anders weiter bearbeitet. Es werden nur an den verwendeteten Mittenfrequenzen die Level ausgelesen (Bezug für dB ist 1) und in das CLF geschrieben.
 
-The sensitivity should not contain latency (for CLF2 v2).
+Die Sensitivity sollte unbedingt laufzeitbereinigt sein (betrifft nur CLF2 v2).
 
-Exporting of CLF1 presumes that the balloon was imported with 10° steps.
+Für den Export von CLF1 wird voraussgesetzt, dass der Balloon in 10° Steps eingelesen wurde.
 
-The export of CLF2 requires  that the balloon was imported with 5° steps. Phase data is extracted at the band center frequencies. Phase data is always raw data, as phase data is not averaged when importing the balloon.
+Für den Export von CLF2 wird voraussgesetzt, dass der Balloon in 5° Steps eingelesen wurde. Die Phasendaten werden im importierten Balloon bei den Mittelfrequenzen extrahiert. Die Phasendaten sind Rohdaten, da beim Balloonimport, auch bei einer Mittelung in Bändern, die Phasendaten nicht gemittelt werden.
 
-The dxf-format to describe the case should  be Autocad R12 lines and arcs with the option to use lines only. The maximum file size is 500kB. The origin of the drawing is fixed to 0,0,0. This is the default value for the mechanical reference point in the CLF file, too. The positive X-axis is on-axis of the loudspeaker (0°), the z-axis is the top of the cabinet. The unit of length is m or mm.
+Für das dxf-Format zur Beschreibung des Gehäuses sollte das Format R12 Linien + Bögen mit der Option alles als Linien zu exportieren verwendet werden. Die maximale Dateigröße ist 500kB. Der Ursprung des Gehäuses ist auf 0,0,0 festgelegt. Dies ist auch der default-Wert für den Referenz Punkt im CLF (mechanical reference). Die positive X-Achse  ist die Hauptabstrahlrichtung, Oben ist die positive Z-Achse. Die Längeneinheit ist m oder mm.
 
 ![clf-export](/clf-export.png)
