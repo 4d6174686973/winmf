@@ -1,0 +1,9 @@
+# Convert samplerate
+
+Diese Funktion ändert die Samplefrequenz eines Zeitsignals.
+
+Bei ``New samplerate`` wird die neue Samplefrequenz eingetragen.
+
+``#Supp. points`` ist die Anzahl der Nachbarsamples zu jeder Seite, die in die Berechnung mit einbezogen werden. Der Default-Wert ist 5. Höhere Werte liefern ein genaueres Ergebnis auf Kosten einer höheren Rechenzeit.
+
+``Kaiser win para`` ist ein Parameter der Filterfunktion des Anti-Aliasing-Filters, welches nach der Konversion angewendet wird, um unerwünschte Effekte im oberen Frequenzbereich durch ein Tiefpassfilter zu unterdrücken. Der Default-Wert ist 5. Höhere Werte dämpfen die Nebenmaxima und verbreitern sie.

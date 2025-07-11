@@ -1,0 +1,35 @@
+# Edit extended comment
+
+Mit diesem Menu können mehrzeilige Kommentare erzeugt und bearbeitet werden.
+
+Die Kommentare können mit [File/Save extended comment](/de/help/file/save-extended-comment) als txt-file gespeichert werden.
+
+Die Sichtbarkeit im Display wird mit der Checkbox Comm... (neben der Checkbox für Legend) gesteuert (Shortcut c). Klicken in den Text des Kommentars aktiviert das Editieren. Der Text wird nach Klicken außerhalb des Kommentarfeldes übernommen. Der Text wird im header des files inklusive aller Einstellungen und Formatierungen gespeichert und beim Laden des Files exakt reproduziert.
+
+![example1](/example1.png)
+
+Die Detaileinstellungen dieses Menüs (``Edit/Header/Edit extended comment``) sind wie folgt:
+
+![example2](/example2.png)
+
+``Mode`` schaltet zwischen ``Edit header`` und ``Set header`` um. ``Edit header`` editiert die im Header des Files gespeicherten Daten des Kommentars. Bei OK wird der Header überschrieben, bei Cancel nicht.
+
+Mit ``Set header`` werden die Daten des Kommentars mit den in dem Menü gespeicherten Daten überschrieben. Mit Ok werden sowohl die Daten im Header mit den editierten Daten überschrieben, als auch die im Menü hinterlegten. Dieser Modus erlaubt  die Benutzung in Makroprozessen, um beispielsweise erweiterte Informationen strukturiert zu erfassen, indem ein default text im Menü hinterlegt wird.
+
+Die Position des Kommentarfeldes ist relativ zur Achsendarstellung des Plots, d.h. links unten ist 0,0, rechts oben ist 1,1. Zur Platzierung von Text außerhalb müssen Werte kleiner 0  und größer 1 verwendet werden. Das kann nützlich sein, um beim Plotten einen Kommentar außerhalb des Plots zu platzieren.
+
+``visible in plot`` steuert die Verwendung beim Plotten
+
+``visible in display`` steuert die Sichtbarkeit im Display von WinMF
+
+``Font size``: Textgröße in dpi
+
+``Text color``: Textfarbe
+
+``Backgr. Color``: Hintergrundfarbe, none ist transparent
+
+``Interpreter``: der Text Interpreter. Tex ist für normalen Text in Verbindung mit Symbolen (z. B. griechische Symbole) und einfachen mathematischen Ausdrücken und Formatierungen empfohlen. Als Beispiel dient der Text im Fenster (s. oben): Z_\{min\} erzeugt ein tiefer gestelltes "min" und \Omega ergibt den griechischen Buchstaben als Symbol für "Ohm". S. z.B. auch [LaTeX-Kompendium:_Control characters](https://de.wikibooks.org/wiki/LaTeX-Kompendium:_Sonderzeichen).
+
+``Latex`` kann für komplexe Formeln (Summen, Integrale etc.) verwendet werden, allerdings ist der Output nicht so hoch in der Qualität und es kommt je nach Font size schon mal zu Verschiebungen der Symbole .  Latex Sequenzen werden mit  \$\$ eingeleitet und mit \$\$ abgeschlossen.
+
+``Text`` ist einfach Text.

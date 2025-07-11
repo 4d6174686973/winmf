@@ -1,0 +1,25 @@
+# Multisine generator
+
+Der ``Multisine generator`` erzeugt Multisinussignale, die beispielsweise bei Messungen von Intermodulationsverzerrungen verwendet werden können. Die Frequenzen der Sinussignale sind dabei so verteilt, dass die Harmonischen einer Frequenzlinie nach Möglichkeit nicht genau auf einer anderen Frequenzlinie liegen.
+
+[Length](/de/help/edit/signal-length) definiert die Signallänge.
+
+## Multisine generation
+
+``Upper limit`` und ``Lower limit`` beschränken den Bereich, in dem die Frequenzen der Sinussignale liegen.
+
+``Weighting`` multipliziert das Multisinussignal mit einer der bekannten [weighting functions](/de/help/edit/weighting-functions) wobei ``white`` gleiche Amplitude aller Sinusteiltöne bedeutet und ``file`` die Bewertung mit einem beliebigen vorhandenen Spektrum ermöglicht.
+
+``Filename`` ermöglicht die Auswahl dieses Spektrums.
+
+``Anchor freq.`` ist die fixe Frequenz, von der ausgehend die übrigen Frequenzlinien berechnet werden.
+
+``Bandw.`` legt den Abstand zwischen den Einzelfrequenzen in Teilen einer Oktave fest.
+
+``Max. harmonic`` beschreibt die Ordnung von Harmonischen, bis zu der das Aufeinandertreffen von Sinussignalen und Harmonischen vermieden wird.
+
+[Show multisine infos](/de/help/edit/multisine-infos) zeigt weitere Informationen über die einzelnen Frequenzlinien an.
+
+Der Plot zeigt ein Multisinussignal der FFT-Länge 16 mit 1/6 Octav-Abstand der Linien und einem Frequenzbereich von 20-20kHz.
+
+![mulitsin_eia426b](/mulitsin_eia426b.png)

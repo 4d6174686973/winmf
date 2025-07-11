@@ -1,0 +1,33 @@
+# Fractional octave filtering
+
+``Fractional octave filtering`` erlaubt die Filterung im Zeit- und Frequenzbereich mit Oktavfiltern oder Bruchteilen von Oktaven nach DIN EN 61260.
+
+``Bandwidth [1/oct]`` legt die Bandbreite der Filter in Bruchteilen von Oktaven fest.
+
+``Lower band [Hz]`` bestimmt die Mittenfrequenz des tiefsten Filters.
+
+``Upper band [Hz]`` bestimmt die Mittenfrequenz des höchsten Filters.
+
+``Reference [Hz]`` legt die Referenz-Mittenfrequenz fest. Ausgehend von dieser werden die übrigen Mittenfrequenzen abhängig vom Wert für Basis festgelegt. Bei dem Basiswert 2 liegen die Filtermittenfrequenzen der Oktavfilter exakt um den Faktor 2 auseinander, beim Wert 10 um den Faktor $10^(3/10)=1.99526$ (gerundet).
+
+``Class 1 tol.`` und ``Class 2 tol.`` erzeugt Toleranzkurven entsprechend der Norm, die die verschiedenen Toleranzstufen veranschaulichen.
+
+Ist ``Create band level spectrum`` aktiviert, dann wird für jede Ausgangskurve ein Spektrum mit den Leveln der gefilterten Bänder erzeugt.
+
+Die Kanalauswahl erfolgt nach [Select channel](/de/help/edit/select-channel).
+
+Nach der Filterung liegt für jedes Filterband ein eigener Kanal im Zeitbereich vor.
+
+Als Beispiel für die Anwendung ist im Folgenden ein an 4 Mikrofonpositionen aufgezeichnetes Motorgeräusch gezeigt.
+
+![motor1](/motor1.png)
+
+Nach Oktavbandfilterung liegen für jeden der 4 Kanäle alle Zeitverläufe in Oktaven vor, insgesamt 32 Kanäle:
+
+![motor1_octaves](/motor1_octaves.png)
+
+Statistikwerte für die gefilterten Kanäle, wie Crest-Faktor oder Leq, können detailliert im [Info-Fenster](/de/help/info/statistics) ausgewertet werden.
+
+Ist ``Create band level spectrum`` aktiviert, dann wird zusätzlich das zugehörige Bandlevel Spektrum im Frequenzbereich erzeugt:
+
+![motor1_octaves_spl_band_levels](/motor1_octaves_spl_band_levels.png)

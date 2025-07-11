@@ -1,0 +1,23 @@
+# SPL over time
+
+``SPL over time`` berechnet aus einem Mikrofonsignal den SPL-Verlauf über der Zeitachse. Es können die gleichen Parameter wie bei einem Pegelmesser eingestellt werden (A-Bewertung, Integrationszeit), wobei noch zusätzliche Filtermöglichkeiten bestehen und auch eine Mittelwertbildung zwischen den Kanälen möglich ist. Nach Berechnung wird die Y-Darstellung automatisch auf Level umgeschaltet.
+
+``Int. length [s]`` legt die Integrationszeit in Sekunden fest.
+
+``Apply to all channels`` erlaubt die Anwendung der Funktion auf alle Kanäle einer Datei oder nur auf den aktivierten Kanal.
+
+``Average magnitude all chan.`` mittelt die Beträge der Schalldruckverläufe nach Integration und A-Bewertung (nicht die Level!) .
+
+``A weighting`` wendet ein A-Bewertungsfilter an.
+
+Mit ``Use filter 1 (2)`` werden zusätzliche Filter aktiviert. Zunächst kann zwischen Tiefpassfilter (``low pass``) und Hochpassfilter (``High pass``) gewählt werden. Als Filtercharakteristika stehen ``Butterworth``, ``Chebyshev PB``, ``Chebyshev SB`` und ``Elliptic`` zur Verfügung. Während die ersten glattere Filterverläufe ermöglichen, können die letzteren steilere Verläufe erzeugen, mit dem Preis einer höheren Welligkeit (ripple). ``Filter order`` legt die Filterordnung und damit die Steilheit des Filters fest, in Einheiten von 6dB/oct.  ``Cut off [Hz]`` bestimmt die Grenzfrequenz des Filters. ``Passb. rip. [dB]`` und ``Stopb. rip. [dB]`` legen die maximale Welligkeit im Durchlassbereich bzw. im Sperrbereich der Chebyshev- und elliptischen Filter fest. ``OK`` startet die Integration.
+
+Als Beispiel ist im folgenden Plot ein an 4 Mikrofonpositionen aufgezeichnetes Motorgeräusch gezeigt.
+
+![motor1](/motor1.png)
+
+Der A-bewertete SPL-Verlauf dieser Signale ist:
+
+![motor1_spl](/motor1_spl.png)
+
+SPL over time kann auch in Kombination mit der [Fract. octave Filterbank](/de/help/edit/frac-oct-filtering) angewendet werden, um SPL-Verläufe frequenzbandbezogen zu berechnen.

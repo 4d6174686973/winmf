@@ -1,0 +1,40 @@
+import { Steps } from 'nextra/components'
+
+Distortion
+
+Das Distortion Info Fenster erlaubt die Auswertung der harmonischen Verzerrungen des gerade angezeigten Spektrums. Die Konfiguration der Auswertung geschieht durch
+
+<Steps>
+
+### Auswahl der auszuwertenden Parameter unter ``Select``:
+
+
+![info-distortion-select](/info-distortion-select.gif)
+
+- sel. H [dB]: der Verzerrungsanteil wird aus den selected harmonics berechnet. Die Auswahl der Harmonischen erfolgt im Untermenü  THD info setup
+- THD und THD+N: der Verzerrungsanteil wird bei THD aus allen Harmonischen im Auswertungsfrequenzbereich (durch Select region im Info Fenster definiert), bzw. bei THD+N aus den Harmonischen + Noisefloor berechnet
+- Rub&Buzz und Rub&Buzz+N: der Verzerrungsanteil wird bei Rub&Buzz aus allen Harmonischen bestimmt, die unter THD info setup für die R&B Analyse definiert wurden, bzw. bei Rub&Buzz+N aus den Harmonischen + Noisefloor.
+- Noise R&B: zeigt den Noisefloor einer Rub&Buzz Analyse an
+- Fund. rms: RMS der Grundwelle
+- H2 bis H15: Anteile der zweiten bis 15. Harmonischen
+- SINAD: Signal to Noise and Distortion ratio. Der Wert entspricht dem negativen THD+N Wert
+
+
+### Den Einstellungen zu den Auswertungen unter ``THD info setup``:
+
+![info-distortion-setup](/info-distortion-setup.gif)
+
+- Frequency [Hz]: Frequenz der Grundwelle
+- Select H start, Select H step und Select H stop: legen die Ordnung der Harmonischen fest, die bei der Auswertung unter sel. H berücksichtigt werden sollen. Die Werte 2, 1 und 5 beispielsweise (von 2 bis 5 in 1er Schritten) wählen die Harmonischen der Ordnung 2,3,4 und 5 aus. Mit dem Wert step=2 können auch die geradzahligen oder ungeradzahligen Harmonischen separat betrachtet werden
+- ``Distortion ref.``: legt den Bezugswert der Verzerrungsmessung fest. Zur Auswahl stehen die Grundwelle (``Fund. IEEE1241``), die Grundwelle mit den Harmonischen (``Fund.+THD``) und das Gesamtsignal (``All IEC60268-5``).
+- Rub&Buzz: hier werden die entsprechenden Parameter einer Messung der höheren Verzerrungskomponenten eingetragen, ``R&B H start`` ist die erste zu berücksichtigende Komponente,  ``R&B H stop`` ist die letzte Komponente, ``R&B H step`` definiert die Schrittweite.
+- Capture mode: Zunächst erlaubt ``Eval.`` mode die Auswahl zwischen ``Sync`` und ``Windowed``. Im ``Sync`` Modus erwartet das System die Fundamentale exakt auf der Frequenzlinie, die unter ``Frequency`` eingetragen wurde. Bei einer synchronen Messung (AD und DA Wandler werden von der gleichen Clock gespeist) ist dies immer der Fall. Bei nicht-synchronen (z.B. Tonbandgerät mit Gleichlaufschwankungen) kann diese Frequenz verschoben sein. In diesem Fall  erfolgt die Bestimmung des Grundwellenanteils innerhalb eines Frequenzfensters (``Windowed``). Die Breite dieses Frequenzfensters (``Capture width``) kann automatisch (``Auto``) oder manuell (``Fixed``) ausgewählt werden. ``Capture [Hz]`` beschreibt die Breite des Frequenzfensters bei manueller Auswahl.
+
+
+### Das Ergebnis der Auswertung wird im Info-Fenster z.B. wie folgt angezeigt:
+
+![info-distortion-window](/info-distortion-window.gif)
+
+Der Export der Tabellenwerte kann per Copy&Paste oder bei Aktivierung der Export Optionen (unter ``Select/Show export options``) erfolgen. Siehe auch dazu: [Export der Tabellenwerte.](/en/help/info/excelcsv-export).
+
+</Steps>

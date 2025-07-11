@@ -1,0 +1,39 @@
+# Learn tolerance
+
+Learn tolerance erstellt für das gerade im Speicher befindliche Spektrum oder Zeitsignal für jeden Kanal einen Toleranzschlauch. Die Toleranzschläuche beziehen sich im Frequenzbereich auf den Betrag, im Zeitbereich auf die Amplitude. Es wird immer ein Satz Toleranzschläche für den gesamten Frequenzbereich, bzw. Zeitbereich erstellt. Die Auswahl des zu prüfenden Bereichs erfolgt kanalweise im Menü [check tolerance](/de/help/qc/check-tolerance).
+
+Der (oder die) Toleranzschläuche werden unter dem Filenamen, der bei ``tolerance file`` angegeben ist, gespeichert, bzw. ein bestehendes Toleranzfile wird in den Limits angepasst.
+
+**Achtung**: Wenn sich ein falsches oder ungeeignetes File im Speicher befindet werden die Toleranzen darauf natürlich auch angepasst, sofern die Files kompatibel sind. Sichern Sie deswegen immer die Toleranzfiles.
+
+Wenn das Feld leer ist, wird ein neues File erstellt. Der Filenmame für das neue File wird automatisch aus dem Filenamen des im Speicher befindlichen Files gebildet: [filename - tolerance.suffix]. Vorsicht: Ein evt. vorhandenes File mit demselben Namen wird überschrieben!
+
+Wenn ein existierndes File angegeben wurde, so wird bei Erstellung der Toleranzen zunächst versucht dieses File zu laden. Gelingt das nicht, so wird unter dem Namen ein neues Toleranzfile erstellt. Konnte das File geladen werden, wird  überprüft ob das im Speicher befindliche File und das geladene Toleranzfile kompatibel sind. Das Toleranzfile muss folgende Voraussetzungen erfüllen:
+
+- Übereinstimmung in Samplerate und Samplezahl mit dem im Speicher befindlichen File
+
+- Die Kanalanzahl des Toleranzfiles muss doppelt so groß wie die Kanalanzahl des im Speicher befindlichen Files sein (für jeden Kanal muss ein oberes und unteres Limit existieren)
+
+## Steuerung der Toleranschlaucherstellung
+
+Unter ``tolerance setup`` können für jeden Kanal ein oberes und unteres Limit in dB und ein additiver Offset auf die Limits eingestellt werden. Der dB-Offset bewirkt eine relative Aufweitung des Toleranzschlauches in Bezug zur Ausgangskurve. Der additive Offset wird zusätzlich auf das jeweilige Limit angewendet.
+
+Beispiel: Betrachtet wird die Sensitivity eines Lautsprechers. Die Sensitivity sei 94dB, also 1Pa als Absolutwert. Ein oberes Limit von 3dB würde zunächst eine obere Toleranzgrenze von 94dB + 3dB  = 97dB ergeben. Wäre zusätzlich ein Offset von z.B. 0.5 angegeben, dann würde die Toleranzgrenze auf 1,41Pa + 0,5Pa = 1,91Pa festgelegt werden. Für die untere Toleranzgrenze wirken sich die Paramater analog aus. Im Frequenzbereich werden negative Werte auf 0 limitiert.
+
+Tip: soll lediglich eine obere Grenze getestet werden (z.B. bei Verzerrungskurven oder Rauschteppichen), so kann für das ``Lower limit dB`` ein sehr großer Wert (z. B. 200dB) angegeben werden.
+
+Die Erstellung der Toleranzschläuche erfolgt natürlich nicht einfach durch Parallelverschiebung der Ausgangskurven. Das würde bei zerklüfteten Verläufen oder Impulsantworten zu unbefriedigenden Ergebnissen führen, da einen minimale Verschiebung bereits zu Toleranzverletzungen führen würde. Um dem entgegen zu wirken, muss eine weitere Unschärfe eingebaut werden. Der Steuerparameter ist im Frequenzbereich die relative Bandbreite (``Bandw. [1/oct]``), im Zeitbereich das ``Interval [s]``. Bei der Erstellung eines Toleranzschlauches wird eine gleitende Min-Max Suche mit der angegebenen Bandbreite, bzw. Intervallgröße, durchgeführt. Die Anwendung der Offsets erfolgt für das obere Limit in jedem Intervall jeweils bezogen auf das Maximum, der untere Offset wird immer bezogen auf das Minimum erstellt.
+
+Beispiel: die Unschärfebandbreite sei im Frequenzbereich mit 1 angegben, also 1/1 octave. Bei der Frequenz 1000Hz würde in einem Bereich von einer Oktave (1000Hz) um die Mittenfrequenz das Minimum und Maximum ermittelt. Die obere Toleranz bei der Frequenz 1000Hz wäre dann: Maximum + relativer dB-Offset + additiver absoluter Offset. Das Minimum wird entsprechend ausgewertet.
+
+Je größer das Unschärfeintervall angegeben wird, desto toleranter verhält sich der Prüfprozess gegenüber Verschiebungen von Einbrüchen und Überhöhungen.
+
+## Further Processing
+
+Es ist grundsätzlich empfehlenswert die Ausgangsdaten zu glätten bevor auf deren Basis Toleranzschläuche erstellt werden. Für Spektren kann eine Glättung zum Beispiel durch eine [Fensterung](/de/help/edit/apply-window) der Impulsantwort erfolgen oder/und durch eine Glättung mit der [Smooth Funktion](/de/help/edit/smooth). Glättungen von Zeitsignalen können durch eine Multiplikation des zugehörigen Spektrums mit einer Rechteckfunktion mit anschließender IFFT durchgeführt werden. Komplexe Glättungsvorgänge können mit Hilfe der [Makrofunktionen](/de/help/macro) automatisiert werden.
+
+## Automatisierte Toleranzschlaucherzeugung
+
+In der Qualitatskontrolle für Fertigunsgprozesse ist es üblich die Toleranzschläuche auf Basis eines ganzen Satzes von Messungen zu erstellen. Die Messungen sind vorher manuell kontrolliert und für gut befunden worden, also als typische Messergebnisse identifiziert worden.
+
+Zur automatischen Erstellung der Toleranzschläuche werden die für gut befundenenen Kurven in einen Ordner kopiert. Mit Macro recording wird die [Aufzeichnung eines Makros](/de/help/macro)gestartet, das die Toleranzerstellung und alle vorher durchzuführenden Glättungen, Fensterungen und andere Prozessingschritte ausführt. Nun wird mit dem Menü  [Batch processing](/de/help/macro/batch-processing) das Makro auf den Ordner mit den Basisdaten angewendet. Es ist evt. ein vorhandenes Toleranzfile zu löschen, da sonst eine weitere Anlernung und keine neue Erstellung erfolgt.

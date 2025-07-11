@@ -1,0 +1,33 @@
+# RME HDSP
+
+Bevor Messungen durchgeführt werden muss der Treiber für die Schnittstellenkarte RME HDSP auf dem Rechner installiert werden. Nach Installation ist in der Regel ein Neustart erforderlich. Es empfiehlt sich die aktuellen Treiber zu verwenden:
+
+http://www.rme-audio.de/downloads.php?page=content/downloads/downloads_driver&subpage=content/downloads/downloads_driver_hdspe
+
+Bitte die Installationshinweise  beachten.
+
+Da es keinen Zugriff von WinMF auf das Routing der RME-HDSP Hardware gibt, muss sicher gestellt werden, dass die RME-Matrix geeignet konfiguriert ist. Die Konfiguration lässt sich in der Taskleiste rechts unten  unter dem Symbol "Hammerfall DSP Mix" mit Rechtsklick/Matrix öffnen. Es sollte folgendes Routing eingestellt sein:
+
+![rme_hdsp_matrix](/rme_hdsp_matrix.png)
+
+Der Headphone-mix (Ph.L, Ph.R) spielt für die Messtechnik keine Rolle und kann zum Mithören von Eingängen und Ausgängen beliebig konfiguriert werden.
+
+Weiterhin sollte im Hammerfall DSP Settings der Buffer für die Samples auf 256 stehen. Ist der Buffer auf höhere Werte eingestellt kommt es zu größeren Latenzen. Es kann dann passieren, dass das Ende eines Sweeps nicht mehr gemessen werden kann. Die Einstellungen können auch in der Taskleiste unter dem Symbol für "Hammerfall DSP Settings" eingesehen werden.
+
+![hammerfall_dsp-setting](/hammerfall_dsp-setting.png)
+
+Die Samplerate wird von WinMF gesteuert und bedarf keiner weiteren Einstellung. Werden digitale Ein- und Ausgänge verwendet sind hier u. U. weitere Einstellungen zum Clock-Master nötig.
+
+Nach einer neuen Installation der RME-HDSP Karte sind alle Einstellungen geeignet für WinMF, so dass es sofort losgehen kann.
+
+## Wichtige Hinweise
+
+Ein Hochfahren aus dem Standby oder Ruhezustand mit angeschlossener Hardware kann insbesondere bei Notebooks zu einem Problem in der HDSP-Karte führen. Die Karte wird zwar erkannt, aber es kommt zu Fehlfunktionen an den Ein- und Ausgängen. Deswegen immer mit der angeschalteten Hardware einen Kaltstart durchführen. Auch das Hot-Plugging bei Express-Card Slots führt gelegentlich zu diesem Problem. Das kann sich zum Beispiel durch vollkommen verzerrte und übersteuerte Messungen äußern, obwohl die Aussteuerung in Ordnung war.
+
+Keines der für Messungen benutzten RME-Geräte darf für die Wiedergabe von Windows Sounds oder die Medienwiedergabe als Standardgerät konfiguriert sein. In der Systemsteuerung unter Sounds ist das Standardgerät auf ein nicht RME-HDSP Gerät einzustellen. Andernfalls kann es zu Fehlmessungen kommen.
+
+## Analyse fehlerhafter Treiberinstallationen/defekter Hardware am PCI-Bus
+
+Ein fehlerhaft installierter Treiber eines beliebigen PCI-devices kann sich durch Drop-outs in der Sound-Wiedergabe äußern. In diesem Fall können die Latenzen am PCI-Bus so stark ansteigen, dass keine drop-out-freie Wiedergabe mehr möglich ist. Auch defekte Hardware oder nicht funktionierende Firmware von SSD-Platten können diesen Effekt hervorbringen. Eine einfache Analyse ermöglicht das Tool
+
+**Nur Win 7 und Vorgänger**: Ein einfaches Tool zur Messung der Latenzen ist dpclat.exe. Wenn die gemessenen Latenzen im roten Bereich liegen, dann sollte man nacheinander alle Geräte am PCI-Bus deaktivieren bis der Übeltäter gefunden wurde. Das Deaktivieren von Festplatten erfordert ggf. einen Neustart.

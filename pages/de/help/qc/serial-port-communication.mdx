@@ -1,0 +1,7 @@
+# Serial port communication
+
+Über Serial port communication können Strings über die in [Setup com port communication](/de/help/qc/setup-com-port-communication) definierte Schnittstelle gesendet werden. Mögliche Anwendung ist es z.B. ein Gerät im QC-Prozess per seriellem Kommando in einem bestimmten Zustand zu versetzen. Unter ``Bytes to receive`` kann die Anzahl der bytes festgelegt werden, die aus der seriellen Schnittstelle gelesen werden sollen. Der in ``Replace string`` definierte String wird aus dem empfangenen String gelöscht. Ist bei Compare string ein String definiert, so wird der empfangene String (nachdem der Replace string gelöscht wurde) mit dem ``Compare string`` verglichen. Bei Identität wird im QC Prozess PASSED ausgegeben, ansonsten FAILED. Ist ``Compare string`` leer ist das Ergebnis immer PASSED.
+
+Um Sonderzeichen zu übertragen wird der 3-stellige ASCII Code mit einem einleitenden # verwendet, z.B. für Linefeed wird ein \#010 eingesetzt.
+
+Um den String der zuletzt im [Process control](/de/help/qc/process-control) gescannten Seriennummer zu übernehmen wird #SER im String eingesetzt. #SER wird dann beim Senden durch den Seriennummernstring ersetzt. Die Variable #SER ist case sensitiv, muss also genau so geschrieben werden.

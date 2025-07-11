@@ -1,0 +1,104 @@
+# Frontend setup
+
+Der Menüpunkt ``Frontend setup`` öffnet ein neues Fenster, in dem alle relevanten Einstellungen für die verwendeten Ein- und Ausgangskanäle vorgenommen werden.
+
+## File
+
+Mit ``Frontend setup / File`` können einmal gefundene Einstellungen für die Ein- und Ausgangskanäle gespeichert und wieder geladen werden.
+
+## Default
+
+Unter ``Default`` kann für die verwendete Hardware-Konfiguration eine sinnvolle Grundeinstellung ausgewählt werden. Zur Auswahl stehen ``Robo3``, ``RME Multiface II``, ``Robo2 mit Multiface II``, ``Digital`` und ``DBS1``.
+
+## Input view / Output view
+
+Hier können die im persönlichen Messsetup vorhandenen Elemente der Signalkette an- oder ausgeschaltet werden. Nur die Einstellungen für die gewählten Bereiche werden angezeigt. Für die Inputs stehen ``Frontend inputs``, ``Probes`` und ``Preamps`` zur Verfügung, für die Ausgänge ``Frontend outputs``, ``Internal power amplifiers``, ``External power amplifiers`` sowie ``Loads & output calibration``.
+
+## Probes
+
+Hier erfolgen die Einstellungen für die Wandler, die eine zu messende mechanische Größe (z.B. Schalldruck oder Beschleunigung) in elektrische Signale umwandeln.
+
+### Sensor
+
+In der default-Einstellung sind die Eingangskanäle schlicht durchnummeriert. Die Zahlen können durch aussagekräftige Namen, wie zum Beispiel "Messmikrofon links", ersetzt werden.
+
+### Serial identifier
+
+Eingabe der Seriennummer des Sensors. Diese Information wird im Moment noch nicht weiter ausgewertet. Denkbare Anwendungen sind z.B. die Erfassung der Seriennummer in den Excel Protokollen bei Qualitätssicherungs Prozessen (QC/Process control).
+
+### Microphone compensation
+
+Hier kann eine vorhandene Kompensationsdatei für ein verwendetes Mikrofon (oder einen anderen Wandler) aufgerufen werden. Die Datei muss im WinMF Format vorliegen und innerhalb des ``Exciter`` Verzeichnisses gespeichert sein. Jede Messung wird mit dieser Datei multipliziert, so dass die Datei den inversen Frequenzgang des Mikrofons enthalten muss. Zur Auswahl der Datei mit Rechtsklick im Eingabefeld das Kontextmenü öffnen und die Datei im Browser selektieren.
+
+### Sensortype
+
+Hier kann die Art des verwendeten Sensors ausgewählt werden. Für rein elektrische Messungen, zum Beispiel an Equalizern oder Controllern, wählt man voltage aus, für Mikrofonmessungen ``pressure``, für Schnellesensoren ``velocity``, für Beschleunigungsaufnehmer ``acceleration`` und so weiter. In den Messungen werden die Werte in den entsprechenden Einheiten dargestellt.
+
+### Sensor characteristic
+
+Bei Mikrofonsonden kann hier als Zusatzinformation angegeben werden, ob es ein Freifeld, bzw. ein Diffusfeldmikrofon ist. Bei Beschleunigungsaufnehmern und Schnellesensoren kann die vektorielle Ausrichtung angegeben werden. Diese Information wird im Moment noch nicht weiter verarbeitet. Denkbare Anwendung ist z.B. die 3D-Animation von gemessenen Schnelleverteilungen
+
+### Sensitivity
+
+Für die korrekte Erfassung von Messwerten ist die richtige Angabe der ``Sensitivity``, also der Empfindlichkeit des Wandlers, entscheidend. So muss bei Verwendung eines Mikrofons die zugehörige Empfindlichkeit hier angegeben werden, beispielsweise 15mV/Pa (einzutragen als 0.015 V/Pa). Ist ein Kalibrator vorhanden, kann der Sensor auch im Zeitfenster im Menü ``AD/DA / Mic. calibrate`` kalibriert werden. Nach erfolgreicher Kalibrierung ändert sich die Farbe des entsprechenden Kanals von rot auf grün, die gemessene Empfindlichkeit wird automatisch eingetragen.
+
+## External preamp
+
+### External preamp gain
+
+Wird ein externer Vorverstärker bei den Messungen verwendet, muss hier der eingestellte Verstärkungsfaktor eingetragen werden.
+
+### External preamp max. output
+
+Hier kann die maximale Ausgangsspannung des externen Vorverstärkers angegeben werden.
+
+## Frontend inputs
+
+Die Eingangskanäle können mit einem Häkchen neben dem Namen aktiviert werden. Bei jeder Messung werden alle hier ausgewählten Kanäle aufgezeichnet, auch wenn kein Signal am entsprechenden Eingang anliegt.
+
+### Frontend sensitivity
+
+Bei Verwendung eines Robo2 oder Robo3 kann hier die Eingangsempfindlichkeit der Eingangskanäle 1 und 2 gemeinsam umgeschaltet werden. Die maximale Eingangsspannung kann in Schritten von 20 dB von -40dBu bis +40dBu (Robo2) bzw. von -34dBu bis +46dBu (Robo3) eingestellt werden. Bei zu geringem Eingangspegel wählt man einen niedrigeren Spannungsbereich, bei Übersteuerungen am Eingang einen höheren. Viel zu hohe Signalpegel, zum Beispiel von Leistungsverstärkern, können das Robo beschädigen! Daher sollte bei unbekannten Signalpegeln zunächst eine unempfindliche Einstellung (z.B. +46dBu) ausgewählt werden. Bei Verwendung eines Robos sind die maximalen Eingangsspannungen der Kanäle 3-18 durch die Hardware vorgegeben und nicht vom Anwender umschaltbar, bei Verwendung eines Multiface II ohne Robo gilt dies für alle Kanäle.
+
+### Frontend phantom power
+
+Bei fernsteuerbarer Phantomspeisung kann hier die Phantomspeisung ein- und ausgeschaltet werden.
+## Frontend outputs
+
+Hier werden die Ausgänge des Frontends durch Setzen eines Häkchens aktiviert. Das Ausgangssignal wird an allen aktivierten Ausgängen mit gleichem Pegel (in dBFS) ausgegeben.
+
+### Frontend sensitivity
+
+Hier kann bei Verwendung eines Robo2 oder Robo3 der maximale Ausgangspegel von Kanal 1 und 2 gemeinsam umgeschaltet werden, beim Robo2 zwischen 0dBu und +20dBu, beim Robo 3 zwischen +6dBu und +26dBu. Bei allen anderen Kanälen und bei Verwendung eines Multiface II ohne Robo sind die maximalen Ausgangspegel durch die Hardware vorgegeben und nicht umschaltbar.
+
+## Internal power amplifiers
+
+Die Frontends Robo2 und Robo3 enthalten auf den Ausgängen 1 und 2 interne Leistungsverstärker. Die korrekten Werte sind bereits eingetragen und können nicht verändert werden.
+
+### Internal amp gain
+
+Hier kann der Verstärkungsfaktor der im Robo eingebauten Endstufe abgelesen werden. Er beträgt unveränderbar 20dB beim Robo2 und 0dB beim Robo3.
+
+### Internal amp max. out
+
+Hier kann der maximale Ausgangspegel am Verstärkerausgang des Robo abgelesen werden. Er beträgt für alle Robos +26dBu, die beim Robo2 an den Bananenbuchsen, beim Robo3 an den Speakonanschlüssen anliegen.
+
+## External power amplifiers
+
+### External amp gain
+
+Wird ein externer Leistungsverstärker für die Messung verwendet, so muss hier der Verstärkungsfaktor in dB angegeben werden.
+
+### External amp max. out
+
+Damit ein externer Leistungsverstärker nicht übersteuert wird, kann hier die maximale Ausgangsspannung in dBu angegeben werden.
+
+## Loads and output calibration
+
+### Load impedance
+
+Um eine korrekte Berechnung der elektrischen Leistung durchführen zu können, muss hier die nominelle Impedanz des Lautsprechers angegeben werden.
+
+### Output calibration
+
+Hier kann für jeden Ausgangskanal des Frontends ein Kalibrierfaktor eingetragen werden. Bei Wiedergabe von Files durch ``ADDA/Play`` kann mit den Kalibrierfaktoren die Wiedergabekette (Externe Endstufe + Lautsprecher oder Kopfhörer) kalibriert werden. Damit ist es z.B. möglich Aufzeichnungen die in PA gespeichert wurden mit dem korrekten Schalldruck wiederzugeben. Andere Menüs verwenden den Kalibrierfaktor nicht.

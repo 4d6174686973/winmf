@@ -1,0 +1,34 @@
+# Dante based frontends
+
+Die im Folgenden beschriebenen Software-tools sind über die [Audinate homepage](https://www.audinate.com/) runterzuladen, bzw. zu erwerben (DVS).
+
+Die Schnittstelle von Dante zum PC kann entweder eine PCIe Dante Soundkarte (128 Kanäle) oder eine Software Soundkarte (DVS, 64 Kanäle) sein. Bei der Installation der DVS ist zu beachten, dass die aktuelle Version kein Windows XP unterstützt. Die neueste unter XP funktionierende Version ist DVS 3.03, was aber offiziell nicht mehr von Audinate supported wird. Aktuell erworbene Lizenzschlüssel können aber trotzdem angewendet werden. Bei der Eingabe des Lizenzschlüssels für das DVS ist zu beachten, dass bei der Aktivierung der Firewall die Aktion nicht blockiert.
+
+Zur Konfiguration der Audiomatrix, also der Zuordnung der physikalisch existierenden Ein- und Ausgänge, ist der Dante Controller zu installieren. Nach dem Start des Dante Controllers werden hier die verfügbaren Geräte angezeigt und es können in der Matrix die gewünschten Verknüpfungen erstellt werden.
+
+![dante_controller_dbs1](/dante_controller_dbs1.jpg)
+
+## Bekannte Probleme unter XP und bei älteren Versionen des Dante Controllers:
+
+- wenn gleichzeitig ein WLAN auf dem Rechner aktiviert ist, dann funktioniert der Dante Controller nicht mehr
+
+- wenn der Rechner beim Booten mit einem anderen Netzwerk verbunden ist, als später für den Betrieb mit Dante verwendet ist die Funktion des Dante Controllers gestört. Abhilfe schafft neues Booten mit dem für Dante verwendeten LAN, bzw. das manuelle Starten des ``Dante Control and Monitoring Dienstes`` unter ``Systemsteuerung/Verwaltung/Dienste``
+
+- wenn der Dante Controller trotzdem nicht geht, folgende Dienste unter ``Systemsteuerung/Verwaltung/Dienste`` neu starten:
+
+    - ``Dante Control and Monitoring``
+    - ``Dante Discovery``
+    - ``Dante Virtual Soundcard Manager`` (wenn DVS verwendet wird)
+    - ``Dienst "Bonjour"``
+
+Zur Einrichtung von Messtechnik über Dante ist die PCIe Soundkarte an das Ethernet anzuschließen, bzw. den Rechner mit dem Ethernet zu verbinden. Im Fall der DVS ist die Soundkarte durch Drücken auf den runden on/off Button zu aktivieren. Ist die Karte aktiviert, dann leuchtet der Button grün, ansonsten grau:
+
+![dante__dvs](/dante__dvs.jpg)
+
+Im Dante Controller werden dann die verfügbaren Geräte angezeigt. Wenn Geräte auf Basis des Ultimo-Chips im Peer-to-Peer Betrieb mit einer DVS verwendet werden, sollten zur besseren Latenzstabilität folgende Einstellungen für die Latency gewählt werden:
+
+![dante_controller_deviceview](/dante_controller_deviceview.jpg)
+
+Im Routing des Dante Controller müssen nun die Ein- und Ausgänge der für die Messtechnik benutzten Geräte mit den zu benutzenden Ein- und Ausgängen der Dante Soundkarte verbunden werden. Im gezeigten Beispiel ist der Messrechner "Prowler" und wird auf den Kanälen 1 und 2 mit dem Geräte FA-DBS1-07013d gepatcht. Die Häkchen müssen bei erfolgreicher Verbindung grün leuchten.
+
+![dante_controller_dbs1](/dante_controller_dbs1.jpg)

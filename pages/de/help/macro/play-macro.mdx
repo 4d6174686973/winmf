@@ -1,0 +1,32 @@
+# Play Macro
+
+Mit ``Play macro`` kann ein vorhandenes Macro geöffnet und ausgeführt werden. ``Macro file`` erlaubt die Auswahl der entsprechenden Macrodatei. Rechtsklick auf den Filenamen öffnet den  [Macro editor](/de/help/macro/edit-macro).
+
+Bei der Ausführung von Makros können Subversionen verwendet werden. Dabei wird eine Makro Subversion durch ein "$" gefolgt vom Versionsnamen in der Makrodefinition eingeleitet. Wird unter Subversion "only base macro" selektiert, dann führt das Makro nur die Zeilen aus, die zu keiner Makroversion gehören. Wird eine Version ausgewählt, dann werden zusätzlich die mit diesem Versionsstring gekennzeichneten Zeilen ausgeführt.
+
+Das folgende Beispiel zeigt eine einfache Macrodefinition mit zwei Subversionen (PPA1000-2 und PPA2200-3):
+
+| _ | frequency_domain |
+|------------|-------------|
+| 48kHz | Initialize |
+| $PPA1000-2 2ch | FE |
+| $PPA1000-2 100W, 2ch | LSE |
+| $PPA1000-2 10-110dB | Display_range |
+| $PPA2200-3 3ch | FE |
+| $PPA2200-3 2000W, 3ch | LSE |
+| $PPA2200-3 20-120dB | Display_range |
+| Freq_resp | Plotting |
+
+es wird zunächst das Messystem initialisiert und dann abhängig von der ausgewählten Version entweder die 3 Schritte für PPA1000-2 oder PPA2200-3 ausgeführt. Anschließend wird unabhängig von der ausgewählten Version ein Plot erstellt.
+
+Im  [Macro editor](/de/help/macro/edit-macro) können die Versionsstrings eingefügt und entfernt werden.
+
+``Result path`` legt einen Dateipfad fest, unter dem die bearbeiteten Dateien abgespeichert werden. Ist dieser Pfad identisch mit dem ursprünglichen Dateipfad, so wird die Datei nach Durchführung des Macros überschrieben. Wird dieser Pfad leer gelassen, so wird zur Speicherung der aktuelle Pfad verwendet. Das trifft z.B. auch auf Info Fenster zu, die Tabellen in Textdateien oder in Excel-Dateien exportieren.
+
+``Repetitions`` führt das Makro so oft aus wie hier angegeben.
+
+``Single stepping`` erlaubt die Durchführung des Macros in Einzelschritten.
+
+[Macrodefinitionen und manuelles Editieren von Makros.](/de/help/macro/macro-definitions)
+
+Makrosammlungen können für einen schnellen Zugriff im [Macro organizer](/de/help/macro/macro-organizer) verwaltet werden.

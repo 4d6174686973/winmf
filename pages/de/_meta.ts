@@ -1,5 +1,5 @@
 export default {
-  //  Pages
+  // Pages
   index: 'Home',
   distribution: {
     title: 'Vertrieb',
@@ -13,7 +13,12 @@ export default {
     title: 'Datenschutz',
     type: 'page'
   },
-  //  Site map
-  help: 'Hilfe',
-  features: 'Features und Anwendungen',
+
+  // Site map
+  features: 'Features',
+  'supported-hardware': 'Supported Hardware',
+  help: 'Help',
+  'first-steps': 'First Steps',
+  licensing: 'Lizensierung',
+  'system-requirements': 'Systemanforderungen'
 }

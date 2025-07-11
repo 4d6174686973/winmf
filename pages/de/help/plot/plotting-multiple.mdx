@@ -1,0 +1,32 @@
+# Plotting multiple
+
+Die Multi-Plot Funktion ermöglicht den Plot von 2 oder 3 verschiedenen Files in einen gemeinsamen Plot. Diese Funktion steht im Zeitbereich und im Frequenzbereich zur Verfügung.
+
+Im [Plotting setup](/de/help/plot/plotting) werden Grafikformat, Auflösung und  weitere Optionen eingestellt.
+
+Unter ``Data Source Setup`` werden die Datenquellen, sowie Optionen für die Herkunft von X-Achsenskalierung, Kommentar und Filename definiert.
+
+- Data Source Memory: es können aus der Spektrums- bzw. Time signals Liste die im Speicher vorhandenen Files ausgewählt werden.
+
+
+![plot_multi_memory](/plot_multi_memory.gif)
+
+Data Source Harddisk: es können Files aus beliebigen Datenordnern ausgewählt werden. Die Ordner müssen sich unter dem [Base path](/de/help/file/preferences) befinden.
+
+![plot_multi_harddisk](/plot_multi_harddisk.gif)
+
+Der folgende Plot ist ein Beispiel für einen Plot aus 3 Files von Sensitivity, Impedanz und ungebrochener Phase (unwrapped phase).
+
+![amt-8inch-fre-imp-phase](/amt-8inch-fre-imp-phase.png)
+
+Sollen nur 2 Files geplottet werden, dann muss der dritte Plot im ``Data source setup`` abgeschaltet werden:
+
+![plot_multi_memory-2-files](/plot_multi_memory-2-files.gif)
+
+![amt-8inch-fre-imp](/amt-8inch-fre-imp.png)
+
+Im Folgenden sind noch zwei Beispiele für Zeitsignal Plots gezeigt:
+
+![amt-8inch-ir-stepr](/amt-8inch-ir-stepr.png)
+
+![time-signals-multi-plot](/time-signals-multi-plot.png)

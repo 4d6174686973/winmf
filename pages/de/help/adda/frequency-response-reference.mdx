@@ -1,0 +1,35 @@
+# Reference
+
+Vor einer ``Frequency response``, ``LS sensitivity`` oder ``Polar response`` Messung muss eine Referenzmessung mit dem ausgewählten Anregungssignal durchgeführt werden.
+
+Eine Referenzmessung dient zum einen dazu, den meist nicht neutralen Frequenzgang der Anregungssignale auszugleichen, zum anderen die Messfehler, die durch das Messsystem selbst hervorgerufen werden, zu beheben.
+
+Die Messignale können eine beinahe beliebige Frequenzgewichtung beinhalten. Da bei der Messung jedoch nur die Frequenzantwort des gemessenen Systems von Interesse ist, wird diese Gewichtung durch Multiplikation des gemessenen Signals mit der Referenzdatei, die im Wesentlichen die Inverse des Anregungssignals darstellt, neutralisiert. Wenn die Referenzdatei durch eine Messung über die Ein- und Ausgänge des Messsystems erzeugt wurde, wird zusätzlich der komplexe Frequenzgang der Hardware gemessen und in der Folge ebenfalls ausgeglichen.
+
+Die Grafik zeigt in blau eine mögliche Frequenzgewichtung eines Sweeps, in grün das zugehörige Referenzspektrum.
+
+![reference_3](/reference_3.png)
+
+Besonders zu beachten ist, dass die Referenzdatei mit der gleichen Samplefrequenz gemessen wurde, mit der auch die Messung durchgeführt wird. WinMF erzeugt andernfalls eine Fehlermeldung. Prinzipiell kann eine passende, zu einem früheren Zeitpunkt erzeugte Referenzdatei für Messungen verwendet werden. Es empfiehlt sich jedoch, zu Beginn jeder Messsession neue Referenzmessungen durchzuführen.
+
+Im Bereich Filter setup können zwei beliebige Filter definiert werden, die bei der Referenzmessung zusätzlich verwendet werden. Dies kann beispielsweise bei gestörter Signalqualität erforderlich sein. Die Filterdefinitionen sind bei [Edit-Filter](/de/help/edit/filter) erklärt.
+
+Mit ``Select channel`` wird ein Kanal für die Referenzmessung ausgewählt. Interne Referenzmessungen mit Robo-Frontends sind nur mit Kanal 1 und 2 möglich.
+
+``Apply to all channels`` erzeugt eine n-kanalige Referenzmessung über alle n aktiven Eingangskanäle.
+
+``Reference`` bestimmt die Datei, in der die Referenzmessung gespeichert wird.
+
+``Ref. mode`` erlaubt bei Robo-Frontends die Auswahl zwischen verschiedenen Arten der Referenz.
+
+``Exciter file`` startet keine Messung im eigentlichen Sinn, sondern nimmt als Referenzfile das inverse Spektrum des Anregungssignals. Bei dieser Variante werden hardwareseitige Fehler (Laufzeit, Spektrum) nicht bei der Messung ausgeglichen.
+
+``External line`` misst über die Line Ein- und Ausgänge, die dazu mit Kabeln verbunden werden müssen.
+
+``External amp`` misst über die Line Ein- und Ausgänge, wobei die externe Endstufe ebenfalls im Signalweg liegt. Die Line-Ausgänge des Frontends werden also mit den Endstufeneingängen verkabelt, die Ausgänge der Endstufe mit den Line-Eingängen des Frontends. Das Endstufensignal muss dabei zwischen den Pins 2 und 3 des XLR-Eingangs liegen, Pin 1 bleibt unbeschaltet. Dabei ist zu beachten, dass das die Eingangsempfindlichkeit des Messfrontends an das Endstufensignal angepasst ist, falsche Einstellungen oder Kabelbelegungen können hier zu Beschädigungen des Frontends führen!
+
+``Internal line`` verbindet automatisch die internen Line Ein- und Ausgänge des Robo-Frontends, externe Kabel sind nicht erforderlich.
+
+``Internal Amp`` verbindet die Ausgänge der internen Endstufen mit den Line-Eingängen.
+
+``Calc. dyn [dB]`` beschreibt die maximale Dynamik, mit der die Referenzdatei berechnet wird.

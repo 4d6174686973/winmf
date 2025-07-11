@@ -1,0 +1,25 @@
+# LS sensitivity
+
+``LS sensitivity`` ist eine Frequenzgangmessung wie  [Frequency response](/de/help/adda/frequency-response), jedoch mit einigen zusätzlichen Parametern und Processing Optionen, die speziell für Lautsprechermessungen mit Mikrofonen geeignet sind.
+
+![sensitivity](/sensitivity.png)
+
+Vor der eigentlichen Messung muss mit [Ref. - Reference measurement](/de/help/adda/frequency-response-reference) eine Referenzmessung durchgeführt werden.
+
+Die Grundeinstellungen der Messung werden im [Measurement setup](/de/help/adda/measurement-setup)beschrieben, die Einstellungen zur Anregung im  [Exciter setup](/de/help/adda/exciter-setup).
+
+Die Einstellung der bei der Messung verwendeten Verstärker erfolgt im [Amplifier setup](/de/help/adda/amplifier-setup).
+
+``LS sensitivity proc.`` erlaubt die Einstellung der Messbedingungen. ``Mic. dist. [m]`` beschreibt den Abstand zwischen Lautsprecher und Mikrofon. Die Ergebnisse der Sensitivity-Messungen werden üblicherweise auf 1W, 1m normiert. WinMF führt diese Normierung automatisch durch. Die Eingangsspannung, die der Leistung von 1W an der Nennimpedanz entspricht, wird im Kommentar automatisch eingetragen. Die Nennimpedanz ist das Quadrat dieses Wertes (nach $P*Z=U^2$).
+
+Im Feld ``Corrected`` by kann ein Korrekturwert definiert werden, mit dem alle Messungen multipliziert werden. So ist es beispielsweise üblich, bei Messungen, bei denen das Mikrofon auf einem schallharten Boden liegt, die Messung mit -6dB zu korrigieren, um auf Freifeldbedingungen umzurechnen.
+
+Die Verstärker-Einstellungen werden im [Amplifier setup](/de/help/adda/amplifier-setup) durchgeführt.
+
+Bei [Processing](/de/help/adda/processing) wird eine automatische Bearbeitung des Messergebnisses definiert.
+
+Eine Testmessung kann mit ``Test measurement`` durchgeführt werden. Diese kann zum Beispiel dazu dienen, die Pegel und Verkabelungen zu überprüfen.
+
+``Detect dist.`` führt ebenfalls eine Testmessung durch, dabei wird aus der Signallaufzeit der Abstand zwischen Lautsprecher und Mikrofon berechnet und in das Feld ``Mic. dist. [m]`` eingetragen. Dieses Verfahren ist meist ungenauer als eine Abstandsmessung mit Maßband oder Distometer, außerdem wird die Laufzeit im Innern des Lautsprechers dem Abstand zugerechnet.
+
+Die Messung wird mit ``OK`` gestartet und mit ``Cancel`` abgebrochen.

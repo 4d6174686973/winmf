@@ -1,0 +1,69 @@
+import { Steps } from 'nextra/components'
+import { Callout } from 'nextra/components'
+ 
+# First Steps
+
+<Steps>
+
+### Setzen des Exciter- und Base path:
+
+In den ersten Abschnitten ist die Bedeutung der Pfade erläutert: [Siehe file/preferences.](/de/help/file/preferences)
+
+### Erzeugen der Excitersignale
+
+Drücken Sie den Button ``generate sweeps`` in exciter path im preferences menu
+
+### Installation des Audio interface Treibers
+
+Das Audio Interface muss mit einem ASIO Treiber installiert werden. Für das Robo2 oder Robo3 wird RME HDSPe verwendet. Das HDSPe setup ist hier beschrieben: [adda/setup-of-hardware/rme-hdsp](/de/help/adda/setup-of-hardware/rme-hdsp).
+
+### Initialisieren der Hardware
+
+Vor der ersten Messung muss einmalig das Audio Interface initialisiert werden. Dazu unter  [ADDA/Initialize](/de/help/adda/initialize), das ASIO interface für die installierte Hardware auswählen und die Samplerate definieren.
+
+<Callout type="info">
+    **Hinweise for Robo2 und Robo3:** Wenn das Robo mit den PC korrekt verbunden ist, dann geht die lock/Error LED aus. Wenn die Verbindung unterbrochen ist oder ein Fehler vorliegt, dann ist die LED an oder blinkt.
+</Callout>
+
+### Frontend setup
+
+Unter  [adda/frontend-setup](/de/help/adda/frontend-setup) muss ein geeignetes Frontend ausgewählt werden.
+
+<Callout type="info">
+    **Hinweise for Robo3 (und Robo2):** Versuchen Sie die Sensitivity von Ein- oder Ausgängen im Frontend Menu umzuschalten. Man kann die Relais im Robo3 klicken hören und die aktuelle Sensitivity wird am Robo per LED angezeigt.
+</Callout>
+
+### Referenzmessung für Frequency response , (LS-sensitivity, Polar response)
+
+Zunächst muss im Messmenu der Exciter ausgewahlt werden und damit eine Referenzmessung durchgeführt werden:
+
+[adda/frequency-response-reference](/de/help/adda/frequency-response-reference)
+
+<Callout type="info">
+    **Hinweise for Robo2 und Robo3:** Die Referenzverbindungen werden über interne Relais realisiert. Die Verbindungen werden von WinMF im Robo automatisch geschaltet.
+</Callout>
+
+<Callout>
+**Hinweise für akustische  Messungen:** Wenn sweeps verwendet werden, muss das ``exiter end time gap`` die gesamte Latenz der Messstrecke überbrücken. Die Latenz wird verursacht durch die digitale Messstrecke, den akustischen Pfad und der DSP-Hardware Latenz bei aktiven Lautsprechern.
+
+</Callout>
+
+Normalerweise werden bei 48kHz  Samplerate die folgenden Exciter verwendet. Wenn die Samplerate höher ist, dann wird auch ein längerer Sweep verwendet. Bei doppelter Samplerate sollte der Sweep doppelt so lang sein, also +1 FFT length:
+
+**LS-sensitivity, oder polar reponse:** SWP15LM, SWP16LM, SWP17LM oder höher (SWP = SWP, 15 = FFT length, LM = loudspeaker measurement).
+
+**Frequency response bei rein elektrischen Messstrecken:** SWP17DIS, SWP18DIS, SWP19DIS oder länger (DIS = Distortion).
+
+**Sweep distortion with frequency response or LS-sensitivity:** SWP17DIS, SWP18DIS, SWP19DIS or longer (DIS = Distortion).
+
+### Polarmessungen (Directivity, 3D-Ballons)
+
+Zur Auswahl des Drehtellers wird unter ADDA/Polar response im Menü  Setup/Turntable setup bei Select machine die passende Maschine ausgewählt: [Turntable setup](/de/help/adda/turn-table-setup)
+
+Danach, mit Configure machine die Kommunikation einrichten (Wahl des Ports oder Einstellen der IP-Adresse, die Achsen bei Bedarf in den Nullpunkt fahren und den Nullpunkt setzen).
+
+Unter Setup/Pol. Setup Balloon wird die Automatisierung für die Directivity oder Balloon-Messung eingestellt: [Pol. Setup Balloon](/de/help/adda/polar-data-setup). Hier können Presets für gängige Abläufe gewählt werden, z. B. Hor. 360° macht eine Polarmessung in der Horizontalebene mit 360° Winkelbereich. Die Standardschrittweite ist 5° (El. Step, bzw. Az. Step) und kann bei Bedarf angepasst werden. Unter output files sollte immer SPK-output verwendet werden, da Drittprogramme wie EASE Speaker lab das WinMF Format nicht einlesen können. Aus Kompatibilitätsgründen verwendet der [Directivity Editor](/de/help/directivity/edit-directivity) von WinMF auch SPK-files. 3D-Ballons können mit dem  [Balloon Editor](/de/help/directivity/edit-balloon) eingelesen werden und bei Bedarf als CLF-file exportiert werden.
+
+Unter Measurement Info können drei Strings frei definiert werden, um das DUT und die Messreihe zu beschreiben. WinMF erstellt daraus automatisch einen Ordnernamen, in dem die Dateien der Polarmessung gespeichert werden. Dieser Ordner befindet sich immer im aktuellen Pfad. Dies ist der zuletzt im Hauptfenster beim Laden oder Speichern verwendete Pfad.
+
+</Steps>

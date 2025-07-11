@@ -1,0 +1,5 @@
+# Complex interpolation
+
+führt eine komplexe Interpolation mit vorgebener [Anzahl Samples und Samplerate](/de/help/edit/signal-length) aus. Beim Heraufsetzen der Samplerate werden Nullen im nichtdefinierten Frequenzbereich eingefügt. Die unter length eingegebenen Werte für Samples, bzw. FFT, beziehen sich auf die zugehörige Impulsantwort des komplexen Frequenzganges. Wird beispielsweise FFT = 14 eingegeben, dann ist die Linienzahl des Spektrums: $2^{13}+1 = 8193$.
+
+Hinweis: Daten können nur sinnvoll komplex interpoliert werden, wenn sie einen hinreichend glatten Verlauf des Betrags- und Phasengangs aufweisen. In der Regel trifft das auf die meisten gemessenen Frequenzgänge zu. Es ist nicht sinnvoll Rauschspektren durch eine komplexe Interpolation zu modifizieren.

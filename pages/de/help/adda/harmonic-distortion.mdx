@@ -1,0 +1,19 @@
+# Harmonic distortion
+
+Die Messung ``Harmonic distortion`` dient zur Bestimmung der harmonischen Verzerrungen und verwendet als Anregung Sinussignale.
+
+![thd_2](/thd_2.png)
+
+Das Bild zeigt das Klirrspektrum eines übersteuerten Eingangs des Robo3 Messystems mit der Anregungsfrequenz 1,3kHz und den Harmonischen bei ganzzahligen Vielfachen davon (sowie einige kleine Intermodulationsanteile).
+
+Die Parameter der Messung werden in  [Measurement setup](/de/help/adda/measurement-setup) festgelegt. Als zusätzlicher Parameter kann die Frequenz des anregenden Sinussignals bei ``Frequency [Hz]`` eingegeben werden. Die eingegebene Frequenz wird dabei so angepasst, dass in der eingestellten FFT-Länge eine ganzzahlige Anzahl von Signalperioden durchlaufen wird und das Signal damit in einem Nulldurchgang enden kann.
+
+Die Pegeleinstellungen erfolgen im  [Exciter setup](/de/help/adda/exciter-setup), die Einstellungen zu den verwendeten Endstufen im [Amplifier setup](/de/help/adda/amplifier-setup).
+
+Unter ``Normalisation`` kann die Messung auf verschiedene Bezugswerte bezogen werden, und zwar auf den Wert ``1V``, auf den Pegel des Anregungssignals (``excitation level``), oder das gemessene Signal wird absolut dargestellt (``nothing``).
+
+In [Processing](/de/help/adda/processing) wird die Weiterverarbeitung der Messergebnisse eingestellt.
+
+Ist die Option ``Show distortion`` aktiviert, dann erfolgt nach Messung automatisch eine Auswertung mit Hilfe des [Distortion Info window](/de/help/info/distortion). Die in der Messung verwendete Anregungsfrequenz wird in das Auswertungsfenster automatisch übertragen. 
+
+``Cancel`` bricht die Messung ab, ``OK`` startet die Messung.

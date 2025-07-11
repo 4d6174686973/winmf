@@ -1,0 +1,13 @@
+# Batch processing
+
+``Batch processing`` ermöglicht die automatische Durchführung von Macros für mehrere Dateien in einem Verzeichnis. Dazu wird zunächst mit Macro file das gewünschte Macro ausgewählt.
+
+``Data path`` bestimmt das Verzeichnis mit den zu bearbeitenden Dateien.
+
+Sind im Macro Save-Operationen definiert, z.B. Save, Plot oder Info-Fenster (die Werte in Excel-Tabellen speichern), dann werden diese Files im ``Result path`` geschrieben.
+
+Sind ``Data path`` und ``Result path`` identisch, werden die Rohdaten mit den bearbeiteten Dateien überschrieben.
+
+``File suffixes`` legt die Dateiendungen fest, auf die das Macro angewendet wird. Es können mehrere Endungen per Komma getrennt angegeben werden, z.B. .wav,.dat;
+
+``File filter`` wählt die Dateien aus, die die gelisteten Strings im Dateinamen haben. Es können mehrere Strings durch Komma getrennt angegeben werden, z.B. T1,T10. Wird das Feld leer gelassen, dann werden alle Dateien mit der gewählten Endung verarbeitet.

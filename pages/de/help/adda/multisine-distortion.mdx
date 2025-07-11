@@ -1,0 +1,27 @@
+# Multisine distortion
+
+Die ``Multisine distortion`` Messung ist eine Intermodulationsmessung. Dabei wird ein Lautsprecher mit mehreren Sinustönen gleichzeitig angeregt. Neben den harmonischen Verzerrungen, wie sie auch bei einzelnen Sinusfrequenzen auftreten, modulieren sich die verschiedenen Anregungsfrequenzen gegenseitig und es treten Intermodulationseffekte auf, die nach Entfernung des Anregungssignals ausgewertet werden können. Das Anregungssignal ist dabei so gestaltet, dass die Harmonischen einer Sinusfrequenz möglichst nicht genau auf einer anderen Sinusfrequenz liegen. Das Anregungssignal wird durch Subtraktion aus dem gemessenen Signal entfernt, so dass nur die harmonischen Verzerrungen sowie die Intermodulationsanteile übrig bleiben.
+
+Im  [Measurement setup](/de/help/adda/measurement-setup) werden die Grundeinstellungen der Messung vorgenommen.
+
+Im ``Multisine setup`` wird durch ``Multisine para.`` der [Multisine generator](/de/help/edit/multisine-generator) aufgerufen. ``Refresh`` aktualisiert die Einstellungen aus dem ``Multisine generator``.
+
+im [Exciter setup](/de/help/adda/exciter-setup) wird der Pegel des Messsignals eingestellt, im [Amplifier setup](/de/help/adda/amplifier-setup) die Parameter für die verwendeten Endstufen.
+
+[Processing](/de/help/adda/processing) erlaubt die Bearbeitung der Messergebnisse.
+
+![multisinus-eia426b](/multisinus-eia426b.png)
+
+Das Messresultat enthält 5 Kanäle:
+
+Im ersten Kanal wird das aufgezeichnete Rohsignal dargestellt, mit Anregungssignal und Verzerrungen.
+
+In Kanal 2 sind die Sinusfrequenzen der Anregung durch Subtraktion entfernt worden
+
+Für Kanal 3 wird das Rohsignal bandweise aufsummiert, die Bandbreite entspricht dem Frequenzabstand der Anregung. Aus diesem Signal kann auch der Gesamtpegel berechnet werden.
+
+Kanal 4 enthält die bandweise Summe von Kanal 2, also ohne Anregung. Die Bandbreite entspricht Kanal 3.
+
+Kanal 5 schließlich stellt das Verhältnis von Kanal 4 zu Kanal 3 dar.
+
+``Ok`` startet die Messung, ``Cancel`` bricht sie ab.

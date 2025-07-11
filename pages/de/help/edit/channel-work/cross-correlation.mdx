@@ -1,0 +1,9 @@
+# Cross correlation
+
+Es wird die Kreuzkorrelationsfunktion (CCF) der angegebenen Kanäle berechnet. Ist ``Autocorrelation`` aktiviert, dann wird die Autokorrelationsfunktion der Kanäle berechnet. Zur Normalisierung der ACF, bzw. CCF stehen folgende Optionen zur Verfügung
+
+- ``biased``: Normierung auf die Länge der Eingangssignale, also $R_{xy,biased} = \frac{1}{N} R_{xy}$ , mit $N$ = Länge der Eingangssignale
+- ``unbiased``: Das Ergebnis wird wie folgt normiert:  $R(m)_{xy,unbiased} = \frac{1}{N - |m|} R_{xy}(m)$ , mit $N$ = Länge der Eingangssignale
+- ``coeff``: Normierung auf 1 für die Mitte der ACFs
+- ``none``: ohne Normalisierung
+

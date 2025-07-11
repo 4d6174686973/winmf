@@ -1,0 +1,23 @@
+# Cursorsteuerung
+
+![anzeigebereich](/anzeigebereich.png)
+
+Es gibt zwei Cursor pro Darstellungsfenster. Der aktive Cursor ist dabei gelb, der inaktive rot. Um die Cursor steuern zu können, muss der Fokus zunächst durch Anklicken mit der Maus auf die Grafikanzeige des entsprechenden Fensters gesetzt werden. Die Cursor stehen dabei im Allgemeinen zunächst am rechten und linken Rand des Anzeigebereichs, wo sie evt. nicht sichtbar sind.
+
+Der gerade aktive (also gelbe) Cursor kann mit Pfeil links bzw. Pfeil rechts verschoben werden. Durch Shift + Pfeil links bzw. Shift + Pfeil rechts erfolgt die Verschiebung in größeren Schritten. Die Cursor können auch mit der Maus gegriffen (linke Maustaste) und verschoben werden.
+
+## Aktivierung eines Cursors
+
+Der rechte Cursor kann durch Drücken der Taste r, der linke durch Drücken der Taste l aktiviert werden. Umschalten ist mit der Leertaste möglich.
+
+## Ablesen von Werten
+
+![ablesewerte](/ablesewerte.png)
+
+Die Werte am linken Cursor können unter Cursor 1, die Werte am rechten Cursor unter Cursor 2 abgelesen werden. Dabei beschreibt Index die durchlaufende Nummer des Kurvenstützpunktes. Dies ist im Zeitbereich die Nummer des Samples, im Frequenzbereich die des Frequenzstützpunktes. Unter Cursor 1-2 kann die Differenz der beiden Werte, also hier die Anzahl der Punkte zwischen den Cursorn, abgelesen werden.
+
+In der folgenden Zeile kann der X-Wert der Kurve am Cursor abgelesen werden. Im Zeitbereich ist dies die Zeit ab Beginn des Signals, im Frequenzbereich die Frequenz. Die Differenz der beiden Werte an Cursor 1 und 2 kann wieder unter Cursor 1-2 abgelesen werden.
+
+In der Zeile V (Voltage) kann der Y-Wert der Messkurve abgelesen werden. Dies kann zum Beispiel eine Spannung oder ein Schalldruck sein, je nachdem, was bei der Messung unter AD/DA / Frontend setup / Sensortype angegeben wurde. Unter Cursor 1-2 steht wieder die Differenz der Y-Werte an beiden Cursorn.
+
+In der Zeile dB wird der Y-Wert in dB angegeben, jeweils am linken, rechten und als Differenz zwischen den Cursorn.

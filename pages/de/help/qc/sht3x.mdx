@@ -1,0 +1,13 @@
+# SHT3X
+
+Liest Temperatur und relative Luftfeuchte per Arduino über USB und Seed SHT31 oder SHT35 Sensor. Die Werte werden im Falle eines QC-Prozesses in das Logfile geschrieben. Die Messung erfolgt bei Ausführung von OK. Zusätzlich wird als Zeitstempel der Messung die Systemzeit ausgelesen.
+
+Der Com Port muss auf den default Werten des Menüs stehen (Baud rate 115200, Timeout 1s).
+
+Es stehen diese Optione zur Verfügung:
+
+``Append to title`` hängt die gemessene T und Rh an den Titel des Plots an
+
+``Append to ext. comment`` hängt die gemessene  T und Rh an den extended comment des Files an (s. [Edit extended comment](/de/help/edit/edit-extended-comment)).
+
+``Set to file header`` schreibt die Werte in den Header des Files (s. [Edit temp, humid.](/de/help/edit/edit-temp-humi))

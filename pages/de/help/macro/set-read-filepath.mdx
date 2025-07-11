@@ -1,0 +1,19 @@
+# Set read filepath
+
+Setzt den Pfad für die read Operationen unter Edit/... (während des Makroprozesses aber auch im manuellen Modus).
+
+Der Pfad wird bei aktivierter Option ``Use current filepath`` auf den gerade aktuellen Pfad gesetzt:
+- ohne Makro Prozess/QC Prozess der zuletzt zum Laden oder Speichern verwendete Pfad
+- Play Macro auf den result path
+- im QC-Prozess auf den dort definierten Pfad (Basispfad, Produktionslos)
+
+Ohne aktivierte Option wird der bei ``Path`` ausgewählte Pfad verwendet. Dieser Pfad muss unter dem Basispfad liegen (base path unter preferences).
+
+Dieser Pfad wirkt sich auf folgende Funktionen aus:
+
+This affects the following functions:
+- [Edit/read](/de/help/edit/read-file)
+- [Edit/read file channels](/de/help/edit/read-file-channels)
+- [Edit/read current filename (nur diese Funktion ist makrofähig)](/de/help/edit/read-file)
+- [Edit/read and insert at active cursor](/de/help/edit/read-file-and-insert-at-active-cursor)
+- [Edit/read current filename file and insert at active cursor](/de/help/edit/read-file-and-insert-at-active-cursor)

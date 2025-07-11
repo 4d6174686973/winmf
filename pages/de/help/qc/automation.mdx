@@ -1,0 +1,14 @@
+# Automation
+
+Im Ordner der unter Macro path definiert ist liegt eine Makrodefinition, die alle Abläufe für eine Messung enthält. Als Beispiel heißt die Datei hier Mess.txt. Gestartet wird die Messung indem im Automation folder eine leere Textdatei mit dem Namen Mess.txt abgelegt wird. Es passieren dann folgende Schritte in WinMF:
+
+1. Mess.txt wird gelöscht
+2. Die Makrodefinition aus Mess.txt wird abgearbeitet
+3. Alle Ergebnisse (und auch Fehlermeldung) werden in einer Datei Mess.csv abgelegt
+4. Am Ende des Prozesses wird eine Datei Mess_log.csv abgelegt, die eine Protokollierung aller Prozessschritte enthält
+5. Wenn der Prozess beendet ist, wird eine Datei Mess.finished abgelegt. Wenn der Prozess fehlerfrei war (also seitens der Software kein Fehler passiert ist) ist die Datei leer, ansonsten ist hier ein Hinweis auf den Fehler zu finden. Die Detailfehlermeldung befindet sich dann in der Datei Mess.csv.
+
+Solange eine Datei mit der Endung „finished“ existiert, wird kein neuer Prozess gestartet.
+Wenn die Ergebnis- und Logdateien nicht gelöscht werden, dann werden neue Prozessergebnisse an diese Dateien angehängt.
+
+Das Polling-Intervall sollte nicht auf zu kleine Werte gesetzt werden, um unnötige Prozessorlast zu vermeiden.

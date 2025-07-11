@@ -1,0 +1,24 @@
+# Loudspeaker parameters
+
+Die Auswertung der Lautsprecher Parameter (Thiele-Small-Parameter) erfolgt hier nach der Methode mit Zusatzmasse. Es muss eine zweikanalige [Impedanzmessung](/de/help/adda/impedance) vorliegen, ein Kanal ohne Zusatzmasse, der andere Kanal mit Zusatzmasse. Die Kanalreihenfolge ist ohne Bedeutung.
+
+## Wahl und Befestigung der Zusatzmasse
+
+Die verwendete Zusatzmasse darf nicht magnetisch sein. Das Gewicht sollte der bewegten Masse des Tieftöners angepasst sein, so dass eine nennenswerte Verstimmung der Resonanz erzielt wird. Zu große Zusatzmassen sind allerdings auch zu vermeiden, da dann die Ruhelage der Membran zu stark verschoben werden kann (bei horizontaler Aufstellung) und so Messfehler entstehen. Eine unsymmetrische Massebefestigung und/oder zu große Zusatzmassen können zu Pendelbewegungen der Membran führen. Das äußert sich unter Umständen in einer Aufsplittung des Resonanzpeaks in zwei Peaks. In diesem Fall ist ein anderes Gewicht und/oder eine andere Befestigungsart zu wählen. Bewährt hat sich die Befestigung eines Kuperkabels am Übergang von Staubschutzkalotte zu Membran, da in diesem Bereich die Krafteinleitung der Schwingspule erfolgt. Typische Gewichte liegen zwischen 1g und 50g. Das jeweils verwendete Gewicht muss möglichst genau ermittelt werden.
+
+## Impedanzmessung
+
+Die Messungen sollten mit hohem Rauschabstand durchgeführt werde, um für die Messung des DC-Widerstandes eine möglichst niedrige Start-Frequenz auswählen zu können. Ferner sollte ein recht langes Messsignal verwendet werden, um eine hohe Liniendichte im Spektrum zu erzielen. Für Subwoofer ist mindestens ein Messsignal der Länge 2^18 Samples bei 48kHz erforderlich. Der folgende Plot zeigt ein Beispiel für einen 12"-Tieftöner.
+
+![imp12](/imp12.png)
+
+## Auswertung
+
+Der auszuwertende Bereich wird unter Region gewählt. Weiterhin muss entweder der Membrandurchmesser oder die Membranfläche angegeben werden, sowie das verwendete Zusatzgewicht. Sollte es zu Unstimmigkeiten der ermittelten Werte für den DC-Widerstand oder die Induktivität kommen, dann erhält man im Textfenster eine Meldung dazu. Es sollte dann eine andere obere und/oder untere Grenze gewählt werden.
+
+![loudspeaker_parameters](/loudspeaker_parameters.gif)
+
+## Weitere Hinweise:
+- Die an fabrikneuen Chassis durchgeführten Messungen weichen oft erheblich in der Resonanzfrequenz von den Datenblattwerten ab, weil die Datenblattwerte üblicherweise nach einer Einfahrphase gemessen werden. Dadurch erreicht die Membranaufhängung ihre endgültige Nachgiebigkeit.
+- Die Messspannung hat einen Einfluss auf die gemessenen Parameter. Normalerweise werden die Parameter mit verhältnismäßig kleinen Leistungen gemessen (< 1W).
+

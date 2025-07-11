@@ -1,0 +1,15 @@
+# Check tolerance
+
+Check tolerance führt eine Toleranzschlauchpüfung des gerade im Speicher befindlichen Files durch. Für jeden Kanal kann ein Frequenzbereich (oder Zeitbereich) für die Überprüfung definiert werden (``Range to check``). Die Toleranzschläuche werden durch das ``tolerance file`` beschrieben.
+
+Bevor die eigentliche Prüfung startet, wird das tolerance file auf Gültigkeit überprüft. Es muss die gleiche Samplerate und Samplezahl wie das zu prüfende File aufweisen. Die Kanalanzahl muss dopellt so groß sein (für jeden Kanal muss eine obere und untere Grenze definiert sein).
+
+Die Prüfung erfolgt kanalweise, zuerst wird Kanal 1 mit seinen Limits (Kanal 1 und 2 im tolerance file) verglichen, dann erfolgt die Prüfung von Kanal 2 mit seinen Limits (Kanal 3 und 4 im tolerance file), usw. Wird ein gemütlicherer Ablauf erwünscht, so kann zwischen den Prüfungen eine Pausenzeit definiert werden (``Pause``). Das kann z.B. bei neuen QC-Prozessen nützlich sein, um den Prüfablauf zu beobachten.
+
+![v1-0-00427_fr_setup_tol](/v1-0-00427_fr_setup_tol.png)
+
+Eine Toleranzverletzung wird mit farbigen Kreisen an den entsprechenden Stellen angezeigt. Es wird dann auch automatisch eine Pause von 1s gemacht. Ergebnisse einer Toleranzschlauchprüfung werden im QC-Prozess automatisch in der QC-Tabelle erfasst. Im Fall einer Toleranzverletzung werden entsprechende Hinweise in der Tabelle eingefügt.
+
+Für die zu prüfende Kanalanzahl gibt es keine Limitierung.
+
+Die Erstellung von Toleranzschläuchen kann sehr komfortabel mit [learn tolerance](/de/help/qc/learn-tolerance) erfolgen. Eine manuelle Erstellung ist natürlich auch möglich.

@@ -1,0 +1,9 @@
+# Set-up Relay Card 1977xx
+
+**Wenn die Karte über den optional bestellbaren USB-RS232 Adapter benutzt wird, ist es essentiell den aktuellsten [Treiber](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx) zu verwenden, insbesondere auf 64bit Systemen. Der mitgelieferte Treiber ist erheblich veraltet und führt zu Systemabstürzen, sobald die Karte an den Rechner angeschlossen wird.**
+
+Vor Initialisierung und Verwendung der Relaiskarte muss die Com-Port Nummer des für die Relais-Ansteuerung verwendeten Ports angegeben werden. Die Baud rate (19200) ist bereits richtig voreingestellt und muss nicht verändert werden. Bei Verwendung von Relaiskarten im QC-Prozess sollte das Com-Port setup in den Prüfablauf eingebunden werden.
+
+Bei der Ausführung eines QC-Prozesses mit Relais-Ansteuerung auf unterschiedlichen Rechnern kann es erforderlich sein die Com-Port Nummer anzupassen. Das gilt insbesondere bei USB-RS232 Konvertern, die bei Anschluss an verschiedenen Rechnern unterschiedliche Com-Port Nummer zugewiesen bekommen können.
+
+[Weitere Information zum Setup von seriellen Ports findet man hier.](/de/help/qc/com-port-settings)

@@ -1,0 +1,5 @@
+# A-filtering (IIR)
+
+Diese Funktion wendet auf einen Frequenzgang oder ein Zeitsignal das normierte (DIN EN 61672-1:2003-10) A-Filter in Form eines IIR-Filters (infinite impulse response filter) an. Dabei wird auch die Phase entsprechend dem IIR-Filter beeinflusst. Als IIR Filter weicht die Filterkurve in der Nähe der halben Samplefrequenz leicht von der erwarteten Kurve ab, liegt aber noch innerhalb der Toleranzgrenzen der Norm. Die genaue Filterkurve ist daher abhängig von der Samplefrequenz. Dieses Verhalten ist vergleichbar bei Pegelmessern zu finden, die ebenfalls IIR-Filter zur Berechnung der A-Bewertung verwenden.
+
+Diese Funktion kann nur einmal auf einen Frequenzgang oder ein Zeitsignal angewendet werden und ist bis zur Durchführung von [A-unfiltering](/de/help/edit/a-unfiltering-iir) geblockt.

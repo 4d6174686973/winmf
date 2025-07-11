@@ -1,0 +1,13 @@
+# Outline ET250-3D
+
+Der 1-achsige Outline Drehteller wird  per Ethernet über UDP-Pakete angesteuert. In der Konfiguration muss bei WinMF die IP-Adresse des Drehtellers eingetragen werden. Die voreingestellte Port-Nummer sollte normalerweise frei sein. Wenn nicht, dann kann hier ein anderer Port eingetragen werden. Der WinMF-Rechner benötigt ebenfalls eine gültige IP-Adresse, die im gleichen Subnetz liegen muss, z.B.:
+
+WinMF: 192.168.0.12
+
+ET250-3D: 192.168.0.199
+
+Die IP-Adresse vom ET250-3D wird über die mit dem Drehteller ausgelieferte Software eingestellt. 
+
+Ist eine Firewall installiert, dann müssen die IP-Adressen frei geschaltet sein und auch der benutzte Port muss in der Firewall entsperrt sein. Im Normalfall meldet sich die Firewall bei der ersten Benutzung und fragt, ob die Firewall die Kommunikation erlauben soll.
+
+Der aktuelle Winkel wird komplett von WinMF verwaltet, d.h. die Anzeige auf dem Outline ist nur informativ und muss nicht mit dem in WinMF verwalteten Winkel übereinstimmen. Es empfiehlt sich unter turntable setup/configure machine die Maschine auf den Nullpunkt zu fahren, bzw. an der Maschine auf 0° zu setzen, und mit set to 0° in WinMF den Nullpunkt zu setzen. Im weiteren Verlauf der Benutzung stimmen dann die am Outline angezeigten Werte und die in WinMF verwalteten Werte für die aktuelle Position überein.

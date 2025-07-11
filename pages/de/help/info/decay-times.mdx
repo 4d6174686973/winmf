@@ -1,0 +1,21 @@
+# Decay times
+
+Im Info Menü kann unter Decay times eine Auswertung der rückwärts integrierten Impulsantworten (IIR) erfolgen. Wenn keine IIR im Speicher vorliegt, wird automatisch das  [menu for IIR processing](/de/help/edit/integrated-impulse-response-processing) aufgerufen.
+
+Die anzuzeigenden Parameter sind zunächst im Untermenu ``Select/Select parameters`` des Decay times Menüs zu selektieren.
+
+![decay-times-select](/decay-times-select.gif)
+
+Die Auswertungen erfolgen nach DIN EN ISO 3382-1:2009 und  DIN EN ISO 3382-2:2008. Neben den Nachhallzeiten für die verschiedenen Intervalle können noch folgende Berechnungen und Informationen angezeigt werden:
+
+- channel tag: zeigt die zugehörige Kanalnummer vor Filterung an, so dass die Ergebnisse den ursprünglichen Kanälen zugeordnet werden können
+- fm nom. [Hz]: nominelle Bandmittenfrequenz nach DIN EN 61620
+- fm [Hz]: exakte Bandmittenfrequenz nach DIN EN 61620
+- C(...): Grad der Krümmung nach ISO 3382-2:2008, Anhang B3. C(T20-30) ist z. B. der Krümmungsgrad für das Intervall T20 im Vergleich zu T30, usw. Typische Werte sind zwischen 0 und 5%, Werte höher als 10% deuten auf eine Abweichung vom linearen Verlauf
+- x: Grad der Nichtlinearität nach ISO 3382-2:2008, Anhang B2. Es wird hier das Quadrat des Korrelationskoeffizienten für das jeweilige Auswerteintervall berechnet. x30 berechnet z. B. im Bereich -5 bis -35dB ein Maß für die Abweichung von der durch die lineare Regression bestimmten Kurve. Im Gegensatz zu dem Krümmungsgrad C werden hier auch "eirige" Verläufe detektiert. Der Wert ist in Promille angegeben. Ein Wert um die 0 bedeutet keine Abweichung, 1000 ist maximale Abweichung. Typische Werte für "intakte" IIRs sind im Bereich 0-5 Promille.
+
+![decay-times-info-window](/decay-times-info-window.gif)
+
+Über den button ``copy table to spectrum`` können die angezeigten RT-Werte als kanalweises Spektrum in die Frequency domain kopiert werden.
+
+![t20-t30](/t20-t30.png)

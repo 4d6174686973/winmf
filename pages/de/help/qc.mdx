@@ -1,0 +1,31 @@
+# Quality Control (QC)
+
+Das QC-Modul ermöglicht es komplexe Aufgaben in der Qualitätssicherung umzusetzen. Dabei sind keine Programmierkenntnisse oder das Schreiben eines Skriptes notwendig. Die "Programmierung" des QC-Prozesses erfolgt genaus so einfach wie die Aufzeichnung und Wiedergabe eines Makros mit WinMF.
+
+## Grundlagen zum QC-Menü
+
+Hauptfunktion des QC-Menüs ist der Prozess-Kontroller [Process control](/de/help/qc/process-control), der das Abspielen des QC-Makros, die Verwaltung der Pfade, Dateinamen und die Einbindung einer Seriennummer in Dateinamen übernimmt. Für jeden QC-Process wird ein eigener Ordner für die Messungen, Auswertungen und eine Excel-Tabelle angelegt. Die Excell-Tabelle enthält zwei Sheets, Production log und QC. Im Production log werden alle Aktionen des QC-Processes gelistet, sowie das aktuelle Datum, die Seriennummer des Prüflings und der Name des QC-Testers. Auf dem Blatt QC werden alle Auswertungen, also Prüfung auf Toleranzschläuche, Verletzung von Limits und sonstige Tests im Detail gelistet. Für jeden Test wird außerdem Auskunft gegeben ob der Test bestanden wurde (Passed) oder nicht (Failed).
+
+Wenn das QC-Modul freigeschaltet ist, können in allen Info-Fenstern ([Statistics](/de/help/info/statistics), [STI](/de/help/info/sti-impuse-response-und-stipa), [Distortion](/de/help/info/distortion), etc.) für jeden auszuwertenden Parameter kanalweise obere und untere Limits verwaltet werden. Dazu muss im Select-Menü des Info-Fensters  "Show limits" aktiviert werden. Wird ein Info-Fenster mit aktivierten Limits im QC-Prozess aufgerufen, so werden alle Limits kontrolliert und das Ergebnis in der QC-Tabelle auf dem Blatt QC ausgewertet.
+
+Darüber hinaus werden im QC-Menü weitere Funktionen zur Prozesssteuerung, Toleranzkontrolle und automatischen Anlernung von Toleranzschläuchen zur Verfügung gestellt.
+
+Der QC-Prozess wird vom Frequenzbereichsfenster aus gesteuert. Hier sind alle Funktionen im QC-Menü enthalten. Das QC-Menü im Zeitbereich enthält nur die Funktionen ``Set current filename``, ``Check tolerance`` und ``Learn tolerance``, die beim Aufrufen auf das gerade im Speicher befindliche Signal angewendet werden.
+
+## Weitere Funktionen im QC-Menü
+
+Die Funktionen [Check tolerance](/de/help/qc/check-tolerance) und [Learn tolerance](/de/help/qc/learn-tolerance) erlauben es kanalweise Toleranzen anzulernen und im QC-Process auszuwerten. Die Anwendung bezieht sich im Frequenzbereich auf den Amplitudengang und im Zeitbereich auf die Amplitude. Damit können z.B. Frequenzgänge von Impedanzen, Verzerrungskurven oder Sensitivities von Lautsprechern überprüft werden. Mögliche Anwendung im Zeitbereich ist die Polaritätskontrolle über eine Auswertung der Impulsantwort.
+
+[Set current filename](/de/help/macro/set-current-filename) ermöglicht eine erweiterte Kontrolle über den gerade verwendeten Dateinamen.
+
+[Write string to Excel cell](/de/help/qc/write-string-to-excel-cell) schreibt in die QC-Tabelle einen String. Diese Funktion kann z.B. zur Einbindung von Kommentaren in den QC-Process verwendet werden.
+
+[User input](/de/help/qc/user-input) erzwingt eine Interaktion mit dem Benutzer. Dabei kann auch ein Bild angezeigt werden, um z. B. dem Benutzer eine Erläuterung eines Arbeitsschrittes anzuzeigen. Der QC-Prozess ist unterbrochen, bis der Benutzer die erforderliche Eingabe gemacht hat. Das Ergebnis der Eingabe wird in der QC-Tabelle erfasst.
+
+[Relay card 1977xx](/de/help/qc/relais-card-1977xx) steuert die von Conrad Electronic vertriebenen Relaiskarten mit den Bestellnummern 1977xx an.
+
+[Wait seconds](/de/help/qc/wait-seconds) unterbricht den Prozess um die angegebenen Sekunden.
+
+## Individuelle Menüs
+
+Spezialfunktionen, wie Firmware updates auf der zu prüfenden Hardware, Programmierung von Setups, etc., können bei Bedarf implementiert werden.

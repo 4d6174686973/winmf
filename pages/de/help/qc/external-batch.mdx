@@ -1,0 +1,21 @@
+# External batch
+
+Dieses Menü führt eine Batch-Datei aus. Der Pfad zu der Datei wird unter ``Path`` eingestellt. Die Pfadangabe muss relativ zu dem unter  [Preferences](/de/help/file/preferences)eingestellten ``Base path`` sein. Der Dateiname der Batch-Datei und zu übergebende Parameter werden unter Execute eingegeben. Ein Datenfile für die Batch-Ausführung kann unter ``Data file`` angegeben werden. Eine mögliche Anwendung dieses Menüs ist die automatisierte Programmierung von Elektronik in der Fertigung oder während eines QC-Prozesses.
+
+Um Sonderzeichen zu einzufügen wird der 3-stellige ASCII Code mit einem einleitenden # verwendet, z.B. für Linefeed wird ein \#010 eingesetzt.
+
+Um den String der zuletzt im [Process control](/de/help/qc/process-control)gescannten Seriennummer zu übernehmen wird #SER im String eingesetzt. #SER wird dann beim Ausführen durch den Seriennummernstring ersetzt. Die Variable #SER ist case sensitiv, muss also genau so geschrieben werden.
+
+Enthält die Seriennummer selbst Sonderzeichen wie z.B. ein Leerzeichen,
+so ist der #SER String im Aufruf von Anführungszeichen einzufassen, also
+"#SER"
+
+Wenn eine Windows Batch File aufgerufen wird, deren Ausgaben während
+der QC sichtbar sein sollen (Öffnen eines Kommandozeilenfensters), kann
+dies mit dem Befehl "start /WAIT /D [Pfad] [.bat Datei]" erreicht werden.
+
+Der aktuelle Pfad im Zeitbereich wird mit dem String #TIME_FILEPATH übergeben.
+
+Der aktuelle Pfad im Frequenzbereich wird mit dem String #FREQ_FILEPATH übergeben.
+
+Nach einem QC Durchlauf steht der aktuelle Pfad im Zeit- und Frequenzbereich 

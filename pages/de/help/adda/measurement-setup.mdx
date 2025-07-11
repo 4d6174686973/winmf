@@ -1,0 +1,21 @@
+# Measurement setup
+
+Hier werden die Messeinstellungen vorgenommen.
+
+``Mode`` schaltet zwischen dem Modus für einmalige Messung (``Mode single``) und ununterbrochene Messung (``Mode repeat``). Im Modus ``repeat`` wird die Messung so lange wiederholt, bis sie mit esc. abgebrochen wird. Im Display und im Speicher verbleibt nur die letzte Messung.
+
+``Averages`` bestimmt die Anzahl der Mittelungen für eine Messung.
+
+``Presends`` legt die Anzahl der vor der Messung abgespielten Messignale fest. Während der Wiedergabe wird noch nicht gemessen. ``Presends`` können beispielsweise zum Öffnen von Noisegates verwendet werden.
+
+Samples zeigt die Zahl der Samples des Messignals an.
+
+``Meas time [ms]`` zeigt die benötigte Zeit für einen Signaldurchlauf an.
+
+``FFT length`` zeigt die Sampleanzahl als Zweierpotenz an. Ist der Wert ganzzahlig, ist das Anzeigefeld grün hinterlegt, bei nicht ganzzahligem FFT Wert rot.
+
+``Meas time [ms]`` zeigt die benötigte Zeit für alle Mittelungen an.
+
+Bei eingeschaltetem ``External preamps`` werden die im  [Frontend setup](/de/help/adda/frontend-setup) eingetragenen Verstärkungswerte berücksichtigt. Dies ist erforderlich, wenn Vorverstärker im Signalweg liegen.
+
+Bei eingeschaltetem ``Apply sensor sensitivities`` werden die im [Frontend setup](/de/help/adda/frontend-setup) eingetragenen Sensitivity-Werte berücksichtigt. Dies ist erforderlich, wenn Messungen über Sensoren, wie Mikrofone oder Beschleunigungsaufnehmer, durchgeführt werden.

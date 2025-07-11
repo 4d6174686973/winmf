@@ -1,0 +1,154 @@
+# Calibration File
+Mittels Calibration file können Grundeinstellungen eines Frontends modifiziert werden. Dazu gehören u.a. Sensitivity Werte von Ein- und Ausgängen, die individuell zwischen Geräten leicht schwanken können. Es ergibt sich damit die Möglichkeit einen sehr präzisen und individuellen Abgleich eines physikalischen Gerätes vorzunehmen. Da das File menschenles- und editierbar ist, genügt es auch Anforderungen an die Dokumentation von Messketten.
+
+Eine weitere Anwendung ist die Erzeugung eines individuellen Frontends für ein Gerät, das nicht als Default-Setup implementiert ist.
+
+Um in WinMF ein solches File zu verwenden muss in Preferences die ``Use cal-file....`` Option aktiviert werden. Es wird dann automatisch ``All outs are normalized ...`` mit aktiviert. Wenn ``Use cal-file....`` aktiviert ist, sucht WinMF in seinem Startpfad nach einer Datei mit dem Namen: ``cal-file.txt``
+
+und liest dieses File ein, interpretiert die Einträge und überschreibt das existierende Frontend mit den dort gefundenen Werten. Wenn mindestens ein verwertbarer Eintrag gefunden wird, dann erscheint unten rechts im Display die grün hinterlegte Information, dass ein EXTERNAL CAL FILE verwendet wird:
+
+![Calibration File Display](/cal-file-display.png)
+
+Wenn kein File gefunden wird, dann ignoriert WinMF diese Option und es wird das Frontend wie zuletzt konfiguriert verwendet. Wenn das File ungültig ist, wird eine Fehlermeldung angezeigt.
+
+## Definition von cal-file Einträgen
+
+Ein Cal-file wird eingeleitet mit dem Frontend Namen in der ersten Zeile. **Dieser Name muss mit dem internen Namen des Frontends übereinstimmen.** Groß- und Kleinschreibung werden dabei ignoriert.
+
+Die Liste gültiger Frontendnamen ist:
+- Babyface_Pro_FS
+- DBS1
+- Digital
+- Fireface
+- Fireface_UCX2
+- Fireface_UFX_Plus
+- Motu_M2
+- MuFa2
+- Robo2
+- Robo2_Fireface_UCX
+- Robo2_Fireface_UCX2_CH5_6
+- Robo2_Fireface_UCX_CH5_6
+- Robo3
+- Special_2x_Robo3
+- Special_4x_Robo3
+
+## Configuration
+
+Ein gültiger Eintrag bezieht sich auf genau einen Parameter eines Kanals. Es gibt vier konfigurierbare Kanaltypen, die wie folgt aufgebaut sind:
+
+```plaintext
+type
+sensor
+kanalnummer (1...max_kanäle)
+sens
+sensitivity faktor als float mit punkt als dezimalseparator
+```
+
+```plaintext
+type
+in,out
+kanalnummer (1...max_kanäle)
+sel_sensitivity
+nummer des elements der popupmenu liste
+sensitivity_dBu
+sensitivity in dBu als float mit punkt als dezimalseparator
+```
+
+```plaintext
+type
+out
+kanalnummer (1...max_kanäle)
+int_gain
+gain in dB als float mit punkt als dezimalseparator
+```
+
+```plaintext
+type
+out
+kanalnummer (1...max_kanäle)
+ext_gain
+gain in dB als float mit punkt als dezimalseparator
+```
+
+## Multiface II example
+
+MuFa2
+
+```plaintext
+type
+out
+1
+sel_sensitivity
+1
+sensitivity_dBu
+5.73
+```
+
+```plaintext    
+type
+out
+1
+sel_sensitivity
+2
+sensitivity_dBu
+15.71
+```
+
+```plaintext
+type
+in
+1
+sel_sensitivity
+1
+sensitivity_dBu
+14.43
+```
+
+Es wird für das Frontend Multiface II (MuFa2) Folgendes gesetzt
+- Ausgang Kanal 1, erste Stufe der Sensitivity = 5.73dBu
+- Ausgang Kanal 1, zweite Stufe der Sensitivity = 15.71dBu
+- Eingang Kanal 1, erste Stufe der Sensitivity = 14.43dBu
+
+## Robo3 Beispiel
+
+robo3
+
+```plaintext
+type
+sensor
+1
+sens
+0.0078
+```
+
+```plaintext
+type
+in
+1
+sel_sensitivity
+4
+sensitivity_dBu
+26.3
+```
+
+```plaintext
+type
+out
+2
+int_gain
+0.1
+```
+
+```plaintext
+type
+out
+2
+ext_gain
+26
+```
+
+Es wird für das Frontend Robo3 Folgendes gesetzt
+- Kanal 1, Sensor Sensitivity = 0.0078
+- Eingang Kanal 1, vierte Stufe der Sensitivity = 26.3dBu
+- Ausgang Kanal 2, internal amp gain = 0.1dB
+- Ausgang Kanal 2, external amp gain = 26dB

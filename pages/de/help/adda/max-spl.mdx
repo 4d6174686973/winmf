@@ -1,0 +1,49 @@
+# Max SPL
+
+Die ``Max SPL`` misst den maximalen Schalldruck, den ein Lautsprecher bei einzelnen Frequenzen liefern kann. Als Messsignal dienen Sinusbursts, deren Pegel sukzessive erhöht wird, während die harmonischen Verzerrungen und der Pegel gemessen werden. Abbruchkriterien sind ein maximaler THD-Wert, ein vorgegebener maximaler Eingangspegel sowie eine Limitererkennung.
+
+![max-spl_1](/max-spl_1.png)
+
+Im [Measurement setup](/de/help/adda/measurement-setup) werden die Grundeinstellungen zur Messung vorgenommen, im [Frequency steps setup](/de/help/adda/frequency-steps-setup) die zu messenden Einzelfrequenzen festgelegt.
+
+``LS sensitivity proc.`` dient der korrekten Normierung auf den Abstand 1m.
+
+``Unter Mic. dist [m]`` wird der Abstand zwischen Mikrofon und Lautsprecher eingetragen.
+
+``Corrected by [dB]`` korrigiert die Messung mit einem konstanten Wert, z.B. bei Mikrofon auf schallhartem Boden mit -6dB für Freifeldbedingungen.
+
+``Wird bei Mic. dist [m]`` 1m und bei ``Corrected by [dB]`` 0dB eingetragen, so erfolgt keine Normierung und es wird der absolute Schalldruck an der Mikrofonposition gemessen.
+
+``Level steps setup`` steuert den Pegel des Messsignals.
+
+``Rel. start level`` legt den Startpegel relativ zum maximalen Ausgangspegel fest.
+
+``Level increment`` beschreibt die Pegelerhöhung zwischen zwei Einzelmessungen.
+
+``Recovery [s]`` ist eine pegelabhängige Regenerationspause zwischen zwei Einzelmessungen. Je näher der Pegel an die obere Pegelgrenze kommt, desto länger wird diese Pause, der hier eingetragene Wert bestimmt die maximale Dauer.
+
+Die ``Pause time [s]`` wird vor der nächsten Frequenz einmalig eingefügt und dient z.B. der Erholung eines Thermolimiters.
+
+``Return to min.`` lässt die Messung bei jeder neuen Frequenz wieder beim Rel. start level beginnen, ansonsten wird mit dem Level des zuletzt ereichten mininmalen Distortion threshold begonnen.
+
+die Parameter ``Burst pause [s]``, ``Start offset [dB]`` und ``Recovery max@[dB]`` sind ab dem 02.09.2016 hinzugekommen. Werden diese 3 Parameter zu 0 gesetzt, verhält sich alles wie zuvor.
+
+``Burst pause [s]`` definiert eine weitere konstante Pausenzeit, die vor jedem Burst eingelegt wird.
+
+``Start offset [dB]`` wirkt sich nur aus, wenn ``return to min`` deaktiviert ist. Dann wird der Startlevel der nächsten Frequenz zuzüglich dieses offsets gewählt. Es sind nur negative Werte möglich. Wurde beispielsweise als Startlevel für die nächste Frequenz -30dBu ermittelt und ``Start offset [dB]`` ist -5dB, dann wird bei -35dBu die nächste Frequenz gestartet.
+
+``Recovery max@[dB]`` clipt die ``Recovery time`` bei einem offset level relativ zum maximalen level auf die maximale recovery time. Dadurch wird die maximale recovery time früher erreicht, bei niedrigen Leveln läuft die Messung hingegen schnell durch.
+
+``Max voltage rel. frontend`` legt die maximale Ausgangsspannung am Line-Ausgang des Frontends fest. Hier werden beispielsweise Aktivlautsprecher angeschlossen. dB reference schaltet die Anzeige zwischen ``dBV`` und ``dBU`` um. Der maximale Messpegel kann nun als Pegel in dB (``Level [dB]``), als effektive Spannung (``Voltage Vrms``) oder relativ zum digitalen Maximalpegel (``Level dBFs``) eingegeben werden.
+
+``Max voltage rel. amplifier`` legt die maximale Messleistung bei Verwendung der internen Endstufen des Frontends oder von externen Endstufen fest.
+
+``Amp output`` ermöglicht die Auswahl zwischen internen und externen Endstufen. Wichtig bei Verwendung externer Verstärker ist die Eingabe des korrekten Verstärkergains im  [Frontend setup](/de/help/adda/frontend-setup) .
+
+Bei ``Nom. load [Ohm]`` wird die nominale Impedanz des Lautsprechers eingetragen.
+
+Unter ``Nom. power [W]`` wird die maximale Leistung für die Messung eingetragen. Zu optimistische Werte können dabei die Lautsprecher zerstören!
+
+Die ``Distortion thresholds`` sind die Schwellwerte für die THD, die bei der Maximalpegelmessung gemessen werden. Wird bei der Erhöhung des Messpegels einer dieser Schwellwerte überschritten, so wird im entsprechenden Ausgangskanal (jeder Threshold wird in einem eigenen Kanal ausgegeben) bei dem dann gemessenen Schallpegel ein Messpunkt erzeugt. Wird die Einzelmessung vor Erreichen des Thresholds gestoppt (zum Beispiel durch Erreichen des maximalen Ausgangspegels), so wird der entsprechende Messpunkt beim höchsten bei dieser Frequenz gemessenen Pegel eingetragen. Es können maximal 4 Thresholds gemessen werden, die als Prozentwerte von der Fundamentalen angegeben werden. Häufig verwendete Schwellwerte sind 1%, 3%, 10% oder 20%. Sollen weniger als vier Verzerrungsgrenzen gemessen werden, so wird für die nicht benötigten Kanäle der Wert 0% eingetragen.
+
+``OK`` startet die Messung, ``Cancel`` bricht sie ab.

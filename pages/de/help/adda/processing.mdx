@@ -1,0 +1,74 @@
+# Processing
+
+``Processing`` ermöglicht je nach Messung verschiedene Arten der automatischen Nachbearbeitung und des Filehandlings.
+
+### Windowing (AD only, AD-DA, Harmonic distortion, Harmonic distortion (f), Impedance)
+
+Im Bereich ``Windowing`` kann ein Zeitfenster definiert werden, die Beschreibung der Parameter ist unter [Edit - Apply window](/de/help/edit/apply-window) zu finden. 
+
+### Impulse response proc. (Frequency response, LS sensitivity, Polar response)
+
+``Impulse`` response proc. bearbeitet die gemessene Impulsantwort im Zeitbereich. Wenn ``Delay correct.`` auf ``offset`` geschaltet wird, wird die komplette Impulsantwort um den in ``Delay [ms]`` eingetragenen Wert verschoben (zyklisch).
+
+``Windowing`` schaltet eine Fensterfunktion ein, deren Parameter in [Window para.](/de/help/edit/apply-window) definiert werden können.
+
+## 2CH-FFT processing / time signal coherence (AD only, AD-DA)
+
+Es kann entweder eine klassische ``2-CH FFT`` Analyse verwendet werden oder für Kanalpaare von Zeitsignalen die Kohärenz und Schätzung der Transferfunktion gerader Kanal/ungerader Kanal berechnet werden (``Coherence``). Für die ``2-CH FFT`` Analyse muss die Messung im Repeat-mode laufen.
+
+Im Fenster ``2CH-FFT para.`` kann die Latenzkompesation für die geraden Kanalnummern gesetzt werden. (Die Latenz wird in den geraden Kanälen abgezogen).
+
+Für die ``2CH-FFT`` kann eingestellt werden, welche Kanäle im Ergebnis angezeigt werden sollen:
+- odd-, even channels: die Rohdaten A, B
+- odd-, even channels running aver.: laufender Betrags-Mittelwert der Rohdaten ($G_{AA}^{0.5} = (\frac{1}{n} \sum |A|^2)^{0.5}, G_{BB}^{0.5} = (\frac{1}{n} \sum |B|^2)^{0.5}$)
+- Coherence (magnitude squared): $ν^2 = |G_{AB}|^2 / (G_{AA}*G_{BB})$  (with $G_{AB}=\frac{1}{n} \sum AB$)
+- SNR (Signal to noise estimate): $SNR = ν^2 / (1-ν^2)$
+- komplexe Transferfunktionen $TF1=G_{AB} / G_{AA}$ and $TF2 = G_{BB} / G_{AB}^*$
+
+Die Parametrierung der Zeitsignal Kohärenz-Analyse erfolgt wie unter  [Edit/Channel Work/Coherence](/de/help/edit/channel-work/coherence) beschrieben.
+
+``Exciter=Reference``: Für beide Processing Optionen kann als Referenz-Kanal der eingestellte Exciter eingesetzt werden (nur ADDA), so dass der Referenzkanal nicht extra mitgemessen werden muss.
+
+### Spectral processing (AD only, AD-DA, Frequency response, LS sensitivity, Polar response)
+
+``Skip sensitivity normalisation`` (nur bei LS sensitivity) verhindert bei Sensitivity Messungen die Normalisierung auf 1W an der Nominalimpedanz. Stattdessen wird die Sensitivity auf die Eingangsspannung und 1m Abstand bezogen dargestellt. Diese Einstellung kann bei der Messung von Aktivsystemen sinnvoll sein.
+
+``Spectral processing`` bearbeitet die Messung im Frequenzbereich. [A-weighting](/de/help/edit/a-weighting) applies the A-filter to the measured curve.
+
+``Smoothing`` enables the smoothing function, whose parameters are to be modified via [Smooth para.](/de/help/edit/smooth) bearbeitet werden können.
+
+### Distortion processing (LS sensitivity, Polar response)
+
+[Distortion processing](/de/help/adda/distortion-processing) erlaubt bei Messungen mit logarithmischen Sweeps die Auswertung von Verzerrungen.
+
+``Relate to fundamental`` stellt die Verzerrungen der einzelnen Ordnungen relativ zur Fundamentalen in einzelnen Kanälen dar.
+
+``Max order`` gibt die höchste dargestellte Verzerrungsordnung vor.
+
+### Channel processing (AD only, AD-DA, Harmonic distortion, Multisine, Frequency response, LS sensitivity, Impedance)
+
+``Channel processing`` erlaubt es, mehrere aufeinander folgende Messungen in einen Buffer-Speicher zu schreiben und zeigt sie als einzelne Kanäle an.
+
+``Keep raw data`` schreibt auch die vom Processing unbeeinflusste Rohmessung in den Buffer und in einen eigenen Kanal.
+
+``Hold # meas.`` legt die Anzahl der letzten Messungen fest, die im Buffer erhalten bleiben. Ist die maximale Anzahl der Messungen überschritten, wird die älteste Messung verworfen und die übrigen Messungen werden im Buffer weiter geschoben.
+
+``Reset buffer`` löscht die im Buffer gespeicherten letzten Messungen, die vorliegenden Kanäle werden jedoch nicht gelöscht. Mit der nächsten Messung beginnt die Belegung der Buffer neu.
+
+``Show buffer`` zeigt den aktuellen Inhalt des Buffers an.
+
+``Result in both domains`` überführt per IFFT jede Messung direkt auch in den Zeitbereich.
+
+### File processing (AD only, AD-DA, Harmonic distortion, Harmonic distortion (f), Multisine, Frequency response, LS sensitivity, Polar response, Impedance)
+
+``File processing`` ermöglicht es, mehrere aufeinander folgende Messungen automatisch unter fortlaufenden Namen zu speichern.
+
+``Autoinc. mode`` erlaubt die Auswahl zwischen manuell gestarteten Messungen (``Single``), zeitgesteuerten Messungen (``Repeat n times``) und Abschaltung der automatischen Speicherung (``off``).
+
+``Repeat n times`` legt die Anzahl der automatisch durchgeführten und gespeicherten Messungen fest.
+
+``Pause time`` bestimmt die Pause zwischen den einzelnen Messungen.
+
+``File name`` legt den ersten Teil der Dateinamen fest, daran wird automatisch die Nummer der Messung angehängt.
+
+``Save also MF`` speichert alle Messungen automatisch auch im Monkey Forest Format ab.

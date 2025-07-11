@@ -1,0 +1,33 @@
+# Smooth
+
+## Smooth (time signal)
+
+Arbeitsbereich und Kanal werden mit [Select region](/de/help/edit/region-control) und [Select channel](/de/help/edit/select-channel) festgelegt.
+
+Die Glättung im Zeitbereich führt eine Mittelwertbildung in einem gleitenden Rechteckfenster durch. Die Fensterbreite in Samples wird durch die Anzahl ``bins`` angegeben.
+
+![motor1-sm_100bins](/motor1-sm_100bins.png)
+
+## Smooth (spectrum)
+
+Arbeitsbereich und Kanal werden mit [Select region](/de/help/edit/region-control) und [Select channel](/de/help/edit/select-channel) festgelegt.
+
+### Smooth setup
+
+Hier werden die Parameter der Glättung eingestellt. ``Process`` erlaubt die Auswahl einer kontinuierlichen Glättung (``continuous``) oder einer Glättung in Stufen (``steps``).
+
+### Kontinuierliche Glättung
+
+Bei der kontinuierlichen Glättung kann der Betrag (``Smoothing of magnitude``), die Gruppenlaufzeit (``Smoothing of group delay``) oder beides (``Smoothing of both``) bearbeitet werden.
+
+Der Bereich, der für die Mittelung betrachtet wird, kann linear (``Method lin.`` durch Eingabe der betrachteten Frequenzlinien (``bins``)) oder logarithmisch (``Method log.`` durch Eingabe der Breite des betrachteten Bereichs in Oktaven (``Bandw. [1/oct.]``)) angegeben werden.
+
+### Glättung in Stufen
+
+Bei der Glättung in Stufen ist zwischen einer Mittelwertbildung (Method averaged) und einer Addition (``Method added (SPL)``) zu unterscheiden.
+
+Die Breite der Stufen wird in Oktaven angegeben (``Bandw. [1/oct.]``).
+
+Der folgende Plot zeigt exemplarisch die verschiedenen Glättungsmethoden angewandt auf die Frequenzgangmessung einer Beschallungsanlage.
+
+![wfs-fr-smooth-example](/wfs-fr-smooth-example.png)

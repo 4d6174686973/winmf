@@ -1,0 +1,24 @@
+# Room acoustics preprocessing
+
+Vor der Auswertung der raumakustischen Einzahlkennwerte unter  [Room acoustics](/de/help/info/room-acoustics) muss zunächst das Processing ausgeführt werden.
+
+![room_acoustics_processing](/room_acoustics_processing.gif)
+
+Für die korrekte Auswertung der Messgrößen ist es entscheidend den Startzeitpunkt der Auswertungen festzulegen. Werden mehrere Impulsantworten ausgewertet oder in Bänder gefilterte Impulsantworten, so ist es unerlässlich den Startzeitpunkt durch die Funktion ``IR start detect`` automatisch detektieren zu lassen. Unter Region wird zunächst definiert, in welchem Bereich die Funktion ``IR start detect``, ``IR end detect`` und die Funktionen mit Bezug zum Noisefloor wirken sollen. Ist zum Beispiel das Ende der Impulsantwort durch Verzerrungen gestört, bietet es sich an dieses von der Auswertung auszunehmen.
+
+Unter ``Processing options`` sind folgende Einstellungen möglich:
+
+- IR start detect: Benutzung der automatischen Detektion des Impulsstartes.
+- Thr. rel max [dB]: definiert den Impulsstart relativ zum Maximum der Impulsantwort in dB für IR ``start detect``; wenn die threshold auf -20dB steht, dann wird der Impulsstart beim ersten Überschreiten des globalen Maximums abzüglich 20dB vor dem Maximum der Impulsantwort gefunden
+- Scan band: bei ``each`` wird nach Filterung der Impulsantwort der Impulsstart für jedes Band getrennt ermittelt und für weitere Auswertungen verwendet; bei ``highest only`` wird nur das Band mit der höchsten Frequenz für die Ermittlung des Impulsstartes verwendet
+- IR end detect: ermittelt automatisch den Übergang der gefilterten IR in den Noisefloor
+- IACC t1 und t2 [s]: Integrationsgrenzen für die Auswertung des IACC_t1,t2
+
+Unter ``Noise subtraction`` können einige Parameter definiert werden, um aus einem bestimmten Teil der Impulsantwort eine Schätzung des RMS-Wertes des Noise zu gewinnen.  Dieser kann dann vor weiteren Berechnungen von der Impulsantwort abgezogen werden.
+
+- ``Noise subtraction``: wenn es aktiviert ist, erfolgt die Subtraktion der Rauschspannung
+- ``Noise detect``: ermittelt die Rauschspannung aus dem Bereich, der durch die Parameter ``Take RMS from`` und ``Noise length`` definiert wird. Ist ``Noise detect`` deaktiviert, dann kann in das Feld Noise RMS eine Spannung eingetragen werden
+- ``Take RMS from``: ``head`` übernimmt den Noise dem Bereich vor dem Impulsstart, tail vom Bereich hinter dem Übergang der Impulsantwort in den Noisefloor, lowest ``segment`` wählt den Bereich mit dem niedrigsten Noise
+- Noise length [%]: wählt die Länge des auszuwertenden Noisefloor prozentual zu der Länge des jeweiligen Bereichs. Ist zum Beispiel der Noise tail 10s lang, dann ist der Bereich für die RMS-Berechnung des Noise die erste Sekunde, wenn ``Noise length`` auf 10% steht
+
+Unter Filter Options können die Impulsantworten nach DIN EN 61260 in [Bruchteilen von Oktaven](/de/help/edit/frac-oct-filtering) gefiltert werden.

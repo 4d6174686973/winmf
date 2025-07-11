@@ -1,1 +1,29 @@
-# Help
+# WinMF - Grundlagen
+
+## Installation
+
+s. beiliegende Datei install.txt
+
+## Grundlagen zu WinMF
+
+Das Programm WinMF arbeitet mit zwei Hauptfenstern, die ständig offen sind. Dies sind das Zeitbereichsfenster und das Frequenzbereichsfenser. Um in einem Fenster zu arbeiten, muss es durch Anklicken aktiviert werden. Durch Schließen des Zeit- oder Frequenzbereichsfensters wird WinMF beendet und der aktuelle Zustand gespeichert.
+
+Im Zeitbereich liegt eine Datei in der Form vor, wie sie an einem (oder mehreren) AD-Wandlern als Audiodatei aufgezeichnet wird: Eine Folge von Spannungswerten (oder Schalldruck,  Auslenkung, etc.) auf einem Zeitraster, das durch die Samplefrequenz gegeben ist.
+
+Im Frequenzbereich liegt die Datei als Folge von komplexen Spannungswerten auf einem Frequenzraster vor. Die Zeit- oder Frequenzdarstellung wird als Grafik zentral im entsprechenden Fenster angezeigt.
+
+Grundsätzlich kann jedes elektroakustische Signal im Zeitbereich oder im Frequenzbereich betrachtet werden. Die Darstellungen sind völlig gleichwertig und können durch mathematische Operationen verlustfrei ineinander überführt werden. Dies geschieht nicht automatisch. Wird eine Messung durchgeführt oder eine Datei geöffnet, liegt sie zunächst nur im Frequenz- oder im Zeitbereich vor, je nachdem, in welchem Bereich die Messung durchgeführt wurde oder die Datei geöffnet wurde. Erst durch eine FFT (Fast Fourier Transformation) oder IFFT (Inverse Fast Fourier Transformation) wird die Information in das zweite Fenster transformiert. Jede Bearbeitung oder Veränderung wirkt stets nur auf das aktuelle Fenster und muss bei Bedarf durch eine Transformation übertragen werden.
+
+Alle aktuellen Einstellungen in den Menüs, aber auch Fenstergrößen und -positionen usw., werden beim Schließen des Programms in zwei Konfigurationsdateien gespeichert und beim nächsten Programmstart automatisch wieder geladen, so dass in der gleichen Einstellung weiter gearbeitet werden kann. Alle Untermenüs bieten darüber hinaus die Möglichkeit, Setupdateien mit Einstellungen für ihren begrenzten Bereich zu speichern und wieder zu laden. So können komplexe Spezialeinstellungen komfortabel verwaltet werden.
+
+[Cursorsteuerung und Ablesen von Werten](/en/help/domain/cursor-control)
+
+[Cursortools](/en/help/domain/cursor-tools)
+
+[Umschaltung der Achsendarstellung](/en/help/domain/plot-mode)
+
+[Range Infos](/en/help/domain/range)
+
+[File Infos](/en/help/domain/file-info)
+
+[Shortcuts](/en/help/domain/short-cuts)

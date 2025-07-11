@@ -1,0 +1,11 @@
+# Coherence
+
+Für die Kanalpaarungen ungerade und gerade Kanalnummer (also 1-2, 3-4, 5-6, usw.) werden die Kohärenz und Schätzung der Transferfunktion gerader Kanal/ungerader Kanal berechnet. Dazu wird der unter ``Region`` gewählte Teil entsprechend in Abschnitte mit der ``Fenster-Länge`` / Überlappung  unterteilt und mit der gewählten ``Fensterfunktion`` gefenstert. Die ``Fensterlänge`` wird relativ zur  FFT-Länge definiert. Die FFT-Länge bestimmt die Frequenzauflösung der Kohärenzkurve. Die Überlappung der Analysefenster ist einstellbar und kann maximal 1/2 der Fensterlänge sein.
+
+Ein Zeitversatz zwischen den Kanalpaaren muss für ein exaktes Ergebnis möglichst genau mit dem Wert unter ``Latency compensation`` ausgeglichen werden. Der hier eingetragene Wert wird von den geraden Kanälen in der Gruppenlaufzeit abgezogen.
+
+Je größer der Zeitversatz in Relation zur Analyselänge ist, desto größer ist der Verlust an Kohärenz aufgrund der Latenz. Wenn Gruppenlaufzeitverzerrungen zu erwarten sind, so dass keine exakte Latenzkompensation ermittelt werden kann, dann sollte die Analyselänge (FFT-Länge) möglichst groß gewählt werden und die Gesamtlänge der Messung auch in der Länge angepasst werden., um eine hinreichend große Anzahl von Analyseabschnitten zu erhalten.
+
+Das Ergebnis wird im Frequenzbereich als $ν^2$ angezeigt.
+
+Wenn die Einstellung zu weniger als 2 Analyseabschnitten führt, wird ein Hinweis zur falschen Parametrierung angezeigt.

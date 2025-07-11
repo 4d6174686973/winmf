@@ -1,0 +1,56 @@
+# Filter
+
+WinMF beinhaltet umfangreiche Filterfunktionen, um Spektren zu bearbeiten.
+
+``Filter control`` ermöglicht zunächst die Umschaltung der Darstellung der Filter. Mit ``Filter`` werden die eingestellten Filter auf einen oder mehrere Kanäle angewandt angezeigt, ``Set`` zeigt nur die eingestellten Filter, während ``Set single channels`` jedes Filter in einem eigenen Kanal zeigt.
+
+``Add new filter`` erzeugt ein neues Filter am Ende der Filterliste.
+
+``Delete filter`` löscht das gerade aktuelle Filter.
+
+``Copy`` kopiert die Einstellungen des aktuellen Filters, die dann mit ``Paste`` auf ein anderes Filter übertragen werden können.
+
+``Insert before`` erzeugt ein neues Filter vor dem aktuellen Filter mit den Einstellungen, die mit Copy eingelesen wurden, ``Insert after`` entsprechend ein neues Filter hinter dem aktuellen Filter.
+
+``Interactive`` bewirkt, dass die aktuellen Änderungen der Filtereinstellungen direkt im Display angezeigt werden. Solange das Filter Menü offen ist stehen dann die Maussteuerung und Tastaturshortcuts zur Verfügung (s.unten).
+
+Im ``Filter setup`` werden die Filterparameter eingestellt.
+
+Im ersten Auswahlfeld kann aus der Liste aller vorhandenen Filter eines ausgewählt werden, dessen Parameter dann verändert werden können. Daneben kann für jedes Filter ein eigener Name vergeben werden.
+
+``Bypass filter`` deaktiviert das aktuelle Filter, ``Invert phase`` kehrt die Phase um.
+
+Im nächsten Auswahlfenster wird der Filtertyp ausgewählt. Es stehen Hochpass, Tiefpass, Allpass, Bellfilter (parametrischer EQ) sowie Low- und Highshelf-Filter in 6dB und 12dB-Versionen zur Auswahl.
+
+Bei den Hochpass, Tiefpass- und Allpassfiltern stehen weiterhin folgende Filtercharakteristiken zur Verfügung: ``Butterworth``, ``Bessel``, ``Chebyshef PB`` (Passband, Typ 1), ``Chebyshev SB`` (Stopband, Typ 2) und ``Linkwitz-Riley``. Einstellbare Parameter sind die ``Filterordnung``, die ``Cut-off-Frequenz`` sowie das Filter-``Gain``. Beim ``Chebyshev PB`` ist außerdem der ``Passband ripple`` und beim ``Chebyshev SB`` der ``Stopband attenuation`` in den Parametern zu definieren.
+
+Die ``Bell``-Filter haben die Parameter ``Gain``, ``Frequenz`` und ``Güte``, die ``Shelving``-Filter nur Gain und Frequenz.
+
+Bei allen Filtern kann zwischen ``Minimum phase``, ``Linear phase`` und ``Maximum phase`` gewählt werden.
+
+Die Kanalauswahl erfolgt wie in [Select channel](/de/help/edit/select-channel).
+
+``OK`` wendet die eingestellten Filter auf die entsprechenden Kanäle an, während ``Cancel`` den Vorgang abbricht.
+
+Der folgende Plot zeigt einige typische Filter:
+
+![set_of_filters](/set_of_filters.png)
+
+## Tastatursteuerung (MF-style):
+- Page up: setzt die Filternummer für den zu bearbeitenden Filter herab.
+- Page down: setzt die Filternummer für den zu bearbeitenden Filter herauf. Wenn es das letzte Filter in der Liste ist, wird ein neues Filter angelegt.
+- Pfeil links, rechts: verringert/erhöht die Frequenz. Durch Drücken von ``Shift`` (step*10), ``Strg``  (step*100) oder ``Alt`` (step*0.1) kann die Schrittweite modifiziert werden.
+- Komma/Punkt: verringert/erhöht das Gain in 0.1dB Schritten. Durch Drücken von ``Shift`` (step 1dB), ``Strg``  (step 10dB) oder ``Alt`` (step 0.01dB) kann die Schrittweite modifiziert werden.
+- b: toggelt den Zustand bypass
+- c/v: setzt die Filterordnung herauf/herab.
+- h: ändert bei Hoch- und Tiefpässen die Filtercharakteristik
+- m/n: verringert/erhöht die Güte bei Bell-Filtern in 0.1 Schritten. Durch Drücken von ``Shift`` (step 1), ``Strg`` (step 10) oder ``Alt`` (step 0.01) kann die Schrittweite modifiziert werden.
+- t: schaltet den Filtertyp um.
+- delete: löscht das aktive Filter.
+- escape/return: verlassen des Filtermenüs ohne/mit Übernahme der Filter.
+
+## Maussteuerung:
+- linke Maustaste: durch Verfahren des aktiven Cursors (gelber Cursor) wird die Frequenz des Filters eingestellt.
+- rechte Maustaste: durch hoch/runterfahren des Maus wird das Gain verstellt.
+- Mausrad: verstellt die Güte des Filters in 0.1 Schritten. Durch Drücken von ``Shift`` (step 1), ``Strg``  (step 10) oder ``Alt`` (step 0.01) kann die Schrittweite modifiziert werden.
+

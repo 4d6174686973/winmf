@@ -1,0 +1,39 @@
+# Generate
+
+Im Signalgenerator können einige der klassischen Signale erzeugt werden.
+
+![signals](/signals.png)
+
+Unter [Signal length](/de/help/edit/signal-length) ist die Gesamtlänge des neuen Signals einzugeben. Außerdem ist die Samplefrequenz anzugeben.
+
+## Generator
+
+hier stehen verschiedene Wellenformen zur Verfügung. Je nach Wellenform können verschiedene Parameter eingestellt werden.
+
+### Sine
+
+Bei Sinus (``sine``) kann zunächst die Frequenz eingestellt werden.
+
+Die Funktion ``round_to_int`` verändert diesen Frequenzwert so, dass eine ganzzahlige Anzahl von Perioden in die vorgegebene Signallänge passt. Bei Verwendung als Anregungssignal muss die Option aktiviert werden, da sonst bei FFT-Berechnungen die Vorraussetzung einer exakten Periodizität verletzt wird (leakage effekt).
+
+Unter ``Amplitude [V]`` kann der Spitzenwert der Signalamplitude eingestellt werden.
+
+### Rechteck
+
+Rechteck (``rectangular``) hat die gleichen Parameter wie Sinus. Zusätzlich kann unter ``Duty cycle [%]`` eingestellt werden, wie lange der positive Maximalwert im Verhältnis zur Periodendauer gehalten wird.
+
+### Dreieck
+
+Dreieck (``triangular``) hat die gleichen Parameter wie Sinus.
+
+### Sägezahn
+
+Sägezahn (``sawtooth``) hat zusätzlich den Parameter ``width``, der die Länge der aufsteigenden Flanke im Verhältnis zur Periodendauer beschreibt. Der Wertebereich liegt zwischen 0 und 1. Bei einem Wert von 0.5 für ``width`` entspricht der Sägezahn einem Dreieck.
+
+### Rauschen
+
+Bei Rauschsignalen (``noise``) wird die Länge als FFT-Wert angegeben (``FFT length noise``). Hier sind nur ganzzahlige Eingaben möglich, das Signal hat 2^N Samples.
+
+Der Parameter ``Slope [dB]`` beschreibt den Abfall der Amplitude im Frequenzbereich in dB/Oktave.
+
+``0dB at freq. [Hz]`` verschiebt die Kurve im Frequenzbereich derart, dass sie bei der eingegebenen Frequenz den Wert 0dB hat.

@@ -1,0 +1,17 @@
+# CLF Export
+
+Konvertiert spk balloons in CLF1, CLF2 v1 und v2.
+
+Das CLF-Textfile wird unter dem Namen ``Filename`` im Ordner des Balloons gespeichert. Die unter ``Electro acoustic data`` einzubindenden files für Sensitivity und Impedanz müssen mit dem hier angebenen Filenamen im Balloon Ordner vorhanden sein.
+
+Wenn bei ``Method`` für power ``custom`` gewählt wird, dann muss im  Balloon Ordner das File mit dem Custom Spektrum unter dem angegebenen Namen liegen. Das Spektrum wird nicht in Bänder gemittelt oder anders weiter bearbeitet. Es werden nur an den verwendeteten Mittenfrequenzen die Level ausgelesen (Bezug für dB ist 1) und in das CLF geschrieben.
+
+Die Sensitivity sollte unbedingt laufzeitbereinigt sein (betrifft nur CLF2 v2).
+
+Für den Export von CLF1 wird voraussgesetzt, dass der Balloon in 10° Steps eingelesen wurde.
+
+Für den Export von CLF2 wird voraussgesetzt, dass der Balloon in 5° Steps eingelesen wurde. Die Phasendaten werden im importierten Balloon bei den Mittelfrequenzen extrahiert. Die Phasendaten sind Rohdaten, da beim Balloonimport, auch bei einer Mittelung in Bändern, die Phasendaten nicht gemittelt werden.
+
+Für das dxf-Format zur Beschreibung des Gehäuses sollte das Format R12 Linien + Bögen mit der Option alles als Linien zu exportieren verwendet werden. Die maximale Dateigröße ist 500kB. Der Ursprung des Gehäuses ist auf 0,0,0 festgelegt. Dies ist auch der default-Wert für den Referenz Punkt im CLF (mechanical reference). Die positive X-Achse  ist die Hauptabstrahlrichtung, Oben ist die positive Z-Achse. Die Längeneinheit ist m oder mm.
+
+![clf-export](/clf-export.png)

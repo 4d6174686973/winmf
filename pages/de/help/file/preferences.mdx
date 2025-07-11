@@ -1,0 +1,45 @@
+# Preferences
+
+Hier werden einige menüübergreifende Grundeinstellungen vorgenommen.
+
+## Pfade und Grundeinstellungen
+
+``Exciter path`` legt den Startpfad für das Laden von Anregungssignalen fest, d.h. die zu verwendenden Signale müssen sich in diesem Pfad oder in Unterordnern befinden. Das bedeutet zwar eine gewisse Einschränkung, stellt aber sicher, dass Makros ohne Änderung auf verschiedenen Rechnern laufen können.
+
+``Base path`` legt den Startpfad für alle Fileoperationen die in Makros vorkommen können fest. Dies betrifft z.B. die Export-Funktion in den Info-Fenstern und alle QC-Funktionen. Der aktuelle Filepfad zum Laden von WinMF-files und die Import/Export Funktionen sind davon ausgenommen. Die zentrale Festlegung eines Pfades für die in Makros relevanten Funktionen ist ebenfalls notwendig, um die Übertragbarkeit von Makros zu ermöglichen.
+
+``Generate sweeps in exciter path`` erzeugt im Exciter path eine Sammlung gängiger Sweeps für Messungen. Spezielle sweeps können im [Sweep generator](/de/help/edit/sweep-generator) erzeugt werden.
+
+``Show QC process control at startup`` öffnet automatisch das Process control Fenster beim Starten.
+
+``Start QC automation at startup`` startet eine Prozessautomatisierung nach dem Starten von WinMF.
+
+Wenn  ``Offline help`` aktiviert ist, greift WinMF auf die lokale Hilfe Seite zu. Die Hilfe muss im Installationspfad von WinMF im Ordner Help liegen. Die aktuelle Hilfe kann hier geladen werden: www.ifaa-akustik.de/data/Help.zip
+
+``Help language`` legt die Sprache der Hilfe fest.
+
+``Store measurement setup in file`` speichert in den WinMF Files zusätzlich das bei einer Messung verwendete Frontend setup und Messmenü. Unter  [Spectrums, bzw. Time Signals](/de/help/time-signalsspectrums), können die Settings dann aus dem File wiederhergestellt werden.
+
+``Check for updates at startup`` synchronisiert WinMF, die Offline-Hilfe und weitere benötigte Komponenten mit der Version auf dem WinMF Server. Es ist eine Internetverbindung erforderlich und die Firewall muss WinMF freigeben.
+
+``Decimal separator in tables is point`` setzt den Dezimalseparator in Tabellen auf '.', ansonsten ist er ','.
+
+``Windows always at default position``lässt alle Fenster in der linken oberen Ecke des aufrufenden Fensters aufgehen.
+
+``Reset all window positions`` setzt den in den Fenstern gespeicherten Wert auf den default Wert zurück.
+
+## Messungen
+
+``Use filename as legend`` verwendet den Filenamne und die Kanalnummern als neue Legende. Eine vorhandene Legende wird überschrieben. Diese Funktion wird nur beim Laden eines Files angewendet.
+
+``Copy path after FFT/IFFT to other domain`` kopiert den Pfad der Ausgangsdatei in die andere Domäne.
+
+``Use cal-file.txt in WinMF folder to calibrate Frontend values`` es kann über ein Textfile eine individuelle Kalibrierung jeder Frontendeinstellung vorgnommen werden:  [Doku zum Kalibrierfile](/de/help/file/cal-file)
+
+``All outs are normalized to exciter Volt. or amp. Watt`` (line internal/external): normalisiert kanalübergreifend auch inhomogene Ausgänge auf die eingestellte Spannung. Diese Option muss zwingend aktiviert werden, wenn über inhomogene Kanäle Referenzen verwendet werden.
+
+``Use sensor ident as legend`` verwendet den sensor identifier aus Frontend Setup in der Legende
+
+``T_ref (for delay calc.) [°C]``: der hier angegebene Wert wird zur Berechnung der Schallgeschwindigkeit im Menu ``Edit/add group delay`` und im nachgelagerten internenen processing bei ADDA/Polar response im Falle der Verwendung eines Mikrofonarms mit unterschiedlichen Abständen der Mikrofone verwendet.
+
+``Acquire lab temp, humid.``: Hier kann der Sensor zur Erfassung der Labortemperatur konfiguriert werden (s. [Configure lab. temp, humi](/de/help/file/lab-ht)).

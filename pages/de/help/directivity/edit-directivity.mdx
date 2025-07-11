@@ -1,0 +1,89 @@
+# Edit directivity
+
+Hier werden Directivity Messungen in einer oder zwei Ebenen dargestellt und bearbeitet. Es stehen zwei Bereiche für horizontale und vertikale Messungen zur Verfügung, die unabhängig voneinander editiert werden können.
+
+Auf der x-Achse wird die Frequenz, auf der y-Achse der Winkel dargestellt. Die Pegel werden durch die Farben beschrieben. Wenn die Funktion ``Normalize`` aktiviert ist, erfolgt die Darstellung der Directivity relativ zu einer Hauptachse (meist die Richtung 0° hor, 0° ver). Farblich dargestellt wird dann der Abfall des Schalldrucks gegenüber dieser Hauptachse.
+## Measurement info
+
+In den Feldern ``Manufacturer``, ``Loudspeaker type`` und ``Configuration`` können die entsprechenden Informationen eingetragen werden. Die entsprechenden Infos werden in dieser Reihenfolge in der Überschrift der Grafik angezeigt.
+
+## Reload and refresh
+
+``Reload data & refresh`` lädt die Directivity Daten neu und aktualisiert die Darstellung, ``Refresh`` aktualisiert nur die Darstellung mit den ausgewählten Parametern.
+
+## Import
+
+Der ``Import`` der Messungen erfolgt entweder aus einem Verzeichnis, das Einzelmessungen von WinMF oder Monkey Forest enthält (``Hor/Ver from SPK folder``), oder in Form einer POX Datei (``Hor/Ver from POX file``). POX Dateien sind ein ASCII Format von Monkey Forest. Die Messungen werden entsprechend dem Bereich Hor oder Ver zugeordnet.
+
+``SPK balloon to directivity`` erzeugt in einem Verzeichnis, das eine Balloon Messung in Form von einzelnen SPK Dateien enthält, zwei Unterverzeichnisse ``hor`` und ``ver``, in denen die Messungen der horizontalen und vertikalen Ebene aus der Balloon Messung einsortiert werden. Bei Balloon Messungen, die aufgrund von Symmetrien nur einen halben oder viertel Balloon enthalten, werden die für die Directivity fehlenden Messungen durch Spiegelung erzeugt und ebenfalls in die Unterverzeichnisse einsortiert.
+
+## Export
+
+``Save hor./ver. dir. as VACS ASCII`` speichert den Inhalt des hor./ver. Feldes im Format des Visualizing Tools [VACS](http://www.randteam.de/VACS/), das verschiedene Audio-Mess-Formate grafisch darstellen kann.
+
+[Export off axes responses](/de/help/directivity/export-off-axes) erlaubt den Export und Plot der relativen Frequenzgänge.
+
+``Export directivity`` schreibt die Directivity Daten inkl. des kompletten auf die Rohdaten angewandten Processings in einen neuen Ordner. Damit können z.B. Fensterungen und Glättungen auf gemessene Directivities angewandt werden und die bearbeiteten Daten für weitere Berechnungen verwendet werden.
+
+## Presets
+
+Hier können verschiedene Standardeinstellungen für die Darstellung der Directivity ausgewählt werden, und zwar ``+/-90° 1/12 oct. smooth`` und ``+/-180° 1/3 oct. smooth.`` Diese Voreinstellungen können noch editiert werden.
+
+## Options
+
+``Show horizontal/vertical controls`` blendet das Menü ``Horizontal/Vertical setup`` mit weiteren Parametern für die Darstellung der Directivity ein bzw. aus.
+
+``Copy horizontal settings to vertical`` kopiert die Einstellungen für die Horizontale in die Settings für die Vertikale. Der Pfad und der Azimuth Winkel sind davon ausgenommen. Die Einstellungen unter Processing werden nicht kopiert.
+
+``Use horizontal window settings for vertical`` verwendet die unter Proc/Window für die horizontale Achse gemachten Einstellungen auch für die Vertikale. Die Checkbox Windowing im Processing Menü wird dabei für die Vertikale übernommen.
+
+``Use horizontal smooth settings for vertical`` verwendet die unter Proc/Smooth für die horizontale Achse gemachten Einstellungen auch für die Vertikale. Die Checkbox Smoothing im Processing Menü wird dabei für die Vertikale übernommen.
+
+Wenn diese drei Optionen angewählt sind, werden alle Einstellungen der Horizontalen für die Vertikale übernommen, so dass eine erheblich vereinfachte Bedienung erreicht wird.
+
+## Horizontal/Vertical setup
+
+Im ersten Datenfeld steht der Pfad der dargestellten Messung, wie er beim Import ausgewählt wurde. Der Pfad kann manuell editiert werden.
+
+### Import step [°]
+
+Hier wird der Winkelabstand der zu importierenden Einzelmessungen eingetragen.
+### Azimuth [°]
+
+Sind in dem spk-Verzeichnis mehrere Ebenen oder eine Balloon-Messung enthalten, wählt ``Azimuth [°]`` die Ebene aus, in der die Directivity dargestellt werden soll. So bedeutet 0° hier die horizontale und 90° die vertikale Ebene. Bei Balloons sind auch dazwischen liegende Ebenen möglich.
+
+### Upper/Lower limit [Hz]
+
+Diese beiden Parameter bestimmen die obere und untere Grenze des dargestellten Frequenzbereichs.
+
+### Max./Min. Angle [°]
+
+Hier wird der dargestellte Winkelbereich festgelegt.
+
+### Lev. max./min. [dB]
+
+Diese Parameter bestimmen den farblich dargestellten Pegelbereich. Auf den hier definierten Pegelbereich wird die Farbabstufung gleichmäßig verteilt. Bei Verwendung der Standardwerte +3dB/-30dB beschreibt der Farbübergang von Orange nach Gelb die -6dB-Linie, die häufig als Definition für die Abstrahlbreite verwendet wird.
+
+### Ref. method
+
+Die Darstellung der relativen Pegel (Funktion ``Normalize`` ist aktiviert) erfolgt im Verhältnis zu einer ausgewählten Einzelmessung oder dem Mittel aus mehreren Einzelmessungen.
+
+Die Auswahl ``sel. axis`` erlaubt die Auswahl einer Bezugsmessung, die bei ``Ref. axis 1 ``ausgewählt wird. Standard ist die Darstellung relativ zur 0° Richtung.
+
+``av. both. axes`` erlaubt die Darstellung relativ zum  [Average](/de/help/edit/channel-work/average) zweier Einzelmessungen, die bei ``Ref. axis 1`` und ``Ref. axis 2`` ausgewählt werden.
+
+``av. between axes`` schließlich mittelt für die Referenz über den Bereich von ``Ref. axis 1`` bis ``Ref. axis 2``.
+
+``Cyc. mov. [step]`` verschiebt die Einzelmessungen zyklisch, eingetragen wird hier die Anzahl der Schritte mit dem Winkel, der unter ``Import step [°]`` steht.
+
+### Show 0° impulse response
+
+Diese Funktion führt eine IFFT der 0° Messung durch und zeigt das Ergebnis im Zeitfenster.
+
+### Mirror
+
+Mirror spiegelt die Directivity des positiven in den negativen Winkelbereich.
+
+### Processing
+
+Hier werden alle Einzelmessungen bearbeitet, wie bei [Processing](/de/help/adda/processing) beschrieben. Insbesondere können die Einzelmessungen gefenstert und geglättet werden. Die Einstellungen hierzu werden bei ``Proc. para.`` vorgenommen.

@@ -1,0 +1,16 @@
+# Macro Submenu Execution
+
+MenuMenus, die eine Ausführung von Submenus in Macros erlauben, haben im File menu einen zusätzlichen Eintrag: ``Macro submenu exec``.
+
+In diesem Menu kann das auszuführende Makro ausgewählt werden und die Ausführung aktiviert werden. Die Aktivierung wird auch im Filememu angezeigt (checked oder unchecked)..
+
+Die Makrosausführung ist im Falle einer Submenu Ausführung wie folgt:
+
+Im Makroprozess wird
+- zuerst das zugehörige Menu nur geöffnet
+- dann das ausgewählte geöffnet und ausgeführt
+- beide Fenster werde danach geschlossen 
+
+Das zum Submenu gehörende Menu wird !nicht! ausgeführt. Soll dieses auch ausgeführt werden muss das in einem separaten Schritt im Makroprozess definiert werden.
+
+Beispiel: das Menu ADDA/FR für Frequenzgangmessungen erlaubt die Ausführung der Referenzmessung im Makroprozess. Wenn das aktiviert wird, wird nur die Referenzmessung im Makroprozess durchgeführt. Für eine Frequenzgangmessung muss dann in einem zweiten Makroschritt die Frequenzgangmessung (ohne ``Macro submenu exec``) ausgeführt werden.

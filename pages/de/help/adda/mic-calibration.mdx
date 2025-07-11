@@ -1,0 +1,21 @@
+# Mic calibration
+
+(nur im Zeitbereich) erlaubt die Kalibrierung der Mikrofonempfindlichkeit mit Hilfe eines Kalibrators oder Pistonphons. 
+
+Unter ``File`` lassen sich Setups für diesen Bereich laden und speichern.
+
+``Mode`` legt fest, ob die Messung nur einmal oder ständig wiederholt wird. ``Escape`` stoppt die wiederholte Messung. 
+
+Mit ``FFT length`` wird die Länge der Messung als Zweierpotenz 2^n eingestellt. ``Samples`` zeigt die resultierende Anzahl von Samplepunkten, Meas. time die von der Samplerate abhängige Länge einer Messung.
+
+Unter ``Piston`` wird der Schalldruckpegel des Kalibrators eingetragen. 
+
+Die Kalibrierung wird mit ``OK`` gestartet. ``Cancel`` schließt das Fenster und bricht die Messung ab.
+
+Die Tabelle darunter listet die Nummern der Sensoren auf, dazu deren Empfindlichkeit und den Status der Kalibrierung: Rot bedeutet noch nicht kalibriert, Grün bedeutet kalibriert. Im folgenden Beispiel wurde eine zweikanalige Kalibrierung durchgeführt. An Kanal 1 wurde 7,4mV gemessen, Kanal 2 wurde verworfen, da der Störabstand zu gering und die Verzerrungen der Messung zu hoch waren. Eine erfolgreiche Kalibrierung wird automatisch in das [Frontend setup](/de/help/adda/frontend-setup) übernommen.
+
+![mic-calibration-menu](/mic-calibration-menu.gif)
+
+Das Levelmeter rechts unten gibt Auskunft über die Aussteuerung der letzten Messung. Je nach Hardware sollte hier mindestens -30dB bei einer Kalibrierung erreicht werden.
+
+![mic-calibration-screen-shot2](/mic-calibration-screen-shot2.gif)

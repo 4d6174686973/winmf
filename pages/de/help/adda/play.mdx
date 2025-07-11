@@ -1,0 +1,15 @@
+# Play
+
+Es wird das angezeigte Zeitsignal über die aktivierten Outputs abgespielt. Über die Wiedergabematrix können die Kanäle geeignet gemischt werden.
+
+``Mode`` legt fest, ob das Referenzsignal einfach oder wiederholt abgespielt wird. Die wiederholte Wiedergabe kann mit ``Escape`` beendet werden.
+
+``Normalize`` legt fest, auf welchen Pegel die abgespielten Referenzsignale normalisiert werden. Zur Auswahl stehen ``Max. all ch`` (lautestes Sample aller Kanäle wird zu 0dBFs), ``Calibr. SPL`` (siehe unten), ``Calc. SPL`` (berechneter Pegel), ``Frontend V`` (maximale Ausgangsspannung des Frontends) und ``Amp V`` (maximale Ausgangsspannung des Verstärkers).
+
+``Calibr. SPL`` öffnet ein weiteres Fenster, in dem eine untere und obere Grenzfrequenz für die Pegelberechnung angegeben werden können (``Calibr. fu [Hz]`` und ``Calibr. fo [Hz]``). ``Calibr. SPL [dB] ``legt den Referenzpegel des Referenzsignals fest. Use input legt den verwendeten Eingangskanal für die Kalibrierung fest. Es ist darauf zu achten, dass für diesen Kanal ein Mikrofon angeschlossen ist und korrekte Werte für Sensitivity und Pre Amp Gain eingetragen werden. Die Kalibrierwerte werden im Frontend Setup unter Loads and Calibration eingetragen und können dort auch manuell angepasst werden.
+
+``Calibrate`` startet die Kalibrierung.
+
+``Level [dBFs]`` legt den Wiedergabepegel des normalisierten Signals fest (nur Werte kleiner gleich 0dBFs können eingegeben werden).
+
+In der Wiedergabematrix können die Kanäle einzeln in der Wiedergabelautstärke angepasst werden. Dabei stehen die Zeilen für die einzelnen Kanäle des im Speicher befindlichen Signals, die Spalten für die aktivierten Ausgangskanäle.

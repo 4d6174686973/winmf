@@ -1,0 +1,61 @@
+# Turn table setup
+
+Im ``Turn table setup`` werden die Einstellungen zum verwendeten Drehteller oder der Drehmaschine vorgenommen.
+
+Bei ``Select machine`` stehen diverse Drehmaschinen zur Auswahl: 
+
+[ELF V2](/de/help/adda/elf-v2)
+
+[Manual](/de/help/adda/manual)
+
+[LT360EX](/de/help/adda/lt360ex)
+
+[Wendefix](/de/help/adda/wendefix)
+
+[Knarrzi](/de/help/adda/knarrzi)
+
+[St. Neumann](/de/help/adda/st-neumann)
+
+[ET250-3D](/de/help/adda/et250-3d)
+
+[ANTV1_Azi_MicArc_Ele](/de/help/adda/antv1_azi_micarc_ele)
+
+Bei Auswahl einer der aufgeführten automatischen Drehmaschinen können unter ``Configure machine`` weitere Einstellungen dazu durchgeführt werden.
+
+## Configure machine
+
+Hier erfolgt die Einstellung der Schnittstelle(n) für die Maschinensteuerung sowie die manuelle Steuerung der Maschine.
+
+### Bei seriellen Ports zur Maschinensteuerung:
+
+``Scan ports`` sucht im Windows-System nach vorhandenen Ports, die prinzipiell für die Steuerung eines Drehtellers in Frage kommen. Das Ergebnis des Scans wird hier nach wenigen Sekunden angezeigt.
+
+``Port number`` erlaubt die Auswahl des Ports, der für die Steuerung der Maschine verwendet werden soll. Die zur Verfügung stehenden Ports können auch im Windows-Geräte-Manager unter ``Anschlüsse (COM und LPT)`` angezeigt werden. Die Maschine ``Wendefix`` benötigt für die horizontale und vertikale Achse zwei unterschiedliche Ports zur Steuerung.
+
+### Bei Steuerung über Ethernet:
+
+``Host ip``: IP Adresse des Drehtellers
+
+``Port``: UPD Port Nummer
+
+``Elevation control`` ermöglicht die manuelle Steuerung der horizontalen Drehung.
+
+``Step CW`` und ``Step CCW`` drehen die Drehmaschine um den dazwischen eingetragenen Winkel im bzw. gegen den Uhrzeigersinn.
+
+``Pos. [°]`` zeigt die aktuelle Position der Maschine an, Set to 0° definiert die aktuelle Position als 0-Position.
+
+``GoTo`` dreht die Maschine auf die dahinter angegebene Position, GoTo 0° dreht auf die 0-Position.
+
+``Azimuth control`` ermöglicht die manuelle Steuerung der vertikalen Drehung, die Funktion ist gleich wie bei Elevation control.
+
+``Travel plan`` bestimmt bei zweiachsigen Maschinen, in welcher Reihenfolge die Messungen durchgeführt werden. Dabei wird immer ein kompletter Durchlauf der in Inner loop ausgewählten Achse durchgeführt, dann dreht die andere Achse eine Stufe weiter, woraufhin wieder ein kompletter Durchlauf der ersten Achse erfolgt.
+
+``Inner loop dir.`` legt fest, ob die bei Inner loop gewählter Achse immer die Messungen im Uhrzeigersinn (CW, clockwise) durchläuft oder abwechselnd im und gegen den Uhrzeigersinn (CCW, counter-clockwise). Die zweite Option ist etwas schneller, da dir Rückdrehung entfällt. Auf die Zuordnung der Dateinamen zu den einzelnen Messungen hat die Drehrichtung keinen Einfluss.
+
+``Elevation (Hor) mot. behav.`` bestimmt das Verhalten der Motorsteuerung für die horizontale Achse.
+
+``Wait for key (return)`` bedeutet, dass die Maschine die Lautsprecherpositionen automatisch anfährt, die Einzelmessung jedoch erst durch die Taste Return ausgelöst wird.
+
+``Start delay [ms]`` ermöglicht die Eingabe einer Pause vor der ersten Messung, ``Settle time [ms]`` eine Pause zwischen dem Anfahren der neuen Messposition und der Messung. Dies kann sinnvoll sein, wenn die Messhardware mit dem Lautsprecher durch die Bewegung in Schwingungen gerät und zuerst zur Ruhe kommen muss, bevor die Messung gestartet werden kann.
+
+Die Einstellungen ``Azimuth (Ver) mot. behav.`` erfolgen analog zu Elevation ``(Hor) mot. behav.`` für die vertikale Achse.

@@ -1,0 +1,56 @@
+# Sweep generator
+
+## Nomenklatur von Messsignalen
+
+Die im Exciterpfad vordefinierten Sweeps verwenden folgende Nomenklatur:
+
+SWP LL APP
+
+SWP = Sweep exciter
+
+LL = Anzahl der samples als FFT-Länge (2^LL)
+
+APP = Anwendung:
+- LS: Lautsprecher Sensitivity
+- ELE: Elektronik
+- DIS: Verzerrungsmessungen
+- DRY: Raumakustik trockene Räume
+- WET: Raumakustik Räume mit langer Nachhallzeit
+- REV: Messungen in Hallräumen
+
+## Erzeugung beliebiger Sweeps
+
+Mit dem ``Sweep generator`` kann man Messsignale in Form von Sweeps generieren.
+
+Unter ``Presets`` können geeignete Voreinstellungen für verschiedenste Anwendungen geladen werden. Diese können jedoch beliebig editiert werden, um spezielle Messsignale zu erzeugen.
+
+``Length`` dient der Definition der Signallänge. Die Anzahl der Samples wird durch den Parameter FFT bestimmt, wobei FFT=12 bedeutet, dass das Signal 2^12 Samples lang wird. Zusätzlich muss die Samplerate angegeben werden, für die das Signal erzeugt wird. Grundsätzlich können Sweeps mit beliebigen Sampleraten erzeugt werden. Bei einer Messung mit diesen Signalen ist jedoch darauf zu achten, dass an der Messhardware die entsprechende Samplefrequenz unterstützt. So kann z.B. das Robo3 mit 32kHz, 44,1kHz, 48kHz, 88,2kHz oder 96kHz messen. Die Samplefrequenz muss dabei mehr als doppelt so hoch sein wie die höchste zu messende Frequenz.
+
+Sweep options erlaubt die Einstellung verschiedener Parameter zur Gestaltung des Signals. Zunächst kann zwischen den Optionen ``linear`` und ``logarithmic`` umgeschaltet werden.
+
+Ein ``logarithmischer Sweep`` hat einen logarithmischen Frequenzverlauf über der Zeit, die Amplitude ist dabei stets konstant. Daraus ergibt sich ein mit 3dB/oct. fallender Frequenzverlauf. Diese Sweeps können z.B. bei Verzerrungsmessungen eingesetzt werden.
+
+Ein ``linearer Sweep`` hat ebenfalls eine konstante Amplitude über der Zeit, der Frequenzverlauf ist dabei in weiten Grenzen einstellbar. In der einfachsten Form ist der Frequenzverlauf ebenfalls linear. Solche Sweeps können z.B. bei Messungen an elektrischen Schaltungen und Filtern verwendet werden. Für viele Anwendungen (z.B. Raumakustik, Lautsprechermessungen) möchte man jedoch Signale mit erhöhtem Energiegehalt bei tiefen Frequenzen verwenden, um hier einen besseren Signal-Rauschabstand zu erreichen. Dazu wird ein entsprechendes Filter mit ``Define mag.`` erstellt, beispielsweise ein Low-shelf mit 20dB Gain bei 100Hz. ``Cust.mag.`` schaltet die [Filter](/de/help/edit/filter) ein bzw. aus. Der Sweep selbst erhält dabei keine höhere Amplitude für niedrige Frequenzen, vielmehr durchläuft er den tiefen Frequenzbereich entsprechend langsamer und speist dadurch mehr Energie in das zu messende System ein.
+
+Soll für spezielle Anwendungen die Amplitude des Sweeps nicht konstant sein, so kann mit ``Def. amplitude`` auch dieser Verlauf mit [Filtern](/de/help/edit/filter) bearbeitet werden. ``Cust. amp.`` schaltet diese Filter ein bzw. aus.
+
+![sweep_custom](/sweep_custom.png)
+
+![sweep_custom-timesignal](/sweep_custom-timesignal.png)
+
+``Restrict range`` schränkt den Frequenzbereich ein, den der Sweep durchläuft. ``Start. freq.`` und ``Stop freq.`` bestimmen Anfangs- und Endfrequenz.
+
+Der Parameter ``Stop margin`` fügt am Ende des Sweeps Nullen ein, die Länge wird in Sekunden angegeben. Die Länge muss mindestens so groß sein wie die Latenz des Messsystems (einige ms) plus der akustischen Laufzeit (bei Mikrofonmessungen etwa 3ms/m) plus der Ausklingzeit des gemessenen Systems (bei Raumakustikmessungen ist das etwa die Nachhallzeit).
+
+Die folgenden Plots zeigen drei typische Sweeps:
+1. für Elektronikmessungen mit konstanter Amplitude des Zeitsignals und linearem Betragsgang
+2. für Lautsprechermessungen mit konstanter Amplitude des Zeitsignals und 20dB Anhebung des Betragsgangs im Low-mid-Bereich zur Verbesserung des SNR
+3. für Distortion Messungen mit logarithmischem Verlauf der Gruppenlaufzeit und konstanter Amplitude des Zeitsignals
+
+
+![sweeps](/sweeps.png)
+
+![sweeps-gd](/sweeps-gd.png)
+
+![sweeps-timesignal](/sweeps-timesignal.png)
+

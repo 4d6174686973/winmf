@@ -1,0 +1,29 @@
+# Impedance
+
+Die Impedanzmessung ist im Bereich der Lautsprechermesstechnik eine der häufigsten Messungen. Sie lässt unter anderem Rückschlüsse auf das Funktionsprinzip und den nutzbaren Frequenzbereich zu. Das Bild zeigt beispielhaft den typischen Impedanzverlauf einer Bassreflexbox.
+
+![impredance](/impredance.png)
+
+Die Impedanzmessung verwendet die im Robo2 bzw. Robo3 vorhandene Schaltung incl. Shuntwiderstand und Verstärker. Der Lautsprecher wird einfach an einen Speakon-Ausgang angeschlossen.
+
+Vor jeder Impedanzmessung sollte mit [Reference measurement](/de/help/adda/impedance-reference) eine Referenzmessung durchgeführt werden.
+
+Im [Measurement setup](/de/help/adda/measurement-setup) werden grundsätzliche Einstellungen zur Messung vorgenommen, im [Exciter setup](/de/help/adda/exciter-setup) wird das Anregungssignal ausgewählt und der Pegel eingestellt.
+
+Im ``Impedance setup`` können Korrekturwerte für das verwendete Lautsprecherkabel eingetragen werden. Bei ``Cable R [mOhm]`` wird der gemessene oder abgeschätzte reelle Widerstand des Kabels in Milliohm eingetragen, bei ``Cable L [uH]`` die Induktivität in Mikrohenry.
+
+Im Bereich [Processing](/de/help/adda/processing) können die Messergebnisse bearbeitet werden.
+
+Wird eine externe Beschaltung für die Impedanzmessung verwendet, dann sind die Widerstände wie folgt anzuschließen:
+
+![ext-imp-sch](/ext-imp-sch.png)
+
+Der Line In sollte symmetrisch das Signal über $R_s$ abgreifen, Gnd (XLR1) sollte nicht mit der externen Endstufe verbunden werden.
+
+As Referenzwiderstand muss zur Referenzmessung statt des DUT  ($Z_{load}$) 10 Ohm angeschlossen werden.
+
+$R_s = 1 \Omega$ ist für die meisten Anwendung als Shunt eine geeignete Größe.
+
+Es besteht die Gefahr bei falscher Verkabelung das Messfrontend zu zerstören!
+
+``OK`` starts the measurement; ``Cancel`` aborts the procedure.

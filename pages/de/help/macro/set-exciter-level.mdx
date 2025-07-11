@@ -1,0 +1,32 @@
+# Set exciter level
+
+Diese Funktion wirkt sich nur aus, wenn ein [Makro aufgezeichnet](/de/help/macro/start-macro-recording) oder [wiedergegeben](/de/help/macro/play-macro) wird.
+
+Im Panel ``Exciter level`` kann ein Spannungswert definiert werden. Alle im Makro nachfolgenden Messmenüs (ausgenommen [Play](/de/help/adda/play)) , die ein Signal über den DA-Wandler ausgeben, ignorieren dann den in ihrem Setup eingestellten Wert und verwenden stattdessen den hier eingestellten Wert. Die Normierung erfolgt absolut, also unter Berücksichtigung der gerade im Frontend eingestellten Output-Sensitivity. Die Normierung basiert auf der Annahme, dass der Crest-Faktor im Signal 3dB beträgt. Für andere Crest-Faktoren ist das entsprechend bei der Wahl des Spannungswertes zu berücksichtigen. Der hier eingestellte Wert ist quasi eine Variable für nachfolgende Messmenüs.
+
+## Änderung ab 07.02.2019:
+
+Die hier eingestellte Spannung wird immer mit Bezug zum physikalischen Ausgang berechnet, also bezogen auf die Line Ausgänge bei Amp_output = line, sonst mit Bezug zu den internen oder externen Amp gains.
+
+Wenn unter File/Preferences die Option All outs are normalized to exciter Volt... aktiviert ist, dann werden alle aktivierten Ausgänge eingestellt, im anderen Fall wird nur Kanal 1 berücksichtigt, die anderen Kanäle verhalten sich relativ dazu entsprechend der Gain Unterschiede.
+
+Im Zusammenspiel mit dem Menü [Set relative exciter level](/de/help/macro/set-relative-exciter-level) können im Makroprozess komplexe Pegelabläufe programmiert werden, ohne für jeden Pegel ein eigenes Messmenü-Setup zu speichern.
+
+Beispiel:
+
+Ein Makro ruft das ADDA-Menü mit einem Sinus-Exciter und einem Level von -20dBFS auf. Das Frontend ist auf 26dBu output-sensitivity eingestellt.  Der Sinus wird dann mit 6dBu (rms) wiedergegeben. Das Makro sieht an dieser Stelle z.B. so aus:
+
+```plaintext
+Out1_26dBu.Robo3.set
+-20dBFS.ADDA.set
+```
+
+Wenn man jetzt das Menü ``Set exciter level`` in das Makro einfügt und den Level z. B. auf 1Vrms festlegt, dann wird der Sinus so umnormiert, dass 1Vrms über das Frontend wiedergegeben werden.
+
+```plaintext
+1Vrms.Set_exciter_level.set
+Out1_26dBu.Robo3.set
+-20dBFS.ADDA.set
+```
+
+Die Einstellung sind im Makro solange gültig, bis [Unset exciter level](/de/help/macro/unset-exciter-level) im Makro aufgerufen wird, oder das Makro beendet ist.

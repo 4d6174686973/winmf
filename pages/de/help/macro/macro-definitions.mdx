@@ -1,0 +1,59 @@
+# Macro definitions
+
+Eine WinMF Makrodefinition besteht aus einer Textdatei, die in jeder Zeile einen Setupnamen enthält. Jede Zeile entspricht einem Makroschritt, bei dem das in dieser Zeile gelistete Menü mit dem Setup ausgeführt wird. Beim Abspielen des Makros wird das Menüsetup des Makroschrittes in das auszuführende Menü geladen und anschließend in der gerade aktuellen Domäne (Zeitbereich, Frequenzbereich, etc.) ausgeführt. Um eine definierte Ausführung eines Makros zu erzielen, muss die erste Zeile die Domäne definieren.
+
+Ein einfaches Makro, das mit dem Makrorekorder aufgezeichnet wurde ist z.B.:
+
+Demo_000001.frequency_domain.set
+
+Demo_000001.Initialize.set
+
+Demo_000001.FE.set
+
+Demo_000001.AD.set
+
+Demo_000002.FE.set
+
+Demo_000002.AD.set
+
+Der Makroname ist "Demo", die Nummern werden vom Makrorecorder automatisch ergänzt, um mehrfach ausgeführte identische Menüs zu unterscheiden. Es werden dadurch folgende Aktionen durchgeführt:
+
+1. Wechsel in den Frequenzbereich
+
+2. Initialisierung der Messhardware
+
+3. Setup des Frontends mit dem Setup Demo_000001
+
+4. AD-Messung mit dem Setup Demo_000001
+
+5. Setup des Frontends mit dem Setup Demo_000002
+
+6. AD-Messung mit dem Setup Demo_000002
+
+Damit das Makro abgespielt werden kann, müssen die Makrodefinition und alle zugehörigen Setups im gleichen Verzeichnis liegen.
+
+## Manuelles Editieren von Makros
+
+Der einfachste Weg ein Makro und die zugehörigen Setups zu editieren ist die Benutzung des [Macro Editors](/de/help/macro/edit-macro). Makros können aber problemlos auch manuell editiert werden. Dazu einen beliebigen Texteditor verwenden um die Makrodefinition zu ändern. Es können natürlich auch identische Setups mehrfach aufgerufen werden. Eine Variante des obigen Makros könnte so aussehen:
+
+Demo_000001.frequency_domain.set
+
+Demo_000001.Initialize.set
+
+Demo_000001.FE.set
+
+Demo_000001.AD.set
+
+Demo_000002.FE.set
+
+Demo_000001.AD.set
+
+Demo_000003.FE.set
+
+Demo_000001.AD.set
+
+Es wird folglich 3 mal das gleiche AD-Setup aufgerufen, aber vorher jeweils ein anderes Frontend-Setup definiert, um z.B. andere Kanäle aktiv zu schalten.
+
+## Editieren von Menüsetups aus Makrodefinitionen
+
+Menüsetups aus Makrodefinitionen können genauso wie jedes andere Menüsetup behandelt werden. Dazu einfach in dem entsprechenden Menü unter File/Load setup  das zu ändernde Setup laden. Im Menü werden dann alle zu ändernden Einstellungen durchgeführt und anschließend das Setup unter File/Save setup unter gleichem Namen wieder gespeichert.

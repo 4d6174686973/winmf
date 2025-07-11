@@ -1,0 +1,17 @@
+# Combine curves
+
+Diese Funktion dient dazu, eine Kurve aus Teilen von anderen Kurven zusammen zu setzen.
+
+``Target channel`` bezeichnet dabei den Kanal, von dem der obere Frequenzbereich verwendet werden soll. Pegel und Phase dieses Kanals bleiben erhalten.
+
+``Source channel`` bezeichnet den Kanal, der unten am`` Target channel`` angesetzt werden soll. Pegel und Phase werden dabei stetig an den Target channel angepasst.
+
+``Frequency`` bestimmt die Frequenz, bei der die beiden Kanalabschnitte zusammen gesetzt werden.
+
+``Delete source`` entscheidet darüber, ob der Source channel erhalten bleibt oder gelöscht wird.
+
+Das folgende Beispiel zeigt die [gefensterte](/de/help/edit/apply-window) Messung eines 15"-Tieftöners, die Nahfeldmessung und die bei 100Hz kombinierte Messung als Betrags- und Phasengang (unten).
+
+![lf-near-far-combi](/lf-near-far-combi.png)
+
+![lf-near-far-combi-phase](/lf-near-far-combi-phase.png)

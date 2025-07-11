@@ -1,0 +1,27 @@
+# Distortion processing
+
+Ist im [processing](/en/help/adda/processing) einer Messing das distortion processing aktiviert, dann kann bei Anregung mit einem [logarithmischen Sweep](/en/help/edit/sweep-generator) eine simultane Auswertung der harmonischen Verzerrungsanteile erfolgen. Ist kein geeignetes Anregungssignal benutzt worden, dann erfolgt eine Meldung, dass das ``Distortion processing`` deaktiviert wurde und das Processing wird nicht ausgeführt.
+
+Die Auswertung der Verzerrungsanteile erfolgt durch Separation der auf "Impulsantworten" komprimierten harmonischen Verzerrungsanteile. Als Beispiel ist im Folgenden ein im Nahfeld gemessener Tweeter betrachtet. Als Anregungssignal wurde ein logarithmischer Sweep der Länge 2^17 Samples ohne Bandbegrenzung verwendet (SWP17DIS.MDA).
+
+![tweeter_sens](/tweeter_sens.png)
+
+Die IFFT des komplexen Frequenzgangs ist in logarithmischer Amplitudendarstellung::
+
+![tweeter_sens_ir](/tweeter_sens_ir.png)
+
+Der eigentliche Impuls liegt bei ca. 0ms und reicht bis knapp 185dB. Der Bereich ab ca. 1.2s zeigt eine Reihe von Peaks, die den jeweiligen Verzerrungsanteilen zugeordnet sind. Von rechts nach links steigt die Verzerrungsordnung an (bei 2,5s liegt die Impulsantwort der 2. Harmonischen = H2IR). Ein weiteres wichtiges Detail ist der Abstand der HIRs: mit steigender Ordnung verringert sich der Abstand. Für das weitere Processing bedeutet das die Notwendigkeit ein geeignet kurzes Fenster zu finden, um eine Separation der HIRs voneinander zu ermöglichen.  Die Fensterlänge bestimmt schließlich die Frequenzauflösung der Spektren der HIRs, so dass sich folgende Zusammenhänge für das Processing ergeben:
+
+- je höher die auszuwertende Verzerrungsordnung, desto geringer ist der Abstand der höchsten auszuwertenden HIR von ihrem Nachbarn und bestimmt somit die Fensterlänge. Die Frequenzauflösung sinkt somit mit der höchsten Verzerrungsordnung die auszuwerten ist.
+- je länger das Anregungssignal, desto größer ist der Abstand der HIRs und damit steigt die Frequenzauflösung
+- da die Fensterlänge mit der Länge des Anregungssignal steigt (und damit auch die Leistung des Noisefloors innerhalb des Fensters), ist für eine Erhöhung des SNRs eine Mittelung notwendig
+
+Die automatisierte Auswertung ermögicht die Darstellung der Verzerrung absolut, so dass eine Frequenzgangmessung und Verzerrungsmessung simultan durchgeführt werden kann:
+
+![tweeter_sens_abs_dist](/tweeter_sens_abs_dist.png)
+
+In relativer Darstellung ergibt sich:
+
+![tweeter_sens_rel_dist](/tweeter_sens_rel_dist.png)
+
+Im Gegensatz zu der Messung mit Sinusbursts ergibt sich bei identischer Frequenzauflösung eine erheblich kürzere Messdauer. Allerdings ist dadurch der Störabstand auch erheblich geringer, was sich bei kleinen Verzerrungsanteilen durch verrauschte Kurven äußert. Für eine Verbesserung des SNR wäre hier eine Mittelung anzusetzen, wodurch der Vorteil der schnellen Messung wieder verringert wird. Weiterhin ist bei Vergleichen zu beachten, dass durch die geringe Messdauer von Sweep-Messungen auch tatsächlich etwas andere Verzerrungskurven entstehen können. Das betrifft vor allem mit Ferrofluid gefüllte Hochtöner, deren Verzerrungsverhalten sehr stark mit der Temperatur reagiert und damit von der eingespeisten Energie, also der Vorgeschichte, abhängt.

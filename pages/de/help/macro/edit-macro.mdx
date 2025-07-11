@@ -1,0 +1,39 @@
+# Edit macro
+
+Hier können die aufgezeichneten Makro bearbeitet werden.
+
+Unter ``Macro setup - Macro`` file wird das zu bearbeitende Makro ausgewählt.
+
+Die Tabelle unter ``Macro definition`` sind die Einzelschritte des Makros aufgelistet. In der linken Spalte steht der Name des Makros, ergänzt um eine laufende Nummer, falls ein Menü mehrfach in einem Makro enthalten ist. In der rechten Spalte steht der Name des Menüs, das in diesem Schritt aufgerufen wird.
+
+![macroeditor](/macroeditor.gif)
+
+Die Namen in der linken Spalte können nach Anklicken editiert werden.
+
+Zur Bearbeitung der Menüs auf der rechten Seite muss ein Eintrag mit Linksklick ausgewählt werden. Mit Rechtsklick wird dann ein Kontextmenü geöffnet. Sind mehrere Einträge selektiert, dann wird die im Kontextmenü ausgewählte Operation immer auf den obersten Eintrag angewendet. Die einzige Ausnahme ist die Delete Funktion.
+
+Nach Auswahl von ``Edit setup menu`` erscheint das gleiche Menü, wie es beim Aufzeichnen des Makros ausgeführt wurde. Hier können nun alle Einstellungen beliebig verändert werden und mit ``File - Save setup`` as unter dem alten oder einem neuen Namen abgespeichert werden.
+
+``Execute setup`` menu führt den selektierten Makroschritt aus.
+
+``Insert`` erlaubt das Einfügen eines vorhandenen Setups vor dem angeklickten Menü.
+
+``Delete`` löscht alle selektierten Zeilen in der Tabelle.
+
+``Copy to new name`` kopiert die komplette Zeile, sie kann mit ``Paste`` an beliebiger Position in der Liste eingefügt werden. Der Name erhält dabei den Zusatz ``copy``, der beliebig editiert werden kann.
+
+``Copy to same name`` funktioniert genau gleich, dabei wird der Name jedoch nicht verändert.
+
+``Paste`` fügt ein im Zwischenspeicher vorhandenes Menü ein.
+
+``Append`` hängt ein im Zwischenspeicher vorhandenes Menü am Ende der Tabelle an.
+
+``Insert macro file`` fügt vor der aktuellen Position ein komplettes vorhandenes Makro ein.
+
+``Append macro file`` fügt ein Makro am Ende der Tabelle ein.
+
+``Comment line(s)`` fügt ein Kommentarzeichen ein. Die auskommentierten Zeilen werden beim Ausführen ignoriert.
+
+``Uncomment line(s)`` entfernt Kommentarzeichen
+
+``Clean up macro folder`` löscht im Verzeichnis der Makrodefinition alle für das gerade editierte Makro nicht benutzen Setups. Sind mehrere Makros in einem Verzeichnis, so ist die Funktion mit Vorsicht zu verwenden.

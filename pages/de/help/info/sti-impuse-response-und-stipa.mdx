@@ -1,0 +1,31 @@
+# STI (Impulse response and STIPA)
+
+Wenn ``Info/STI from impulse response`` oder  ``Info/STI from STIPA`` aufgerufen wird, dann erfolgt zunächst das Processing zur Berechnung der MTF-Tabelle. Es wird nur der zwischen den Cursorn liegende Bereich ausgewertet. Um eine Neuberechnung durchzuführen, muss vorher das Info-Fenster geschlossen werden.
+
+Es ist darauf zu achten, dass die Impulsantworten eine hinreichende Länge (mindestens 1,6s, bzw. der Nachhallzeit des Raumes angemessen) und Qualität haben. Verzerrungen und ein geringer Signal-to-Noise können die Ergebnisse beeinflussen.
+
+Für die Verwendung von moduliertem Rauschen als Testsignal (STIPA-Methode) gilt, dass mindestens 10s Signal vorliegen sollten. Ferner ist darauf zu achten, dass das Anregungssignal mit korrekter Samplerate wiedergegeben wird, da das Verfahren empfindlich auf Frequenzverschiebungen reagiert. Auch eine Messstrecke, die in der Signalverarbeitung Frequenzverschiebungen verursacht, ist eher ungeeignet für das STIPA-Verfahren.
+
+Unter ``Select/Select parameters`` können dann die anzuzeigenden Auswertungen ausgewählt werden:
+
+![sti_info_window-select](/sti_info_window-select.gif)
+
+Im Info Fenster erscheinen tabellarisch die STI-Werte für jeden Kanal:
+
+![sti_info_window-results](/sti_info_window-results.gif)
+
+Neben den verschiedenen Versionen zur Berücksichtigung der Maskierung, können auch der Hörschwellenfaktor und die Verarbeitung der Signal-to-Noise Werte getrennt an - und abgeschaltet werden.
+
+``Copy signal-``, bzw., ``noise levels`` kopiert aus der gerade angezeigten Spektrumsdatei (nur Kanal 1 wird berücksichtigt) die Level an den Oktavband-Mittenfrequenzen in das STI-Menü.
+
+``Show m-table`` zeigt die Modulations-Transferfunktionen und die m-Korrekturfaktoren in tabellarischer Form :
+
+![sti_info_window-m-table](/sti_info_window-m-table.gif)
+
+Der Export der Tabellenwerte kann per Copy&Paste oder bei Aktivierung der Export Optionen (unter ``Select/Show export options``) erfolgen. Siehe auch dazu: [Export der Tabellenwerte](/de/help/info/excelcsv-export).
+
+Die Modulationstransferfunktionen können für andere Anwendungen auch direkt in den Frequenzbereich transformiert werden:
+
+[Transfer/Complex MTF from impulse response](/de/help/transform/complex-mtf-of-impulse-response)
+
+[Transfer/Complex MTF from stationary signal (from STIPA)](/de/help/transform/complex-mtf-of-stationary-signal-stipa-exciter)
