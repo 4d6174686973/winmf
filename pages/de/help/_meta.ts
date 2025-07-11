@@ -12,6 +12,6 @@ export default {
   qc: 'QC',
   plot: 'Plot',
   help: 'Help',
-  advices: 'Advices',
+  advices: 'Hinweise',
   shortcuts: 'Shortcuts',
 }
