@@ -1,18 +1,16 @@
 # Macro Submenu Execution
 
-Menus, which allow an execution of its submenus in macro processses show an additional entry in  its file menu: ``Macro submenu exec``.
+MenuMenus, die eine Ausführung von Submenus in Macros erlauben, haben im File menu einen zusätzlichen Eintrag: ``Macro submenu exec``.
 
-Within this menu, the submenu to be executed can be selected and its execution be activated.
+In diesem Menu kann das auszuführende Makro ausgewählt werden und die Ausführung aktiviert werden. Die Aktivierung wird auch im Filememu angezeigt (checked oder unchecked)..
 
-The execution is also shown in the filemenu (checked or unchecked).
+Die Makrosausführung ist im Falle einer Submenu Ausführung wie folgt:
 
-The macro execution is in the case of a submenu as follows:
+Im Makroprozess wird
+- zuerst das zugehörige Menu nur geöffnet
+- dann das ausgewählte geöffnet und ausgeführt
+- beide Fenster werde danach geschlossen 
 
-The macro process is
-- first the calling menu of  the submenu is only opened
-- then the selected submenu is opened and executed
-- both menus are closed after execution
+Das zum Submenu gehörende Menu wird !nicht! ausgeführt. Soll dieses auch ausgeführt werden muss das in einem separaten Schritt im Makroprozess definiert werden.
 
-The calling menu of the submenu is !not! executed. Should this also be executed, it must be defined as separate step in the macro process.
-
-Example: the menu ADDA/FR for frequency response measurement allows the execution of the reference in the macro process. If this is activated, only the reference measurement is executed. For a subsequent frequency response measurement a second step has to be defined in the process (without ``Macro submenu exec``).
+Beispiel: das Menu ADDA/FR für Frequenzgangmessungen erlaubt die Ausführung der Referenzmessung im Makroprozess. Wenn das aktiviert wird, wird nur die Referenzmessung im Makroprozess durchgeführt. Für eine Frequenzgangmessung muss dann in einem zweiten Makroschritt die Frequenzgangmessung (ohne ``Macro submenu exec``) ausgeführt werden.

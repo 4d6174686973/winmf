@@ -1,39 +1,39 @@
 # Edit macro
 
-Here the recorded macros can be modified.
+Hier können die aufgezeichneten Makro bearbeitet werden.
 
-Under ``Macro setup - Macro file`` the macro to be edited is selected.
+Unter ``Macro setup - Macro`` file wird das zu bearbeitende Makro ausgewählt.
 
-The table under ``Macro definition`` lists the single macro steps. The leftmost column contains the macro name supplemented by a consecutive index, in case a menu occurs more than once within the macro. The rightmost column shows the menu which is called by this step.
+Die Tabelle unter ``Macro definition`` sind die Einzelschritte des Makros aufgelistet. In der linken Spalte steht der Name des Makros, ergänzt um eine laufende Nummer, falls ein Menü mehrfach in einem Makro enthalten ist. In der rechten Spalte steht der Name des Menüs, das in diesem Schritt aufgerufen wird.
 
 ![macroeditor](/macroeditor.gif)
 
-The names on the left are editable by clicking on them.
+Die Namen in der linken Spalte können nach Anklicken editiert werden.
 
-For editing the menus on the right an entry needs to be selected by left-click; then a right-click opens a context menu. If several entries are selected, the operation chosen from the context menu is always applied to the upmost entry. Only exception is ``Delete``.
+Zur Bearbeitung der Menüs auf der rechten Seite muss ein Eintrag mit Linksklick ausgewählt werden. Mit Rechtsklick wird dann ein Kontextmenü geöffnet. Sind mehrere Einträge selektiert, dann wird die im Kontextmenü ausgewählte Operation immer auf den obersten Eintrag angewendet. Die einzige Ausnahme ist die Delete Funktion.
 
-When ``Edit setup menu`` is selected, the same menu appears as it was executed during macro recording. All setting can be modified at will and saved by ``File - Save setup`` as under the old or a new name.
+Nach Auswahl von ``Edit setup menu`` erscheint das gleiche Menü, wie es beim Aufzeichnen des Makros ausgeführt wurde. Hier können nun alle Einstellungen beliebig verändert werden und mit ``File - Save setup`` as unter dem alten oder einem neuen Namen abgespeichert werden.
 
-``Execute setup menu`` executes the selected macro step.
+``Execute setup`` menu führt den selektierten Makroschritt aus.
 
-``Insert`` allows inserting an existing setup in front of the selected menu.
+``Insert`` erlaubt das Einfügen eines vorhandenen Setups vor dem angeklickten Menü.
 
-``Delete`` applies to all selected rows of the table.
+``Delete`` löscht alle selektierten Zeilen in der Tabelle.
 
-``Copy to new name`` copies the entire row, which by ``Paste`` can then be inserted in the list at any position. The name now contains the appendix copy, which is editable at will.
+``Copy to new name`` kopiert die komplette Zeile, sie kann mit ``Paste`` an beliebiger Position in der Liste eingefügt werden. Der Name erhält dabei den Zusatz ``copy``, der beliebig editiert werden kann.
 
-``Copy to same name`` has the same function, but without changing the name.
+``Copy to same name`` funktioniert genau gleich, dabei wird der Name jedoch nicht verändert.
 
-``Paste`` inserts the menu from the paste buffer.
+``Paste`` fügt ein im Zwischenspeicher vorhandenes Menü ein.
 
-``Append`` adds the menu from the paste buffer at the end of the table.
+``Append`` hängt ein im Zwischenspeicher vorhandenes Menü am Ende der Tabelle an.
 
-``Insert macro file`` inserts an entire existing macro in front of the current position.
+``Insert macro file`` fügt vor der aktuellen Position ein komplettes vorhandenes Makro ein.
 
-``Append macro file`` adds a macro at the end of the table.
+``Append macro file`` fügt ein Makro am Ende der Tabelle ein.
 
-``Comment line(s)`` inserts a comment symbol. Comment lines are disregarded during execution.
+``Comment line(s)`` fügt ein Kommentarzeichen ein. Die auskommentierten Zeilen werden beim Ausführen ignoriert.
 
-``Uncomment line(s)`` deletes comment symbols
+``Uncomment line(s)`` entfernt Kommentarzeichen
 
-``Clean up macro folder`` deletes from the macro directory all setups which are not used by the macro that is currently being edited. If the directory contains multiple macros, this function should be used carefully.
+``Clean up macro folder`` löscht im Verzeichnis der Makrodefinition alle für das gerade editierte Makro nicht benutzen Setups. Sind mehrere Makros in einem Verzeichnis, so ist die Funktion mit Vorsicht zu verwenden.

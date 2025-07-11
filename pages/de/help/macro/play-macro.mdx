@@ -1,10 +1,10 @@
 # Play Macro
 
-By ``Play macro`` an existing macro can be loaded and executed. ``Macro file`` allows selecting the macro file. Right-click on the file name opens the [Macro editor](/en/help/macro/edit-macro).
+Mit ``Play macro`` kann ein vorhandenes Macro geöffnet und ausgeführt werden. ``Macro file`` erlaubt die Auswahl der entsprechenden Macrodatei. Rechtsklick auf den Filenamen öffnet den  [Macro editor](/de/help/macro/edit-macro).
 
-The execution of macros allows the use of subversions. A subversion is marked with a "$" followed by the subversion name in each row of the macro definition. If "only base macro" is selected, the macro executes the lines which do not belong to a subversion. If a subversion is selected, the macro also executes the lines which are introduced by the subversion string.
+Bei der Ausführung von Makros können Subversionen verwendet werden. Dabei wird eine Makro Subversion durch ein "$" gefolgt vom Versionsnamen in der Makrodefinition eingeleitet. Wird unter Subversion "only base macro" selektiert, dann führt das Makro nur die Zeilen aus, die zu keiner Makroversion gehören. Wird eine Version ausgewählt, dann werden zusätzlich die mit diesem Versionsstring gekennzeichneten Zeilen ausgeführt.
 
-The following examples shows a simple macro with two subversions (PPA1000-2 und PPA2200-3):
+Das folgende Beispiel zeigt eine einfache Macrodefinition mit zwei Subversionen (PPA1000-2 und PPA2200-3):
 
 | _ | frequency_domain |
 |------------|-------------|
@@ -17,16 +17,16 @@ The following examples shows a simple macro with two subversions (PPA1000-2 und 
 | $PPA2200-3 20-120dB | Display_range |
 | Freq_resp | Plotting |
 
-First, the measurement system is initialized and then, depending on the selected version,  the macro executes the three steps for PPA1000-2 or PPA2200-3. Finally, a plot is generated independently of the selected version.
+es wird zunächst das Messystem initialisiert und dann abhängig von der ausgewählten Version entweder die 3 Schritte für PPA1000-2 oder PPA2200-3 ausgeführt. Anschließend wird unabhängig von der ausgewählten Version ein Plot erstellt.
 
-The [Macro editor](/en/help/macro/edit-macro) allows to insert and remove version strings into the macro definition.
+Im  [Macro editor](/de/help/macro/edit-macro) können die Versionsstrings eingefügt und entfernt werden.
 
-``Result path`` defines the directory, the processed files shall be stored to. If this path is identical to the original file path, the file will be overwritten after being processed by the macro. If this path is empty, the original filepath will be used for write processes during the macro run. This is also applied to statistics windows which can export tables to ascii files and excel files.
+``Result path`` legt einen Dateipfad fest, unter dem die bearbeiteten Dateien abgespeichert werden. Ist dieser Pfad identisch mit dem ursprünglichen Dateipfad, so wird die Datei nach Durchführung des Macros überschrieben. Wird dieser Pfad leer gelassen, so wird zur Speicherung der aktuelle Pfad verwendet. Das trifft z.B. auch auf Info Fenster zu, die Tabellen in Textdateien oder in Excel-Dateien exportieren.
 
-``Repetitions`` executes the macro as often as defined here.
+``Repetitions`` führt das Makro so oft aus wie hier angegeben.
 
-``Single stepping`` allows executing the macro in single steps.
+``Single stepping`` erlaubt die Durchführung des Macros in Einzelschritten.
 
-[Macro definitions and manual macro editing](/en/help/macro/macro-definitions)
+[Macrodefinitionen und manuelles Editieren von Makros.](/de/help/macro/macro-definitions)
 
-Macro collections can be managed by the [Macro organizer](/en/help/macro/macro-organizer) for quick access.
+Makrosammlungen können für einen schnellen Zugriff im [Macro organizer](/de/help/macro/macro-organizer) verwaltet werden.

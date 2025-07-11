@@ -1,13 +1,13 @@
 # Batch processing
 
-``Batch processing`` allows automatic macro execution for several files in a directory. For this, at first the macro to be used is selected by ``Macro file``.
+``Batch processing`` ermöglicht die automatische Durchführung von Macros für mehrere Dateien in einem Verzeichnis. Dazu wird zunächst mit Macro file das gewünschte Macro ausgewählt.
 
-``Data path`` defines the directory containing the files to be worked on.
+``Data path`` bestimmt das Verzeichnis mit den zu bearbeitenden Dateien.
 
-If the macro includes any saving operations, e.g. Save, Plot or Info windows (exporting values to Excel files), these files will be stored to ``Result path``.
+Sind im Macro Save-Operationen definiert, z.B. Save, Plot oder Info-Fenster (die Werte in Excel-Tabellen speichern), dann werden diese Files im ``Result path`` geschrieben.
 
-If ``Data path`` and ``Result path`` are identical, the original data is overwritten by the edited data.
+Sind ``Data path`` und ``Result path`` identisch, werden die Rohdaten mit den bearbeiteten Dateien überschrieben.
 
-``File suffixes`` defines the file extensions the macro will be applied to. Several extensions can be specified using commas as separator, e.g. .wav,.dat;
+``File suffixes`` legt die Dateiendungen fest, auf die das Macro angewendet wird. Es können mehrere Endungen per Komma getrennt angegeben werden, z.B. .wav,.dat;
 
-``File filter`` selects only those files having the listed strings in their file names. Several strings can be specified using commas as separator, e.g. T1,T10. If the field is left blank, all files with the selected extensions will be processed.
+``File filter`` wählt die Dateien aus, die die gelisteten Strings im Dateinamen haben. Es können mehrere Strings durch Komma getrennt angegeben werden, z.B. T1,T10. Wird das Feld leer gelassen, dann werden alle Dateien mit der gewählten Endung verarbeitet.

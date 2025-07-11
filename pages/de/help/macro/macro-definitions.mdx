@@ -1,8 +1,8 @@
 # Macro definitions
 
-A WinMF Macro definition consists of a text file with a setup name in each line. Each line corresponds to a macro step, which executes the menu listed in this line with the associated setup. When a macro is executed, the menu setup for the macro step is loaded into the menu in question and then executed in the current domain (time domain, frequency domain, etc.). In order to achieve a well-defined macro execution, the first line shall specify the domain.
+Eine WinMF Makrodefinition besteht aus einer Textdatei, die in jeder Zeile einen Setupnamen enthält. Jede Zeile entspricht einem Makroschritt, bei dem das in dieser Zeile gelistete Menü mit dem Setup ausgeführt wird. Beim Abspielen des Makros wird das Menüsetup des Makroschrittes in das auszuführende Menü geladen und anschließend in der gerade aktuellen Domäne (Zeitbereich, Frequenzbereich, etc.) ausgeführt. Um eine definierte Ausführung eines Makros zu erzielen, muss die erste Zeile die Domäne definieren.
 
-A simple example for a macro recorded by the macro recorder:
+Ein einfaches Makro, das mit dem Makrorekorder aufgezeichnet wurde ist z.B.:
 
 Demo_000001.frequency_domain.set
 
@@ -16,25 +16,25 @@ Demo_000002.FE.set
 
 Demo_000002.AD.set
 
-The macro name is "Demo", the indices are assigned by the recorder automatically to distinguish between menus used several times. The following actions are performed:
+Der Makroname ist "Demo", die Nummern werden vom Makrorecorder automatisch ergänzt, um mehrfach ausgeführte identische Menüs zu unterscheiden. Es werden dadurch folgende Aktionen durchgeführt:
 
-1. Switching to frequency domain
+1. Wechsel in den Frequenzbereich
 
-2. Initialise measuring hardware
+2. Initialisierung der Messhardware
 
-3. Setting up the frontend with setup Demo_000001
+3. Setup des Frontends mit dem Setup Demo_000001
 
-4. AD measurement with setup Demo_000001
+4. AD-Messung mit dem Setup Demo_000001
 
-5. Setting up the frontend with setup Demo_000002
+5. Setup des Frontends mit dem Setup Demo_000002
 
-6. AD measurement with setup Demo_000002
+6. AD-Messung mit dem Setup Demo_000002
 
-Macro definition and all associated setups need to be located in the same directory in order to run the macro.
+Damit das Makro abgespielt werden kann, müssen die Makrodefinition und alle zugehörigen Setups im gleichen Verzeichnis liegen.
 
-## Manual macro editing
+## Manuelles Editieren von Makros
 
-The most convenient way to edit a macro and the associated setups is by using the [Macro Editor](/en/help/macro/edit-macro). However macros can easily be edited manually as well. Using an arbitrary text editor the macro definition can be modified. Identical setups can also be called several times of course. A variation of the macro above might look like the following:
+Der einfachste Weg ein Makro und die zugehörigen Setups zu editieren ist die Benutzung des [Macro Editors](/de/help/macro/edit-macro). Makros können aber problemlos auch manuell editiert werden. Dazu einen beliebigen Texteditor verwenden um die Makrodefinition zu ändern. Es können natürlich auch identische Setups mehrfach aufgerufen werden. Eine Variante des obigen Makros könnte so aussehen:
 
 Demo_000001.frequency_domain.set
 
@@ -52,8 +52,8 @@ Demo_000003.FE.set
 
 Demo_000001.AD.set
 
-Accordingly the same AD setup is called 3 times, but after changing the frontend setup each time, e.g. in order to activate other channels.
+Es wird folglich 3 mal das gleiche AD-Setup aufgerufen, aber vorher jeweils ein anderes Frontend-Setup definiert, um z.B. andere Kanäle aktiv zu schalten.
 
-## Editing menu setups belonging to macro definitions
+## Editieren von Menüsetups aus Makrodefinitionen
 
-Menu setups associated to macro definitions are to be handled just like any other menu setup. So just load the setup to be modified in the corresponding menu by File/Load setup; inside the menu all desired changes can be made, and afterwards the setup only needs to be saved via File/Save setup under the same file name.
+Menüsetups aus Makrodefinitionen können genauso wie jedes andere Menüsetup behandelt werden. Dazu einfach in dem entsprechenden Menü unter File/Load setup  das zu ändernde Setup laden. Im Menü werden dann alle zu ändernden Einstellungen durchgeführt und anschließend das Setup unter File/Save setup unter gleichem Namen wieder gespeichert.

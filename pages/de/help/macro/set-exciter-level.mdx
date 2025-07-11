@@ -1,47 +1,32 @@
 # Set exciter level
 
-This function only applies when [recording](/en/help/macro/start-macro-recording) or [executing](/en/help/macro/play-macro) macros.
+Diese Funktion wirkt sich nur aus, wenn ein [Makro aufgezeichnet](/de/help/macro/start-macro-recording) oder [wiedergegeben](/de/help/macro/play-macro) wird.
 
-Under ``Exciter level`` a voltage value is to be defined. All subsequent measuring menus in the macro (except [Play](/en/help/adda/play)) passing a signal via the DA converter, will disregard the value defined in their setup and use the value specified here instead. Normalisation is done absolute, thus considering the output sensitivity set at the frontend. Normalisation is based on the assumption, that the crest factor of the signal is 3dB. For other crest factors this is to be considered when choosing the voltage value. The value specified here virtually is a variable for subsequent measuring menus.
+Im Panel ``Exciter level`` kann ein Spannungswert definiert werden. Alle im Makro nachfolgenden Messmenüs (ausgenommen [Play](/de/help/adda/play)) , die ein Signal über den DA-Wandler ausgeben, ignorieren dann den in ihrem Setup eingestellten Wert und verwenden stattdessen den hier eingestellten Wert. Die Normierung erfolgt absolut, also unter Berücksichtigung der gerade im Frontend eingestellten Output-Sensitivity. Die Normierung basiert auf der Annahme, dass der Crest-Faktor im Signal 3dB beträgt. Für andere Crest-Faktoren ist das entsprechend bei der Wahl des Spannungswertes zu berücksichtigen. Der hier eingestellte Wert ist quasi eine Variable für nachfolgende Messmenüs.
 
-Changes after 07.02.2019:
+## Änderung ab 07.02.2019:
 
-The chosen voltage is calculated always referenced to the chosen physical output, that means referenced to line out if Amp_out = line, otherwise referenced to the internal or external amp gain.
+Die hier eingestellte Spannung wird immer mit Bezug zum physikalischen Ausgang berechnet, also bezogen auf die Line Ausgänge bei Amp_output = line, sonst mit Bezug zu den internen oder externen Amp gains.
 
-If under File/Preferences the option All outs are normalized to exciter Volt... is activated, all active outputs will be set to the voltage defined with set exciter level. If the normalization is not used, only out 1 is considered. All other outputs are relative to output 1 with their indivdual gain differences.
+Wenn unter File/Preferences die Option All outs are normalized to exciter Volt... aktiviert ist, dann werden alle aktivierten Ausgänge eingestellt, im anderen Fall wird nur Kanal 1 berücksichtigt, die anderen Kanäle verhalten sich relativ dazu entsprechend der Gain Unterschiede.
 
-In connection with the [Set relative exciter level](/en/help/macro/set-relative-exciter-level) menu complex level sequences can be implemented within the macro process, without having to store an own measuring menu for each level.
+Im Zusammenspiel mit dem Menü [Set relative exciter level](/de/help/macro/set-relative-exciter-level) können im Makroprozess komplexe Pegelabläufe programmiert werden, ohne für jeden Pegel ein eigenes Messmenü-Setup zu speichern.
 
-Example:
+Beispiel:
 
-The macro calls the ADDA menu with a sine excitation and a level of -20dBFS. The output sensitivity of the frontend is set to 26dBu. Thus the sine signal is played back with 6dBu (rms). At this point the macro looks something like this:
+Ein Makro ruft das ADDA-Menü mit einem Sinus-Exciter und einem Level von -20dBFS auf. Das Frontend ist auf 26dBu output-sensitivity eingestellt.  Der Sinus wird dann mit 6dBu (rms) wiedergegeben. Das Makro sieht an dieser Stelle z.B. so aus:
 
-.
-
-.
-
+```plaintext
 Out1_26dBu.Robo3.set
-
 -20dBFS.ADDA.set
+```
 
-.
+Wenn man jetzt das Menü ``Set exciter level`` in das Makro einfügt und den Level z. B. auf 1Vrms festlegt, dann wird der Sinus so umnormiert, dass 1Vrms über das Frontend wiedergegeben werden.
 
-.
-
-Inserting the ``Set exciter level`` menu into the macro and setting the level to 1Vrms for example, the sine signal is re-normalised in such a way, that 1Vrms is emitted by the frontend.
-
-.
-
-.
-
+```plaintext
 1Vrms.Set_exciter_level.set
-
 Out1_26dBu.Robo3.set
-
 -20dBFS.ADDA.set
+```
 
-.
-
-.
-
-The settings are valid within the macro until [Unset exciter level](/en/help/macro/unset-exciter-level) is called in the macro or the macro is terminated.
+Die Einstellung sind im Makro solange gültig, bis [Unset exciter level](/de/help/macro/unset-exciter-level) im Makro aufgerufen wird, oder das Makro beendet ist.
