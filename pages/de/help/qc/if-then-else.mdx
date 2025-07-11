@@ -1,0 +1,7 @@
+# If ... Then... Else
+
+Es können mit diesem Menü bedingte Makroausführungen im QC Prozess eingebaut werden. Ist die ``If-Bedingung`` erfüllt, dann wird der ``Then`` Teil ausgeführt. Wenn ``jump steps`` ausgewählt sind, dann springt das Makro um diese Schritte im Makro. Negative Schrittweiten springen zurück, positive vor. Die Schrittweite wird ausgehend von der Position des If-then-else Menüs gezählt. Sprünge außerhalb des Makros werden ignoriert und führen zu einem Abbruch der QC mit **Process Error** und **FAILED**. Bei der Berechnung der Sprungweite werden alle Zeilen des Makros gezählt, also auch kommentierte Zeilen und Makrozeilen anderer Subversionen. Springt man in oder vor eine kommentierte Zeile oder in oder vor eine Zeile mit einer anderen Subversion als der gerade ausgeführten, dann werden diese ignoriert bis wieder eine ausführbare Zeile erreicht wird.  Unter ``Max repetitions`` wird die Anzahl maximaler Wiederholungen der Sprünge definiert. Die ``If-Bedingung`` wird nach jedem Sprung erneut evaluiert bis entweder die ``If-Bedingung`` nicht mehr erfüllt ist, oder ``Max repetitions`` errreicht wird.
+
+Zu berücksichtigen ist, dass der Prozess Zustand **FAILED** nicht nach einer Wiederholung eines Makroschrittes zurückgesetzt wird.
+
+tbc.

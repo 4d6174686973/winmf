@@ -1,14 +1,15 @@
 # Check tolerance
 
-``Check tolerance`` performs a tolerance band check for the current file. A range for the tolerance check can be defined for every channel ("range to check"). The tolerance bands are described by the ``tolerance file``.
+Check tolerance führt eine Toleranzschlauchpüfung des gerade im Speicher befindlichen Files durch. Für jeden Kanal kann ein Frequenzbereich (oder Zeitbereich) für die Überprüfung definiert werden (``Range to check``). Die Toleranzschläuche werden durch das ``tolerance file`` beschrieben.
 
-The ``tolerance file`` will be verified prior to the check. The ``tolerance file`` must have the same sampling rate and number of samples as the current file. It also has to contain the double amount of channels (an upper and lower limit has to be defined for every channel).
+Bevor die eigentliche Prüfung startet, wird das tolerance file auf Gültigkeit überprüft. Es muss die gleiche Samplerate und Samplezahl wie das zu prüfende File aufweisen. Die Kanalanzahl muss dopellt so groß sein (für jeden Kanal muss eine obere und untere Grenze definiert sein).
 
-The tolerance is checked channel by channel. Channel 1 of the current file is compared to its specified limits (channel 1 and 2 in the ``tolerance file``), then channel 2 is checked (channel 3 and 4 in the ``tolerance file``), etc. For a slower procedure it is possible to specify a "pause" in between the checks. This feature is especially useful for the observation of new QC procedures.
+Die Prüfung erfolgt kanalweise, zuerst wird Kanal 1 mit seinen Limits (Kanal 1 und 2 im tolerance file) verglichen, dann erfolgt die Prüfung von Kanal 2 mit seinen Limits (Kanal 3 und 4 im tolerance file), usw. Wird ein gemütlicherer Ablauf erwünscht, so kann zwischen den Prüfungen eine Pausenzeit definiert werden (``Pause``). Das kann z.B. bei neuen QC-Prozessen nützlich sein, um den Prüfablauf zu beobachten.
 
 ![v1-0-00427_fr_setup_tol](/v1-0-00427_fr_setup_tol.png)
-A violation of the specified limits is indicated by colored circles around the affected areas. A pause of 1 second then allows for an initial inspection. The results of the tolerance check are recorded in the QC sheet. Tolerance violations are marked.
 
-There is no limit to the maximum number of channels to be checked.
+Eine Toleranzverletzung wird mit farbigen Kreisen an den entsprechenden Stellen angezeigt. Es wird dann auch automatisch eine Pause von 1s gemacht. Ergebnisse einer Toleranzschlauchprüfung werden im QC-Prozess automatisch in der QC-Tabelle erfasst. Im Fall einer Toleranzverletzung werden entsprechende Hinweise in der Tabelle eingefügt.
 
-The function [learn tolerance](/en/help/qc/learn-tolerance) offers a convenient method of generating the tolerance limits and the corresponding tolerance file. A manual generation is possible as well.
+Für die zu prüfende Kanalanzahl gibt es keine Limitierung.
+
+Die Erstellung von Toleranzschläuchen kann sehr komfortabel mit [learn tolerance](/de/help/qc/learn-tolerance) erfolgen. Eine manuelle Erstellung ist natürlich auch möglich.

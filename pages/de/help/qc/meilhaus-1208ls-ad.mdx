@@ -1,0 +1,11 @@
+# Meilhaus 1208LS AD
+
+Mit diesem Menü können Multimeter der Meilhaus Redlab 1208 Serie angesteuert werden. Zur Zeit ist nur die Auswertung der AD-Wandler implementiert. Primärer Zweck ist die Erfassung von Gleichspannungen, z.B. zur Qualitätssicherung bei der Elektronikfertigung. Das Ergebnis einer Messung wird als Zeitsignal in der Time domain dargestellt. Es muss vor Benutzung die mitgelieferte Meilhaus Software installiert werden. Es können in WinMF folgenden Parameter eingestellt werden:
+- Board ID: ID des anzusteuernden Meilhaus Gerätes. In der Regel ist das 0, wenn nur 1 Multimeter angeschlossen ist
+- AD-mode: konfiguriert den AD-Wandler. Es kann zwischen differentieller Messung mit maximal 4 Kanälen und single-ended mit bis zu 8 Kanälen gewählt werden. Es stehen  Spannungsbereiche von +-1V bis +-20V zur Verfügung
+- Samplerate: stellt die Samplerate des AD-Wandlers ein
+- \# of Samples: definiert die Anzahl der Samples
+- First channel: der erste AD-Kanal (0 ist die kleinste Kanalnummer)
+- Last channel: der letzte AD-Kanal
+
+Auswertungen, wie Überwachung der zulässigen Grenzen eines Messwertes, usw. werden dann in einem weiteren Schritt z.B. im [Statistics Menü](/de/help/info/statistics) vorgenommen.

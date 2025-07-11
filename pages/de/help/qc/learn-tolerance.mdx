@@ -1,36 +1,39 @@
 # Learn tolerance
 
-``Learn tolerance`` generates a tolerance band for each channel of the current file. The tolerance band is generated regarding the modulus (frequency domain) or the amplitude (time domain). Tolerance bands are always generated for the whole file. The range for the tolerance check is selected per channel in the [check tolerance](/en/help/qc/check-tolerance) menu.
+Learn tolerance erstellt für das gerade im Speicher befindliche Spektrum oder Zeitsignal für jeden Kanal einen Toleranzschlauch. Die Toleranzschläuche beziehen sich im Frequenzbereich auf den Betrag, im Zeitbereich auf die Amplitude. Es wird immer ein Satz Toleranzschläche für den gesamten Frequenzbereich, bzw. Zeitbereich erstellt. Die Auswahl des zu prüfenden Bereichs erfolgt kanalweise im Menü [check tolerance](/de/help/qc/check-tolerance).
 
-The tolerance bands are saved in a file specified in ``tolerance file``. If the ``tolerance file`` already exists the limits will be adjusted to the new values if the ``tolerance file`` meets the following criteria:
-- Same sampling rate and total number of samples as the current time signal or spectrum.
-- Double the amount of channels as the current time signal or spectrum (upper and lower limit for each channel)
+Der (oder die) Toleranzschläuche werden unter dem Filenamen, der bei ``tolerance file`` angegeben ist, gespeichert, bzw. ein bestehendes Toleranzfile wird in den Limits angepasst.
 
-Attention! If a wrong or not suitable file is currently loaded, the tolerance file will be adjusted accordingly if it is compatible. Hence, it is highly recommended to backup tolerance files.
+**Achtung**: Wenn sich ein falsches oder ungeeignetes File im Speicher befindet werden die Toleranzen darauf natürlich auch angepasst, sofern die Files kompatibel sind. Sichern Sie deswegen immer die Toleranzfiles.
 
-In case the ``tolerance file`` name is not specified, a name is derived from the current file name + tolerance.suffix.
-Attention! an existing file with the same name will be replaced.
+Wenn das Feld leer ist, wird ein neues File erstellt. Der Filenmame für das neue File wird automatisch aus dem Filenamen des im Speicher befindlichen Files gebildet: [filename - tolerance.suffix]. Vorsicht: Ein evt. vorhandenes File mit demselben Namen wird überschrieben!
 
-## Tolerance Band Set-Up
+Wenn ein existierndes File angegeben wurde, so wird bei Erstellung der Toleranzen zunächst versucht dieses File zu laden. Gelingt das nicht, so wird unter dem Namen ein neues Toleranzfile erstellt. Konnte das File geladen werden, wird  überprüft ob das im Speicher befindliche File und das geladene Toleranzfile kompatibel sind. Das Toleranzfile muss folgende Voraussetzungen erfüllen:
 
-``Tolerance set-up`` allows for the specification of an upper and lower limit in dB and an additive absolute offset per channel. The absolute offset causes a relative widening of the tolerance band. It is added to the limit.
+- Übereinstimmung in Samplerate und Samplezahl mit dem im Speicher befindlichen File
 
-Example: The sensitivity of a loudspeaker is 94dB (1 Pa). The specification of a 3dB tolerance results in an upper limit of 94dB + 3dB = 97dB. An additive absolute offset of .5 raises the upper limit to 1.41Pa + .5Pa = 1.91Pa. The lower limit is affected accordingly. In the frequency domain the lower limit is confined to values equal to and above 0.
+- Die Kanalanzahl des Toleranzfiles muss doppelt so groß wie die Kanalanzahl des im Speicher befindlichen Files sein (für jeden Kanal muss ein oberes und unteres Limit existieren)
 
-Hint: It is possible to check for upper limits only (eg. distortion or noise measurements) by setting the ``lower limit dB`` to high values (eg. 200dB).
+## Steuerung der Toleranschlaucherstellung
 
-The generation of the tolerance bands is not a simple shift of the original curve. This would lead to unsatisfactory results for jagged curves or impulse responses. Small shifts of peaks and notches would result in an immediate tolerance violation. Hence, smoothing is implemented in the tolerance band generation. In the frequency domain the smoothing interval is the "relative bandwidth" ([1/oct]), in the time domain it is the "interval" ([s]). For the generation of the tolerance bands a floating minimum and maximum detection is executed within the boundaries set by the smoothing interval. The limits and offsets are then applied to the maximum in each interval for the upper limit and to the minimum for the lower limit.
+Unter ``tolerance setup`` können für jeden Kanal ein oberes und unteres Limit in dB und ein additiver Offset auf die Limits eingestellt werden. Der dB-Offset bewirkt eine relative Aufweitung des Toleranzschlauches in Bezug zur Ausgangskurve. Der additive Offset wird zusätzlich auf das jeweilige Limit angewendet.
 
-Example: The smoothing interval in the frequency domain is given as 1/1 octave. At a frequency of 1000Hz the maximum and minimum are detected within an octave (1000Hz) around the 1000Hz center frequency. The upper tolerance is then: maximum within the octave + relative offset in dB + additive absolute offset. The lower limit is generated accordingly.
+Beispiel: Betrachtet wird die Sensitivity eines Lautsprechers. Die Sensitivity sei 94dB, also 1Pa als Absolutwert. Ein oberes Limit von 3dB würde zunächst eine obere Toleranzgrenze von 94dB + 3dB  = 97dB ergeben. Wäre zusätzlich ein Offset von z.B. 0.5 angegeben, dann würde die Toleranzgrenze auf 1,41Pa + 0,5Pa = 1,91Pa festgelegt werden. Für die untere Toleranzgrenze wirken sich die Paramater analog aus. Im Frequenzbereich werden negative Werte auf 0 limitiert.
 
-The wider the smoothing interval is specified, the more tolerant the QC process is towards shifts of peaks and notches.
+Tip: soll lediglich eine obere Grenze getestet werden (z.B. bei Verzerrungskurven oder Rauschteppichen), so kann für das ``Lower limit dB`` ein sehr großer Wert (z. B. 200dB) angegeben werden.
+
+Die Erstellung der Toleranzschläuche erfolgt natürlich nicht einfach durch Parallelverschiebung der Ausgangskurven. Das würde bei zerklüfteten Verläufen oder Impulsantworten zu unbefriedigenden Ergebnissen führen, da einen minimale Verschiebung bereits zu Toleranzverletzungen führen würde. Um dem entgegen zu wirken, muss eine weitere Unschärfe eingebaut werden. Der Steuerparameter ist im Frequenzbereich die relative Bandbreite (``Bandw. [1/oct]``), im Zeitbereich das ``Interval [s]``. Bei der Erstellung eines Toleranzschlauches wird eine gleitende Min-Max Suche mit der angegebenen Bandbreite, bzw. Intervallgröße, durchgeführt. Die Anwendung der Offsets erfolgt für das obere Limit in jedem Intervall jeweils bezogen auf das Maximum, der untere Offset wird immer bezogen auf das Minimum erstellt.
+
+Beispiel: die Unschärfebandbreite sei im Frequenzbereich mit 1 angegben, also 1/1 octave. Bei der Frequenz 1000Hz würde in einem Bereich von einer Oktave (1000Hz) um die Mittenfrequenz das Minimum und Maximum ermittelt. Die obere Toleranz bei der Frequenz 1000Hz wäre dann: Maximum + relativer dB-Offset + additiver absoluter Offset. Das Minimum wird entsprechend ausgewertet.
+
+Je größer das Unschärfeintervall angegeben wird, desto toleranter verhält sich der Prüfprozess gegenüber Verschiebungen von Einbrüchen und Überhöhungen.
 
 ## Further Processing
 
-It is generally recommended to smooth measurement data before using it for the generation of tolerance bands. [Windowing](/en/help/edit/apply-window) of impulse responses is a method of smoothing their spectra, as is the application of a [smoothing function](/en/help/edit/smooth). A smoothing of time signals can be achieved by multiplication with a rectangular function and subsequent IFFT. Complex smoothing processes can be automated with [macros](/en/help/macro).
+Es ist grundsätzlich empfehlenswert die Ausgangsdaten zu glätten bevor auf deren Basis Toleranzschläuche erstellt werden. Für Spektren kann eine Glättung zum Beispiel durch eine [Fensterung](/de/help/edit/apply-window) der Impulsantwort erfolgen oder/und durch eine Glättung mit der [Smooth Funktion](/de/help/edit/smooth). Glättungen von Zeitsignalen können durch eine Multiplikation des zugehörigen Spektrums mit einer Rechteckfunktion mit anschließender IFFT durchgeführt werden. Komplexe Glättungsvorgänge können mit Hilfe der [Makrofunktionen](/de/help/macro) automatisiert werden.
 
-## Automated Generation of Tolerance Bands
+## Automatisierte Toleranzschlaucherzeugung
 
-In quality control it is common practice to derive tolerance bands from a large number of measurements that have been checked and approved.
+In der Qualitatskontrolle für Fertigunsgprozesse ist es üblich die Toleranzschläuche auf Basis eines ganzen Satzes von Messungen zu erstellen. Die Messungen sind vorher manuell kontrolliert und für gut befunden worden, also als typische Messergebnisse identifiziert worden.
 
-For the automated generation of tolerance bands any number of approved measurements has to be copied into a folder. The generation of tolerance bands as well as all prior processing can be automated using the [macro functionality](/en/help/macro). Using the [batch processing](/en/help/macro/batch-processing) feature, the macro can be applied to the folder containing the measurement data. An existing tolerance file has to be deleted to allow for the generation of a new file.
+Zur automatischen Erstellung der Toleranzschläuche werden die für gut befundenenen Kurven in einen Ordner kopiert. Mit Macro recording wird die [Aufzeichnung eines Makros](/de/help/macro)gestartet, das die Toleranzerstellung und alle vorher durchzuführenden Glättungen, Fensterungen und andere Prozessingschritte ausführt. Nun wird mit dem Menü  [Batch processing](/de/help/macro/batch-processing) das Makro auf den Ordner mit den Basisdaten angewendet. Es ist evt. ein vorhandenes Toleranzfile zu löschen, da sonst eine weitere Anlernung und keine neue Erstellung erfolgt.

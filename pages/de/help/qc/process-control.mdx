@@ -1,63 +1,67 @@
 # Process Control
 
-The QC process is controlled by the "process control". The result is recorded in an Excel file containing a production log and a QC sheet. The production log keeps track of all process steps and additional information such as the date, the serial number of the device under test and the name of the responsible QC tester. Interrupted and aborted QC processes can easily be identified and analyzed with the help of the production log. The QC sheet contains all information regarding the actual tests and their results. Limit violations are marked, stating the related test procedure, the channel number and the violated limit. New results will be appended to the QC sheet if the process is repeatedly executed for the same serial number.
+Im Prozess Kontroller wird der QC-Prozess eingerichtet und gesteuert. Das Ergebnis des QC-Prozesses ist eine Excell Tabelle mit dem Tabellenblatt Production Log und dem Tabellenblatt QC. Das Blatt Production log listet alle ausgeführten Schritte des Prozesses, enthält Datum des Tests, Seriennummer des getesteten Gerätes und den Namen des QC-Testers. Bricht ein Prüfprozess aus einem unbannten Grund ab, so lässt sich leicht anhand des Log-Blattes der Schritt im Prozess ermitteln und analysieren. Das QC-Blatt enthält alle für die Prüfung des Gerätes relevanten Informationen und Prüfergebnisse. Wird ein Test nicht bestanden, so wird detailliert Auskunft gegeben, bei welchem Test ein Grenzwert verletzt wurde. Weiterhin werden Kanalnummer und das verletzte Limit angezeigt. Wird ein QC-Prozess mehrmals mit der gleichen Seriennummer durchgeführt, so wird die bereits existierende Excel durch die neuen Ergebnisse ergänzt.
 
 ## Administration
 
 ### Process Administration
 
-The product path and the production lot are defined in the ``administration/process administration`` menu. The measurement results and the Excel file are saved in the path "product path\production lot\serial number\".
+Im Menü ``Administration/Process administration`` wird der ``Product path`` und das ``Production lot`` definiert. Die Messergebnisse und die Excell Tabelle werden in diesem Pfad gespeichert, der wie folgt aufgebaut ist:
 
-Further options are:
+``Product path\Production lot\Serial number\``
 
-``Replace disallowed characters in serial number by -"``: All disallowed characters in the serial number will be replaced by "-", making sure that the QC process can be executed. Scanned serial numbers often contain disallowed characters which have to be replaced prior to starting the process.
+Weitere Optionen sind
 
-``Use serial number as production log file`` name replaces the file name in the other menus with the serial number. This option is mandatory if all results of a QC process are to be recorded in one Excel sheet.
+``Replace unallowed characters in serial number by -``: die in Datei- und Pfadnamen nicht verwendbaren Zeichen werden automatisch durch ein "-" ersetzt. Damit ist sichergestellt, dass der QC-Prozess durchgeführt werden kann. Unerlaubte Zeichen werden öfters beim Scannen von Seriennummern erfasst und müssen vor dem Start des Prozesses ersetzt werden.
 
-``Excel output`` writes the results of the QC-process into an Excel sheet. This requires Excel to be installed on the PC as the Excel Com-server is used. If Excel output is not activated, a simple CSV ASCII-file is written instead.
+``Use serial number as production log filename``: Ersetzt den Filenamen in anderen Menüs, z.B. bei Info/Statistics durch die Seriennummer. Diese Option muss aktiviert werden, wenn alle Ergebnisse eines QC-Prozesses in einer Excell Tabelle erfasst werden sollen.
 
-``Show grafic output`` can be deactivated to speed up the QC-process.
+``Excel output`` schreibt die Ergebnisse des QC-Prozesses in eine Excel Tabelle. Es ist erforderlich, dass Excel auf dem Rechner installiert ist, da der Com-Server von Excel verwendet wird. Wenn die Checkbox Excel output deaktiviert ist, dann wird ein einfaches CSV-file (ASCII-Textfile) geschrieben.
 
-``Repeat QC``: a number between 1 and 1e99 can be used to repeat the QC-process by this number. Combined with the Stop after failed option, it can be used to detect errors which occur only very seldom.
+``Show grafic output`` kann deaktiviert werden, um den Prozess zu beschleunigen.
 
-``Stop after failed`` stops the QC-process immediately when a FAILED is detected during the QC-process.
+``Repeat QC`` hier kann eine Zahl zwischen 1 und 1e99 eingetragen werden, um einen QC-Prozess mehrfach zu wiederholen. In Kombination mit der Option Stop after failed können selten auftretende Fehler detektiert werden.
 
-``List of QC-officers``: Here the administrator can enter the names of all QC testers. The currently active QC officer can be selected in the main menu under "process output". The name of the current QC tester is recorded in the production log.
+``Stop after failed`` stoppt sofort den QC-Prozess, wenn ein FAILED während des QC-Prozesses erkannt wird.
 
-``Process parameters``: Chooses the macro to be executed. "Single stepping" allows for a step-by-step test of the macro. The QC process allows the execution of macro subversions (see [Play macro](/en/help/macro/play-macro)).
+``List of QC-officers``: Der Administrator gibt hier die Namen der QC-Tester ein. Im Hauptmenü kann unter Process Output der gerade tätige QC-Tester aus der Liste gewählt werden. Der Name wird automatisch in der QC-Tabelle im Production log erfasst.
+
+``Unter Process parameters`` wird das auszuführende Makro gewählt. Zum Testen des Makros kann der Ablauf auf ``Single stepping`` umgestellt werden. Es können Subversionen von Makros ausgeführt werden (s. [Play macro](/de/help/macro/play-macro)).
 
 ### Automation
 
-The QC process can be controlled remotely using the menu administration/[process automation](/en/help/qc/automation).
+Im Menü Administration/[process automation](/de/help/qc/automation) kann der QC-Prozess auch durch externe Programme ferngesteuert werden.
 
 ## Process Output
 
-``QC-officer``: Selection of the current QC tester.
+Bei ``QC-officer`` wird der gerade tätige QC-Tester ausgewählt.
 
-``Product path, Production log``: Display of the choices made in the "process administration" menu.
+``Product path`` und ``Production log`` zeigen die im Untermenü ``Process administration`` gemachten Einstellungen.
 
-``Serial number``: Input of the serial number of the current device under test. The number can be entered manually or using a scanner (make sure the previous entry has been deleted before scanning). The number is deleted after the completion of a QC process and the cursor is placed in this field for a direct input of a new serial number.
+Unter ``Serial number`` wird die Seriennummer des zu testenden Produktes eingegeben. Die Eingabe kann manuell erfolgen oder mit einem Scanner. Wenn gescannt wird ist darauf zu achten, dass die vorherige Eingabe gelöscht wurde. Nach Abschluss eines QC-Prozesses wird die letzte Eingabe automatisch gelöscht und der Cursor in die Eingabemaske für die Seriennummer gesetzt. Es kann dann sofort eine neue Nummer gescannt werden.
 
 ## Process Control
 
-``Start`` starts the QC macro. ``Pause`` interrupts the process until ``pause`` or ``start`` are pressed. Cancel aborts the process. The status display shows the current state of the QC process. Possible states are ``idle``, measuring, ``programming``, ``waiting``, ``evaluation``, ``processing``, ``PASSED``, ``FAILED``, and ``process error``.
+Mit ``Start`` wird das QC-Makro gestartet. Pause unterbricht den Ablauf, bis erneut Pause oder ``Start`` gedrückt wird. ``Cancel`` bricht den Prozess ab. Im großen Status-Feld wird der gerade aktuelle Status des QC-Prozesses angezeigt. Im Ruhezustand wird idle angezeigt. Weitere Zustände sind ``measuring``, ``programming``, ``waiting``, ``evaluation``, ``processing``, ``PASSED``, ``FAILED`` und ``process error``.
 
-``Process error`` is displayed in the status display if the process enters an unknown state. Possible reasons include an unsuccessful RS232 communication, a failed attempt to write into the Excel file (eg. if the file is opened or a mapped network drive does not exist). The QC process is aborted whenever a ``process error`` occurs. The cause for the error has to be identified and eliminated before the process can be started again.
+``Process error`` wird angezeigt, wenn ein nicht vorgesehener Zustand eintritt. Das kann z.B. eine nicht erfolgreiche RS232-Kommunikation sein, oder ein fehlgeschlagener Versuch in die QC-Tabelle zu schreiben (z.B. weil das File geöffnet ist, oder ein Netzwerklaufwerk nicht mehr existiert). Wenn ein ``process error`` auftritt, dann wird der QC-Prozess abgebrochen. Es ist dann zunächst die Fehlerursache zu beseitigen, bevor der QC-Prozess wieder ausgeführt wird.
 
 ## Process Details
 
-The ``process details`` table lists all macro steps. The first column ``name`` contains the user assigned name of the step. The column ``menu`` indicates the menu called by the respective step. The column ``message`` holds additional information such as results of tolerance checks, or hardware communication messages, etc.
+Die Process ``details`` Tabelle listet alle auszuführenden Makroschritte auf. In der ersten Spalte ``Name`` ist der durch den Benutzer definierte Name des Makroschrittes gezeigt, in der Spalte ``Menü`` wird das durch den Makroschritt aufzurufende Menü gelistet. In der Spalte ``Message`` werden Informationen, die bei den einzelnen Messungen und Prozessschritten anfallen, ergänzt.  Das sind zum Beispiel Ergebnisse von Grenzwertüberprüfungen oder Meldungen der Kommunikation zwischen Geräten, etc..
 
-## Creation of QC Process Macros
+# Erstellung von Makros für QC-Prozesse
 
-The creation of QC process macros is done using the [macro recorder](/en/help/macro/start-macro-recording). Macros generated using the recorder can directly be used as QC process macros. It is recommended to assign explicit names to every single macro step. Further information about the structure of a macro definition and macro editing can be found here: LINK:definition and editing of macros.
+Die Erstellung von Makros kann z.B. einfach mit dem [macro recorder](/de/help/macro/start-macro-recording) erfolgen. Ein so aufgezeichnetes Makro kann dann unmittelbar für einen QC-Prozess verwendet werden. Es empfiehlt sich jedoch den einzelnen Schritten aussagekräftige Namen zuzuordnen. Weitere Informationen zum Aufbau einer Makrodefinition und zum Editieren sind hier zu finden:
 
-All hardware components should be initialized within the macro to ensure a smooth execution of the QC process, even if the initialization would only be necessary after a reboot or a change of hardware.
+[Macrodefinitionen und Editieren von Makros](/de/help/macro/makrodefinitionen).
 
-Complex macros should be divided into short and clear sub-macros. For instance:
-- Initialization of relay cards and measurement hardware
-- Frequency response: front-end set-up, measurement, tolerance check, set file name, save, plot
-- Impedance response: front-end set-up, measurement, tolerance check, set file name, save, plot
+Um einen reibungslosen Ablauf von QC-Prozesses zu gewährleisten sollten alle beteilgten Hardwarekomponenten im Makro initialisiert werden, auch wenn dies eigentlich nur nach einem Rechnerneustart oder einem Wechsel der Hardware nötig wäre.
+
+Als Strategie zur Erstellung sollten komplexe Abläufe mit vielen Schritten in einzelne Makros unterteilt werden, z.B.
+- Initialisierung der Hardware (Relaiskarten und Messhardware)
+- Frequenzgang: Frontendsetup, Messung, Toleranzschlauchüberprüfung, Set filename, Save, Plot
+- Impedanzgang: Frontendsetup, Messung, Toleranzschlauchüberprüfung, Set filename, Save, Plot
 - ...
 
-After the recording of all sub-macros, the menus of the sub-macros should be named. All sub-macros have to be combined in one single macro file for the QC process.
+Wenn alle einzelnen Makros aufgezeichnet sind, sollten die Menüs der "Untermakros" mit aussagekräftigen Namen versehen werden und dann in einer einzelnen Makrodatei für den QC-Prozess zusammengefasst werden.

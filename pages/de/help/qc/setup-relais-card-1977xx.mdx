@@ -1,9 +1,9 @@
 # Set-up Relay Card 1977xx
 
-When using the optionally available USB-RS232 adapter to connect the card it is mandatory to install the most recent [driver](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx). This is particularly important for 64-bit systems. The included driver is deprecated and causes an immediate system crash upon connection.
+**Wenn die Karte über den optional bestellbaren USB-RS232 Adapter benutzt wird, ist es essentiell den aktuellsten [Treiber](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx) zu verwenden, insbesondere auf 64bit Systemen. Der mitgelieferte Treiber ist erheblich veraltet und führt zu Systemabstürzen, sobald die Karte an den Rechner angeschlossen wird.**
 
-The correct COM port number has to be specified prior to the initialization and operation of the relay card. The correct baud rate (19200) is set by default and should not be changed. For the utilization of relay cards during the QC process it is highly recommended to include the COM port set-up in the QC procedure.
+Vor Initialisierung und Verwendung der Relaiskarte muss die Com-Port Nummer des für die Relais-Ansteuerung verwendeten Ports angegeben werden. Die Baud rate (19200) ist bereits richtig voreingestellt und muss nicht verändert werden. Bei Verwendung von Relaiskarten im QC-Prozess sollte das Com-Port setup in den Prüfablauf eingebunden werden.
 
-The execution of QC processes using relay cards on other systems may require the adjustment of the COM port number. This is especially true using the USB-RS232 adapter.
+Bei der Ausführung eines QC-Prozesses mit Relais-Ansteuerung auf unterschiedlichen Rechnern kann es erforderlich sein die Com-Port Nummer anzupassen. Das gilt insbesondere bei USB-RS232 Konvertern, die bei Anschluss an verschiedenen Rechnern unterschiedliche Com-Port Nummer zugewiesen bekommen können.
 
-[Further information about the set-up of serial ports](/en/help/qc/com-port-settings)
+[Weitere Information zum Setup von seriellen Ports findet man hier.](/de/help/qc/com-port-settings)
