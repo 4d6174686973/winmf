@@ -10,12 +10,7 @@ This site is built on a clone of [swr website](https://github.com/shuding/nextra
 
 Follow these steps
 
-1) Open project in devcontainer
-
-2) Run `npm install -g pnpm` in terminal
-
-3) Run `pnpm update` to update the dependencies.
-
-4) Run `pnpm i` to install the dependencies.
-
-5) Run `pnpm dev` to start the development server and visit localhost:3000.
+1. Run `npm install -g pnpm` in terminal
+2. Run `pnpm update` to update the dependencies.
+3. Run `pnpm i` to install the dependencies.
+4. Run `pnpm dev` to start the development server and visit localhost:3000.
