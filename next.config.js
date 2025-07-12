@@ -53,6 +53,7 @@ export default withBundleAnalyzer(
       defaultLocale: 'en'
     }, // basePath: "/some-base-path",
     distDir: './.next', // Nextra supports custom `nextConfig.distDir`
+    output: 'export', // Enable static export
     redirects: () => [
       // {
       //   source: "/docs.([a-zA-Z-]+)",
