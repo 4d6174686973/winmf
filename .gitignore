@@ -1,3 +1,9 @@
 node_modules
 .next
 .pnpm-store
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
