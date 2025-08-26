@@ -88,7 +88,12 @@ export default withBundleAnalyzer(
         source: '/',
         destination: '/en',
         permanent: true
-      }
+      },
+      {
+        source: '/:path*.html',   // match anything ending in .html
+        destination: '/:path*',   // redirect to same path without .html
+        permanent: true,          // 308 permanent redirect
+      },
     ],
     reactStrictMode: true
   })
