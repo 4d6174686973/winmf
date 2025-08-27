@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    image: nextra-ssr:latest
+    ports:
+    - "3000:3000"
+    environment:
+    - NODE_ENV=production
+    - PORT=3000
+    - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped

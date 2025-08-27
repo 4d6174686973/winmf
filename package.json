@@ -12,8 +12,7 @@
     "dev": "next",
     "prebuild": "node nextra-remote-filepaths/fetch.js",
     "predev": "pnpm prebuild",
-    "start": "next start",
-    "types:check": "tsc --noEmit"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "aws-amplify": "^6.15.5",
