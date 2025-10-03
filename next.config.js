@@ -51,29 +51,8 @@ export default withBundleAnalyzer(
     i18n: {
       locales: ['en', 'de'],
       defaultLocale: 'en'
-    }, // basePath: "/some-base-path",
-    distDir: './.next', // Nextra supports custom `nextConfig.distDir`
+    }, // 
     redirects: () => [
-      // {
-      //   source: "/docs.([a-zA-Z-]+)",
-      //   destination: "/docs/getting-started",
-      //   statusCode: 301,
-      // },
-      // {
-      //   source: "/advanced/performance",
-      //   destination: "/docs/advanced/performance",
-      //   statusCode: 301,
-      // },
-      // {
-      //   source: "/advanced/cache",
-      //   destination: "/docs/advanced/cache",
-      //   statusCode: 301,
-      // },
-      // {
-      //   source: "/docs/cache",
-      //   destination: "/docs/advanced/cache",
-      //   statusCode: 301,
-      // },
       {
         source: '/docs.([a-zA-Z-]+)',
         destination: '/docs/getting-started',
@@ -95,6 +74,9 @@ export default withBundleAnalyzer(
         permanent: true,          // 308 permanent redirect
       },
     ],
-    reactStrictMode: true
+    reactStrictMode: true,
+    
+    // Fix Image Optimization Error
+    images: { unoptimized: true }
   })
 )
