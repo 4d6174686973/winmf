@@ -73,6 +73,11 @@ export default withBundleAnalyzer(
         destination: '/:path*',   // redirect to same path without .html
         permanent: true,          // 308 permanent redirect
       },
+      {
+        source: '/features/features',
+        destination: '/features',
+        permanent: true
+      },
     ],
     reactStrictMode: true,
     
