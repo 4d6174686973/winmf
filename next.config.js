@@ -74,8 +74,8 @@ export default withBundleAnalyzer(
         permanent: true,          // 308 permanent redirect
       },
       {
-        source: '/features/features',
-        destination: '/features',
+        source: '/en/features/features',
+        destination: '/en/features',
         permanent: true
       },
     ],
