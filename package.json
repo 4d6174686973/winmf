@@ -15,7 +15,7 @@
     "start": "next start -p $PORT"
   },
   "dependencies": {
-    "aws-amplify": "^6.16.0",
+    "aws-amplify": "^6.16.2",
     "markdown-to-jsx": "^6.11.4",
     "next": "^14.2.35",
     "nextra": "3.0.0-alpha.36",
@@ -33,12 +33,12 @@
     }
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.20.0",
+    "@aws-amplify/backend": "^1.21.0",
     "@aws-amplify/backend-cli": "^1.8.2",
     "@next/bundle-analyzer": "^13.5.11",
     "@types/node": "22.5.4",
-    "autoprefixer": "^10.4.23",
-    "aws-cdk-lib": "^2.236.0",
+    "autoprefixer": "^10.4.24",
+    "aws-cdk-lib": "^2.238.0",
     "constructs": "^10.4.5",
     "esbuild": "^0.25.12",
     "postcss": "^8.5.6",
