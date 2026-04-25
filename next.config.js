@@ -2,37 +2,9 @@ import bundleAnalyzer from '@next/bundle-analyzer'
 import nextra from 'nextra'
 
 const withNextra = nextra({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
   defaultShowCopyCode: true,
-  transform(content, { route }) {
-    if (route.startsWith('/en/docs/advanced/dynamic-markdown-import')) {
-      return `
-${content}
-export function getStaticProps() {
-  return {
-    props: {
-      foo: 'from nextra config'
-    }
-  }
-}`
-    }
-    return content
-  },
-  // transformPageMap(pageMap, locale) {
-  //   if (locale === 'en') {
-  //     pageMap = [
-  //       ...pageMap,
-  //       {
-  //         name: 'virtual-page',
-  //         route: '/en/virtual-page',
-  //         frontMatter: { sidebarTitle: 'Virtual Page' }
-  //       }
-  //     ]
-  //   }
-  //   return pageMap
-  // },
-  latex: true
+  latex: true,
+  unstable_shouldAddLocaleToLinks: true
 })
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -45,13 +17,12 @@ const withBundleAnalyzer = bundleAnalyzer({
 export default withBundleAnalyzer(
   withNextra({
     eslint: {
-      // Eslint behaves weirdly in this monorepo.
       ignoreDuringBuilds: true
     },
     i18n: {
       locales: ['en', 'de'],
       defaultLocale: 'en'
-    }, // 
+    },
     redirects: () => [
       {
         source: '/docs.([a-zA-Z-]+)',
@@ -69,19 +40,18 @@ export default withBundleAnalyzer(
         permanent: true
       },
       {
-        source: '/:path*.html',   // match anything ending in .html
-        destination: '/:path*',   // redirect to same path without .html
-        permanent: true,          // 308 permanent redirect
+        source: '/:path*.html',
+        destination: '/:path*',
+        permanent: true
       },
       {
         source: '/en/features/features',
         destination: '/en/features',
         permanent: true
-      },
+      }
     ],
+    outputFileTracingRoot: new URL('.', import.meta.url).pathname,
     reactStrictMode: true,
-    
-    // Fix Image Optimization Error
     images: { unoptimized: true }
   })
 )
