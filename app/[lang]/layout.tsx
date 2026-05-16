@@ -10,11 +10,6 @@ const TITLE: Record<string, string> = {
   de: 'WinMF Messsoftware'
 }
 
-const EDIT_TEXT: Record<string, string> = {
-  en: 'Edit this page on GitHub',
-  de: 'Bearbeite diese Seite auf GitHub'
-}
-
 const FOOTER_LINK: Record<string, string> = {
   en: 'https://www.four-audio.com/en/home/',
   de: 'https://www.four-audio.com/'
@@ -80,7 +75,7 @@ export default async function DocsLayout({ children, params }: LayoutProps) {
             </Footer>
           }
           docsRepositoryBase="https://github.com/4d6174686973/winmf"
-          editLink={EDIT_TEXT[lang]}
+          editLink={null}
           i18n={[
             { locale: 'en', name: 'English' },
             { locale: 'de', name: 'Deutsch' }
